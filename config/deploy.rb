@@ -1,8 +1,8 @@
 # Change these
 server '92.53.97.113', port: 22, roles: [:web, :app, :db], primary: true
 
-set :repo_url,        'git@github.com:mohnstrudel/yadadya_fashion_landing.git'
-set :application,     'fashion_landing'
+set :repo_url,        'git@github.com:mohnstrudel/yadadya_corp.git'
+set :application,     'yadadya.com'
 set :user,            'deploy'
 set :puma_threads,    [4, 16]
 set :puma_workers,    0
@@ -23,9 +23,9 @@ set :puma_preload_app, true
 set :puma_worker_timeout, nil
 set :puma_init_active_record, true  # Change to false when not using ActiveRecord
 
-set :rollbar_token, '8902b1c1f836403fb38ad2d90443e7d1'
-set :rollbar_env, Proc.new { fetch :stage }
-set :rollbar_role, Proc.new { :app }
+# set :rollbar_token, '8902b1c1f836403fb38ad2d90443e7d1'
+# set :rollbar_env, Proc.new { fetch :stage }
+# set :rollbar_role, Proc.new { :app }
 
 ## Defaults:
 # set :scm,           :git
