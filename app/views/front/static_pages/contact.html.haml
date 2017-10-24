@@ -1,0 +1,67 @@
+%section.g-section.g-contact
+  .g-wrapper
+    %h2.g-title
+      %span.g-title__text
+        Хотите больше?
+        %br.g-teblet-view/
+        Пригласите нас
+        %br/
+        на встречу!
+    .g-contact__img-wrapper
+      .g-contact__img.g-contact__img_phone.js-tilter
+        %img.g-contact__icon.tilter__figure{src: "#{asset_path 'contact_phone.svg'}"}
+      .g-contact__img.g-contact__img_cup.js-tilter
+        %img.g-contact__icon.tilter__figure{src: "#{asset_path 'contact_cup.svg'}"}
+      .g-contact__img.g-contact__img_mail.js-tilter
+        %img.g-contact__icon.tilter__figure{src: "#{asset_path 'contact_mail.svg'}"}
+    .g-contact-info
+      .g-contact-info__item
+        %h4.g-contact-info__title-small Контакты
+        %p.g-contact-info__text
+          %span.g-contact-info__adress г.Москва, ул. 2-я Хуторская, д. 38а, к. 15, офис 204.
+          %span.g-contact-info__text-block
+            Телефон
+            %a.g-contact-info__phone-link +7 (495) 374-58-11
+          %span.g-contact-info__text-block
+            E-mail
+            %a.g-link.g-contact-info__mail-link info@yadadya.com.
+          %span.g-contact-info__text-block
+            Работаем
+            %br
+            C пн-пт — с 10:00 до 19:00, 
+            %br
+            сб-вс — выходные.
+            
+      .g-contact-info__item.g-contact-info__item_big
+        %h3.g-contact-info__title
+          Напишите нам
+          %br
+          о своей задумке
+        %p.g-contact-info__text.g-contact-info__text_big
+          Мы внимательно изучим вводную информацию и свяжемся с вами в кратчайшие сроки. А пока посмотрите
+          = succeed "." do
+            %a.g-link{href: projects_path} наши работы
+        %a.g-btn.g-btn_green.js-popup Написать нам
+      .g-contact-info__item.g-contact-info__item_requisites
+        %h4.g-contact-info__title-small Реквизиты
+        %p.g-contact-info__text
+          ООО «Ядадья»
+          %span.g-contact-info__strong.g-contact-info__text-block
+            7702829627
+            %br/
+            771301001
+            %br/
+            5137746238537
+          %span.g-contact-info__text-block
+            Р/С:
+            %span.g-contact-info__strong 40702810838170023076
+            %br/
+            в ПАО «Сбербанк России»,
+          %span.g-contact-info__text-block
+            г. Москва (БИК:
+            = succeed ")" do
+              %span.g-contact-info__strong 044525225
+          %span.g-contact-info__text-block
+            К/С:
+            %span.g-contact-info__strong 30101810400000000225
+%section#g-map.g-section.g-map

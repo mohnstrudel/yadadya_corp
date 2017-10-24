@@ -1,0 +1,17 @@
+{
+  "name": "yadadya_com",
+  "private": true,
+  "dependencies": {
+    "@rails/webpacker": "^3.0.2",
+    "animejs": "^2.2.0",
+    "bxslider": "^4.2.13",
+    "coffeescript": "1.12.7",
+    "inputmask": "^3.3.10",
+    "jquery": "^3.2.1",
+    "normalize.css": "^7.0.0",
+    "tilt.js": "^1.2.0"
+  },
+  "devDependencies": {
+    "webpack-dev-server": "^2.9.3"
+  }
+}

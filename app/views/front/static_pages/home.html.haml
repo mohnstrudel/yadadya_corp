@@ -1,0 +1,78 @@
+%section.g-section.g-main
+  .g-wrapper
+    %h2.g-main__top Интернет-агентство
+    %h1.g-main__title
+      Я
+      %i.g-main__title-point>
+      CREATIONS
+    %h3.g-main__subtitle Вся разработка в одном месте
+  .g-scroller
+  #video-wrapper.g-video-wrapper
+
+=render partial: 'front/static_pages/home_sections/what_we_do'
+
+=render partial: 'front/static_pages/home_sections/how_we_work'
+
+=render partial: 'front/static_pages/home_sections/why_we'
+
+%section.g-section.g-section_best
+  .g-wrapper
+    %h2.g-title
+      %span.g-title__text лучшие кейсы
+    %h3.g-subtitle.g-subtitle_small Вы только посмотрите, что вытворяют!
+    .g-best-wrapper
+      %ul#cases-slider.g-best
+        %li.g-best__item
+          .g-best__banner
+          %a.g-best__desc{:href => "http://yadadya.com", :target => "_blank"} Увеличили конверсию в X раз
+        %li.g-best__item
+          .g-best__banner
+          %a.g-best__desc{:href => "http://yadadya.com", :target => "_blank"} Увеличили конверсию в X раз
+        %li.g-best__item
+          .g-best__banner
+          %a.g-best__desc{:href => "http://yadadya.com", :target => "_blank"} Увеличили конверсию в X раз
+        %li.g-best__item
+          .g-best__banner
+          %a.g-best__desc{:href => "http://yadadya.com", :target => "_blank"} Увеличили конверсию в X раз
+        %li.g-best__item
+          .g-best__banner
+          %a.g-best__desc{:href => "http://yadadya.com", :target => "_blank"} Увеличили конверсию в X раз
+        %li.g-best__item
+          .g-best__banner
+          %a.g-best__desc{:href => "http://yadadya.com", :target => "_blank"} Увеличили конверсию в X раз
+        %li.g-best__item
+          .g-best__banner
+          %a.g-best__desc{:href => "http://yadadya.com", :target => "_blank"} Увеличили конверсию в X раз
+%section.g-section.g-areas
+  .g-wrapper
+    .g-areas__left
+      .js-tilter
+        %img.g-areas__img.tilter__figure{src: "#{asset_path 'efficiency.svg'}"}
+      %img.g-areas__img-bg{src: "#{asset_path 'efficiency_bg.svg'}"}
+    .g-areas__right
+      %h2.g-areas__title Увеличиваем эффективность бизнеса
+      %p.g-areas__text Особенность нашего подхода заключается в степени погружения в проект клиента. Мы смотрим на любой продукт глазами бизнеса, тщательно изучаем, что происходит «внутри» и анализируем все процессы компании. А затем предлагаем и внедряем решения по их автоматизации. Такие решения позволяют, например, сократить расходы на персонал, уменьшить время производственного цикла и в конечном итоге влияют на рентабельность бизнеса клиента.
+      %p.g-areas__list-title В каких областях мы можем вам помочь:
+      %ul.g-areas__list
+        %li.g-areas__item Сложные решения
+        %li.g-areas__item Интернет-магазины
+        %li.g-areas__item Поддержка и развитие
+        %li.g-areas__item Привлечение клиентов
+        %li.g-areas__item Мобильные приложения
+        %li.g-areas__item Фирменный стиль
+        %li.g-areas__item Корпоративные сайты
+        %li.g-areas__item Битрикс24
+%section.g-section.g-offer
+  .g-wrapper
+    %h2.g-title.g-title_white
+      %span.g-title__text
+        Давайте сделаем
+        %br.g-mobile
+        вам проект
+    %p.g-subtitle.g-subtitle_white.g-subtitle_small
+      Осторожно! При создании используются секретные ингредиенты:
+      %br>/
+      любовь к работе, знание дела и погружение в проблемы клиента.
+    %a.g-btn.js-popup{:href => "javascript:void(0)"} Обсудить проект
+
+

@@ -1,0 +1,31 @@
+!!!
+%html
+  %head
+    %title Yadadya
+
+    %meta{:charset => "utf-8"}/
+    %meta{:content => "IE=edge", "http-equiv" => "X-UA-Compatible"}/
+    %meta{:content => "width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no", :name => "viewport"}/
+    %meta{:content => "#ffffff", :name => "theme-color"}/
+
+    %link{:href => "https://fonts.googleapis.com/css?family=Oswald:400,500&subset=cyrillic", :rel => "stylesheet"}/
+    %link{:href => "/img/icons/apple-touch-icon.png", :rel => "apple-touch-icon", :sizes => "180x180"}/
+    %link{:href => "/img/icons/favicon-32x32.png", :rel => "icon", :sizes => "32x32", :type => "image/png"}/
+    %link{:href => "/img/icons/favicon-16x16.png", :rel => "icon", :sizes => "16x16", :type => "image/png"}/
+    %link{:href => "/manifest.json", :rel => "manifest"}/
+    %link{:color => "#5bbad5", :href => "/img/icons/safari-pinned-tab.svg", :rel => "mask-icon"}/
+    
+
+    %title YadadyaCom
+    = csrf_meta_tags
+    = stylesheet_link_tag "https://api.mapbox.com/mapbox-gl-js/v0.41.0/mapbox-gl.css", :rel => "stylesheet"
+    = stylesheet_link_tag    'front', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'https://api.mapbox.com/mapbox-gl-js/v0.41.0/mapbox-gl.js'
+    = javascript_include_tag 'front', 'data-turbolinks-track': 'reload'
+  %body.g-body{class: "#{controller_name} #{action_name}"}
+    .g-content
+      =render partial: 'front/navigation/header'
+      = yield
+      =render partial: 'front/navigation/footer'
+      =render partial: 'front/navigation/popups'
+      =render partial: 'front/navigation/icons'

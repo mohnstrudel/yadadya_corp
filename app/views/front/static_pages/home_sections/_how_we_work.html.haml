@@ -1,0 +1,78 @@
+%section.g-section.g-section_how
+  .g-wrapper
+    %h2.g-title
+      %span.g-title__text Как мы работаем?
+    %h3.g-subtitle В нашем арсенале — два подхода к разработке продуктов:
+    .g-approach-list
+      .g-approach-list__item
+        %h3.g-approach-list__title «Водопад», каскадная модель
+        %p.g-approach-list__desc Используем в случае, когда у вас есть понимание, как должен выглядеть готовый  продукт и, возможно, даже ТЗ. Бюджет и сроки при таком подходе — фиксированные, а значит, внесение изменений по ходу проекта невозможно.
+        .g-approach-list__wrapper-waterfall
+          %ol.g-approach-list__steps.g-approach-list__steps_waterfall.js-animation.js-animation_mobile.js-animation_tablet{"data-animation-delay" => "400ms"}
+            %li.g-approach-list__step
+              %span.g-approach-list__counter
+                1
+                %svg.g-approach-list__counter-bg
+                  %use{:height => "42", :width => "42", :x => "0", "xlink:href" => "#ic-counter-bg", :y => "0"}
+              %span.g-approach-list__text
+                Формулируем требования
+                %br>/
+                к конечному продукту.
+            %li.g-approach-list__step
+              %span.g-approach-list__counter
+                2
+                %svg.g-approach-list__counter-bg
+                  %use{"xlink:href" => "#ic-counter-bg"}
+              %span.g-approach-list__text
+                Пишем детальное ТЗ
+                %br>/
+                (на основе вашего или с нуля).
+            %li.g-approach-list__step
+              %span.g-approach-list__counter
+                3
+                %svg.g-approach-list__counter-bg
+                  %use{"xlink:href" => "#ic-counter-bg"}
+              %span.g-approach-list__text Строим график работ.
+            %li.g-approach-list__step
+              %span.g-approach-list__counter
+                4
+                %svg.g-approach-list__counter-bg
+                  %use{"xlink:href" => "#ic-counter-bg"}
+              %span.g-approach-list__text Работаем по нему.
+        %p.g-approach-list__desc.g-approach-list__desc_waterfall Вы получаете готовый продукт в установленный срок.
+      .g-approach-list__item
+        %h3.g-approach-list__title Agile, гибкий подход
+        %p.g-approach-list__desc
+          Мы строим работу по этой модели, если у вас есть идея, но нет понимания, в каком направлении двигаться для начала ее реализации, и вообще, с чего начать.
+        %p.g-approach-list__desc
+          Поэтому мы итеративно, по шагам разрабатываем веб- продукт. Подход подразумевает возможность пересмотра функционала «на лету». Поэтому, бюджет при таком подходе гибкий, также как и сроки реализации.
+        .g-approach-list__wrapper-agile
+          %ol.g-approach-list__steps.g-approach-list__steps_agile.js-animation.js-animation_mobile.js-animation_tablet{"data-animation-delay" => "600ms"}
+            %li.g-approach-list__step
+              %span.g-approach-list__counter
+                1
+                %svg.g-approach-list__counter-bg
+                  %use{"xlink:href" => "#ic-counter-bg"}
+              %span.g-approach-list__text
+                Описываем минимальные требования
+                %br>/
+                к готовому продукту.
+            %li.g-approach-list__step
+              %span.g-approach-list__counter
+                2
+                %svg.g-approach-list__counter-bg
+                  %use{"xlink:href" => "#ic-counter-bg"}
+              %span.g-approach-list__text Создаем прототип.
+            %li.g-approach-list__step
+              %span.g-approach-list__counter
+                3
+                %svg.g-approach-list__counter-bg
+                  %use{"xlink:href" => "#ic-counter-bg"}
+              %span.g-approach-list__text
+                Работаем итерациями,
+                = succeed "\u{434}\u{435}\u{43c}\u{43e}\u{43d}\u{441}\u{442}\u{440}\u{438}\u{440}\u{443}\u{435}\u{43c}" do
+                  %br.g-mobile/
+                = succeed "\u{440}\u{435}\u{437}\u{443}\u{43b}\u{44c}\u{442}\u{430}\u{442}" do
+                  %br.g-mobile-hide/
+                = succeed "\u{43a}\u{430}\u{436}\u{434}\u{44b}\u{435}" do
+                  %br.g-mobile/

@@ -1,0 +1,128 @@
+Yadadya.DOMReady(function(){
+	// $(".g-best-wrapper").mCustomScrollbar({
+	// 	axis:"x",
+	// 	// mouseWheel:{enable:false}
+	// });
+	if($('body').hasClass('home')){
+		$('input[type="file"]').fileuploader({theme: 'onebutton', addMore: true, enableApi: true});	
+	}
+	
+	if (Yadadya.params.isDesctop.matches)
+		$("#video-wrapper").append('<video id="video" width="100%" height="auto" autoplay="autoplay" loop="loop" preload="auto"><source src="<%= asset_path 'coding.webm' %>" type="video/webm"></source></video>');
+	var tiltSettings = {
+				movement: {
+					imgWrapper : {
+						translation : {x: -5, y: -5, z: -5},
+						rotation : {x: 0, y: 0, z: 0},
+						reverseAnimation : {duration : 200, easing : 'easeOutQuad'}
+					}
+				}
+			};
+	$(".js-tilter").each(function(){
+		new TiltFx(this, tiltSettings);
+	});
+	
+});
+Yadadya.resetItems = {
+	whatSlider: null,
+    whatSliderSlide: null,
+    whySlider: null,
+    whySliderSlide: null,
+    casesSlider: null,
+    casesSliderSlide: null
+}
+Yadadya.reset = function(){
+	if(Yadadya.resetItems.whatSlider){
+        Yadadya.resetItems.whatSliderSlide = Yadadya.resetItems.whatSlider.getCurrentSlide();
+        Yadadya.resetItems.whatSlider.destroySlider();
+        Yadadya.resetItems.whatSlider = null;
+    }
+    if(Yadadya.resetItems.whySlider){
+        Yadadya.resetItems.whySliderSlide = Yadadya.resetItems.whySlider.getCurrentSlide();
+        Yadadya.resetItems.whySlider.destroySlider();
+        Yadadya.resetItems.whySlider = null;
+    }
+    if(Yadadya.resetItems.casesSlider){
+        Yadadya.resetItems.casesSliderSlide = Yadadya.resetItems.casesSlider.getCurrentSlide();
+        Yadadya.resetItems.casesSlider.destroySlider();
+        Yadadya.resetItems.casesSlider = null;
+    }
+}
+Yadadya.desctop = function(){
+	Yadadya.resetItems.casesSlider = $("#cases-slider").bxSlider({
+		minSlides: 3,
+		maxSlides: 5,
+		moveSlides: 2,
+		slideWidth: parseInt(317 * Yadadya.rem / 13, 10),
+		slideMargin: parseInt(10 * Yadadya.rem / 13, 10),
+		mouseDrag: true,
+		startSlide: Yadadya.resetItems.casesSliderSlide || 0
+	});
+}
+Yadadya.tablet = function(){
+	$(".g-what-list__item, .g-why-list__item").css({height: "auto"});
+	
+	Yadadya.resetItems.casesSlider = $("#cases-slider").bxSlider({
+		minSlides: 3,
+		maxSlides: 5,
+		moveSlides: 1,
+		slideWidth: parseInt(317 * Yadadya.rem / 13, 10),
+		slideMargin: parseInt(10 * Yadadya.rem / 13, 10),
+		mouseDrag: true,
+		startSlide: Yadadya.resetItems.casesSliderSlide || 0
+	});
+
+	Yadadya.resetItems.whatSlider = $("#what-slider").bxSlider({
+		minSlides: 3,
+		maxSlides: 3,
+		moveSlides: 1,
+		slideWidth: parseInt(28.5 * Yadadya.rem, 10),
+		slideMargin: parseInt(0.5 * Yadadya.rem, 10),
+		mouseDrag: true,
+		startSlide: Yadadya.resetItems.whatSliderSlide || 0
+	});
+	Yadadya.resetItems.whySlider = $("#why-slider").bxSlider({
+		minSlides: 2,
+		maxSlides: 2,
+		moveSlides: 1,
+		slideWidth: parseInt(57 * Yadadya.rem, 10),
+		slideMargin: parseInt(0.5 * Yadadya.rem, 10),
+		mouseDrag: true,
+		startSlide: Yadadya.resetItems.whySliderSlide || 0
+	});
+	var maxHeight = 0;
+	$("#what-slider").find(".g-what-list__item").each(function(){
+		if(maxHeight < $(this).outerHeight())
+			maxHeight = $(this).outerHeight();
+	}).css({height: maxHeight});
+	maxHeight = 0;
+	$("#why-slider").find(".g-why-list__item").each(function(){
+		if(maxHeight < $(this).outerHeight())
+			maxHeight = $(this).outerHeight();
+	}).css({height: maxHeight});	
+}
+Yadadya.mobile = function(){
+	Yadadya.resetItems.whatSlider = $("#what-slider").bxSlider({
+		minSlides: 1,
+		maxSlides: 1,
+		moveSlides: 1,
+		mouseDrag: true,
+		adaptiveHeight: true,
+		startSlide: Yadadya.resetItems.whatSliderSlide || 0
+	});
+	Yadadya.resetItems.whySlider = $("#why-slider").bxSlider({
+		minSlides: 1,
+		maxSlides: 1,
+		moveSlides: 1,
+		mouseDrag: true,
+		adaptiveHeight: true,
+		startSlide: Yadadya.resetItems.whySliderSlide || 0
+	});
+	Yadadya.resetItems.casesSlider = $("#cases-slider").bxSlider({
+		minSlides: 1,
+		maxSlides: 1,
+		moveSlides: 1,
+		mouseDrag: true,
+		startSlide: Yadadya.resetItems.casesSliderSlide || 0
+	});
+}
