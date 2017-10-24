@@ -3,7 +3,6 @@
 //= require bxslider
 //= require inputmask/dist/inputmask/inputmask
 //= require inputmask/dist/inputmask/jquery.inputmask
-//= require animejs/anime
 //= require_tree ../../../vendor/assets/javascripts/front/.
 
 
