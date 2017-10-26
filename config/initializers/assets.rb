@@ -14,5 +14,6 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 # Rails.application.config.assets.precompile += %w( admin.js admin.css )
 
 Rails.application.config.assets.precompile += %w( front.css front.js )
+
 Rails.application.config.assets.paths << Rails.root.join('vendor', 'assets', 'fonts')  
 Rails.application.config.assets.precompile << /\.(?:svg|eot|woff|ttf)\z/

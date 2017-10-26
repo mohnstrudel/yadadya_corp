@@ -17,4 +17,5 @@ module FrontHelper
 
     link_to name, link_path, class: "g-menu__list-item #{class_name}#{additional_class}", &block
   end
+
 end

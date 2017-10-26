@@ -1,9 +1,9 @@
-	Yadadya.DOMReady(function(){
+$(document).on('turbolinks:load', function(){
 		// $(".g-best-wrapper").mCustomScrollbar({
 		// 	axis:"x",
 		// 	// mouseWheel:{enable:false}
 		// });
-		
+	if($('body').hasClass('home')){
 			$('input[type="file"]').fileuploader({theme: 'onebutton', addMore: true, enableApi: true});	
 		
 		if (Yadadya.params.isDesctop.matches)
@@ -21,37 +21,36 @@
 			new TiltFx(this, tiltSettings);
 		});
 		
-	});
 
 
-		Yadadya.resetItems = {
-		whatSlider: null,
-	    whatSliderSlide: null,
-	    whySlider: null,
-	    whySliderSlide: null,
-	    casesSlider: null,
-	    casesSliderSlide: null
-	}
-
-if($('body').hasClass('home')){
-	Yadadya.reset = function(){
-	if(Yadadya.resetItems.whatSlider){
-        Yadadya.resetItems.whatSliderSlide = Yadadya.resetItems.whatSlider.getCurrentSlide();
-        Yadadya.resetItems.whatSlider.destroySlider();
-        Yadadya.resetItems.whatSlider = null;
-    }
-    if(Yadadya.resetItems.whySlider){
-        Yadadya.resetItems.whySliderSlide = Yadadya.resetItems.whySlider.getCurrentSlide();
-        Yadadya.resetItems.whySlider.destroySlider();
-        Yadadya.resetItems.whySlider = null;
-    }
-    if(Yadadya.resetItems.casesSlider){
-        Yadadya.resetItems.casesSliderSlide = Yadadya.resetItems.casesSlider.getCurrentSlide();
-        Yadadya.resetItems.casesSlider.destroySlider();
-        Yadadya.resetItems.casesSlider = null;
-    }
-	}
+Yadadya.resetItems = {
+	whatSlider: null,
+    whatSliderSlide: null,
+    whySlider: null,
+    whySliderSlide: null,
+    casesSlider: null,
+    casesSliderSlide: null
 }
+
+
+Yadadya.reset = function(){
+	if(Yadadya.resetItems.whatSlider){
+      Yadadya.resetItems.whatSliderSlide = Yadadya.resetItems.whatSlider.getCurrentSlide();
+      Yadadya.resetItems.whatSlider.destroySlider();
+      Yadadya.resetItems.whatSlider = null;
+  }
+  if(Yadadya.resetItems.whySlider){
+      Yadadya.resetItems.whySliderSlide = Yadadya.resetItems.whySlider.getCurrentSlide();
+      Yadadya.resetItems.whySlider.destroySlider();
+      Yadadya.resetItems.whySlider = null;
+  }
+  if(Yadadya.resetItems.casesSlider){
+      Yadadya.resetItems.casesSliderSlide = Yadadya.resetItems.casesSlider.getCurrentSlide();
+      Yadadya.resetItems.casesSlider.destroySlider();
+      Yadadya.resetItems.casesSlider = null;
+  }
+}
+
 
 Yadadya.desctop = function(){
 	Yadadya.resetItems.casesSlider = $("#cases-slider").bxSlider({
@@ -131,3 +130,5 @@ Yadadya.mobile = function(){
 		startSlide: Yadadya.resetItems.casesSliderSlide || 0
 	});
 }
+}
+});

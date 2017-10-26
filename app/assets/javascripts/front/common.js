@@ -53,7 +53,7 @@ var Yadadya = {
 	    }
 	},
 	DOMReady: function(func){
-		$(document).on('turbolinks:load', function(){
+		$(document).ready(function(){
 			var didScroll;
 		    var lastScrollTop = 0;
 		    var delta = 5;
@@ -127,7 +127,8 @@ Yadadya.resize(function(){
   console.log('resized!');
 
 });
-Yadadya.DOMReady(function(){
+$(document).on('turbolinks:load', function(){
+// Yadadya.DOMReady(function(){
 	Yadadya.run();
 	if (Yadadya.params.isMobile.matches)
 		Yadadya.params.$animated = $(".js-animation.js-animation_mobile");

@@ -1,4 +1,4 @@
-Yadadya.DOMReady(function(){
+$(document).on('turbolinks:load', function(){
     if($('body').hasClass('contact')){
         var tiltSettings = {
                 movement: {
