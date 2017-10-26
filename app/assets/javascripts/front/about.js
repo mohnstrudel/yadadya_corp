@@ -1,5 +1,5 @@
-if($('body').hasClass('about')){
-  Yadadya.resetItems = {
+
+Yadadya.resetItems = {
   proposalSlider: null,
   proposalSliderSlide: null,
   leadershipSlider: null,
@@ -7,6 +7,7 @@ if($('body').hasClass('about')){
   aboutSlider: null,
   aboutSliderSlide: null,
 }
+
 Yadadya.DOMReady(function(){
   if (Yadadya.params.isMobile.matches) {
     $(".g-skills").on("click", function(){
@@ -35,22 +36,23 @@ Yadadya.DOMReady(function(){
         new TiltFx(this, tiltSettings);
     });
 });
+
 Yadadya.reset = function(){
   if(Yadadya.resetItems.proposalSlider){
-        Yadadya.resetItems.proposalSliderSlide = Yadadya.resetItems.proposalSlider.getCurrentSlide();
-        Yadadya.resetItems.proposalSlider.destroySlider();
-        Yadadya.resetItems.proposalSlider = null;
-    }
-    if(Yadadya.resetItems.leadershipSlider){
-        Yadadya.resetItems.leadershipSliderSlide = Yadadya.resetItems.leadershipSlider.getCurrentSlide();
-        Yadadya.resetItems.leadershipSlider.destroySlider();
-        Yadadya.resetItems.leadershipSlider = null;
-    }
-    if(Yadadya.resetItems.aboutSlider){
-        Yadadya.resetItems.aboutSliderSlide = Yadadya.resetItems.aboutSlider.getCurrentSlide();
-        Yadadya.resetItems.aboutSlider.destroySlider();
-        Yadadya.resetItems.aboutSlider = null;
-    }
+      Yadadya.resetItems.proposalSliderSlide = Yadadya.resetItems.proposalSlider.getCurrentSlide();
+      Yadadya.resetItems.proposalSlider.destroySlider();
+      Yadadya.resetItems.proposalSlider = null;
+  }
+  if(Yadadya.resetItems.leadershipSlider){
+      Yadadya.resetItems.leadershipSliderSlide = Yadadya.resetItems.leadershipSlider.getCurrentSlide();
+      Yadadya.resetItems.leadershipSlider.destroySlider();
+      Yadadya.resetItems.leadershipSlider = null;
+  }
+  if(Yadadya.resetItems.aboutSlider){
+      Yadadya.resetItems.aboutSliderSlide = Yadadya.resetItems.aboutSlider.getCurrentSlide();
+      Yadadya.resetItems.aboutSlider.destroySlider();
+      Yadadya.resetItems.aboutSlider = null;
+  }
 }
 Yadadya.mobile = function(){
   Yadadya.resetItems.proposalSlider = $("#proposal-slider").bxSlider({
@@ -79,6 +81,4 @@ Yadadya.mobile = function(){
     slideMargin: parseInt(1.81 * Yadadya.rem, 10),
     startSlide: Yadadya.resetItems.aboutSliderSlide || 0
   });
-
-}  
 }

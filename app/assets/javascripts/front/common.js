@@ -119,9 +119,12 @@ var Yadadya = {
 		$(window).scroll(func);
 	}
 }
+// Var Yadadya end
+
 Yadadya.resize(function(){
 	Yadadya.reset();
 	Yadadya.run();
+  console.log('resized!');
 
 });
 Yadadya.DOMReady(function(){
@@ -166,8 +169,10 @@ Yadadya.DOMReady(function(){
 		Yadadya.params.$body.toggleClass("g-body_overflow");
 	}
 	$(".js-menu").on("click", function(){
+    console.log('clicked menu!');
     var menu = $('#menu-wrapper');
     var body = $('body');
+    // console.log(menu);
 		// Yadadya.params.$body.css({"height": $(window).outerHeight()}).toggleClass("g-body_overflow");	
 		// Yadadya.params.$menu.toggleClass("g-menu_visible");
     body.css({"height": $(window).outerHeight()}).toggleClass("g-body_overflow"); 

@@ -1,6 +1,5 @@
 // CUSTOM SCRIPTS
 //= require jquery
-//= require bxslider
 //= require inputmask/dist/inputmask/inputmask
 //= require inputmask/dist/inputmask/jquery.inputmask
 //= require_tree ../../../vendor/assets/javascripts/front/.

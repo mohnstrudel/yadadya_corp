@@ -1,37 +1,40 @@
-Yadadya.DOMReady(function(){
-	// $(".g-best-wrapper").mCustomScrollbar({
-	// 	axis:"x",
-	// 	// mouseWheel:{enable:false}
-	// });
-	if($('body').hasClass('home')){
-		$('input[type="file"]').fileuploader({theme: 'onebutton', addMore: true, enableApi: true});	
-	}
-	
-	if (Yadadya.params.isDesctop.matches)
-		// $("#video-wrapper").append('<video id="video" width="100%" height="auto" autoplay="autoplay" loop="loop" preload="auto"><source src="<%= asset_path "coding.webm" %>" type="video/webm"></source></video>');
-	var tiltSettings = {
-				movement: {
-					imgWrapper : {
-						translation : {x: -5, y: -5, z: -5},
-						rotation : {x: 0, y: 0, z: 0},
-						reverseAnimation : {duration : 200, easing : 'easeOutQuad'}
+	Yadadya.DOMReady(function(){
+		// $(".g-best-wrapper").mCustomScrollbar({
+		// 	axis:"x",
+		// 	// mouseWheel:{enable:false}
+		// });
+		
+			$('input[type="file"]').fileuploader({theme: 'onebutton', addMore: true, enableApi: true});	
+		
+		if (Yadadya.params.isDesctop.matches)
+			// $("#video-wrapper").append('<video id="video" width="100%" height="auto" autoplay="autoplay" loop="loop" preload="auto"><source src="<%= asset_path "coding.webm" %>" type="video/webm"></source></video>');
+		var tiltSettings = {
+					movement: {
+						imgWrapper : {
+							translation : {x: -5, y: -5, z: -5},
+							rotation : {x: 0, y: 0, z: 0},
+							reverseAnimation : {duration : 200, easing : 'easeOutQuad'}
+						}
 					}
-				}
-			};
-	$(".js-tilter").each(function(){
-		new TiltFx(this, tiltSettings);
+				};
+		$(".js-tilter").each(function(){
+			new TiltFx(this, tiltSettings);
+		});
+		
 	});
-	
-});
-Yadadya.resetItems = {
-	whatSlider: null,
-    whatSliderSlide: null,
-    whySlider: null,
-    whySliderSlide: null,
-    casesSlider: null,
-    casesSliderSlide: null
-}
-Yadadya.reset = function(){
+
+
+		Yadadya.resetItems = {
+		whatSlider: null,
+	    whatSliderSlide: null,
+	    whySlider: null,
+	    whySliderSlide: null,
+	    casesSlider: null,
+	    casesSliderSlide: null
+	}
+
+if($('body').hasClass('home')){
+	Yadadya.reset = function(){
 	if(Yadadya.resetItems.whatSlider){
         Yadadya.resetItems.whatSliderSlide = Yadadya.resetItems.whatSlider.getCurrentSlide();
         Yadadya.resetItems.whatSlider.destroySlider();
@@ -47,7 +50,9 @@ Yadadya.reset = function(){
         Yadadya.resetItems.casesSlider.destroySlider();
         Yadadya.resetItems.casesSlider = null;
     }
+	}
 }
+
 Yadadya.desctop = function(){
 	Yadadya.resetItems.casesSlider = $("#cases-slider").bxSlider({
 		minSlides: 3,
