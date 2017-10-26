@@ -124,11 +124,11 @@ var Yadadya = {
 Yadadya.resize(function(){
 	Yadadya.reset();
 	Yadadya.run();
-  console.log('resized!');
+  // console.log('resized!');
 
 });
-$(document).on('turbolinks:load', function(){
-// Yadadya.DOMReady(function(){
+// $(document).on('turbolinks:load', function(){
+Yadadya.DOMReady(function(){
 	Yadadya.run();
 	if (Yadadya.params.isMobile.matches)
 		Yadadya.params.$animated = $(".js-animation.js-animation_mobile");
