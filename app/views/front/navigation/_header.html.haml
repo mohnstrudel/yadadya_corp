@@ -1,13 +1,19 @@
 %header#g-header.g-header{class: get_header_class}
   %a.g-logo.g-logo_top{:href => root_path}
     %img.g-logo__img{src: "#{asset_path 'logo.svg'}"}
-    %img.g-logo__img.g-logo__img_mobile{src: "#{asset_path 'logo_mobile.svg'}"}
+    -if action_name == 'home'
+      %img.g-logo__img.g-logo__img_mobile{src: "#{asset_path 'logo-light.svg'}"}
+    -else 
+      %img.g-logo__img.g-logo__img_mobile{src: "#{asset_path 'logo-dark.svg'}"}
   %a.g-burger.js-menu{:href => "javascript:void(0)"}
     %i.g-burger__icon
   #menu-wrapper.g-menu
     .g-menu-top
       %a.g-logo{:href => root_path}
-        %img.g-logo__img.g-logo__img_small{src: "#{asset_path 'logo-small.svg'}"}
+        -if action_name == 'home'
+          %img.g-logo__img.g-logo__img_small{src: "#{asset_path 'logo-light.svg'}"}
+        -else
+          %img.g-logo__img.g-logo__img_small{src: "#{asset_path 'logo-dark.svg'}"}
       %a.g-close.js-menu{:href => "javascript:void(0)"}
         %i.g-close__icon
     .g-menu__list
@@ -19,9 +25,10 @@
       
       %p.g-menu__text
         %a.g-menu__phone{:href => "tel:74953745811"} +7 (495) 374-58-11
-        %a.g-menu__social.g-menu__social_fb
+        %a.g-menu__social.g-menu__social_fb{href: 'https://www.facebook.com/yadadyacreations', target: '_blank'}
           %svg.g-icon
             %use{"xlink:href" => "#ic-facebook"}
+        }
         %a.g-menu__social.g-menu__social_mail{:href => "mailto:info@yadadya.com"}
           %svg.g-icon
             %use{"xlink:href" => "#ic-mail"}

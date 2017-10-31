@@ -21,9 +21,7 @@
     %title YadadyaCom
     = csrf_meta_tags
     = stylesheet_link_tag "https://api.mapbox.com/mapbox-gl-js/v0.41.0/mapbox-gl.css", :rel => "stylesheet"
-    = stylesheet_link_tag    'front', media: 'all', 'data-turbolinks-track': 'reload'
-    = javascript_include_tag 'https://api.mapbox.com/mapbox-gl-js/v0.41.0/mapbox-gl.js'
-    = javascript_include_tag 'front', 'data-turbolinks-track': 'reload'
+    = stylesheet_link_tag    'front', media: 'all'
     / = javascript_include_tag 'front/main.js' if action_name == 'home'
     / = javascript_include_tag 'front/about.js' if action_name == 'about'
     / = javascript_include_tag 'front/contact.js' if action_name == 'contact'
@@ -37,3 +35,5 @@
       =render partial: 'front/navigation/footer'
       =render partial: 'front/navigation/popups'
       =render partial: 'front/navigation/icons'
+  = javascript_include_tag 'https://api.mapbox.com/mapbox-gl-js/v0.41.0/mapbox-gl.js'
+  = javascript_include_tag 'front'

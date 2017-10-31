@@ -21,28 +21,10 @@
       %span.g-title__text лучшие кейсы
     %h3.g-subtitle.g-subtitle_small Вы только посмотрите, что вытворяют!
     .g-best-wrapper
-      %ul#cases-slider.g-best
-        %li.g-best__item
-          .g-best__banner{style: "background-image: url(#{asset_path 'cases/kosher.png'}); background-size: 100% 100%;"}
-          %a.g-best__desc{:href => "http://kosher.com", :target => "_blank"} Kosher.ru 
-        %li.g-best__item
-          .g-best__banner{style: "background-image: url(#{asset_path 'cases/rasario.png'}); background-size: 100% 90%;"}
-          %a.g-best__desc{:href => "http://yadadya.com", :target => "_blank"} Rasario - интернет-магазин бренда.
-        %li.g-best__item
-          .g-best__banner{style: "background-image: url(#{asset_path 'cases/inpas.png'}); background-size: 100% 90%;"}
-          %a.g-best__desc{:href => "http://yadadya.com", :target => "_blank"} Inpas
-        %li.g-best__item
-          .g-best__banner{style: "background-image: url(#{asset_path 'cases/davidian.png'}); background-size: 150%;"}
-          %a.g-best__desc{:href => "http://yadadya.com", :target => "_blank"} Бренд juliadavidia.com
-        %li.g-best__item
-          .g-best__banner{style: "background-image: url(#{asset_path 'cases/getbam.png'}); background-size: 100% 90%;"}
-          %a.g-best__desc{:href => "http://yadadya.com", :target => "_blank"} SaaS-решение
-        %li.g-best__item
-          .g-best__banner{style: "background-image: url(#{asset_path 'cases/shopmate.png'}); background-size: 100% 90%;"}
-          %a.g-best__desc{:href => "http://yadadya.com", :target => "_blank"} SaaS-решение
-        %li.g-best__item
-          .g-best__banner{style: "background-image: url(#{asset_path 'cases/vds1.png'}); background-size: 100% 90%;"}
-          %a.g-best__desc{:href => "http://yadadya.com", :target => "_blank"} Строительная компания ВДС
+      %a.g-btn.g-btn_download{:href => '/Presentation-Y-Creations.pdf', target: "_blank", download: 'Presentation-Y-Creations.pdf'}
+        Скачать презентацию
+        %svg.g-btn-icon.g-btn-icon_download
+          %use{"xlink:href" => "#ic-btn-download"}
 %section.g-section.g-areas
   .g-wrapper
     .g-areas__left

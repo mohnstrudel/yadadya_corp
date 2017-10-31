@@ -6,11 +6,9 @@
 
 
 //=require front/common
-//=require front/main
-//=require front/about
-//=require front/contact
+
 
 // RAILS SCRIPTS
 //= require rails-ujs
-//= require turbolinks
+
 
