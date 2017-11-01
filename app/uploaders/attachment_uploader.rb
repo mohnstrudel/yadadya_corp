@@ -35,7 +35,11 @@ class AttachmentUploader < CarrierWave::Uploader::Base
   # end
 
   def extension_whitelist
-    %w(pdf txt doc docx)
+    %w(pdf txt doc docx xls xlsx png jpg jpeg)
+  end
+
+  def size_range
+    0.1..50.megabytes
   end
 
   # Add a white list of extensions which are allowed to be uploaded.

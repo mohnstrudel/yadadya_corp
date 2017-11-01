@@ -8,4 +8,6 @@ class Request < ApplicationRecord
                 format: { with: VALID_EMAIL_REGEX }
 
   validates :full_name, :phone, presence: true
+
+  
 end
