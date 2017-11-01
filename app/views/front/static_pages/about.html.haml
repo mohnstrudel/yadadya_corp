@@ -171,12 +171,12 @@
 %section.g-section.g-leadership
   .g-wrapper
     #leadership-slider.g-leadership__wrapper
-      .g-leadership__item.js-animation.js-animation_bounceIn{"data-animation-delay" => "300ms"}
+      .g-leadership__item.js-animation.js-animation_bounceIn{"data-animation-delay" => "600ms"}
         .g-leadership__photo-wrapper.js-tilter
-          %img.g-leadership__photo.tilter__figure.g-leadership__photo_nadegda{src: "#{asset_path 'leadership/nadegda.png'}"}
-        %h3.g-leadership__name Дмитрий Калашников
-        %p.g-leadership__position Account Менеджер
-        %a.g-btn.g-btn_transparent.g-btn_facebook{:href => "https://www.facebook.com/dmitry.ak47", :target => "_blank"}
+          %img.g-leadership__photo.g-leadership__photo_anton.tilter__figure{src: "#{asset_path 'leadership/anton.png'}"}
+        %h3.g-leadership__name Антон Костин
+        %p.g-leadership__position Руководитель проектов
+        %a.g-btn.g-btn_transparent.g-btn_facebook{:href => "https://www.facebook.com/anton.kostin.5", :target => "_blank"}
           %svg.g-icon
             %use{"xlink:href" => "#ic-facebook"}
 
@@ -188,13 +188,14 @@
         %a.g-btn.g-btn_transparent.g-btn_facebook{:href => "https://www.facebook.com/yadadya", :target => "_blank"}
           %svg.g-icon
             %use{"xlink:href" => "#ic-facebook"}
-            
-      .g-leadership__item.js-animation.js-animation_bounceIn{"data-animation-delay" => "600ms"}
+
+
+      .g-leadership__item.js-animation.js-animation_bounceIn{"data-animation-delay" => "300ms"}
         .g-leadership__photo-wrapper.js-tilter
-          %img.g-leadership__photo.g-leadership__photo_anton.tilter__figure{src: "#{asset_path 'leadership/anton.png'}"}
-        %h3.g-leadership__name Антон Костин
-        %p.g-leadership__position Руководитель проектов
-        %a.g-btn.g-btn_transparent.g-btn_facebook{:href => "https://www.facebook.com/anton.kostin.5", :target => "_blank"}
+          %img.g-leadership__photo.tilter__figure.g-leadership__photo_nadegda{src: "#{asset_path 'leadership/dima.png'}", style: "width: 80%; left: 45px;"}
+        %h3.g-leadership__name Дмитрий Калашников
+        %p.g-leadership__position Account Менеджер
+        %a.g-btn.g-btn_transparent.g-btn_facebook{:href => "https://www.facebook.com/dmitry.ak47", :target => "_blank"}
           %svg.g-icon
             %use{"xlink:href" => "#ic-facebook"}
 %section.g-section.g-about-write

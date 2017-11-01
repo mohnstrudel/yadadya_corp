@@ -2,18 +2,18 @@
   %a.g-logo.g-logo_top{:href => root_path}
     %img.g-logo__img{src: "#{asset_path 'logo.svg'}"}
     -if action_name == 'home'
-      %img.g-logo__img.g-logo__img_mobile{src: "#{asset_path 'logo-light.svg'}"}
+      %img.g-logo__img.g-logo__img_mobile{src: "#{asset_path 'logo-light.svg'}", style: "width: 50px; height: 50px;"}
     -else 
-      %img.g-logo__img.g-logo__img_mobile{src: "#{asset_path 'logo-dark.svg'}"}
+      %img.g-logo__img.g-logo__img_mobile{src: "#{asset_path 'logo-dark.svg'}", style: "width: 50px; height: 50px;"}
   %a.g-burger.js-menu{:href => "javascript:void(0)"}
     %i.g-burger__icon
   #menu-wrapper.g-menu
     .g-menu-top
       %a.g-logo{:href => root_path}
         -if action_name == 'home'
-          %img.g-logo__img.g-logo__img_small{src: "#{asset_path 'logo-light.svg'}"}
+          %img.g-logo__img.g-logo__img_small{src: "#{asset_path 'logo-light.svg'}", style: "width: 50px; height: 50px;"}
         -else
-          %img.g-logo__img.g-logo__img_small{src: "#{asset_path 'logo-dark.svg'}"}
+          %img.g-logo__img.g-logo__img_small{src: "#{asset_path 'logo-dark.svg'}", style: "width: 50px; height: 50px;"}
       %a.g-close.js-menu{:href => "javascript:void(0)"}
         %i.g-close__icon
     .g-menu__list
