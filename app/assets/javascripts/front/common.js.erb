@@ -34,11 +34,11 @@
             Yadadya.resetItems.whySlider.destroySlider();
             Yadadya.resetItems.whySlider = null;
         }
-        if(Yadadya.resetItems.casesSlider){
-            Yadadya.resetItems.casesSliderSlide = Yadadya.resetItems.casesSlider.getCurrentSlide();
-            Yadadya.resetItems.casesSlider.destroySlider();
-            Yadadya.resetItems.casesSlider = null;
-        }
+        // if(Yadadya.resetItems.casesSlider){
+        //     Yadadya.resetItems.casesSliderSlide = Yadadya.resetItems.casesSlider.getCurrentSlide();
+        //     Yadadya.resetItems.casesSlider.destroySlider();
+        //     Yadadya.resetItems.casesSlider = null;
+        // }
     } else if(Yadadya.params.$body.hasClass(Yadadya.params.pageClasses.about)){
       if(Yadadya.resetItems.proposalSlider){
             Yadadya.resetItems.proposalSliderSlide = Yadadya.resetItems.proposalSlider.getCurrentSlide();
@@ -405,7 +405,7 @@ Yadadya.DOMReady(function(){
     if(Yadadya.params.$body.hasClass(Yadadya.params.pageClasses.main)){
       $('input[type="file"]').fileuploader({theme: 'onebutton', addMore: true, enableApi: true});
       if (Yadadya.params.isDesctop.matches)
-        $("#video-wrapper").append('<video id="video" width="100%" height="auto" autoplay="autoplay" loop="loop" preload="auto"><source src="img/coding.webm" type="video/webm"></source></video>');
+        $("#video-wrapper").append('<video id="video" width="100%" height="auto" autoplay="autoplay" loop="loop" preload="auto"><source src="<%= asset_path "coding.webm" %>"" type="video/webm"></source></video>');
       var tiltSettings = {
             movement: {
               imgWrapper : {
