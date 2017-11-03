@@ -1,7 +1,7 @@
 !!!
 %html
   %head
-    %title Yadadya
+    =metamagic site: "Интернет-агентство Я.Creations", title: [:title, :site], separator: " | ", og: { title: [:title, :site][1], type: 'website', locale: 'ru_RU', url: request.fullpath, site_name: :site}
 
     %meta{:charset => "utf-8"}/
     %meta{:content => "IE=edge", "http-equiv" => "X-UA-Compatible"}/
@@ -17,8 +17,6 @@
     %link{:href => "/manifest.json", :rel => "manifest"}/
     %link{:color => "#5bbad5", :href => "/img/icons/safari-pinned-tab.svg", :rel => "mask-icon"}/
     
-
-    %title YadadyaCom
     = csrf_meta_tags
     = stylesheet_link_tag "https://api.mapbox.com/mapbox-gl-js/v0.41.0/mapbox-gl.css", :rel => "stylesheet"
     = stylesheet_link_tag    'front', media: 'all'
