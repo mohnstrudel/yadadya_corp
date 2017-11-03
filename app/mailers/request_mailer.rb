@@ -8,6 +8,6 @@ class RequestMailer < ApplicationMailer
       filename = attach.file.filename
       attachments[filename] = File.read(attach.path)
     end
-    mail to: "info@yadadya.com", subject: "Новая заявка на сайте yadadya.com"
+    mail to: "info@yadadya.com, dima@yadadya.com", subject: "Новая заявка на сайте yadadya.com"
   end
 end
