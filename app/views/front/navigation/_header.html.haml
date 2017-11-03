@@ -1,6 +1,6 @@
 %header#g-header.g-header{class: get_header_class}
   %a.g-logo.g-logo_top{:href => root_path}
-    %img.g-logo__img{src: "#{asset_path 'logo.svg'}"}
+    %img.g-logo__img{src: "#{asset_path 'logo-light.svg'}", style: "width: 50px; height: 50px;"}
     -if action_name == 'home' && get_header_class == "g-header_fixed"
       %img.g-logo__img.g-logo__img_mobile{src: "#{asset_path 'logo-dark.svg'}", style: "width: 50px; height: 50px;"}
     -elsif action_name == 'home'
