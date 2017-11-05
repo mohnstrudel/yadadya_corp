@@ -275,7 +275,10 @@ Yadadya.resize(function(){
   Yadadya.run();
 });
 Yadadya.DOMReady(function(){
-  console.log("dom ready!");
+  // Dom is ready here
+  // Прячем extra-message от людей и если поле заполнено, то это бот
+  $('.g-extra-message').hide();
+
   Yadadya.run();
   if (Yadadya.params.isMobile.matches)
     Yadadya.params.$animated = $(".js-animation.js-animation_mobile");
