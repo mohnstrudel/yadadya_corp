@@ -1,7 +1,9 @@
 class Front::RequestsController < FrontController
 
   def create
-    unless params[:message].present?
+    if params[:request][:message].present?
+      logger.debug "Bot tried to fill in the form. Denied."
+    else
       @request = Request.new(request_params)
       
       respond_to do |format|
@@ -18,6 +20,6 @@ class Front::RequestsController < FrontController
   private
 
   def request_params
-    params.require(:request).permit(:full_name, :email, :phone, :body, {attachments: []})
+    params.require(:request).permit(:full_name, :email, :phone, :body, {attachments: []}, :message)
   end
 end
