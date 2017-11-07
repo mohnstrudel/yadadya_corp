@@ -6,7 +6,7 @@ class Front::RequestsController < FrontController
 
     session[:timer_2] = Time.now
     puts "Timer 2: #{session[:timer_2].class}"
-    if session[:timer_2] - session[:timer_1].to_time < 30
+    if session[:timer_2] - session[:timer_1].to_time < 20
       allow_send = false
       logger.debug "Timer too fast. Bot tried to fill in the form. Denied."
       logger.debug "Timer 1: #{session[:timer_1]}, Timer 2: #{session[:timer_2]}. Difference: #{session[:timer_2] - session[:timer_1].to_time}"
