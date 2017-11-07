@@ -2826,6 +2826,10 @@ html{
 	margin-bottom: calc(15rem / 13);
 }
 .g-popup .g-btn_submit{
+	// Firefox fix
+	position: relative;
+	z-index: 1;
+	// Firefox fix end
 	float: right;
 	margin: 0;
 	font-size: calc(16rem / 13);
