@@ -16,7 +16,7 @@
     %p.g-popup__text
       или напишите нам
       %a.g-link{:href => "mailto:info@yadadya.com"} info@yadadya.com
-    =form_with(model: Request.new, class: 'g-form g-contact__form', id: '#form', remote: true) do |f|
+    =form_with(model: Request.new, class: 'g-form g-contact__form', id: 'form', remote: true) do |f|
       .g-input
         =f.text_field :full_name, class: 'g-input__field js-input', placeholder: 'Как вас зовут'
         .g-input__flag

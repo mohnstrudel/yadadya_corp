@@ -1,4 +1,8 @@
 class Front::StaticPagesController < FrontController
+  
+  before_action :set_page_loading_time
+
+
   def home
   end
 
@@ -15,5 +19,15 @@ class Front::StaticPagesController < FrontController
   end
 
   def services
+  end
+
+  private
+
+  def set_page_loading_time
+    # Delete old timers
+    session.delete(:timer_1)
+    session.delete(:timer_2)
+    # Setup new
+    session[:timer_1] = Time.now
   end
 end
