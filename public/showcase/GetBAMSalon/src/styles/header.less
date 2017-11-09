@@ -1,0 +1,152 @@
+.header {
+  .size(100%, 60px);
+  background-color: #343245;
+  .applications {
+    display: inline-block;
+    .size(60px, auto);
+    background-color: #3eaf71;
+    padding: 21px 0 21px;
+    text-align: center;
+    margin: 0 0 0 210px;
+    p {
+      color: #fff;
+      font-size: 18px;
+      text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    }
+    @-webkit-keyframes blink {
+      20% {
+        background: rgba(62, 175, 113, 0.7);
+      }
+      50% {
+        background: none
+      }
+      100% {
+        background: rgba(62, 175, 113, 1);
+      }
+    }
+    -webkit-animation-direction: normal;
+    -webkit-animation-duration: 5s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-name: blink;
+    -webkit-animation-timing-function: ease;
+  }
+  #toggle,
+  .icon-reorder,
+  #toggleSearch {
+    display: none
+  }
+  nav {
+    display: inline-block;
+    .size(60.5%);
+    menu {
+      li {
+        display: inline-block;
+        text-align: center;
+        .size(16%);
+        &:hover {
+          background: #3c3a4e;
+        }
+        .icon-Anchor {
+          &:before {
+            content: "\e600";
+            color: #3eaf71;
+            font-size: 16px;
+          }
+          &:hover {
+            color: #3eaf71;
+          }
+        }
+        .icon-Calendar {
+          &:before {
+            content: "\e601";
+            color: #fbb843;
+            font-size: 16px;
+          }
+          &:hover {
+            color: #fbb843;
+          }
+        }
+
+        .icon-list-square {
+          &:before {
+            content: "\e603";
+            color: #39c5d6;
+            font-size: 12px;
+            top: 1px;
+          }
+          &:hover {
+            color: #39c5d6;
+          }
+        }
+
+        .icon-User-alt {
+          &:before {
+            content: "\e609";
+            color: #badb56;
+            font-size: 16px;
+          }
+          &:hover {
+            color: #badb56;
+          }
+        }
+        .icon-Database-add {
+          &:before {
+            content: "\e602";
+            color: #f65f68;
+            font-size: 16px;
+          }
+          &:hover {
+            color: #f65f68;
+          }
+        }
+
+        .icon-Store-alt {
+          &:before {
+            content: "\e608";
+            color: #7090c7;
+            font-size: 16px;
+          }
+          &:hover {
+            color: #7090c7;
+          }
+        }
+        a {
+          font-family: 'MuseoSansCyrl700', sans-serif;
+          display: inline-block;
+          padding: 21px 0;
+          color: #fff;
+          text-transform: uppercase;
+          margin-top: -1px;
+          &:before {
+            font-family: 'icomoon';
+            margin: 0 10px 0 0;
+            position: relative;
+            top: 2px;
+          }
+        }
+      }
+      .mobileHeader,
+      .mobileFooter {
+        display: none;
+      }
+    }
+  }
+  .personalSetings {
+    float: right;
+    display: inline-block;
+    margin: 23px 2% 0 0;
+    a {
+      color: #9a97b3;
+      font-size: 14px;
+      vertical-align: middle;
+      margin: 0 8px;
+      &:hover {
+        color: #3eaf71;
+      }
+    }
+    .settings;
+    .icon-php:before {
+      content: "\e605";
+    }
+  }
+}

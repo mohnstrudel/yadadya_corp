@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html>
+<head lang="ru">
+	<meta charset="UTF-8">
+	<title></title>
+	<link href='http://fonts.googleapis.com/css?family=Roboto:300,400&subset=latin,cyrillic' rel='stylesheet'
+	      type='text/css'>
+	<link href="src/styles/style.css" rel="stylesheet" type="text/css">
+	<script src="src/scripts/jquery-2.1.3.min.js"></script>
+	<script src="src/scripts/jquery.mask.min.js"></script>
+	<script src="src/scripts/jquery-ui.js"></script>
+	<script src="src/scripts/jquery.timepicker.js"></script>
+	<!--[if lte IE 8]>
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+</head>
+<body>
+<div id="newMasterModal"></div>
+<div id="modalClient">
+	<div class="modalClient">
+		<h4 class="modalClientLink modalLinkActive">Добавить клиента</h4><h4 class="modalServiceLink modalLinkNone">
+		Услуга</h4><span id="close">&#215;</span>
+
+		<div class='modalClientInfo'>
+			<form>
+				<div class='field'>
+					<input id='clientFirstName' name='clientFirstName' maxlength="30" type='text'
+					       placeholder='Имя клиента'>
+				</div>
+				<div class='field'>
+					<input id='clientLastName' name='clientLastName' maxlength="30" type='text' placeholder='Фамилия'>
+				</div>
+				<div class='field'>
+					<input id='clientPatronymic' name='clientPatronymic' maxlength="30" type='text'
+					       placeholder='Отчество'>
+				</div>
+				<div class='field'>
+					<span>+7</span><input id='clientPhone' class="phoneNumber" name='phoneNumber' type='tel'
+					                      placeholder='Номер'>
+				</div>
+				<button class="addClientsBtn">Добавить клиента</button>
+			</form>
+			<span class="agreement">Клиент разрешил обработку своих персональных данных</span>
+		</div>
+		<div class='modalServiceInfo'>
+			<form>
+				<div class="field">
+					<dl class="dropdown modal-val-1" id="madal-chooseAservice">
+						<dt><a><span>Выберите услугу</span></a></dt>
+						<dd>
+							<ul>
+								<li><a id="service-hair">Волосы</a></li>
+								<li><a id="service-face">Лицо</a></li>
+								<li><a id="service-body">Тело</a></li>
+								<li><a id="service-nails">Ногти</a></li>
+								<li><a id="service-sun">Загар</a></li>
+								<li><a id="service-wax">Эпиляция</a></li>
+								<li><a id="service-massage">Массаж</a></li>
+								<li><a id="service-spa">SPA</a></li>
+								<li><a id="service-etc">Другое</a></li>
+							</ul>
+						</dd>
+					</dl>
+				</div>
+				<div class='field'>
+					<dl class="dropdown" id="madal-subServices">
+						<dt><a><span>Выберите подуслугу</span></a></dt>
+						<dd>
+							<ul>
+								<li><a>Женская стрижка1</a></li>
+								<li><a>Женская стрижка2</a></li>
+								<li><a>Женская стрижка3</a></li>
+								<li><a>Женская стрижка4</a></li>
+								<li><a>Женская стрижка5</a></li>
+								<li><a>Женская стрижка6</a></li>
+								<li><a>Женская стрижка7</a></li>
+							</ul>
+						</dd>
+					</dl>
+				</div>
+				<div class='field'>
+					<img src="src/images/masterFoto.png" class="modal-masterFoto">
+					<dl class="dropdown" id="madal-allEmployees">
+						<dt><a><span>Выберите мастера</span></a></dt>
+						<dd>
+							<ul>
+								<li><a>Вася Пупкин1</a></li>
+								<li><a>Вася Пупкин2</a></li>
+								<li><a>Вася Пупкин3</a></li>
+								<li><a>Вася Пупкин4</a></li>
+								<li><a>Вася Пупкин5</a></li>
+								<li><a>Вася Пупкин6</a></li>
+								<li><a>Вася Пупкин7</a></li>
+							</ul>
+						</dd>
+					</dl>
+				</div>
+				<div class='field' id="madal-dateTime">
+					<div class="selectDate">
+						<input type="text" id="datepicker" placeholder="30 Янв 2015">
+					</div>
+					<div class="timeAt">
+						<input autocomplete="off" id="stepTimeAt" class="time ui-timepicker-input" type="text"
+						       placeholder="09:00">
+					</div>
+					<div class="timeTo">
+						<input autocomplete="off" id="stepTimeTo" class="time ui-timepicker-input" type="text"
+						       placeholder="19:00">
+					</div>
+				</div>
+				<button class="modal-addService">Добавить услугу</button>
+			</form>
+		</div>
+	</div>
+</div>
+<div class="wrapper">
+	<header class="header">
+		<div class="applications"><p>17</p></div>
+		<input type="checkbox" id="toggle"/>
+		<input type="checkbox" id="toggleSearch"/>
+		<label for="toggle" class="icon-reorder"></label>
+		<nav>
+			<menu>
+				<li class="mobileHeader"></li>
+				<li><a href="index.html" class="icon-Anchor">Главная</a></li>
+				<li><a href="calendar.html" class="icon-Calendar">Календарь</a></li>
+				<li><a href="services.html" class="icon-list-square">Услуги</a></li>
+				<li><a href="clients.html" class="icon-User-alt">Клиенты</a></li>
+				<li><a href="#" class="icon-Database-add">Финансы</a></li>
+				<li><a href="#" class="icon-Store-alt">Склад</a></li>
+				<li class="mobileFooter"><a href="#">Выход</a></li>
+			</menu>
+		</nav>
+		<section class="personalSetings">
+			<a href="account.html" class="cabinet">Name</a><a href="noMasterProfile.html" class="icon-Settings"></a><a href="faq.html"
+			                                                                                                class="icon-php"></a>
+		</section>
+		<label for="toggleSearch" class="icon-search-icon"></label>
+	</header>
+	<div class="middle">
+		<div class="container">
+			<main class="content">
+				<a href="#modalClient" class="addClient">Добавить клиента</a>
+
+				<form class="search">
+					<input  class="clearable" type="search" placeholder="Поиск...">
+				</form>
+				<h2><span>8</span> клиентов на подходе</h2>
+
+				<div class="comeClients">
+					<div class="comeClientBlock">
+						<div class="comeClientsList heir showMore">
+							<div class="timeDate">
+								<div class="comeClientsDate">
+									<p>9 дек 2014</p>
+								</div>
+								<div class="comeClientsTime">
+									<p>15:30 - 16:30</p>
+								</div>
+							</div>
+							<div class="comeClientsOrder icon-heir">
+								<p>Женская стрижка</p>
+								<span>Евгения Троицая</span>
+							</div>
+							<div class="comeClinetsFoto">
+								<img src="src/images/masterFoto.png"/>
+							</div>
+							<div class="comeCliensPrice">
+								<p>2 500 <span class="ruble">:</span></p>
+							</div>
+							<div class="clientStatus">
+								<div class="newClient"><a class="addClinet">
+									<svg xmlns="http://www.w3.org/2000/svg"  version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 40 40" enable-background="new 0 0 40 40" xml:space="preserve"><g><g><path fill="#C4E9D7" d="M20 0C9 0 0 9 0 20c0 11 9 20 20 20c11 0 20-9 20-20C40 9 31 0 20 0z M17.2 27L12 22l2-2l3.2 3.2L26 13 l2 2L17.2 27z"/></g></g></svg>
+								</a><a class="offClient">
+									<svg xmlns="http://www.w3.org/2000/svg"  version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 40 40" enable-background="new 0 0 40 40" xml:space="preserve"><g><g><path fill="#D0CEE1" d="M20 0C9 0 0 9 0 20c0 11 9 20 20 20s20-9 20-20C40 9 31 0 20 0z M26.4 24.9l-1.4 1.4L20 21.4l-4.9 4.9 l-1.4-1.4l4.9-4.9l-4.9-4.9l1.4-1.4l4.9 4.9l4.9-4.9l1.4 1.4L21.4 20L26.4 24.9z"/></g></g></svg>
+								</a>
+								</div>
+							</div>
+						</div>
+						<main class='slider'>
+							<button class='trigger prev'></button>
+							<button class='trigger next'></button>
+							<section class='frame'>
+								<article class='item'>
+									<img src="src/images/masterFoto.png">
+
+									<div class="aboutMasterPopUp">
+										<div class="masterNamePopup">
+											<p>Ольга Семенова</p>
+										</div>
+										<fieldset class="score">
+											<legend>Score:</legend>
+
+											<input type="radio" id="score-5" name="score" value="5"/>
+											<label title="5 stars" for="score-5">5 stars</label>
+
+											<input type="radio" id="score-4" name="score" value="4"/>
+											<label title="4 stars" for="score-4">4 stars</label>
+
+											<input type="radio" id="score-3" name="score" value="3"/>
+											<label title="3 stars" for="score-3">3 stars</label>
+
+											<input type="radio" id="score-2" name="score" value="2"/>
+											<label title="2 stars" for="score-2">2 stars</label>
+
+											<input type="radio" id="score-1" name="score" value="1"/>
+											<label title="1 stars" for="score-1">1 stars</label>
+
+										</fieldset>
+										<div class="aboutMaster">
+											<p>
+												Какая-то информация про мастера
+											</p>
+										</div>
+									</div>
+								</article>
+								<article class='item'>
+
+									<img src="src/images/1234.png">
+								</article>
+								<article class='item'>
+									<img src="src/images/masterFoto.png">
+								</article>
+								<article class='item'>
+									<div class='inset'>
+										<img src="src/images/masterFoto.png"></div>
+								</article>
+								<article class='item'>
+									<div class='inset'>
+										<img src="src/images/masterFoto.png"></div>
+								</article>
+								<article class='item'>
+									<div class='inset'>
+										<img src="src/images/1234.png"></div>
+								</article>
+								<article class='item'>
+									<div class='inset'>
+										<img src="src/images/1234.png"></div>
+								</article>
+								<article class='item'>
+									<div class='inset'>
+										<img src="src/images/masterFoto.png"></div>
+								</article>
+								<article class='item'>
+									<div class='inset'>
+										<img src="src/images/1234.png"></div>
+								</article>
+								<article class='item'>
+									<div class='inset'>
+										<img src="src/images/masterFoto.png"></div>
+								</article>
+								<article class='item'>
+									<div class='inset'>
+										<img src="src/images/masterFoto.png"></div>
+								</article>
+								<article class='item'>
+									<div class='inset'>
+										<img src="src/images/1234.png"></div>
+								</article>
+								<article class='item'>
+									<div class='inset'>
+										<img src="src/images/masterFoto.png"></div>
+								</article>
+								</article>
+							</section>
+						</main>
+					</div>
+					<div class="comeClientBlock">
+						<div class="comeClientsList body showMore">
+							<div class="timeDate">
+								<div class="comeClientsDate">
+									<p>9 дек 2014</p>
+								</div>
+								<div class="comeClientsTime">
+									<p>15:30 - 16:30</p>
+								</div>
+							</div>
+							<div class="comeClientsOrder icon-body">
+								<p>Женская стрижка</p>
+								<span>Евгения Троицая</span>
+							</div>
+							<div class="comeClinetsFoto">
+								<img class="bum" src="src/images/masterFoto.png"/>
+							</div>
+							<div class="comeCliensPrice">
+								<p>2 500 <span class="ruble">:</span></p>
+							</div>
+							<div class="clientStatus">
+								<div class="newClient"><a class="addClinet">
+									<svg xmlns="http://www.w3.org/2000/svg"  version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 40 40" enable-background="new 0 0 40 40" xml:space="preserve"><g><g><path fill="#C4E9D7" d="M20 0C9 0 0 9 0 20c0 11 9 20 20 20c11 0 20-9 20-20C40 9 31 0 20 0z M17.2 27L12 22l2-2l3.2 3.2L26 13 l2 2L17.2 27z"/></g></g></svg>
+								</a><a class="offClient">
+									<svg xmlns="http://www.w3.org/2000/svg"  version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 40 40" enable-background="new 0 0 40 40" xml:space="preserve"><g><g><path fill="#D0CEE1" d="M20 0C9 0 0 9 0 20c0 11 9 20 20 20s20-9 20-20C40 9 31 0 20 0z M26.4 24.9l-1.4 1.4L20 21.4l-4.9 4.9 l-1.4-1.4l4.9-4.9l-4.9-4.9l1.4-1.4l4.9 4.9l4.9-4.9l1.4 1.4L21.4 20L26.4 24.9z"/></g></g></svg>
+								</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="comeClientBlock">
+					  <div class="comeClientsList wax showMore">
+						<div class="timeDate">
+							<div class="comeClientsDate">
+								<p>9 дек 2014</p>
+							</div>
+							<div class="comeClientsTime">
+								<p>15:30 - 16:30</p>
+							</div>
+						</div>
+						<div class="comeClientsOrder icon-wax">
+							<p>Женская стрижка</p>
+							<span>Евгения Троицая</span>
+						</div>
+						<div class="comeClinetsFoto">
+							<img src="src/images/masterFoto.png"/>
+						</div>
+						<div class="comeCliensPrice">
+							<p>2 500 <span class="ruble">:</span></p>
+						</div>
+						  <div class="clientStatus">
+							  <div class="newClient"><a class="addClinet">
+								  <svg xmlns="http://www.w3.org/2000/svg"  version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 40 40" enable-background="new 0 0 40 40" xml:space="preserve"><g><g><path fill="#C4E9D7" d="M20 0C9 0 0 9 0 20c0 11 9 20 20 20c11 0 20-9 20-20C40 9 31 0 20 0z M17.2 27L12 22l2-2l3.2 3.2L26 13 l2 2L17.2 27z"/></g></g></svg>
+							  </a><a class="offClient">
+								  <svg xmlns="http://www.w3.org/2000/svg"  version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 40 40" enable-background="new 0 0 40 40" xml:space="preserve"><g><g><path fill="#D0CEE1" d="M20 0C9 0 0 9 0 20c0 11 9 20 20 20s20-9 20-20C40 9 31 0 20 0z M26.4 24.9l-1.4 1.4L20 21.4l-4.9 4.9 l-1.4-1.4l4.9-4.9l-4.9-4.9l1.4-1.4l4.9 4.9l4.9-4.9l1.4 1.4L21.4 20L26.4 24.9z"/></g></g></svg>
+							  </a>
+							  </div>
+						  </div>
+					</div>
+						</div>
+					<div class="comeClientBlock">
+					<div class="comeClientsList heir showMore">
+						<div class="timeDate">
+							<div class="comeClientsDate">
+								<p>9 дек 2014</p>
+							</div>
+							<div class="comeClientsTime">
+								<p>15:30 - 16:30</p>
+							</div>
+						</div>
+						<div class="comeClientsOrder icon-heir">
+							<p>Женская стрижка</p>
+							<span>Евгения Троицая</span>
+						</div>
+						<div class="comeClinetsFoto">
+							<img src="src/images/masterFoto.png"/>
+						</div>
+						<div class="comeCliensPrice">
+							<p>2 500 <span class="ruble">:</span></p>
+						</div>
+						<div class="clientStatus">
+							<div class="newClient"><a class="addClinet">
+								<svg xmlns="http://www.w3.org/2000/svg"  version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 40 40" enable-background="new 0 0 40 40" xml:space="preserve"><g><g><path fill="#C4E9D7" d="M20 0C9 0 0 9 0 20c0 11 9 20 20 20c11 0 20-9 20-20C40 9 31 0 20 0z M17.2 27L12 22l2-2l3.2 3.2L26 13 l2 2L17.2 27z"/></g></g></svg>
+							</a><a class="offClient">
+								<svg xmlns="http://www.w3.org/2000/svg"  version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 40 40" enable-background="new 0 0 40 40" xml:space="preserve"><g><g><path fill="#D0CEE1" d="M20 0C9 0 0 9 0 20c0 11 9 20 20 20s20-9 20-20C40 9 31 0 20 0z M26.4 24.9l-1.4 1.4L20 21.4l-4.9 4.9 l-1.4-1.4l4.9-4.9l-4.9-4.9l1.4-1.4l4.9 4.9l4.9-4.9l1.4 1.4L21.4 20L26.4 24.9z"/></g></g></svg>
+							</a>
+							</div>
+						</div>
+					</div>
+						</div>
+					<div class="comeClientBlock">
+					<div class="comeClientsList body showMore">
+						<div class="timeDate">
+							<div class="comeClientsDate">
+								<p>9 дек 2014</p>
+							</div>
+							<div class="comeClientsTime">
+								<p>15:30 - 16:30</p>
+							</div>
+						</div>
+						<div class="comeClientsOrder icon-body">
+							<p>Женская стрижка</p>
+							<span>Евгения Троицая</span>
+						</div>
+						<div class="comeClinetsFoto">
+							<img src="src/images/masterFoto.png"/>
+						</div>
+						<div class="comeCliensPrice">
+							<p>2 500 <span class="ruble">:</span></p>
+						</div>
+						<div class="clientStatus">
+							<div class="newClient"><a class="addClinet">
+								<svg xmlns="http://www.w3.org/2000/svg"  version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 40 40" enable-background="new 0 0 40 40" xml:space="preserve"><g><g><path fill="#C4E9D7" d="M20 0C9 0 0 9 0 20c0 11 9 20 20 20c11 0 20-9 20-20C40 9 31 0 20 0z M17.2 27L12 22l2-2l3.2 3.2L26 13 l2 2L17.2 27z"/></g></g></svg>
+							</a><a class="offClient">
+								<svg xmlns="http://www.w3.org/2000/svg"  version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 40 40" enable-background="new 0 0 40 40" xml:space="preserve"><g><g><path fill="#D0CEE1" d="M20 0C9 0 0 9 0 20c0 11 9 20 20 20s20-9 20-20C40 9 31 0 20 0z M26.4 24.9l-1.4 1.4L20 21.4l-4.9 4.9 l-1.4-1.4l4.9-4.9l-4.9-4.9l1.4-1.4l4.9 4.9l4.9-4.9l1.4 1.4L21.4 20L26.4 24.9z"/></g></g></svg>
+							</a>
+							</div>
+						</div>
+					</div>
+						</div>
+					<div class="comeClientBlock">
+					<div class="comeClientsList wax showMore">
+						<div class="timeDate">
+							<div class="comeClientsDate">
+								<p>9 дек 2014</p>
+							</div>
+							<div class="comeClientsTime">
+								<p>15:30 - 16:30</p>
+							</div>
+						</div>
+						<div class="comeClientsOrder icon-wax">
+							<p>Женская стрижка</p>
+							<span>Евгения Троицая</span>
+						</div>
+						<div class="comeClinetsFoto">
+							<img src="src/images/masterFoto.png"/>
+						</div>
+						<div class="comeCliensPrice">
+							<p>2 500 <span class="ruble">:</span></p>
+						</div>
+						<div class="clientStatus">
+							<div class="newClient"><a class="addClinet">
+								<svg xmlns="http://www.w3.org/2000/svg"  version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 40 40" enable-background="new 0 0 40 40" xml:space="preserve"><g><g><path fill="#C4E9D7" d="M20 0C9 0 0 9 0 20c0 11 9 20 20 20c11 0 20-9 20-20C40 9 31 0 20 0z M17.2 27L12 22l2-2l3.2 3.2L26 13 l2 2L17.2 27z"/></g></g></svg>
+							</a><a class="offClient">
+								<svg xmlns="http://www.w3.org/2000/svg"  version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 40 40" enable-background="new 0 0 40 40" xml:space="preserve"><g><g><path fill="#D0CEE1" d="M20 0C9 0 0 9 0 20c0 11 9 20 20 20s20-9 20-20C40 9 31 0 20 0z M26.4 24.9l-1.4 1.4L20 21.4l-4.9 4.9 l-1.4-1.4l4.9-4.9l-4.9-4.9l1.4-1.4l4.9 4.9l4.9-4.9l1.4 1.4L21.4 20L26.4 24.9z"/></g></g></svg>
+							</a>
+							</div>
+						</div>
+					</div>
+						</div>
+					<div class="comeClientBlock">
+					<div class="comeClientsList heir showMore">
+						<div class="timeDate">
+							<div class="comeClientsDate">
+								<p>9 дек 2014</p>
+							</div>
+							<div class="comeClientsTime">
+								<p>15:30 - 16:30</p>
+							</div>
+						</div>
+						<div class="comeClientsOrder icon-heir">
+							<p>Женская стрижка</p>
+							<span>Евгения Троицая</span>
+						</div>
+						<div class="comeClinetsFoto">
+							<img src="src/images/masterFoto.png"/>
+						</div>
+						<div class="comeCliensPrice">
+							<p>2 500 <span class="ruble">:</span></p>
+						</div>
+						<div class="clientStatus">
+							<div class="newClient"><a class="addClinet">
+								<svg xmlns="http://www.w3.org/2000/svg"  version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 40 40" enable-background="new 0 0 40 40" xml:space="preserve"><g><g><path fill="#C4E9D7" d="M20 0C9 0 0 9 0 20c0 11 9 20 20 20c11 0 20-9 20-20C40 9 31 0 20 0z M17.2 27L12 22l2-2l3.2 3.2L26 13 l2 2L17.2 27z"/></g></g></svg>
+							</a><a class="offClient">
+								<svg xmlns="http://www.w3.org/2000/svg"  version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 40 40" enable-background="new 0 0 40 40" xml:space="preserve"><g><g><path fill="#D0CEE1" d="M20 0C9 0 0 9 0 20c0 11 9 20 20 20s20-9 20-20C40 9 31 0 20 0z M26.4 24.9l-1.4 1.4L20 21.4l-4.9 4.9 l-1.4-1.4l4.9-4.9l-4.9-4.9l1.4-1.4l4.9 4.9l4.9-4.9l1.4 1.4L21.4 20L26.4 24.9z"/></g></g></svg>
+							</a>
+							</div>
+						</div>
+					</div>
+						</div>
+					<a href="#" id="loadMore">Загрузить еще...</a>
+					<a href="#" id="hideMore">Скрыть</a>
+				</div>
+				<div class="leftSide">
+					<h3>Самые востребованные услуги</h3>
+
+					<div class="bestServices">
+						<div class="body showMore2">
+							<div class="serviceName"><p>Фотоэпиляция</p></div>
+							<div class="servicePrice"><p>5500 <span class="ruble">:</span></p></div>
+						</div>
+						<div class="wax showMore2">
+							<div class="serviceName"><p>Фотоэпиляция</p></div>
+							<div class="servicePrice"><p>5500 <span class="ruble">:</span></p></div>
+						</div>
+						<div class="heir showMore2">
+							<div class="serviceName"><p>Фотоэпиляция</p></div>
+							<div class="servicePrice"><p>5500 <span class="ruble">:</span></p></div>
+						</div>
+						<div class="etc showMore2">
+							<div class="serviceName"><p>Фотоэпиляция</p></div>
+							<div class="servicePrice"><p>5500 <span class="ruble">:</span></p></div>
+						</div>
+						<div class="face showMore2">
+							<div class="serviceName"><p>Фотоэпиляция</p></div>
+							<div class="servicePrice"><p>5500 <span class="ruble">:</span></p></div>
+						</div>
+						<div class="sun showMore2">
+							<div class="serviceName"><p>Фотоэпиляция</p></div>
+							<div class="servicePrice"><p>5500 <span class="ruble">:</span></p></div>
+						</div>
+						<div class="massage showMore2">
+							<div class="serviceName"><p>Фотоэпиляция</p></div>
+							<div class="servicePrice"><p>5500 <span class="ruble">:</span></p></div>
+						</div>
+					</div>
+					<a href="#" id="loadMore2">Загрузить еще...</a>
+					<a href="#" id="hideMore2">Скрыть</a>
+
+					<h3>Самые востребованные мастера</h3>
+
+					<div class="bestMaster">
+						<div class="heir showMore3">
+							<div class="masterName"><p>Светлана Крупко</p></div>
+							<div class="masterFoto"><img src="src/images/masterFoto.png"></div>
+						</div>
+						<div class="etc showMore3">
+							<div class="masterName"><p>Татьяна Игорева</p></div>
+							<div class="masterFoto"><img src="src/images/masterFoto.png"></div>
+						</div>
+						<div class="face showMore3">
+							<div class="masterName"><p>Влада Березникова</p></div>
+							<div class="masterFoto"><img src="src/images/masterFoto.png"></div>
+						</div>
+						<div class="sun showMore3">
+							<div class="masterName"><p>Татьяна Игорева</p></div>
+							<div class="masterFoto"><img src="src/images/masterFoto.png"></div>
+						</div>
+						<div class="massage showMore3">
+							<div class="masterName"><p>Влада Березникова</p></div>
+							<div class="masterFoto"><img src="src/images/masterFoto.png"></div>
+						</div>
+					</div>
+					<a href="#" id="loadMore3">Загрузить еще...</a>
+					<a href="#" id="hideMore3">Скрыть</a>
+				</div>
+				<div class="statusProgress">
+					<h3>Загруженность</h3>
+
+					<div class="progressCircl">
+						<ul class="circles">
+							<li class="data-one" data-dimension="225" data-text="60%" data-width="35" data-fontsize="41"
+							    data-percent="60" data-fgcolor="#d0cee1" data-bgcolor="#f0faf5"></li>
+						</ul>
+					</div>
+
+					<h3>Ожидается</h3>
+
+					<h2>1450 <span class="ruble">:</span></h2>
+				</div>
+
+				<section class="stats">
+					<div>
+						<p>Брони сайта GetBam</p>
+						<a href="#" class="getBamReservation">115</a></div>
+					<div>
+						<p>Просмотры карточки салона</p>
+						<a href="#" class="review">73</a></div>
+					<div>
+						<p>Просмотры телефона</p>
+						<a href="#" class="reviewTel">427</a></div>
+					<div>
+						<p>Брони через другие источники</p>
+						<a href="#" class="anotherReservation">10</a></div>
+
+				</section>
+			</main>
+		</div>
+		<aside class="left-sidebar">
+			<div class="block1">
+				<a href="#" class="profile">Заполнить профиль</a>
+
+				<p>Ваш профиль на сайте будет обработан и обновлен. Мы постараемся опубликовать Ваш сервис в течение
+					дня.</p>
+			</div>
+			<div class="block2">
+				<h2>Antonina Stylist</h2>
+				<strong>Статус: <span class="status">Обновление</span></strong>
+
+				<p>Ваш профиль заполнен на 30%. Для привлечения клиентов мы рекомендуем заполниь профиль.</p>
+				<a href="#" class="icon-Watch"></a>
+				<a href="#" class="icon-Pencil"></a>
+			</div>
+			<div class="block3">
+				<h2>Улучшить</h2>
+				<ul>
+					<li>
+						<a href="#">Описание проекта</a>
+					</li>
+					<li>
+						<a href="#">Фотографии</a>
+					</li>
+					<li>
+						<a href="#">Сервис салона</a>
+					</li>
+					<li>
+						<a href="#">Контакты</a>
+					</li>
+				</ul>
+			</div>
+			<div class="block4">
+				<h2><a href="tel:88007775566" class="profile">8 800 777 55 66</a></h2>
+
+				<p>Ваш профиль на сайте будет обработан и обновлен. Мы постараемся опубликовать Ваш сервис в течение
+					дня.</p>
+				<a href="#" class="icon-Speechbubble-righttip-text"></a>
+			</div>
+		</aside>
+	</div>
+</div>
+<script src="src/scripts/mainJS.min.js"></script>
+</body>
+</html>

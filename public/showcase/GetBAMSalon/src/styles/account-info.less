@@ -1,0 +1,890 @@
+.border-radius (@radius) {
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+  border-radius: @radius;
+}
+
+.border-box {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+//Tariffs Page START
+//-------------------
+.tariffs {
+  margin: 0 auto;
+  text-align: center;
+  width: 850px;
+  position: relative;
+  .account-number {
+    color: #333333;
+    font: 300 27px/18px Roboto, sans-serif;
+  }
+  > p {
+    color: #313131;
+    font: 13px/18px  MuseoSansCyrl300, sans-serif;
+    margin-top: 16px;
+  }
+  div {
+    width: 290px;
+    height: 490px;
+    position: relative;
+    display: inline-block;
+    h1 {
+      margin: 42px 0 0 0;
+      font: 100 42px/42px Roboto, sans-serif;
+    }
+    span {
+      display: inline-block;
+      font: 13px MuseoSansCyrl500, sans-serif;
+      margin: 21px 0 11px;
+    }
+    p {
+      font: 13px/24px  MuseoSansCyrl500, sans-serif;
+      color: #323232;
+    }
+    .commission {
+      margin: 15px 0 0;
+    }
+    .triff-price {
+      color: #313131;
+      position: relative;
+      bottom: -90px;
+    }
+    a {
+      display: inline-block;
+      width: 190px;
+      position: relative;
+      bottom: -110px;
+      text-decoration: none;
+      font: 13px/40px  MuseoSansCyrl500, sans-serif;
+      color: #ffffff;
+      .border-radius(20px);
+    }
+  }
+  .triff-base {
+    background-color: #f9f8fd;
+    margin: 111px 20px;
+    .border-radius(10px);
+    border: 5px solid #e7ecf5;
+    vertical-align: top;
+    &:hover {
+      border-color: darken(#e7ecf5, 10%);
+    }
+    h1 {
+      color: #a09db7;
+    }
+    span {
+      color: #d0cee1;
+    }
+    .commission {
+      color: #9997aa;
+      b {
+        color: #807d94;
+      }
+    }
+    a {
+      background: #d0cee1;
+      &:hover {
+        background: darken(#d0cee1, 10%);
+      }
+    }
+  }
+  .triff-platinum {
+    background: lighten(#9ed7b8, 25%);
+    margin: 111px 20px;
+    .border-radius(10px);
+    border: 5px solid #9ed7b8;
+    &:hover {
+      border-color: darken(#9ed7b8, 10%);
+    }
+    h1 {
+      color: #3eaf71;
+    }
+    span {
+      color: #9ed7b8;
+    }
+    .commission {
+      color: #79ca9e;
+      b {
+        color: #3eaf71;
+      }
+    }
+    .triff-price {
+      bottom: -66px;
+    }
+    a {
+      background: #3eaf71;
+      bottom: -86px;
+      &:hover {
+        background: lighten(#3eaf71, 13%);
+      }
+    }
+  }
+  /*.triff-medium {
+    background: lighten(#cbd7ed, 10%);
+    margin: 91px 0 100px;
+    height: 530px;
+    .border-radius(10px);
+    border: 5px solid #cbd7ed;
+    z-index: 1;
+    &:hover {
+      border-color: darken(#cbd7ed, 10%);
+    }
+    h1 {
+      color: #5d7cb3;
+      font: 100 48px/48px  Roboto, sans-serif;;
+    }
+    p {
+      font-size: 15px;
+    }
+    span {
+      color: #cfdbef;
+      font-size: 15px;
+      margin-bottom: 19PX;
+    }
+    .commission {
+      color: #87a5d6;
+      margin: 25px 0 0;
+      b {
+        color: #5d7cb3;
+      }
+    }
+    .triff-price {
+      bottom: -38px;
+    }
+    a {
+      background: #7090c7;
+      bottom: -74px;
+      &:hover {
+        background: lighten(#7090c7, 10%);
+      }
+    }
+    &:before {
+      content: "Самый выгодный тариф";
+      display: inline-block;
+      border-radius: 50%;
+      background-color: #73c598;
+      width: 90px;
+      height: 66px;
+      position: absolute;
+      right: 15px;
+      top: -47px;
+      font: 13px/14px  MuseoSansCyrl700, sans-serif;
+      color: #ffffff;
+      padding: 24px 0 0;
+      -webkit-box-shadow: 0 0 0 4.5px rgba(115, 197, 152, 0.5);
+      -moz-box-shadow: 0 0 0 4.5px rgba(115, 197, 152, 0.5);
+      box-shadow: 0 0 0 4.5px rgba(115, 197, 152, 0.5);
+    }
+  }*/
+}
+
+//Tariffs Page END
+//-------------------
+
+//Transaction Page START
+//----------------------
+.transaction-year {
+  margin: 0 auto;
+  text-align: center;
+  width: 850px;
+  position: relative;
+  h1 {
+    color: #333;
+    font: 300 27px/18px  Roboto, sans-serif;;
+  }
+  table {
+    margin: 0 auto;
+    font: 12px/40px  MuseoSansCyrl300, sans-serif;
+    color: #393939;
+  }
+  .main-table {
+    width: 630px;
+    margin: 50px 0 0;
+    > tr {
+      border-bottom: 1px dotted #d6d4e5;
+      &:first-child {
+        background-color: #7090c7;
+        height: 20px;
+        font: 11px/18px  MuseoSansCyrl300, sans-serif;
+        color: #fff;
+      }
+      td {
+        width: 100%;
+      }
+    }
+  }
+  .table-header {
+    width: 100%;
+    background-color: #7090c7;
+    font: 11px/20px  MuseoSansCyrl700, sans-serif !important;
+    color: #fff !important;
+    height: 20px;
+    td {
+      width: 209px;
+    }
+  }
+  .table-month {
+    width: 100%;
+    border-left: 1px solid #d6d4e5;
+    border-right: 1px solid #d6d4e5;
+    thead {
+      background: lighten(#cbd7ed, 10%);
+      cursor: pointer;
+      &:hover {
+        background: #f7fffb;
+        td {
+          width: 209px;
+          &:nth-of-type(2) {
+            background: #f7fffb;
+            border-left: 1px solid #f7fffb;
+            border-right: 1px solid #f7fffb;
+          }
+        }
+      }
+    }
+    td {
+      width: 209px;
+      &:nth-of-type(2) {
+        background: #f9f8fd;
+        border-left: 1px solid #d6d4e5;
+        border-right: 1px solid #d6d4e5;
+      }
+    }
+    tr {
+      border-bottom: 1px dotted #d6d4e5;
+    }
+    tbody {
+      display: none;
+      td {
+        &:nth-of-type(2) {
+          background: lighten(#f9f8fd, 1.5%);
+        }
+      }
+      tr {
+        &:hover {
+          background: lighten(#f9f8fd, 0.5%);
+          cursor: pointer;
+          td {
+            &:nth-of-type(2) {
+              background: lighten(#f9f8fd, 0.5%);
+              border-left: 1px solid lighten(#f9f8fd, 0.5%);
+              border-right: 1px solid lighten(#f9f8fd, 0.5%);
+            }
+          }
+        }
+
+      }
+    }
+    .thead-active {
+      background: #f7fffb;
+      td {
+        width: 209px;
+        &:nth-of-type(2) {
+          background: #f7fffb;
+          border-left: 1px solid #f7fffb;
+          border-right: 1px solid #f7fffb;
+        }
+      }
+    }
+  }
+  a {
+    display: inline-block;
+    margin: 20px 5px 0;
+    color: #393939;
+    width: 53px;
+    font: 12px/30px  MuseoSansCyrl300, sans-serif;
+  }
+  a.active-year {
+    background-color: #def0ea;
+    border-radius: 15px;
+  }
+}
+
+.transaction-day {
+  margin: 0 auto;
+  text-align: center;
+  width: 850px;
+  position: relative;
+  display: none;
+  h1 {
+    color: #333;
+    font: 300 27px/18px  Roboto, sans-serif;;
+  }
+  .table-day {
+    width: 100%;
+    margin: 50px auto 0;
+    font: 12px/40px  MuseoSansCyrl300, sans-serif;
+    color: #393939;
+    tr {
+      border-bottom: 1px dotted #d6d4e5;
+      &:last-child {
+        border-style: solid;
+      }
+    }
+    td {
+      border-left: 1px solid #d6d4e5;
+      border-right: 1px solid #d6d4e5;
+      &:nth-of-type(even) {
+        background: #f9f8fd;
+      }
+    }
+    .table-header {
+      background-color: #7090c7;
+      font: 11px/20px  MuseoSansCyrl700, sans-serif;
+      color: #fff;
+      height: 20px;
+      border-left: 1px solid #7090c7;
+      border-right: 1px solid #7090c7;
+      border-bottom: none;
+    }
+    .this-day {
+      background: #f7fffb;
+      td {
+        border-left: 1px solid #f7fffb;
+        border-right: 1px solid #f7fffb;
+        background: none;
+        &:first-child {
+          border-left: 1px solid #d6d4e5;
+        }
+        &:last-child {
+          border-right: 1px solid #d6d4e5;
+        }
+      }
+      a {
+        border-bottom: 1px dotted;
+      }
+    }
+  }
+}
+
+//----------------------
+//Transaction Page END
+//Requisites Page START
+//----------------------
+.requisites {
+  margin: 0 auto;
+  text-align: center;
+  width: 850px;
+  position: relative;
+  h1 {
+    color: #333;
+    font: 300 27px/18px  Roboto, sans-serif;;
+  }
+  h2 {
+    color: #333;
+    text-align: center;
+    margin-top: 49px;
+    font: 300 23px/18px  Roboto, sans-serif;
+    &:first-of-type {
+      cursor: pointer; //Потом удалить - это для теста
+    }
+  }
+  .requisites-form,
+  .requisites-done {
+    width: 100%;
+    margin: 5px auto 0;
+    font: 12px/40px  MuseoSansCyrl300, sans-serif;
+    color: #393939;
+    text-align: left;
+    .form-part-1 {
+      width: 100%;
+      tr {
+        border-top: 1px dotted #d6d4e5;
+        &:nth-of-type(odd) {
+          background-color: #f9f8fd;
+        }
+      }
+      td {
+        padding: 0 15px;
+        &:nth-of-type(1) {
+          width: 80px;
+        }
+        &:nth-of-type(3) {
+          width: 145px;
+        }
+        label {
+          width: 100%;
+          display: inline-block;
+          cursor: pointer;
+          color: lighten(#393939, 15%);
+        }
+        input {
+          width: 100%;
+          display: inline-block;
+          line-height: 30px;
+          height: 30px;
+          border: none;
+          background: transparent;
+        }
+        #org-name {
+          width: 77%;
+        }
+        .dropdown {
+          width: 62px;
+          margin: 0;
+          display: inline-block;
+          dt {
+            a {
+              text-decoration: none;
+            }
+            span {
+              display: block;
+              background: #F3F2F9 url(../images/selectbg.png) no-repeat scroll 91% 17px;
+              cursor: pointer;
+              width: 52px;
+              padding: 0 0 0 10px;
+              color: #414040;
+              font: 11px/40px "MuseoSansCyrl500", sans-serif;
+            }
+          }
+          dd {
+            position: relative;
+            ul {
+              display: none;
+              position: absolute;
+              width: 62px;
+              list-style: none;
+              background: #F3F2F9 none repeat scroll 0 0;
+              z-index: 99;
+            }
+            li a {
+              display: block;
+              padding: 0 1em;
+              line-height: 2.5em;
+              text-decoration: none;
+              color: #b1b1b1;
+              font: 11px/40px "MuseoSansCyrl500", sans-serif;
+              &:hover {
+                color: #3eaf71;
+                cursor: pointer;
+              }
+            }
+          }
+        }
+      }
+    }
+    .form-part-2 {
+      width: 100%;
+      tr {
+        border-top: 1px dotted #d6d4e5;
+        &:nth-of-type(even) {
+          background-color: #f9f8fd;
+        }
+        &:last-of-type {
+          border-bottom: 1px dotted #d6d4e5;
+        }
+        &:nth-of-type(2) {
+          td {
+            &:nth-of-type(6) {
+              width: 58px;
+            }
+          }
+        }
+      }
+      td {
+        padding: 0 10px;
+        color: lighten(#393939, 15%);
+        border: none;
+        border-left: 1px solid transparent;
+        border-right: 1px solid transparent;
+        label {
+          width: 100%;
+          display: inline-block;
+          cursor: pointer;
+          color: #b1b1b1;
+        }
+        input {
+          width: 100%;
+          display: inline-block;
+          line-height: 30px;
+          height: 30px;
+          border: none;
+          background: transparent;
+        }
+        &:nth-of-type(1) {
+          width: 124px;
+          padding: 0 15px;
+          label {
+            color: lighten(#393939, 15%);
+          }
+        }
+        &:nth-of-type(2) {
+          width: 43px;
+        }
+        &:last-of-type {
+          width: 175px;
+        }
+        .tooltip-info {
+          display: inline-block;
+          background-color: #7090c7;
+          width: 17px;
+          border-radius: 50%;
+          font: 11px/17px "MuseoSansCyrl500", sans-serif;
+          color: #fff;
+          text-align: center;
+          padding: 0;
+        }
+      }
+    }
+  }
+  .requisites-done {
+    .form-part-1 {
+      margin: 0 0 20px 0;
+      td {
+        &:nth-of-type(odd) {
+          font: 12px/40px  MuseoSansCyrl300, sans-serif;
+          color: #393939;
+        }
+        &:nth-of-type(even) {
+          font: 12px/40px  MuseoSansCyrl500, sans-serif;
+          color: #393939;
+        }
+        &:first-of-type {
+          width: 110px;
+          .tooltip-info {
+            display: inline-block;
+            background-color: #7090c7;
+            width: 17px;
+            border-radius: 50%;
+            font: 11px/17px "MuseoSansCyrl500", sans-serif;
+            color: #fff;
+            text-align: center;
+            padding: 0;
+          }
+        }
+        a {
+          color: #4e6a9b;
+          text-decoration: none;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  p {
+    font: 12px/5px  MuseoSansCyrl300, sans-serif;
+    color: #9f9999;
+  }
+  .other-requisites {
+    text-align: left;
+    margin-top: 20px;
+    form {
+      float: none;
+
+    }
+    label {
+      color: #393939;
+      display: inline-block;
+      width: 150px;
+      font: 300 13px/40px  Roboto, sans-serif;
+      cursor: pointer;
+    }
+    input {
+      margin: 5.5px 0;
+      background-color: #f9f8fd;
+      width: 360px;
+      color: #323232;
+      border: 2px solid #f3f2f9;
+      border-radius: 20px;
+      padding: 0 20px;
+      height: 40px;
+      display: inline-block;
+      font: 300 13px/40px  Roboto, sans-serif;;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+    }
+    #requisite-tel,
+    #requisite-fax {
+      background: #f9f8fd url(../images/Rectangle.svg) no-repeat left;
+      -webkit-background-size: 40px 40px;
+      background-size: 40px 40px;
+      padding-left: 50px;
+    }
+    .add-requisite-field {
+      display: inline-block;
+      width: 17px;
+      height: 17px;
+      background: url(../images/add.svg) no-repeat center;
+      cursor: pointer;
+      position: relative;
+      top: 3px;
+      margin-left: 10px;
+      &:hover {
+        background: url(../images/add_hover.svg) no-repeat center;
+      }
+    }
+    .remove-requsite {
+      width: 12px;
+      height: 12px;
+      border-radius: 50px;
+      background: #fff url(../images/close.png);
+      border: none;
+      cursor: pointer;
+      position: relative;
+      top: -4px;
+      margin-left: 13px;
+    }
+    ul {
+      margin: 30px 0;
+      font: 300 13px/40px  Roboto, sans-serif;
+      color: #393939;
+      li {
+        list-style: disc;
+        color: #d0cee1;
+        padding-left: 22px;
+        margin-left: 10px;
+        label {
+          width: 118px;
+        }
+        #actual-index,
+        #shipping-index {
+          width: 120px;
+        }
+      }
+    }
+    input[type=button] {
+      width: 180px;
+      display: inline-block;
+      font: 13px/40px  MuseoSansCyrl700, sans-serif;
+      color: #fff;
+      border-right: 20px;
+      background: #7090c7;
+      border: none;
+      margin-left: 330px;
+      &:hover {
+        background: #86a3d5;
+      }
+    }
+  }
+}
+
+//----------------------
+//Requisites Page END
+//Documents Page START
+//----------------------
+.documents {
+  margin: 0 auto;
+  text-align: center;
+  width: 850px;
+  position: relative;
+  h1 {
+    color: #333;
+    font: 300 27px/18px  Roboto, sans-serif;;
+  }
+  p{
+    color:  #313131;
+    margin: 44px 0 27px;
+    font: 12px/12px "MuseoSansCyrl300", sans-serif;
+    text-align: left;
+  }
+  .select-period{
+    text-align: left;
+    .dropdown {
+      width: 162px;
+      margin: 0 20px 0 0;
+      display: inline-block;
+      dt {
+        a {
+          text-decoration: none;
+        }
+        span {
+          display: block;
+          background: #f3f2f9 url(../images/selectbg.png) no-repeat scroll 91% 12px;
+          cursor: pointer;
+          width: 155px;
+          padding: 0 0 0 15px;
+          color: #323232;
+          font: 400 13px/32px  Roboto, sans-serif;;
+          .border-radius (15px)
+        }
+      }
+      dd {
+        position: relative;
+        ul {
+          display: none;
+          position: absolute;
+          width: 140px;
+          list-style: none;
+          background: #F3F2F9 none repeat scroll 0 0;
+          z-index: 99;
+          left: 12px
+        }
+        li a {
+          display: block;
+          padding: 0 1em;
+          line-height: 2.5em;
+          text-decoration: none;
+          color: #b1b1b1;
+          font: 11px/40px "MuseoSansCyrl500", sans-serif;
+          &:hover {
+            color: #3eaf71;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+    label{
+      color: #9996b2;
+    }
+    input{
+      color: #323232;
+      font: 400 13px/30px  Roboto, sans-serif;
+      .border-box;
+      .border-radius (15px);
+      border: none;
+      cursor: pointer;
+    }
+    input[type=text]{
+      width: 135px;
+      background: #f3f2f9 url(../images/selectbg.png) no-repeat scroll 91% 12px;
+      padding-left: 15px;
+      margin: 0 5px;
+    }
+    input[type=button]{
+      background:  #7090c7;
+      width: 105px;
+      color: #fff;
+      margin: 0 10px;
+      font: 13px/30px "MuseoSansCyrl700", sans-serif;
+      &:hover {
+        background: #86a3d5;
+      }
+    }
+    .clear-time-period{
+      color:  #9996b2;
+      font: 12px/30px "MuseoSansCyrl300", sans-serif;
+      svg{
+        position: relative;
+        top: 2px;
+        left: 5px;
+      }
+      &:hover{
+        color: #3eaf71;
+        cursor: pointer;
+        path{
+          fill: #3eaf71;
+        }
+      }
+    }
+  }
+  .main-table {
+    width: 850px;
+    margin: 30px 0 0;
+  }
+  .table-header {
+    width: 100%;
+    background-color: #7090c7;
+    font: 11px/20px  MuseoSansCyrl700, sans-serif !important;
+    color: #fff !important;
+    height: 20px;
+    td {
+      width: 33%;
+      &:first-of-type {
+        text-align: left;
+        padding-left: 65px;
+      }
+      &:last-of-type {
+        text-align: right;
+        padding-right: 25px;
+      }
+    }
+  }
+  .table-docs {
+    border: 1px solid #d6d4e5;
+    width: 100%;
+    font: 12px/40px  MuseoSansCyrl300, sans-serif;
+    color: #393939;
+    tr {
+      border-bottom: 1px dotted #d6d4e5;
+      td {
+        .border-box;
+        text-align: left;
+        padding-left: 24px;
+        border-left: 1px solid #d6d4e5;
+        border-right: 1px solid #d6d4e5;
+        &:first-of-type,
+        &:last-of-type {
+          background: #f9f8fd;
+          width: 152px;
+        }
+        &:last-of-type {
+          width: 110px;
+        }
+        a {
+          color: #393939;
+        }
+      }
+
+      &:hover {
+        background: #f7fffb;
+        td {
+          background: #f7fffb;
+          border-left: 1px solid #f7fffb;
+          border-right: 1px solid #f7fffb;
+          &:first-of-type {
+            border-left: 1px solid #d6d4e5;
+          }
+          &:last-of-type {
+            border-right: 1px solid #d6d4e5;
+          }
+          a {
+            color: #4e6a9b;
+          }
+        }
+      }
+    }
+  }
+}
+.modal-change-requisites{
+  width: 420px;
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  background: #fff;
+  h4 {
+    display: inline-block;
+    margin: 24px 0 29px 31px;
+    color: #323232;
+    font: 400 15px/18px 'Roboto', sans-serif;
+    border-bottom: 3px solid #3eaf71;
+  }
+  #close {
+    color: #3eaf71;
+    font: 700 30px 'Verdana', sans-serif;
+    top: 14px;
+    position: absolute;
+    right: 31px;
+    cursor: pointer;
+  }
+  .field {
+    width: 100%;
+    border-top: 1px dotted #d0cee1;
+    border-bottom: 1px solid transparent;
+    textarea {
+      width: 360px;
+      margin: 29px 30px;
+      resize: none;
+      min-height: 150px;
+      border: none;
+      font: 12px 'MuseoSansCyrl300', sans-serif;
+    }
+  }
+  button {
+    background-color: #3eaf71;
+    width: 100%;
+    height: 60px;
+    border: none;
+    font: 13px 'MuseoSansCyrl700', sans-serif;
+    color: #fff;
+    cursor: pointer;
+    &:hover {
+      background: #4cbd7f;
+    }
+  }
+}

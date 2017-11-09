@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html>
+<head lang="ru">
+	<meta charset="UTF-8">
+	<title></title>
+	<link href='http://fonts.googleapis.com/css?family=Roboto:300,400&subset=latin,cyrillic' rel='stylesheet'
+	      type='text/css'>
+	<link href="src/styles/jquery.timepicker.min.css" rel="stylesheet" type="text/css">
+	<link href="src/styles/style.css" rel="stylesheet" type="text/css">
+	<script src="src/scripts/jquery-2.1.3.min.js"></script>
+	<script src="src/scripts/jquery.mask.min.js"></script>
+	<script src="src/scripts/jquery-ui.js"></script>
+	<script src="src/scripts/jquery.timepicker.js"></script>
+	<script type="text/javascript">
+		$(window).ready(function () {
+			$(".clientProfile").height($(window).height() - 90);
+		});
+		$(window).resize(function () {
+			$(".clientProfile").height($(window).height() - 90);
+		});
+	</script>
+</head>
+
+<body>
+<div id="newMasterModal"></div>
+<div id="modalClient">
+	<div class="modalClient">
+		<h4 class="modalClientLink modalLinkActive">Добавить клиента</h4><h4 class="modalServiceLink modalLinkNone">
+		Услуга</h4><span id="close">&#215;</span>
+
+		<div class='modalClientInfo'>
+			<form>
+				<div class='field'>
+					<input id='clientFirstName' name='clientFirstName' maxlength="30" type='text'
+					       placeholder='Имя клиента'>
+				</div>
+				<div class='field'>
+					<input id='clientLastName' name='clientLastName' maxlength="30" type='text' placeholder='Фамилия'>
+				</div>
+				<div class='field'>
+					<input id='clientPatronymic' name='clientPatronymic' maxlength="30" type='text'
+					       placeholder='Отчество'>
+				</div>
+				<div class='field'>
+					<span>+7</span><input id='clientPhone' class="phoneNumber" name='phoneNumber' type='tel'
+					                      placeholder='Номер'>
+				</div>
+				<button class="addClientsBtn">Добавить клиента</button>
+			</form>
+			<span class="agreement">Клиент разрешил обработку своих персональных данных</span>
+		</div>
+		<div class='modalServiceInfo'>
+			<form>
+				<div class="field">
+					<dl class="dropdown modal-val-1" id="madal-chooseAservice">
+						<dt><a><span>Выберите услугу</span></a></dt>
+						<dd>
+							<ul>
+								<li><a id="service-hair">Волосы</a></li>
+								<li><a id="service-face">Лицо</a></li>
+								<li><a id="service-body">Тело</a></li>
+								<li><a id="service-nails">Ногти</a></li>
+								<li><a id="service-sun">Загар</a></li>
+								<li><a id="service-wax">Эпиляция</a></li>
+								<li><a id="service-massage">Массаж</a></li>
+								<li><a id="service-spa">SPA</a></li>
+								<li><a id="service-etc">Другое</a></li>
+							</ul>
+						</dd>
+					</dl>
+				</div>
+				<div class='field'>
+					<dl class="dropdown" id="madal-subServices">
+						<dt><a><span>Выберите подуслугу</span></a></dt>
+						<dd>
+							<ul>
+								<li><a>Женская стрижка1</a></li>
+								<li><a>Женская стрижка2</a></li>
+								<li><a>Женская стрижка3</a></li>
+								<li><a>Женская стрижка4</a></li>
+								<li><a>Женская стрижка5</a></li>
+								<li><a>Женская стрижка6</a></li>
+								<li><a>Женская стрижка7</a></li>
+							</ul>
+						</dd>
+					</dl>
+				</div>
+				<div class='field'>
+					<img src="src/images/masterFoto.png" class="modal-masterFoto">
+					<dl class="dropdown" id="madal-allEmployees">
+						<dt><a><span>Выберите мастера</span></a></dt>
+						<dd>
+							<ul>
+								<li><a>Вася Пупкин1</a></li>
+								<li><a>Вася Пупкин2</a></li>
+								<li><a>Вася Пупкин3</a></li>
+								<li><a>Вася Пупкин4</a></li>
+								<li><a>Вася Пупкин5</a></li>
+								<li><a>Вася Пупкин6</a></li>
+								<li><a>Вася Пупкин7</a></li>
+							</ul>
+						</dd>
+					</dl>
+					</div>
+				<div class='field' id="madal-dateTime">
+					<div class="selectDate">
+						<input type="text" id="datepicker" placeholder="30 Янв 2015">
+					</div>
+					<div class="timeAt">
+						<input autocomplete="off" id="stepTimeAt" class="time ui-timepicker-input" type="text"
+						       placeholder="09:00">
+					</div>
+					<div class="timeTo">
+						<input autocomplete="off" id="stepTimeTo" class="time ui-timepicker-input" type="text"
+						       placeholder="19:00">
+					</div>
+				</div>
+				<button class="modal-addService">Добавить услугу</button>
+			</form>
+		</div>
+	</div>
+</div>
+</div>
+<div class="wrapper">
+	<header class="header">
+		<div class="applications"><p>17</p></div>
+		<input type="checkbox" id="toggle"/>
+		<input type="checkbox" id="toggleSearch"/>
+		<label for="toggle" class="icon-reorder"></label>
+		<nav>
+			<menu>
+				<li class="mobileHeader"></li>
+				<li><a href="index.html" class="icon-Anchor">Главная</a></li>
+				<li><a href="calendar.html" class="icon-Calendar">Календарь</a></li>
+				<li><a href="services.html" class="icon-list-square">Услуги</a></li>
+				<li><a href="clients.html" class="icon-User-alt">Клиенты</a></li>
+				<li><a href="#" class="icon-Database-add">Финансы</a></li>
+				<li><a href="#" class="icon-Store-alt">Склад</a></li>
+				<li class="mobileFooter"><a href="#">Выход</a></li>
+			</menu>
+		</nav>
+		<section class="personalSetings">
+			<a href="#" class="cabinet">Name</a><a href="noMasterProfile.html" class="icon-Settings"></a><a href="#"
+			                                                                                                class="icon-php"></a>
+		</section>
+		<label for="toggleSearch" class="icon-search-icon"></label>
+	</header>
+	<div class="middle">
+		<div class="container">
+			<main class="content clients" id="clientsList">
+				<a href="#modalClient" class="addClient">Добавить клиента</a>
+
+				<form class="search">
+					<input class="clearable" type="search" placeholder="Поиск...">
+				</form>
+				<h2>Список клиентов</h2>
+
+				<div class="clientsList">
+					<div class="clientName">
+						<p>Павел Золотарев</p>
+						<span class="status">Скидка 20%</span>
+					</div>
+					<div class="clientEmail">
+						<span>pavel-zoloto@gmail.com</span>
+					</div>
+					<div class="clinetPhone">
+						<p class="telNumber">8 921 690 45 74</p>
+					</div>
+					<div class="clientStatus">
+						<div class="newClient"><p>Новая заявка</p>&#160; &#160;<a class="addClinet">
+							<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"  x="0px" y="0px" viewBox="0 0 40 40" enable-background="new 0 0 40 40" xml:space="preserve" width="40px" height="40px" class="addClient1">
+								<g>
+									<g>
+										<path fill-rule="evenodd" clip-rule="evenodd" fill="#D0CEE1" d="M14,26c0,0.6,0.4,1,1,1h10c0.6,0,1-0.4,1-1v-9H14V26z M17,21h2 v-2c0-0.6,0.4-1,1-1s1,0.4,1,1v2h2c0.6,0,1,0.4,1,1s-0.4,1-1,1h-2v2c0,0.6-0.4,1-1,1s-1-0.4-1-1v-2h-2c-0.6,0-1-0.4-1-1 S16.4,21,17,21z M20,0C9,0,0,9,0,20c0,11,9,20,20,20s20-9,20-20C40,9,31,0,20,0z M24,12h1v1.5c0,0.3-0.2,0.5-0.5,0.5 c-0.3,0-0.5-0.2-0.5-0.5V12z M15,12h1v1.5c0,0.3-0.2,0.5-0.5,0.5c-0.3,0-0.5-0.2-0.5-0.5V12z M28,26c0,1.7-1.3,3-3,3H15 c-1.7,0-3-1.3-3-3V15c0-1.3,0.8-2.4,2-2.8v1.3c0,0.8,0.7,1.5,1.5,1.5s1.5-0.7,1.5-1.5V12h6v1.5c0,0.8,0.7,1.5,1.5,1.5 s1.5-0.7,1.5-1.5v-1.3c1.2,0.4,2,1.5,2,2.8V26z"/>
+									</g>
+								</g>
+							</svg>
+						</a>
+						</div>
+					</div>
+				</div>
+				<a href="#">
+					<div class="clientsList" id="listMedvedeva">
+						<div class="clientName">
+							<p>Анна Медведева</p>
+							<span class="status">Проблемная</span>
+						</div>
+						<div class="clientEmail">
+							<span>sweetcat@mail.ru</span>
+						</div>
+						<div class="clinetPhone">
+							<p class="telNumber">+7 929 432 12 17</p>
+						</div>
+						<div class="clientStatus">
+							<p>Ожидается сегодня в 15:30</p>
+						</div>
+					</div>
+				</a>
+
+				<div class="clientsList" id="listKozlov">
+					<div class="clientName">
+						<p>Владислав Князев</p>
+						<span class="status">Постоянный клиент</span>
+					</div>
+					<div class="clientEmail">
+						<span></span>
+					</div>
+					<div class="clinetPhone">
+						<p class="telNumber">8 911 456 32 23</p>
+					</div>
+					<div class="clientStatus">
+						<span class="lastUpdate">Последнее посещение: </span>
+
+						<p>Вчера в 16:45</p>
+					</div>
+				</div>
+				<div class="clientsList">
+					<div class="clientName">
+						<p>Анастасия Троицкая</p>
+						<span class="status">Постоянный клиент</span>
+					</div>
+					<div class="clientEmail">
+						<span>anastasiya85@gmail.com</span>
+					</div>
+					<div class="clinetPhone">
+						<p class="telNumber">+7 911 456 32 23</p>
+					</div>
+					<div class="clientStatus">
+						<span class="lastUpdate">Последнее посещение: </span>
+
+						<p>9 декабря 2014</p>
+					</div>
+				</div>
+
+			</main>
+			<div class="clientProfile" id="clientKozlov">
+				<div class='form'>
+					<div class="client-foto">
+						<input type="file" accept="image/*" class="input-file" hidefocus/>
+					<img src="src/images/profileImg.png">
+</div>
+					<h2 id="change-name"><input type="text" placeholder="Владислав Князев" value="Владислав Князев"> </h2>
+					<a href="#" id="toClientList">К списку</a>
+
+					<form>
+						<div class='field'>
+							<input id='patronimic' name='masterPatronimic' maxlength="30" type='text'
+							       placeholder='Отчество'>
+						</div>
+						<div class='field'>
+							<span>7</span><input class="phoneNumber"
+							                     name='masterTelNumber' maxlength="15" type='tel'
+							                     placeholder='Номер'>
+						</div>
+						<div class='field emailValid'>
+							<input id='clientMail' name='clientMail' maxlength="30" type='email'
+							       placeholder='E-mail'>
+							<svg xmlns="http://www.w3.org/2000/svg"  version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 40 40" enable-background="new 0 0 40 40" xml:space="preserve" width="40px" height="40px">
+								<g>
+									<g>
+										<path fill="#C4E9D7" d="M20 0C9 0 0 9 0 20c0 11 9 20 20 20c11 0 20-9 20-20C40 9 31 0 20 0z M17.2 27L12 22l2-2l3.2 3.2L26 13 l2 2L17.2 27z"/>
+									</g>
+								</g>
+							</svg>
+
+						</div>
+						<div class='field'>
+							<input type="radio" name="sex" value="male" id="male1"><label for="male1"><span></span>Мужской</label>
+							<input type="radio" name="sex" value="female" id="female1"><label for="female1"><span></span>Женский</label>
+						</div>
+						<div class='field'>
+							<input class='dateOfFirth' name='dateOfFirth' maxlength="30" type='text'
+							       placeholder='Дата рождения (прим.: 31.01.2000г.)'>
+						</div>
+						<div class='field'>
+							<input id='adress' name='masterAdress' maxlength="30" type='text' placeholder='Адрес'>
+						</div>
+						<div class='field'>
+							<input id='moreInfo' name='moreInfo' type='text' placeholder='Дополнительная информация'>
+						</div>
+					</form>
+				</div>
+				<div class="del-client">
+					<svg xmlns="http://www.w3.org/2000/svg" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 40 40" enable-background="new 0 0 40 40" xml:space="preserve" width="40px" height="40px"><g><g><path fill="#7090c7" d="M20 0C9 0 0 9 0 20c0 11 9 20 20 20s20-9 20-20C40 9 31 0 20 0z M26.4 24.9l-1.4 1.4L20 21.4l-4.9 4.9 l-1.4-1.4l4.9-4.9l-4.9-4.9l1.4-1.4l4.9 4.9l4.9-4.9l1.4 1.4L21.4 20L26.4 24.9z"></path></g></g></svg>
+					<p>Удалить клиента</p>
+				</div>
+			</div>
+			<div class="clientVisitTable">
+				<h2>История посещений</h2>
+				<a href="#" class="addClient1">Добавить запись</a>
+
+				<div id="tableKozlov">
+					<table cellpadding="0" cellspacing="0" class="visitStats">
+						<tr>
+							<td class="tableDate">9 дек 2014</td>
+							<td class="tableService">Мужская стрижка</td>
+							<td class="tableName">Владислав Князев</td>
+							<td class="tablePrice">2450</td>
+							<td class="tableStatus">Ожидается</td>
+						</tr>
+						<tr>
+							<td class="tableDate">9 дек 2014</td>
+							<td class="tableService">Мужская стрижка</td>
+							<td class="tableName">Владислав Князев</td>
+							<td class="tablePrice">2450</td>
+							<td class="tableStatus">Ожидается</td>
+						</tr>
+						<tr>
+							<td class="tableDate">9 дек 2014</td>
+							<td class="tableService">Мужская стрижка</td>
+							<td class="tableName">Владислав Князев</td>
+							<td class="tablePrice">2450</td>
+							<td class="tableStatus">Ожидается</td>
+						</tr>
+						<tr>
+							<td class="tableDate">9 дек 2014</td>
+							<td class="tableService">Мужская стрижка</td>
+							<td class="tableName">Владислав Князев</td>
+							<td class="tablePrice">2450</td>
+							<td class="tableStatus">Ожидается</td>
+						</tr>
+						<tr>
+							<td class="tableDate">9 дек 2014</td>
+							<td class="tableService">Мужская стрижка</td>
+							<td class="tableName">Владислав Князев</td>
+							<td class="tablePrice">2450</td>
+							<td class="tableStatus">Ожидается</td>
+						</tr>
+						<tr>
+							<td class="tableDate">9 дек 2014</td>
+							<td class="tableService">Мужская стрижка</td>
+							<td class="tableName">Владислав Князев</td>
+							<td class="tablePrice">2450</td>
+							<td class="tableStatus">Ожидается</td>
+						</tr>
+						<tr>
+							<td class="tableDate">9 дек 2014</td>
+							<td class="tableService">Мужская стрижка</td>
+							<td class="tableName">Владислав Князев</td>
+							<td class="tablePrice">2450</td>
+							<td class="tableStatus">Ожидается</td>
+						</tr>
+						<tr>
+							<td class="tableDate">9 дек 2014</td>
+							<td class="tableService">Мужская стрижка</td>
+							<td class="tableName">Владислав Князев</td>
+							<td class="tablePrice">2450</td>
+							<td class="tableStatus">Ожидается</td>
+						</tr>
+						<tr>
+							<td class="tableDate">9 дек 2014</td>
+							<td class="tableService">Мужская стрижка</td>
+							<td class="tableName">Владислав Князев</td>
+							<td class="tablePrice">2450</td>
+							<td class="tableStatus">Ожидается</td>
+						</tr>
+						<tr>
+							<td class="tableDate">9 дек 2014</td>
+							<td class="tableService">Мужская стрижка</td>
+							<td class="tableName">Владислав Князев</td>
+							<td class="tablePrice">2450</td>
+							<td class="tableStatus">Ожидается</td>
+						</tr>
+						<tr>
+							<td class="tableDate">9 дек 2014</td>
+							<td class="tableService">Мужская стрижка</td>
+							<td class="tableName">Владислав Князев</td>
+							<td class="tablePrice">2450</td>
+							<td class="tableStatus">Ожидается</td>
+						</tr>
+						<tr>
+							<td class="tableDate">9 дек 2014</td>
+							<td class="tableService">Мужская стрижка</td>
+							<td class="tableName">Владислав Князев</td>
+							<td class="tablePrice">2450</td>
+							<td class="tableStatus">Ожидается</td>
+						</tr>
+						<tr>
+							<td class="tableDate">9 дек 2014</td>
+							<td class="tableService">Мужская стрижка</td>
+							<td class="tableName">Владислав Князев</td>
+							<td class="tablePrice">2450</td>
+							<td class="tableStatus">Ожидается</td>
+						</tr>
+						<tr>
+							<td class="tableDate">9 дек 2014</td>
+							<td class="tableService">Мужская стрижка</td>
+							<td class="tableName">Владислав Князев</td>
+							<td class="tablePrice">2450</td>
+							<td class="tableStatus">Ожидается</td>
+						</tr>
+						<tr>
+							<td class="tableDate">9 дек 2014</td>
+							<td class="tableService">Мужская стрижка</td>
+							<td class="tableName">Владислав Князев</td>
+							<td class="tablePrice">2450</td>
+							<td class="tableStatus">Ожидается</td>
+						</tr>
+					</table>
+					<h3 class="booking">Букингов<span>2</span></h3>
+
+					<h3 class="turnover">Оборот с клиента<span>4560 <span class="ruble">:</span></span></h3>
+				</div>
+			</div>
+			<div class="clientProfile" id="clientMedvedeva">
+				<div class='form'>
+					<div class="client-foto">
+						<input type="file" accept="image/*" class="input-file" hidefocus/>
+						<!--<img src="src/images/profileImg.png">-->
+					</div>
+
+					<h2 id="change-name"><input type="text" placeholder="Анна Медведева" value="Анна Медведева"></h2>
+					<a href="#" id="toClientList2">К списку</a>
+
+					<form>
+						<div class='field'>
+							<input id='patronimic' name='masterPatronimic' maxlength="30" type='text'
+							       placeholder='Отчество'>
+						</div>
+						<div class='field'>
+							<span>7</span><input class="phoneNumber" name='masterTelNumber'
+							                     maxlength="15" type='tel'
+							                     placeholder='Номер'>
+						</div>
+						<div class='field emailValid'>
+							<input id='clientMail' name='clientMail' maxlength="30" type='email'
+							       placeholder='E-mail'>
+							<svg xmlns="http://www.w3.org/2000/svg"  version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 40 40" enable-background="new 0 0 40 40" xml:space="preserve" width="40px" height="40px">
+								<g>
+									<g>
+										<path fill="#C4E9D7" d="M20 0C9 0 0 9 0 20c0 11 9 20 20 20c11 0 20-9 20-20C40 9 31 0 20 0z M17.2 27L12 22l2-2l3.2 3.2L26 13 l2 2L17.2 27z"/>
+									</g>
+								</g>
+							</svg>
+						</div>
+						<div class='field'>
+							<input type="radio" name="sex" value="male" id="male"><label for="male"><span></span>Мужской</label>
+							<input type="radio" name="sex" value="female" id="female"><label for="female"><span></span>Женский</label>
+						</div>
+						<div class='field'>
+							<input class='dateOfFirth' name='dateOfFirth' type='text'
+							       placeholder='Дата рождения (прим.: 31.01.2000г.)'>
+						</div>
+						<div class='field'>
+							<input id='adress' name='masterAdress' maxlength="30" type='text' placeholder='Адрес'>
+						</div>
+						<div class='field'>
+							<input id='moreInfo' name='moreInfo' type='text' placeholder='Дополнительная информация'>
+						</div>
+					</form>
+				</div>
+				<div class="del-client">
+					<svg xmlns="http://www.w3.org/2000/svg" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 40 40" enable-background="new 0 0 40 40" xml:space="preserve" width="40px" height="40px"><g><g><path fill="#7090c7" d="M20 0C9 0 0 9 0 20c0 11 9 20 20 20s20-9 20-20C40 9 31 0 20 0z M26.4 24.9l-1.4 1.4L20 21.4l-4.9 4.9 l-1.4-1.4l4.9-4.9l-4.9-4.9l1.4-1.4l4.9 4.9l4.9-4.9l1.4 1.4L21.4 20L26.4 24.9z"></path></g></g></svg>
+					<p>Удалить клиента</p>
+				</div>
+			</div>
+			<div class="clientVisitTable">
+				<div class="noVisited">
+					<img src="src/images/Untitled-1.png">
+
+					<h3>Анна пока не посещала ваш салон...</h3>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script src="src/scripts/mainJS.min.js"></script>
+</body>
+</html>

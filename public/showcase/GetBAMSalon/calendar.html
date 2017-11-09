@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html>
+<head lang="ru">
+	<meta charset="UTF-8">
+	<title></title>
+	<link href='http://fonts.googleapis.com/css?family=Roboto:300,400&subset=latin,cyrillic' rel='stylesheet'
+	      type='text/css'>
+	<link rel='stylesheet' type='text/css' href='src/styles/dhtmlxscheduler_flat.css'>
+	<link href="src/styles/style.css" rel="stylesheet" type="text/css">
+	<script src="src/scripts/jquery-2.1.3.min.js"></script>
+	<script src="src/scripts/jquery.mask.min.js"></script>
+	<script src="src/scripts/jquery-ui.min.js"></script>
+	<script src="src/scripts/jquery.timepicker.js"></script>
+	<script src="src/scripts/list.min.js"></script>
+	<script src="src/scripts/jquery.smart_autocomplete.js"></script>
+	<script src='src/scripts/dhtmlxscheduler.js' type="text/javascript" charset="utf-8"></script>
+	<script src='src/scripts/dhtmlxscheduler_limit.js' type="text/javascript" charset="utf-8"></script>
+	<script src='src/scripts/dhtmlxscheduler_tooltip.js' type="text/javascript" charset="utf-8"></script>
+	<script src='src/scripts/dhtmlxscheduler_timeline.js' type="text/javascript" charset="utf-8"></script>
+	<script src='src/scripts/dhtmlxscheduler_daytimeline.js' type="text/javascript" charset="utf-8"></script>
+	<script src='src/scripts/dhtmlxscheduler_minical.min.js' type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript" charset="utf-8">
+		(function () {
+			var blocks = [];
+			scheduler.attachEvent("onBeforeViewChange", function (old_mode, old_date, mode, date) {
+				var from = scheduler.date.day_start(new Date(date));
+				var to = scheduler.date.add(from, 1, 'minute');
+				var sections = scheduler.serverList("sections");
+				for (var i = 0; i < blocks.length; i++) {
+					scheduler.deleteMarkedTimespan(blocks[i]);
+				}
+				while (+from < +to) {
+					for (var i = 0; i < sections.length; i++) {
+						blocks.push(scheduler.addMarkedTimespan({
+							start_date: from,
+							end_date: scheduler.date.add(from, 1, 'minute'),
+							sections: {"timeline": [sections[i].key]},
+							css: "placeholder",
+							html: scheduler.templates.time_picker(from)
+						}))
+					}
+					from = scheduler.date.add(from, 1, 'minute');
+				}
+				return true;
+			});
+		})();
+		function init() {
+			scheduler.locale.labels.timeline_tab = "Неделя";
+			scheduler.locale.labels.section_custom = "Section";
+			scheduler.config.details_on_create = true;
+			scheduler.config.details_on_dblclick = true;
+			scheduler.config.xml_date = "%Y-%m-%d %H:%i";
+//===============
+//Configuration
+//===============
+			scheduler.createTimelineView({
+				name: "timeline",
+				x_unit: "minute",
+				x_date: "%i",
+				x_step: 15,
+				x_size: 48,
+				x_start: 8 * 4,
+				dx: 60,
+				y_unit: scheduler.serverList("sections"),
+				y_property: 'section_id',
+				second_scale: {
+					x_unit: "hour",
+					x_date: "%H:%i"
+				},
+				render: "days",
+				days: 7
+			});
+			var dateToStr = scheduler.date.date_to_str("%D<br>%d.%m");
+			scheduler.templates["timeline_scale_label"] = function (section_id, section_label) {
+				return dateToStr(section_label);
+			};
+			var dateToStr2 = scheduler.date.date_to_str("%d %M");
+			scheduler.templates.week_date = function (from, to) {
+				return dateToStr2(from) + " <div class='dhx_minical_icon' id='dhx_minical_icon' onclick='show_minical()'>&nbsp;</div> " + dateToStr2(to);
+			};
+			scheduler.init('scheduler_here', new Date(), "timeline");
+		}
+		scheduler.attachEvent("onBeforeViewChange", function (old_view, old_date, new_view) {
+			var scale_heigth = 20;
+			if (new_view == "timeline") {
+				scheduler.xy.scale_height = scale_heigth / 2;
+			} else if (old_view == "timeline") {
+				scheduler.xy.scale_height = scale_heigth * 2;
+			} else {
+				scheduler.xy.scale_height = scale_heigth;
+			}
+
+			return true;
+		});
+		function show_minical() {
+			if (scheduler.isCalendarVisible()) {
+				scheduler.destroyCalendar();
+			} else {
+				scheduler.renderCalendar({
+					position: "dhx_minical_icon",
+					date: scheduler._date,
+					navigation: true,
+					handler: function (date) {
+						scheduler.setCurrentView(date);
+						scheduler.destroyCalendar()
+					}
+				});
+			}
+		}
+
+		scheduler.templates.tooltip_text = function () {
+			return "<img src='src/images/masterFoto.png'>" +
+					"<span>Женская стрижка</span>" +
+					"<h3>10:20</h3>" +
+					"<h3>10:55</h3>" +
+					"<span>Клиент:<br>Наталья Самойлова</span>"
+		};
+	</script>
+	<style type="text/css" media="screen">
+		html, body {
+			margin: 0;
+			padding: 0;
+			height: 100%;
+			overflow: hidden;
+		}
+
+		.placeholder {
+			color: silver;
+		}
+
+		.dhx_second_cal_header {
+			height: 35px;
+			left: -1px;
+			top: 95px;
+		}
+
+		.dhx_second_cal_header:last-child {
+			display: none;
+		}
+
+		.dhx_second_cal_header > div:last-child {
+			display: none;
+		}
+
+		.dhx_cal_data {
+			height: 80% !important;
+		}
+
+		.dhx_cal_data > table > tbody > tr {
+			max-height: 11.42857143% !important;
+			overflow: hidden !important;
+		}
+
+		.dhx_matrix_line {
+			max-height: 11.42857143% !important;
+			overflow: hidden !important;
+		}
+
+		.dhx_cal_tab {
+			right: 0 !important;
+			left: auto !important;
+		}
+
+		.dhx_cal_tab_first {
+			right: 75px !important;
+			left: auto !important;
+		}
+	</style>
+</head>
+<body onload="init();">
+<div class="wrapper">
+	<header class="header">
+		<div class="applications"><p>17</p></div>
+		<input type="checkbox" id="toggle"/>
+		<input type="checkbox" id="toggleSearch"/>
+		<label for="toggle" class="icon-reorder"></label>
+		<nav>
+			<menu>
+				<li class="mobileHeader"></li>
+				<li><a href="index.html" class="icon-Anchor">Главная</a></li>
+				<li><a href="calendar.html" class="icon-Calendar">Календарь</a></li>
+				<li><a href="services.html" class="icon-list-square">Услуги</a></li>
+				<li><a href="clients.html" class="icon-User-alt">Клиенты</a></li>
+				<li><a href="#" class="icon-Database-add">Финансы</a></li>
+				<li><a href="#" class="icon-Store-alt">Склад</a></li>
+				<li class="mobileFooter"><a href="#">Выход</a></li>
+			</menu>
+		</nav>
+		<section class="personalSetings">
+			<a href="#" class="cabinet">Name</a><a href="noMasterProfile.html" class="icon-Settings"></a><a href="#"
+			                                                                                                class="icon-php"></a>
+		</section>
+		<label for="toggleSearch" class="icon-search-icon"></label>
+	</header>
+	<div class="middle" onload="init();">
+		<div class="container">
+			<main class="content calendar">
+				<div id="scheduler_here" class="dhx_cal_container" style='width:100%; height:100%;'>
+					<div class="dhx_cal_navline">
+						<dl class="dropdown">
+							<dt><a><span>Выбрать услугу...</span></a></dt>
+							<dd>
+								<ul>
+									<li><a id="hair">Волосы</a></li>
+									<li><a id="face">Лицо</a></li>
+									<li><a id="body">Тело</a></li>
+									<li><a id="nails">Ногти</a></li>
+									<li><a id="sun">Загар</a></li>
+									<li><a id="wax">Эпиляция</a></li>
+									<li><a id="massage">Массаж</a></li>
+									<li><a id="spa">SPA</a></li>
+									<li><a id="etc">Другое</a></li>
+								</ul>
+							</dd>
+						</dl>
+						<dl class="dropdown" id="select-master">
+							<dt><a><span>Выбрать мастера...</span></a></dt>
+							<dd>
+								<div class="search-select">
+									<input class="clearable search" type="search" placeholder="Поиск...">
+								</div>
+								<ul class="list">
+									<li><a class="master">Вася Пупкин</a></li>
+									<li><a class="master">Петя Петин</a></li>
+									<li><a class="master">Вова Троль</a></li>
+									<li><a class="master">Юля Сидорова</a></li>
+									<li><a class="master">Саша Иванов</a></li>
+									<li><a class="master">Вася Петров</a></li>
+									<li><a class="master">Жорик Пупкин</a></li>
+								</ul>
+							</dd>
+						</dl>
+						<div class="dhx_cal_prev_button">&nbsp;</div>
+						<div class="dhx_cal_next_button">&nbsp;</div>
+						<div class="dhx_cal_today_button"></div>
+						<div class="dhx_cal_date"></div>
+						<div class="dhx_cal_tab" name="timeline_tab"></div>
+					</div>
+					<div class="dhx_cal_header">
+					</div>
+					<div class="dhx_cal_data" style="height: 100% !important;">
+					</div>
+				</div>
+			</main>
+		</div>
+	</div>
+</div>
+<div id="modal-calendar">
+	<div class="modal-calendar">
+		<h4 class="modalServiceLink modalLinkActive">Услуга</h4><h4 class="modalClientLink modalLinkNone">Новый клиент</h4>
+		<span id="close" onclick="close_form()">&#215;</span>
+
+		<div class='modalServiceInfo'>
+			<form>
+				<div class="field dhx_wrap_section">
+					<dl class="dropdown modal-val-1" id="madal-chooseAservice">
+						<dt><a><span>Выберите услугу</span></a></dt>
+						<dd>
+							<ul>
+								<li><a id="service-hair">Волосы</a></li>
+								<li><a id="service-face">Лицо</a></li>
+								<li><a id="service-body">Тело</a></li>
+								<li><a id="service-nails">Ногти</a></li>
+								<li><a id="service-sun">Загар</a></li>
+								<li><a id="service-wax">Эпиляция</a></li>
+								<li><a id="service-massage">Массаж</a></li>
+								<li><a id="service-spa">SPA</a></li>
+								<li><a id="service-etc">Другое</a></li>
+							</ul>
+						</dd>
+					</dl>
+				</div>
+				<div class='field dhx_wrap_section'>
+					<dl class="dropdown" id="madal-subServices">
+						<dt><a><span>Выберите подуслугу</span></a></dt>
+						<dd>
+							<ul>
+								<li><a>Женская стрижка1</a></li>
+								<li><a>Женская стрижка2</a></li>
+								<li><a>Женская стрижка3</a></li>
+								<li><a>Женская стрижка4</a></li>
+								<li><a>Женская стрижка5</a></li>
+								<li><a>Женская стрижка6</a></li>
+								<li><a>Женская стрижка7</a></li>
+							</ul>
+						</dd>
+					</dl>
+				</div>
+				<div class='field dhx_wrap_section'>
+					<img src="src/images/masterFoto.png" class="modal-masterFoto">
+					<dl class="dropdown" id="madal-allEmployees">
+						<dt><a><span>Выбрать мастера...</span></a></dt>
+						<dd>
+							<div class="search-select">
+								<input class="clearable search" type="search" placeholder="Поиск...">
+							</div>
+							<ul class="list">
+								<li><a class="master">Вася Пупкин</a></li>
+								<li><a class="master">Петя Петин</a></li>
+								<li><a class="master">Вова Троль</a></li>
+								<li><a class="master">Юля Сидорова</a></li>
+								<li><a class="master">Саша Иванов</a></li>
+								<li><a class="master">Вася Петров</a></li>
+								<li><a class="master">Жорик Пупкин</a></li>
+							</ul>
+						</dd>
+					</dl>
+				</div>
+				<div class='field'>
+					<input id='search-client' name='search-client' type="text" autocomplete="off"
+					       placeholder='Найти клиента'>
+				</div>
+				<div class='field dhx_wrap_section' id="madal-dateTime">
+					<div class="selectDate">
+						<input type="text" id="datepicker" placeholder="30 Янв 2015">
+					</div>
+					<div class="timeAt">
+						<input autocomplete="off" id="stepTimeAt" class="time ui-timepicker-input" type="text"
+						       placeholder="09:00">
+					</div>
+					<div class="timeTo">
+						<input autocomplete="off" id="stepTimeTo" class="time ui-timepicker-input" type="text"
+						       placeholder="19:00">
+					</div>
+				</div>
+				<button type='button' onclick="save_form()">Сохранить бронирование</button>
+			</form>
+			<div class="del-event" onclick="delete_event()">
+				<svg xmlns="http://www.w3.org/2000/svg" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 40 40" enable-background="new 0 0 40 40" xml:space="preserve" width="40px" height="40px"><g><g><path fill="#4cbd7f" d="M20 0C9 0 0 9 0 20c0 11 9 20 20 20s20-9 20-20C40 9 31 0 20 0z M26.4 24.9l-1.4 1.4L20 21.4l-4.9 4.9 l-1.4-1.4l4.9-4.9l-4.9-4.9l1.4-1.4l4.9 4.9l4.9-4.9l1.4 1.4L21.4 20L26.4 24.9z"></path></g></g></svg>
+				<p>Удалить бронь</p>
+			</div>
+		</div>
+		<div class='modalClientInfo'>
+			<form>
+				<div class='field dhx_wrap_section'>
+					<input id='clientFirstName' name='clientFirstName' maxlength="30" type='text'
+					       placeholder='Имя клиента'>
+				</div>
+				<div class='field dhx_wrap_section'>
+					<input id='clientLastName' name='clientLastName' maxlength="30" type='text' placeholder='Фамилия'>
+				</div>
+				<div class='field dhx_wrap_section'>
+					<input id='clientPatronymic' name='clientPatronymic' maxlength="30" type='text'
+					       placeholder='Отчество'>
+				</div>
+				<div class='field dhx_wrap_section'>
+					<span>+7</span><input id='clientPhone' class="phoneNumber" name='phoneNumber' type='tel'
+					                      placeholder='Номер'>
+				</div>
+				<div class='field dhx_wrap_section'>
+					<input id='clientEmail' name='clientEmail' type='text'
+					       placeholder='Email'>
+				</div>
+				<button type='button' onclick="save_form()">Сохранить бронирование</button>
+			</form>
+			<span class="agreement">Клиент разрешил обработку своих персональных данных</span>
+		</div>
+	</div>
+</div>
+<script>
+	var my_form = document.getElementById("modal-calendar");
+	scheduler.showLightbox = function (id) {
+		var ev = scheduler.getEvent(id);
+		scheduler.startLightbox(id, my_form);
+		document.getElementById("clientFirstName").value = ev.text;
+
+	};
+	function save_form() {
+		var ev = scheduler.getEvent(scheduler.getState().lightbox_id);
+		ev.text = document.getElementById("clientFirstName").value;
+		scheduler.endLightbox(true, my_form);
+	}
+	function close_form() {
+		scheduler.endLightbox(false, my_form);
+	}
+	function delete_event() {
+		var event_id = scheduler.getState().lightbox_id;
+		scheduler.endLightbox(false, my_form);
+		scheduler.deleteEvent(event_id);
+	}
+</script>
+<script src="src/scripts/mainJS.min.js"></script>
+</body>
+</html>

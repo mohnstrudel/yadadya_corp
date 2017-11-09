@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+<head lang="ru">
+	<meta charset="UTF-8">
+	<title></title>
+	<link href='http://fonts.googleapis.com/css?family=Roboto:300,400&subset=latin,cyrillic' rel='stylesheet'
+	      type='text/css'>
+	<link href="src/styles/style.css" rel="stylesheet" type="text/css">
+	<link href="src/styles/jquery.mCustomScrollbar.css" rel="stylesheet" type="text/css">
+	<script src="src/scripts/jquery-2.1.3.min.js"></script>
+	<script src="src/scripts/jquery.mask.min.js"></script>
+	<script src="src/scripts/jquery-ui.min.js"></script>
+	<script src="src/scripts/jquery.timepicker.js"></script>
+	<script src="src/scripts/list.min.js"></script>
+	<script src="src/scripts/jquery.mCustomScrollbar.js"></script>
+</head>
+
+<body>
+<div id="newMasterModal"></div>
+<div id="modal-add-group">
+	<div class="modal-add-group">
+		<h4>Добавить группу</h4><span id="close">&#215;</span>
+
+		<div class='add-group-option'>
+			<form>
+				<div class='field required-field'>
+					<input id='group-name' name='group-name' maxlength="30" type='text'
+					       placeholder='Название группы'>
+				</div>
+				<div class='field'>
+					<dl class="dropdown master-to-group">
+						<dt><a><span>Выберите участников</span></a></dt>
+						<dd>
+							<ul>
+								<li><a>Вася Пупкин</a></li>
+								<li><a>Петя Петин</a></li>
+								<li><a>Вова Троль</a></li>
+								<li><a>Юля Сидорова</a></li>
+								<li><a>Саша Иванов</a></li>
+								<li><a>Вася Петров</a></li>
+								<li><a>Жорик Пупкин</a></li>
+							</ul>
+						</dd>
+
+					</dl>
+				</div>
+				<div class='field'>
+					<dl class="dropdown select-group">
+						<dt><a><span>Добавить уже существующую группу</span></a></dt>
+						<dd>
+							<ul>
+								<li><a>Парикмахеры-стажеры</a></li>
+								<li><a>Парикмахеры-специальсты</a></li>
+								<li><a>Залетный</a></li>
+								<li><a>Сергей Зверев и Ко</a></li>
+
+							</ul>
+						</dd>
+					</dl>
+				</div>
+				<div class='field'>
+					<div class="empty-field">Пока нет выбранных участников</div>
+				</div>
+				<button class="add-group">Добавить</button>
+			</form>
+		</div>
+	</div>
+</div>
+<div class="wrapper">
+	<header class="header">
+		<div class="applications"><p>17</p></div>
+		<input type="checkbox" id="toggle"/>
+		<input type="checkbox" id="toggleSearch"/>
+		<label for="toggle" class="icon-reorder"></label>
+		<nav>
+			<menu>
+				<li class="mobileHeader"></li>
+				<li><a href="index.html" class="icon-Anchor">Главная</a></li>
+				<li><a href="calendar.html" class="icon-Calendar">Календарь</a></li>
+				<li><a href="services.html" class="icon-list-square">Услуги</a></li>
+				<li><a href="clients.html" class="icon-User-alt">Клиенты</a></li>
+				<li><a href="#" class="icon-Database-add">Финансы</a></li>
+				<li><a href="#" class="icon-Store-alt">Склад</a></li>
+				<li class="mobileFooter"><a href="#">Выход</a></li>
+			</menu>
+		</nav>
+		<section class="personalSetings">
+			<a href="#" class="cabinet">Name</a><a href="noMasterProfile.html" class="icon-Settings"></a><a href="#"
+			                                                                                                class="icon-php"></a>
+		</section>
+		<label for="toggleSearch" class="icon-search-icon"></label>
+	</header>
+	<div class="middle">
+		<div class="container">
+			<main class="content">
+				<div class='service-form'>
+					<dl class="dropdown" id="search-service">
+						<dt><a><span>Выберите услугу</span></a></dt>
+						<dd>
+							<div class="search-service">
+								<input class="clearable search" type="search" placeholder="Поиск..." data-field="sub-services">
+							</div>
+							<ul class="list">
+								<li>Волосы
+								<ol>
+									<li><a class="sub-services">Мужская стрижка</a></li>
+									<li><a class="sub-services">Жунская стрижка</a></li>
+									<li><a class="sub-services">Ирокез</a></li>
+								</ol>
+								</li>
+								<li>Лицо
+									<ol>
+										<li><a class="sub-services">Фингал</a></li>
+									</ol>
+								</li>
+								<li>Тело</li>
+								<li>Ногти</li>
+								<li>Загар</li>
+								<li>Эпиляция</li>
+								<li>Массаж
+									<ol>
+										<li><a class="sub-services">В отделении полиции</a></li>
+										<li><a class="sub-services">По технологии ОМОН'а</a></li>
+									</ol>
+								</li>
+								<li>SPA</li>
+								<li>Другое</li>
+							</ul>
+						</dd>
+					</dl>
+					<a href="#" class="to-service-list">К списку</a>
+
+					<div class="form-block">
+						<div class='field'>
+							<input id='service-name' name='service-name' maxlength="30" type='text'
+							       placeholder='Изменить название'>
+						</div>
+						<div class='field'>
+							<p class="placeholder">Добавить описание</p>
+
+							<div class="service-toggle-field">
+								<p><b class="field-title">Описание услуги</b><a class="btn-done">Скрыть</a></p>
+								<textarea name="text" placeholder="Печатаем описание..."></textarea>
+							</div>
+						</div>
+						<div class='field'>
+							<p class="placeholder">Добавить фотографии</p>
+
+							<div class="service-toggle-field">
+								<p><b class="field-title">Фотографии</b><a class="btn-done">Скрыть</a></p>
+
+
+								<section class="image-grid">
+									<form class="add-service-img image__cell"><input type="file" accept="image/*" class="input-file"
+									                                     hidefocus/></form>
+									<div class="image__cell is-collapsed">
+										<div class="image--basic">
+											<a href="#expand-jump-1">
+												<img id="expand-jump-1"
+												     class="basic__img"
+												     src="src/images/salon/1.jpg" alt="Salon">
+											</a>
+
+											<div class="arrow--up"></div>
+										</div>
+										<div class="image--expand">
+											<a href="#close-jump-1" class="expand__close"></a>
+											<img class="image--large"
+											     src="src/images/salon/1.jpg" alt="Salon">
+										</div>
+									</div>
+									<div class="image__cell is-collapsed">
+										<div class="image--basic">
+											<a href="#expand-jump-2">
+												<img id="expand-jump-2"
+												     class="basic__img"
+												     src="src/images/salon/2.jpg" alt="Salon">
+											</a>
+
+											<div class="arrow--up"></div>
+										</div>
+										<div class="image--expand">
+											<a href="#close-jump-2" class="expand__close"></a>
+											<img class="image--large"
+											     src="src/images/salon/2.jpg" alt="Salon">
+										</div>
+									</div>
+									<div class="image__cell is-collapsed">
+										<div class="image--basic">
+											<a href="#expand-jump-3">
+												<img id="expand-jump-3"
+												     class="basic__img"
+												     src="src/images/salon/3.jpg" alt="Salon">
+											</a>
+
+											<div class="arrow--up"></div>
+										</div>
+										<div class="image--expand">
+											<a href="#close-jump-3" class="expand__close"></a>
+											<img class="image--large"
+											     src="src/images/salon/3.jpg" alt="Salon">
+										</div>
+									</div>
+									<div class="image__cell is-collapsed">
+										<div class="image--basic">
+											<a href="#expand-jump-4">
+												<img id="expand-jump-4"
+												     class="basic__img"
+												     src="src/images/salon/4.jpg" alt="Salon">
+											</a>
+
+											<div class="arrow--up"></div>
+										</div>
+										<div class="image--expand">
+											<a href="#close-jump-4" class="expand__close"></a>
+											<img class="image--large"
+											     src="src/images/salon/4.jpg" alt="Salon">
+										</div>
+									</div>
+									<div class="image__cell is-collapsed">
+										<div class="image--basic">
+											<a href="#expand-jump-5">
+												<img id="expand-jump-5"
+												     class="basic__img"
+												     src="src/images/salon/5.jpg" alt="Salon">
+											</a>
+
+											<div class="arrow--up"></div>
+										</div>
+										<div class="image--expand">
+											<a href="#close-jump-5" class="expand__close"></a>
+											<img class="image--large"
+											     src="src/images/salon/5.jpg" alt="Salon">
+										</div>
+									</div>
+									<div class="image__cell is-collapsed">
+										<div class="image--basic">
+											<a href="#expand-jump-6">
+												<img id="expand-jump-6"
+												     class="basic__img"
+												     src="src/images/salon/6.jpg" alt="Salon">
+											</a>
+
+											<div class="arrow--up"></div>
+										</div>
+										<div class="image--expand">
+											<a href="#close-jump-6" class="expand__close"></a>
+											<img class="image--large"
+											     src="src/images/salon/6.jpg" alt="Salon">
+										</div>
+									</div>
+								</section>
+							</div>
+						</div>
+						<div class='field'>
+							<div class="service-notoggle-field">
+								<p><b class="field-title">Мастера, оказывающие услуги</b></p>
+								<dl class="dropdown" id="select-master">
+									<dt><a><span>Добавить мастера</span></a></dt>
+									<dd>
+										<div class="search-select">
+											<input class="clearable search" type="search" placeholder="Поиск...">
+										</div>
+										<ul class="list">
+											<li><a class="master">Вася Пупкин</a></li>
+											<li><a class="master">Петя Петин</a></li>
+											<li><a class="master">Вова Троль</a></li>
+											<li><a class="master">Юля Сидорова</a></li>
+											<li><a class="master">Саша Иванов</a></li>
+											<li><a class="master">Вася Петров</a></li>
+											<li><a class="master">Жорик Пупкин</a></li>
+										</ul>
+									</dd>
+								</dl>
+
+								<p><a class="group-masters">Группа мастеров</a></p>
+								<br/>
+							</div>
+						</div>
+						<div class='field'>
+							<div class="service-notoggle-field">
+								<p><b class="field-title">Цена на услугу</b></p>
+
+								<div class="static-service-price">
+									<input type="text" placeholder="Цена" class="static-price" value=""> Р <input
+										type="text" placeholder="Время" class="static-time" value=""> минут
+								</div>
+
+								<p><a class="btn-price">Индивидуальная цена</a></p>
+
+
+								<div class="add-service-price">
+									<input type="text" placeholder="Цена" class="input-price" value=""> Р <input
+										type="text" placeholder="Время" class="input-time" value=""> минут<input
+										value="" class="drop input-master clearable" type="text"
+										placeholder="Перетяните или укажите мастера"><a
+										class="btn-add-price">Добавить</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</main>
+		</div>
+		<aside class="left-sidebar">
+			<div class="block3 leftServiceMenu">
+				<div tabindex="1" class="icon-heir"><p>Волосы</p> <span>+</span></div>
+				<div tabindex="1" class="icon-face"><p>Лицо</p> <span>+</span></div>
+				<div tabindex="1" class="icon-body"><p>Тело</p> <span>+</span></div>
+				<div tabindex="1" class="icon-nails"><p>Ногти</p> <span>+</span></div>
+				<div tabindex="1" class="icon-sun"><p>Загар</p> <span>+</span></div>
+				<div tabindex="1" class="icon-wax"><p>Эпиляция</p> <span>+</span></div>
+				<div tabindex="1" class="icon-massage"><p>Массаж</p> <span>+</span></div>
+				<div tabindex="1" class="icon-spa"><p>SPA</p> <span>+</span></div>
+				<div tabindex="1" class="icon-etc"><p>Другое</p> <span>+</span></div>
+			</div>
+			<div class="block4 block4ver2">
+				<h2><a href="tel:88007775566" class="profile">8 800 777 55 66</a></h2>
+
+				<p>Ваш профиль на сайте будет обработан и обновлен. Мы постараемся опубликовать Ваш сервис в течение
+					дня.</p>
+				<a href="#" class="icon-Speechbubble-righttip-text"></a>
+			</div>
+		</aside>
+	</div>
+</div>
+<script src="src/scripts/mainJS.min.js"></script>
+</body>
+</html>
