@@ -1,7 +1,10 @@
 !!!
 %html
   %head
-    =metamagic site: "Интернет-агентство Я.Creations", title: [:title, :site], separator: " | ", og: { title: [:title, :site][1], type: 'website', locale: 'ru_RU', url: request.fullpath, site_name: :site}
+    =metamagic site: "Интернет-агентство Я.Creations", title: [:title, :site], separator: " | ", og: { title: :site, type: 'website', locale: 'ru_RU', url: request.host, site_name: :site, image: asset_path('social/for-social.png'), 'image:alt' => :site, description: "Мы занимаемся разработкой, развитием и продвижением корпоративных сайтов, интернет-магазинов, мобильных приложений и сервисов. Отдаем предпочтение сложным комплексным проектам и нестандартным задачам."}
+
+
+
 
     %meta{:charset => "utf-8"}/
     %meta{:content => "IE=edge", "http-equiv" => "X-UA-Compatible"}/
