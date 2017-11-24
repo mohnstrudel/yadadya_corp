@@ -1,0 +1,2 @@
+module Front::ErrorsHelper
+end
