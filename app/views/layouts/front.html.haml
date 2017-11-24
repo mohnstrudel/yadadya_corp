@@ -23,6 +23,10 @@
     = csrf_meta_tags
     = stylesheet_link_tag "https://api.mapbox.com/mapbox-gl-js/v0.41.0/mapbox-gl.css", :rel => "stylesheet"
     = stylesheet_link_tag    'front', media: 'all'
+    = javascript_include_tag 'front/social_header.js'
+    %noscript
+      %img{:height => "1", :src => "https://www.facebook.com/tr?id=318401934950930&ev=PageView&noscript=1", :style => "display:none", :width => "1"}/
+
     / = javascript_include_tag 'front/main.js' if action_name == 'home'
     / = javascript_include_tag 'front/about.js' if action_name == 'about'
     / = javascript_include_tag 'front/contact.js' if action_name == 'contact'
