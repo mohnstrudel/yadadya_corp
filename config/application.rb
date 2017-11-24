@@ -29,5 +29,7 @@ module YadadyaCom
     config.generators.system_tests = nil
 
     config.active_job.queue_adapter = :delayed_job
+
+    config.exceptions_app = self.routes
   end
 end
