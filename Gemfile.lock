@@ -248,7 +248,7 @@ DEPENDENCIES
   figaro
   haml-rails
   jbuilder (~> 2.5)
-  listen
+  listen (~> 3.1.5)
   metamagic
   pg (~> 0.18)
   puma (~> 3.7)
