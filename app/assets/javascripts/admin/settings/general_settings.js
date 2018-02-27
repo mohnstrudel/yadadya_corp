@@ -1,0 +1,1 @@
+$(".select2_language").select2();

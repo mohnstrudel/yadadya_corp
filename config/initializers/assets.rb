@@ -13,7 +13,7 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 # folder are already added.
 # Rails.application.config.assets.precompile += %w( admin.js admin.css )
 
-Rails.application.config.assets.precompile += %w( front.css front.js front/social_header.js)
+Rails.application.config.assets.precompile += %w( front.css front.js front/social_header.js admin.css admin.js)
 
 
 Rails.application.config.assets.paths << Rails.root.join('vendor', 'assets', 'fonts')  

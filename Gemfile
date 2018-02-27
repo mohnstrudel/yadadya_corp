@@ -46,6 +46,19 @@ gem 'metamagic'
 
 gem 'listen', '~> 3.1.5'
 
+# Use CKEditor for html formatting
+gem 'bootsy' # Screw CKEditor, it's not working on production! 
+gem 'carrierwave' # Required for images upload using ckeditor and in general
+gem 'mini_magick' # Required for image processing
+
+# Use font awesome and Glyphicons
+gem "font-awesome-rails"
+gem 'bootstrap-glyphicons'
+
+# Use Devise for handling users
+gem 'devise'
+
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

@@ -1,0 +1,46 @@
+%section.g-section.g-section_blog
+  .g-wrapper.g-wrapper_blog
+    .g-blog-content
+      %ul.g-posts
+        -@posts.each do |post|
+          %li.g-posts__item
+            .g-posts__img-wrapper
+              %img.g-posts__img{:src => post.logo.news_thumb}/
+            %h2.g-posts__title=post.title
+            %p.g-posts__meta=post.body
+            %p.g-posts__date 17 февраля
+            %a.g-btn.g-btn_small{:href => "blog_post.html"} Читать дальше
+        %li.g-posts__item
+          .g-posts__img-wrapper
+            %img.g-posts__img{:src => "img/post_2.png"}/
+          %h2.g-posts__title Регистрация компании-разработчика в Apple AppStore
+          %p.g-posts__meta В этой статье мы подробно опишем процесс регистрации аккаунта-разработчика в Apple Developer Program. Почему именно Apple, а не Google? Потому что регистрация аккаунта-разработчика в Google Play занимает 30-40 минут
+          %p.g-posts__date 17 февраля
+          %a.g-btn.g-btn_small{:href => "blog_post.html"} Читать дальше
+        %li.g-posts__item
+          .g-posts__img-wrapper
+            %img.g-posts__img{:src => "img/post_3.png"}/
+          %h2.g-posts__title Семинар: «Мобильное приложение: от создания до продвижения»
+          %p.g-posts__meta 31 мая 2016г. мы в очередной раз подтвердим наши компетенции в области разработки мобильных приложений. После трехкратного участия на вебинарах компании «1с-Битрикс» пригласила нас выступить с докладом на очном семинаре…
+          %p.g-posts__date 17 февраля
+          %a.g-btn.g-btn_small{:href => "blog_post.html"} Читать дальше
+      .g-breadcrumbs
+        %a.g-breadcrumbs__item.g-breadcrumbs__item_prev{:href => "#"}
+          Назад
+          %svg.g-breadcrumbs__arrow
+            %use{"xlink:href" => "#ic-arrow"}
+        %a.g-breadcrumbs__item.g-breadcrumbs__item_active{:href => "#"} 1
+        %a.g-breadcrumbs__item{:href => "#"} 2
+        %a.g-breadcrumbs__item{:href => "#"} 3
+        %a.g-breadcrumbs__item.g-breadcrumbs__item_next{:href => "#"}
+          Вперёд
+          %svg.g-breadcrumbs__arrow
+            %use{"xlink:href" => "#ic-arrow"}
+    .g-blog-sidebar
+      .g-blog-sidebar__item
+        %h2.g-blog-sidebar__title ПРЕСС-ЦЕНТР
+        %p.g-blog-sidebar__text Здесь вы найдете самые последние события, связанные с нашей компанией.
+      .g-blog-sidebar__item
+        %h2.g-blog-sidebar__title КАТЕГОРИИ
+        -@categories.each do |category|
+          %a.g-blog-sidebar__category{:href => "#"}=category.title
