@@ -29,6 +29,10 @@ class LogoUploader < CarrierWave::Uploader::Base
     process resize_to_fill: [653, 350]
   end
 
+  version :show_page, :if => :not_svg? do
+    process resize_to_fill: [1440, 1080]
+  end
+
   # Provide a default URL as a default if there hasn't been a file uploaded:
   # def default_url(*args)
   #   # For Rails 3.1+ asset pipeline compatibility:

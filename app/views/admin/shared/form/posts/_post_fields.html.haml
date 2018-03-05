@@ -1,0 +1,12 @@
+-if object.respond_to?(:published_at)
+  .form-group
+    %label.col-sm-2.control-label
+      =t('admin.form.model.published_at')
+    .col-sm-10
+      #data_1
+        .input-group.date
+          %span.input-group-addon
+            %i.fa.fa-calendar
+          =f.text_field :published_at, class: 'form-control'    
+      %span.help-block.m-b-none=t('admin.form.hints.published_at')
+  .hr-line-dashed

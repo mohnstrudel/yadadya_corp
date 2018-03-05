@@ -27,6 +27,7 @@ Rails.application.routes.draw do
     get 'services', to: 'static_pages#services'
     get 'projects', to: 'static_pages#projects'
     get 'blog', to: 'posts#index'
+    get 'blog/:id', to: 'posts#show', as: 'blog_post'
 
     resources :requests
   end

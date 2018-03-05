@@ -17,6 +17,17 @@
         %i.fa.fa-times
   .ibox-content
 
+    -if object.respond_to?(:active)
+      .form-group
+        %label.col-sm-2.control-label
+          =t('admin.form.model.active')
+        .col-sm-10
+          =f.check_box :active, class: 'form-control'
+          %span.help-block.m-b-none
+            Активный пост?
+      .hr-line-dashed
+    / Fields for general settings start (only unique fields)
+
     -if object.respond_to?(:title)
       .form-group
         %label.col-sm-2.control-label
@@ -66,6 +77,9 @@
     / User part begin (only unique to user fields)
     =render partial: "admin/shared/form/user_fields", locals: { f: f, object: object }
     / User part end
+
+    / Posts part begin (only unique to posts fields)
+    =render partial: "admin/shared/form/posts/post_fields", locals: { f: f, object: object }
 
 
     .hr-line-dashed

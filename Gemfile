@@ -38,7 +38,6 @@ gem 'jbuilder', '~> 2.5'
 gem 'haml-rails'
 # что бы юзать yarn
 gem 'webpacker'
-gem 'carrierwave'
 gem "figaro"
 gem 'delayed_job_active_record'
 gem 'capistrano3-delayed-job'
@@ -58,6 +57,8 @@ gem 'bootstrap-glyphicons'
 # Use Devise for handling users
 gem 'devise'
 
+gem 'will_paginate'
+gem 'friendly_id'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

@@ -31,11 +31,11 @@ class Admin::PostsController < AdminController
   private
 
   def find_post
-    @post = Post.find(params[:id])
+    @post = Post.friendly.find(params[:id])
   end
 
   def post_params
-    params.require(:post).permit(:title, :body, :post_category_id, :slug, :logo)
+    params.require(:post).permit(:title, :body, :post_category_id, :slug, :logo, :active, :published_at, :bootsy_image_gallery_id)
   end
 
 end

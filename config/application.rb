@@ -31,5 +31,10 @@ module YadadyaCom
     config.active_job.queue_adapter = :delayed_job
 
     config.exceptions_app = self.routes
+    config.i18n.available_locales = [:en, :ru]
+
+    config.i18n.default_locale = :ru
+
+    config.page_size = 10
   end
 end
