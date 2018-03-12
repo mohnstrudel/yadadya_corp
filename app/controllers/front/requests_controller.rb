@@ -24,7 +24,7 @@ class Front::RequestsController < FrontController
       respond_to do |format|
         if @request.save
           format.js
-          RequestMailer.delay(queue: "admin", priority: 20).notify_admin(@request)
+          RequestMailer.notify_admin(@request).deliver_now
         else
           format.js { render partial: 'fail' }
         end
