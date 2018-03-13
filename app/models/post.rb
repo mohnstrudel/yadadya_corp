@@ -4,6 +4,7 @@ class Post < ApplicationRecord
   after_save :set_published_date
 
   mount_uploader :logo, LogoUploader
+  mount_uploader :logo_inner, LogoUploader
 
   scope :active, -> { where(active: true) }
 

@@ -42,6 +42,9 @@
 // TOASTER
 //= require_tree ../../../vendor/assets/javascripts/admin/plugins/toastr/.
 
+// Datapicker
+//= require admin/plugins/datapicker/bootstrap-datepicker
+
 // Markdown
 //= require admin/bootstrap-markdown
 
@@ -49,3 +52,4 @@
 
 // REMOVE require tree .
 //= require admin/settings/general_settings
+//= require admin/posts

@@ -10,3 +10,21 @@
           =f.text_field :published_at, class: 'form-control'    
       %span.help-block.m-b-none=t('admin.form.hints.published_at')
   .hr-line-dashed
+
+-if object.respond_to?(:logo_inner)
+  .form-group
+    %label.col-sm-2.control-label Картинка для внутреннего поста
+    .col-sm-8
+      .fileinput.fileinput-new.input-group{"data-provides" => "fileinput"}
+        .form-control{"data-trigger" => "fileinput"}
+          %i.glyphicon.glyphicon-file.fileinput-exists
+          %span.fileinput-filename
+        %span.input-group-addon.btn.btn-default.btn-file
+          %span.fileinput-new Выбрать
+          %span.fileinput-exists Поменять
+          =f.file_field :logo_inner
+          
+        %a.input-group-addon.btn.btn-default.fileinput-exists{"data-dismiss" => "fileinput", :href => "#"} Удалить
+    .col-sm-2
+      -unless object.logo_inner.file.nil?
+        =image_tag object.logo_inner.url(:mini_thumb)

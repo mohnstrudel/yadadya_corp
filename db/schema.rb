@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180305105743) do
+ActiveRecord::Schema.define(version: 20180313163512) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,14 @@ ActiveRecord::Schema.define(version: 20180305105743) do
     t.datetime "updated_at", null: false
     t.bigint "request_id"
     t.index ["request_id"], name: "index_attachments_on_request_id"
+  end
+
+  create_table "bootsy_images", force: :cascade do |t|
+    t.string "image_file"
+    t.bigint "image_gallery_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["image_gallery_id"], name: "index_bootsy_images_on_image_gallery_id"
   end
 
   create_table "delayed_jobs", force: :cascade do |t|
@@ -66,6 +74,7 @@ ActiveRecord::Schema.define(version: 20180305105743) do
     t.string "logo"
     t.boolean "active"
     t.datetime "published_at"
+    t.string "logo_inner"
     t.index ["post_category_id"], name: "index_posts_on_post_category_id"
   end
 

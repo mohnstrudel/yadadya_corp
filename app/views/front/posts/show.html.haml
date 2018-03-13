@@ -1,6 +1,7 @@
 %section.g-section.g-section_post
-  .g-post-img-wrapper
-    %img.g-post-img{:src => @post.logo.show_page}/
+  -if @post.logo_inner
+    .g-post-img-wrapper
+      %img.g-post-img{:src => @post.logo_inner.show_page}/
   .g-wrapper.g-post
     %p.g-post__date=l @post.created_at, format: "%e %B %Y"
     %h1.g-title.g-title_blog
