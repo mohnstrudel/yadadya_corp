@@ -7,7 +7,7 @@
     %h1.g-title.g-title_blog
       %span.g-title__text=@post.title
     .g-post__content
-      =@post.body.html_safe
+      =markdown(@post.body)
   .g-post-nav
     -if @previous_post
       =link_to blog_post_path(@previous_post), class: 'g-post-nav__item' do

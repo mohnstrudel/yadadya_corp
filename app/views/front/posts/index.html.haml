@@ -7,7 +7,7 @@
             .g-posts__img-wrapper
               %img.g-posts__img{:src => post.logo.news_thumb}/
             %h2.g-posts__title=post.title
-            %p.g-posts__meta=truncate(post.body, length: 200, escape: false)
+            .g-posts__meta=truncate(post.body, length: 200, escape: false)
             %p.g-posts__date=l post.published_at, format: "%e %B"
             =link_to 'Читать дальше', blog_post_path(post), class: 'g-btn g-btn_small'
 
