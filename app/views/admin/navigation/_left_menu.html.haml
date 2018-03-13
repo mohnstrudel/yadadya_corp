@@ -12,9 +12,10 @@
                 Art Director
                 %b.caret
           %ul.dropdown-menu.animated.fadeInRight.m-t-xs
-            %li
-              =link_to edit_admin_user_path(current_user.try(:id)) do
-                =t('admin.profile')
+            -if current_user
+              %li
+                =link_to edit_admin_user_path(current_user.try(:id)) do
+                  =t('admin.profile')
             %li
               =link_to destroy_user_session_path do
                 =t('admin.logout')

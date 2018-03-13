@@ -1,5 +1,5 @@
 class Front::Users::SessionsController < Devise::SessionsController
-  layout 'front'
+  layout 'admin'
 # before_action :configure_sign_in_params, only: [:create]
   skip_before_action :verify_signed_out_user
 
