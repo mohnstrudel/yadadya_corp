@@ -42,7 +42,10 @@
 // TOASTER
 //= require_tree ../../../vendor/assets/javascripts/admin/plugins/toastr/.
 
+// Markdown
+//= require admin/bootstrap-markdown
+
 // REMOVED turbolinks
-//= require bootsy
+
 // REMOVE require tree .
 //= require admin/settings/general_settings

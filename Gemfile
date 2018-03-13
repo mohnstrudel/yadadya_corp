@@ -46,7 +46,8 @@ gem 'metamagic'
 gem 'listen', '~> 3.1.5'
 
 # Use CKEditor for html formatting
-gem 'bootsy' # Screw CKEditor, it's not working on production! 
+gem 'redcarpet' # Redcarpet markdown editor
+# gem 'bootsy' # Screw CKEditor, it's not working on production! 
 gem 'carrierwave' # Required for images upload using ckeditor and in general
 gem 'mini_magick' # Required for image processing
 

@@ -42,7 +42,7 @@
         %label.col-sm-2.control-label
           =t('admin.form.model.description')
         .col-sm-10
-          =f.bootsy_area :description, class: 'form-control'
+          =f.text_area :description, class: 'form-control', data: {provide: "markdown"}
           %span.help-block.m-b-none A block of help text that breaks onto a new line and may extend beyond one line.
       .hr-line-dashed
     -if object.respond_to?(:body)
@@ -50,7 +50,7 @@
         %label.col-sm-2.control-label
           =t('admin.form.model.body')
         .col-sm-10
-          =f.bootsy_area :body, class: 'form-control', rows: 12
+          =f.text_area :body, class: 'form-control', rows: 12, data: {provide: "markdown"}
       .hr-line-dashed
     -if object.respond_to?(:slug)
       .form-group
