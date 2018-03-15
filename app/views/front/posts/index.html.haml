@@ -9,7 +9,7 @@
             %h2.g-posts__title=post.title
             .g-posts__meta=truncate(post.body, length: 200, escape: false)
             %p.g-posts__date=l post.published_at, format: "%e %B"
-            =link_to 'Читать дальше', blog_post_path(post), class: 'g-btn g-btn_small'
+            =link_to 'Читать дальше', post_category_post_path(post.post_category, post), class: 'g-btn g-btn_small'
 
       =render partial: 'front/navigation/pager', locals: {path: "blog_path", page: @page, class: "g-pagination_posts"}            
       
@@ -20,4 +20,4 @@
       .g-blog-sidebar__item
         %h2.g-blog-sidebar__title КАТЕГОРИИ
         -@categories.each do |category|
-          =link_to category.title, blog_path(category: category.title), class: 'g-blog-sidebar__category'
+          =link_to category.title, post_categories_path(category: category.title), class: 'g-blog-sidebar__category'

@@ -26,8 +26,17 @@ Rails.application.routes.draw do
     get 'contact', to: 'static_pages#contact'
     get 'services', to: 'static_pages#services'
     get 'projects', to: 'static_pages#projects'
-    get 'blog', to: 'posts#index'
-    get 'blog/:id', to: 'posts#show', as: 'blog_post'
+    # get 'blog', to: 'posts#index'
+    
+    scope 'blog' do
+      resources :post_categories, path: "", controller: 'posts', only: [:show, :index] do
+        resources :posts, path: "", only: [:show, :index]
+      end
+    end
+
+    # get 'blog/:id', to: 'posts#show', as: 'blog_post'
+
+
 
     resources :requests
   end

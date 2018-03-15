@@ -10,13 +10,13 @@
       =markdown(@post.body)
   .g-post-nav
     -if @previous_post
-      =link_to blog_post_path(@previous_post), class: 'g-post-nav__item' do
+      =link_to post_category_post_path(@previous_post), class: 'g-post-nav__item' do
         %span.g-post-nav__direction Предыдущая запись
         %span.g-post-nav__name=@previous_post.title
         %svg.g-post-nav__arrow.g-post-nav__arrow_prev
           %use{"xlink:href" => "#ic-arrow"}
     -if @next_post
-      =link_to blog_post_path(@next_post), class: 'g-post-nav__item' do
+      =link_to post_category_post_path(@next_post), class: 'g-post-nav__item' do
         %span.g-post-nav__direction Следующая запись
         %span.g-post-nav__name=@next_post.title
         %svg.g-post-nav__arrow.g-post-nav__arrow_next

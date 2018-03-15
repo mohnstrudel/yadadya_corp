@@ -2,6 +2,7 @@ class Post < ApplicationRecord
   belongs_to :post_category
 
   after_save :set_published_date
+  after_save :set_slug
 
   mount_uploader :logo, LogoUploader
   mount_uploader :logo_inner, LogoUploader
@@ -31,5 +32,19 @@ class Post < ApplicationRecord
       self.save!
     end
 
+  end
+
+  def set_slug
+    unless self.nil?
+      # if self.slug.blank?
+        begin
+          slugged = self.title.parameterize
+          self.slug = slugged
+        rescue => e
+          logger.debug "Error while saving slug for #{self.inspect}. Error message: #{e.message}"
+          self.slug = nil
+        end
+      # end
+    end
   end
 end

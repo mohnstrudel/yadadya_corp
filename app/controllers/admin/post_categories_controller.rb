@@ -30,7 +30,7 @@ class Admin::PostCategoriesController < AdminController
   private
 
   def find_post_category
-    @post_category = PostCategory.find(params[:id])
+    @post_category = PostCategory.friendly.find(params[:id])
   end
 
   def post_category_params
