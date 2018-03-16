@@ -1,3 +1,6 @@
+-meta title: "#{@post.title} | Блог"
+-meta og: { title: "#{@post.title} | Блог" }
+
 %section.g-section.g-section_post
   -if @post.logo_inner
     .g-post-img-wrapper
@@ -7,7 +10,7 @@
     %h1.g-title.g-title_blog
       %span.g-title__text=@post.title
     .g-post__content
-      =markdown(@post.body)
+      =@post.body.html_safe
   .g-post-nav
     -if @previous_post
       =link_to post_category_post_path(@previous_post), class: 'g-post-nav__item' do
