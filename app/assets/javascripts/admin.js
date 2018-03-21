@@ -50,7 +50,7 @@
 
 // REMOVED turbolinks
 
-//= require ckeditor/init
+
 
 // REMOVE require tree .
 //= require admin/settings/general_settings
