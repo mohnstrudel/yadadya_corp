@@ -1,24 +1,25 @@
 class PostCategory < ApplicationRecord
   has_many :posts
 
-  after_save :set_slug
+  before_save :set_slug
 
   extend FriendlyId
-  friendly_id :title, use: :slugged
+  friendly_id :title, :use => :slugged
+  validates_presence_of :title
 
   private
 
   def set_slug
     unless self.nil?
-      # if self.slug.blank?
+      if self.slug.blank?
         begin
-          slugged = self.title.parameterize
+          slugged = Russian.translit(self.title).parameterize
           self.slug = slugged
         rescue => e
           logger.debug "Error while saving slug for #{self.inspect}. Error message: #{e.message}"
           self.slug = nil
         end
-      # end
+      end
     end
   end
 end
