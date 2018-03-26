@@ -17,11 +17,11 @@ class Post < ApplicationRecord
   # include Bootsy::Container
 
   def next
-    Post.where("id > ?", id).order("id ASC").first || Post.first
+    Post.where("id > ?", id).order("id ASC").first
   end
 
   def prev
-    Post.where("id < ?", id).order("id DESC").first || Post.last
+    Post.where("id < ?", id).order("id DESC").first
   end
 
   private

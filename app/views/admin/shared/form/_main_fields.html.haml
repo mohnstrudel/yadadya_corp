@@ -42,7 +42,7 @@
         %label.col-sm-2.control-label
           =t('admin.form.model.description')
         .col-sm-10
-          =f.cktext_area :description, class: 'form-control', ckeditor: { language: 'ru'}
+          =f.cktext_area :description, class: 'form-control', ckeditor: { language: 'ru', toolbar: 'mini'}
           / =f.text_area :description, class: 'form-control', data: {provide: "markdown"}
           %span.help-block.m-b-none A block of help text that breaks onto a new line and may extend beyond one line.
       .hr-line-dashed
