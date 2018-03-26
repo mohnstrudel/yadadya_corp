@@ -1,5 +1,6 @@
 //= require jquery
 //= require admin/bootstrap.min
+
 //= require_tree ../../../vendor/assets/javascripts/admin/plugins/metisMenu/.
 //= require_tree ../../../vendor/assets/javascripts/admin/plugins/slimscroll/.
 
@@ -49,7 +50,6 @@
 //= require admin/bootstrap-markdown
 
 // REMOVED turbolinks
-
 
 
 // REMOVE require tree .
