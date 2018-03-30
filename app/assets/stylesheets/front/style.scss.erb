@@ -1531,7 +1531,15 @@ html{
 	width: 41.38%;
 }
 .g-posts__img-wrapper{position: relative;overflow: hidden;padding-top: 53.6%;}
-.g-posts__img{display: block;position: absolute;top: 50%;left: 50%;-webkit-transform: translate(-50%, -50%);transform: translate(-50%, -50%);}
+
+.g-posts__img{
+	display: block;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+}
 .g-posts__title{
 	color: #0e2f22;
 	font-family: "Oswald", sans-serif;
@@ -3137,6 +3145,11 @@ html{
 	}
 }
 @media screen and (max-width: 720px){
+
+	.g-posts__img{
+		width: 90%;
+		top: 55%;
+	}
 	.g-wrapper{
 		max-width: 100%;
 		box-sizing: border-box;
