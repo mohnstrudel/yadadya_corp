@@ -64,7 +64,7 @@
                   -if obj.respond_to?(:body)
                     %td
                       %small
-                        =obj.body
+                        =truncate(obj.body, length: 400)
                   -if obj.respond_to?(:slug)
                     %td
                       =url_for_page(obj)

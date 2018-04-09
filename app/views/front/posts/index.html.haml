@@ -19,7 +19,7 @@
     .g-blog-sidebar
       .g-blog-sidebar__item
         %h2.g-blog-sidebar__title ПРЕСС-ЦЕНТР
-        %p.g-blog-sidebar__text="Наши основные новости представлены на странице в #{link_to 'Facebook', 'https://facebook.com/yadadyacreations'}.".html_safe
+        %p.g-blog-sidebar__text="Наши основные новости представлены на странице в #{link_to 'Facebook', 'https://facebook.com/yadadyacreations', target: '_blank'}.".html_safe
       .g-blog-sidebar__item
         %h2.g-blog-sidebar__title КАТЕГОРИИ
         -@categories.each do |category|

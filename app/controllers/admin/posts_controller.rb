@@ -5,7 +5,7 @@ class Admin::PostsController < AdminController
   
 
   def index
-    @posts = Post.all
+    @posts = Post.all.order(published_at: :asc)
   end
 
   def new
