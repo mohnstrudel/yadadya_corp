@@ -30,7 +30,7 @@ class LogoUploader < CarrierWave::Uploader::Base
   end
 
   version :show_page, :if => :not_svg? do
-    process resize_to_fill: [1440, 1080]
+    process resize_to_fill: [1440, 222]
   end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:

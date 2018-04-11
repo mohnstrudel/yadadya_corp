@@ -14,11 +14,13 @@
           %i.glyphicon.glyphicon-file.fileinput-exists
           %span.fileinput-filename
         %span.input-group-addon.btn.btn-default.btn-file
-          %span.fileinput-new Select file
-          %span.fileinput-exists Change
+          %span.fileinput-new Выбрать файл
+          %span.fileinput-exists Поменять
           =f.file_field :logo
           
-        %a.input-group-addon.btn.btn-default.fileinput-exists{"data-dismiss" => "fileinput", :href => "#"} Remove
+        %a.input-group-addon.btn.btn-default.fileinput-exists{"data-dismiss" => "fileinput", :href => "#"} Удалить
+      %span.help-block.m-b-none
+        Для записей в блоге лучше загружать в формате 653х350, но можно и другие похожие соотношения, программа подгонит сама под 653х350.
     .col-sm-2
       -unless object.logo.file.nil?
         =image_tag object.logo.url(:mini_thumb)

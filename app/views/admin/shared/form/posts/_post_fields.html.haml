@@ -25,6 +25,8 @@
           =f.file_field :logo_inner
           
         %a.input-group-addon.btn.btn-default.fileinput-exists{"data-dismiss" => "fileinput", :href => "#"} Удалить
+      %span.help-block.m-b-none
+        В идеале картинка форматом 1440px в ширину и 222px в высоту, но можно и другие соотношения, программа подгонит сама под 1440х222.
     .col-sm-2
       -unless object.logo_inner.file.nil?
         =image_tag object.logo_inner.url(:mini_thumb)
