@@ -26,7 +26,21 @@ Rails.application.routes.draw do
 
     get 'about', to: 'static_pages#about'
     get 'contact', to: 'static_pages#contact'
-    get 'services', to: 'static_pages#services'
+    
+    scope 'services' do
+      get '', to: 'static_pages#services'
+      get 'ecom', to: 'static_pages#ecom'
+      get 'difficult', to: 'static_pages#difficult'
+      get 'support', to: 'static_pages#support'
+      get 'mobile', to: 'static_pages#mobile'
+
+      get 'corporate', to: 'static_pages#corporate'
+      get 'clients', to: 'static_pages#clients'
+
+      get 'firmstyle', to: 'static_pages#firmstyle'
+      get 'bitrix', to: 'static_pages#bitrix'
+    end
+    
     get 'projects', to: 'static_pages#projects'
     # get 'blog', to: 'posts#index'
     

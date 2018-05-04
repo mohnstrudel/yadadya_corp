@@ -21,6 +21,30 @@ class Front::StaticPagesController < FrontController
   def services
   end
 
+  def ecom
+  end
+
+  def difficult 
+  end
+
+  def support
+  end
+
+  def mobile
+  end
+
+  def corporate
+  end
+
+  def clients
+  end
+
+  def firmstyle
+  end
+
+  def bitrix
+  end
+
   private
 
   def set_page_loading_time

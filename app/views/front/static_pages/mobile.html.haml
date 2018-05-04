@@ -1,0 +1,219 @@
+%main.main
+  %section.section.section_first.banner.banner_content_center
+    %span.banner__bg{:style => "background-image: url(img/services/corp/banner.jpg);"}
+    .section__wrp.banner__wrp
+      .banner__content
+        %h1.banner__heading.heading.heading_type_h1
+          Мобильные приложения
+        .banner__line
+          %svg{:viewbox => "0 0 47 4", :xmlns => "http://www.w3.org/2000/svg", "xmlns:xlink" => "http://www.w3.org/1999/xlink"}
+            %path{:d => "M2.000,-0.006 L29.000,-0.006 C30.104,-0.006 31.000,0.892 31.000,1.995 L31.000,1.995 C31.000,3.100 30.104,3.994 29.000,3.994 L2.000,3.994 C0.895,3.994 -0.000,3.100 -0.000,1.995 L-0.000,1.995 C-0.000,0.892 0.895,-0.006 2.000,-0.006 ZM37.000,-0.006 L45.000,-0.006 C46.104,-0.006 47.000,0.892 47.000,1.995 L47.000,1.995 C47.000,3.100 46.104,3.994 45.000,3.994 L37.000,3.994 C35.895,3.994 35.000,3.100 35.000,1.995 L35.000,1.995 C35.000,0.892 35.895,-0.006 37.000,-0.006 Z", "fill-rule" => "evenodd"}
+        .banner__caption.caption.caption_size_l
+          Превратим вашу идею в работающую
+          = succeed "." do
+            %nobr бизнес-модель
+  %section.section.apps-promo
+    .section__wrp.apps-promo__wrp.scene
+      .section__body.apps-promo__body
+        .apps-promo__img
+          .apps-promo__img-wrp
+            %img.apps-promo__img-bg.layer{:alt => "apps", "data-depth" => "0.40", :src => "img/services/apps/promo/bg.svg"}/
+            %img.apps-promo__img-icon2.layer{:alt => "apps", "data-depth" => "0.60", :src => "img/services/apps/promo/icon2.svg"}/
+            %img.apps-promo__img-icon.layer{:alt => "apps", "data-depth" => "0.80", :src => "img/services/apps/promo/icon.svg"}/
+        .apps-promo__caption.caption.caption_size_l.js-animation.js-animation_fadeInUp{"data-animation-delay" => "0"}
+          Мы создаем мобильные приложения для iOS и Android,
+          %br.xs-hide/
+          а также разрабатываем адаптивный дизайн и мобильные версии сайтов.
+  %section.section.section_pad_large.section_green_light.apps-benefit
+    .section__wrp.apps-benefit__wrp
+      .section__header.section__header_compensate.apps-benefit__header
+        %h2.section__heading.heading.heading_type_h2.apps-benefit__heading
+          %span.section__heading-text
+            Чем это все будет полезно
+            %br.xs-hide/
+            вашему бизнесу?
+      .section__body.apps-benefit__body
+        .apps-benefit__icon-col.icon-col.icon-col_medium.icon-col_align-left.js-slider-icon-col
+          .icon-col__list.icon-col__list_grid-three
+            .icon-col__item.apps-benefit__item.js-animation.js-animation_fadeInLeft{"data-animation-delay" => "0"}
+              .icon-col__img-wrp.js-tilter
+                %img.icon-col__img.tilter__figure{:alt => "apps", :src => "img/services/apps/benefit/1.svg"}/
+                %img.icon-col__icons.tilter__deco--lines{:alt => "apps", :src => "img/services/apps/benefit/1_1.svg"}/
+                %img.icon-col__bg{:alt => "apps", :src => "img/services/apps/benefit/1_bg.svg"}/
+              .icon-col__text
+                .icon-col__title.heading.heading_type_h5-s
+                  У мобильных приложений
+                  %br/
+                  огромная аудитория
+                .icon-col__caption.caption.caption_size_g
+                  56 млн россиян старше 16 лет
+                  %br/
+                  (около половины всех пользователей сети) заходят в Интернет
+                  %br.sm-hide/
+                  с мобильных устройств (GFK, 2017)
+            .icon-col__item.apps-benefit__item.js-animation.js-animation_fadeInLeft{"data-animation-delay" => "200ms"}
+              .icon-col__img-wrp.js-tilter
+                %img.icon-col__img.tilter__figure{:alt => "apps", :src => "img/services/apps/benefit/2.svg"}/
+                %img.icon-col__icons.tilter__deco--lines{:alt => "apps", :src => "img/services/apps/benefit/2_1.svg"}/
+                %img.icon-col__bg{:alt => "apps", :src => "img/services/apps/benefit/2_bg.svg"}/
+              .icon-col__text
+                .icon-col__title.heading.heading_type_h5-s
+                  Существует большой спрос на приложения для поиска и покупки товаров
+                %ul.icon-col__dot-list.dot-list
+                  %li.dot-list__item
+                    .dot-list__caption
+                      44%
+                      %nobr онлайн-потребителей
+                      %br/
+                      в России используют мобильные устройства для покупок;
+                  %li.dot-list__item
+                    .dot-list__caption
+                      66% россиян используют мобильные устройства для поиска информации о продукте перед покупкой (Nielsen, 2016)
+            .icon-col__item.apps-benefit__item.js-animation.js-animation_fadeInLeft{"data-animation-delay" => "400ms"}
+              .icon-col__img-wrp.js-tilter
+                %img.icon-col__img.tilter__figure{:alt => "apps", :src => "img/services/apps/benefit/3.svg"}/
+                %img.icon-col__icons.tilter__deco--lines{:alt => "apps", :src => "img/services/apps/benefit/3_1.svg"}/
+                %img.icon-col__bg{:alt => "apps", :src => "img/services/apps/benefit/3_bg.svg"}/
+              .icon-col__text
+                .icon-col__title.heading.heading_type_h5-s
+                  Рынок мобильных приложений далек от насыщения
+                %ul.icon-col__dot-list.dot-list
+                  %li.dot-list__item
+                    .dot-list__caption
+                      3,8 млрд приложений было скачано в России в магазинах Google Play и App Store в 2016 году. С 2012 по 2017 годы этот показатель вырос в 4 раза (App Annie, 2017)
+                  %li.dot-list__item
+                    .dot-list__caption
+                      На 35% вырастет количество скачиваний мобильных приложений в мире к 2020 году (IDC, 2016)
+          .icon-col__dots.js-slider-icon-col-dots
+  %section.section.section_pad_large.apps-pluses
+    .section__wrp.apps-pluses__wrp
+      .section__header.section__header_compensate.apps-pluses__header
+        %h2.section__heading.heading.heading_type_h2.apps-pluses__heading
+          %span.section__heading-text НАШИ ПРЕИМУЩЕСТВА
+      .section__body.apps-pluses__body
+        .apps-pluses__text-row.text-row
+          .text-row__list
+            .text-row__item.js-animation.js-animation_fadeInLeft{"data-animation-delay" => "0"}
+              .text-row__heading.text-row__heading_check.heading.heading_type_h5-s
+                Полный цикл разработки
+              .text-row__caption.caption.caption_size_g
+                Обеспечиваем все этапы создания приложения: от прототипов и визуальной концепции до 
+                %nobr back-end
+                разработки и запуска. Клиенту не нужно заниматься планированием — мы сделаем все сами.
+            .text-row__item.js-animation.js-animation_fadeInRight{"data-animation-delay" => "200ms"}
+              .text-row__heading.text-row__heading_check.heading.heading_type_h5-s
+                Экспертное консультирование
+              .text-row__caption.caption.caption_size_g
+                Мы помогаем своим клиентам разобраться со многими фундаментальными вопросами мобильной разработки: выбор технологий, определение функционала, привлечение аудитории и многое другое.
+            .text-row__item.js-animation.js-animation_fadeInLeft{"data-animation-delay" => "0"}
+              .text-row__heading.text-row__heading_check.heading.heading_type_h5-s
+                Собственные нестандартные решения
+              .text-row__caption.caption.caption_size_g
+                За время работы мы собрали много удачных решений, благодаря которым можем предлагать некоторые продукты по очень привлекательным ценам (например, приложение для сайта на 
+                %nobr> 1 °C
+                \-Битрикс).
+            .text-row__item.js-animation.js-animation_fadeInRight{"data-animation-delay" => "200ms"}
+              .text-row__heading.text-row__heading_check.heading.heading_type_h5-s
+                Техническая экспертиза
+              .text-row__caption.caption.caption_size_g
+                Успех приложения во многом определяется правильным выбором платформы, продуманной архитектурой, качеством интерфейса, быстродействием и многими другими факторами. Мы учитываем их все.
+  %section.section.section_pad_large.section_green_light.apps-how
+    .section__wrp.apps-how__wrp
+      .section__header.section__header_compensate.apps-how__header
+        %h2.section__heading.heading.heading_type_h2.apps-how__heading
+          %span.section__heading-text Как мы работаем?
+      .section__body.apps-how__body
+        .apps-how__num-col.num-col.js-slider-num-col
+          .num-col__list
+            .num-col__item.js-animation.js-animation_bounceInLong{"data-animation-delay" => "0"}
+              .num-col__img-wrp.js-tilter
+                %img.num-col__img.tilter__figure{:alt => "apps", :src => "img/services/apps/how/1.svg"}/
+              .num-col__text
+                .num-col__title.heading.heading_type_h5-s
+                  Аналитика
+                %ul.num-col__dot-list.dot-list.dot-list_text_s
+                  %li.dot-list__item
+                    .dot-list__caption
+                      Определяем цели будущего приложения
+                  %li.dot-list__item
+                    .dot-list__caption
+                      Изучаем рынок, конкурентную среду и целевую аудиторию
+                  %li.dot-list__item
+                    .dot-list__caption
+                      Формулируем задачи проекта
+                  %li.dot-list__item
+                    .dot-list__caption
+                      Рекомендуем платформу и состав функционала
+            .num-col__item.js-animation.js-animation_bounceInLong{"data-animation-delay" => "750ms"}
+              .num-col__img-wrp.js-tilter
+                %img.num-col__img.tilter__figure{:alt => "apps", :src => "img/services/apps/how/2.svg"}/
+              .num-col__text
+                .num-col__title.heading.heading_type_h5-s
+                  Прототипы и дизайн
+                %ul.num-col__dot-list.dot-list.dot-list_text_s
+                  %li.dot-list__item
+                    .dot-list__caption
+                      Разрабатываем архитектуру проекта
+                  %li.dot-list__item
+                    .dot-list__caption
+                      Создаем прототип (схематичная модель для демонстрации логики проекта)
+                  %li.dot-list__item
+                    .dot-list__caption
+                      Предлагаем визуальную концепцию, отрисовываем страницы
+            .num-col__item.js-animation.js-animation_bounceInLong{"data-animation-delay" => "1500ms"}
+              .num-col__img-wrp.js-tilter
+                %img.num-col__img.tilter__figure{:alt => "apps", :src => "img/services/apps/how/3.svg"}/
+              .num-col__text
+                .num-col__title.heading.heading_type_h5-s
+                  Программирование и внедрение
+                %ul.num-col__dot-list.dot-list.dot-list_text_s
+                  %li.dot-list__item
+                    .dot-list__caption
+                      Выбираем технологии под цели и задачи проекта
+                  %li.dot-list__item
+                    .dot-list__caption
+                      Создаем внутренний код
+            .num-col__item.js-animation.js-animation_bounceInLong{"data-animation-delay" => "2250ms"}
+              .num-col__img-wrp.js-tilter
+                %img.num-col__img.tilter__figure{:alt => "apps", :src => "img/services/apps/how/4.svg"}/
+              .num-col__text
+                .num-col__title.heading.heading_type_h5-s
+                  Запуск и поддержка
+                %ul.num-col__dot-list.dot-list.dot-list_text_s
+                  %li.dot-list__item
+                    .dot-list__caption
+                      Тестируем проект на соответствие требованиям, нагрузки и быстродействие
+                  %li.dot-list__item
+                    .dot-list__caption
+                      Устраняем найденные недостатки
+                  %li.dot-list__item
+                    .dot-list__caption
+                      Загружаем в App Store и Google Play
+                  %li.dot-list__item
+                    .dot-list__caption
+                      Поддерживаем: обновляем контент и развиваем функционал
+          .num-col__dots.js-slider-num-col-dots
+  %section.section.green-banner.green-banner_apps
+    %span.green-banner__bg{:style => "background-image: url(img/services/apps/green.jpg);"}
+    .section__wrp.green-banner__wrp
+      .green-banner__prehead
+        Особое предложение
+      %h2.green-banner__heading.section__heading.heading.heading_type_h2
+        %span.section__heading-text
+          Ваш
+          %nobr интернет-магазин
+          %br/
+          на Битриксе?
+      .green-banner__text
+        .green-banner__caption.caption.caption_size_g
+          Тогда вам повезло: все содержимое вашего сайта уже доступно в мобильном приложении. Технология
+          = succeed ":" do
+            %nobr «1С-Битрикс
+        .green-banner__caption.caption.caption_size_g
+          Мы успешно реализовали более 20 приложений для сайтов на «
+          %nobr 1С-Битрикс»
+          %br.xs-hide/
+          и с удовольствием разработаем этот недорогой и выгодный продукт и для вас.
+      .green-banner__buttons
+        %a.green-banner__button.button.button_theme_accent.button_size_l.js-popup{:href => "javascript:void(0);"}
+          Напишите нам

@@ -7,6 +7,9 @@
 
 //=require front/common
 //=require front/social
+//=require front/vendor.min
+//=require front/main.min
+
 
 // RAILS SCRIPTS
 //= require rails-ujs
