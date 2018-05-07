@@ -1,4 +1,6 @@
 class Front::StaticPagesController < FrontController
+
+  layout 'static'
   
   before_action :set_page_loading_time
 

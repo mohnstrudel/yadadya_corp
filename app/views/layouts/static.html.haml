@@ -1,0 +1,44 @@
+!!!
+%html
+  %head
+    =metamagic site: "Digital-агентство Я.Creations", title: [:title, :site], separator: " | ", og: { title: :site, type: 'website', locale: 'ru_RU', url: request.protocol + request.host, site_name: :site, image: request.protocol + request.host + asset_path('social/open-graph-title-pic.png'), 'image:alt' => :site, description: "Мы занимаемся разработкой, развитием и продвижением корпоративных сайтов, интернет-магазинов, мобильных приложений и сервисов. Отдаем предпочтение сложным комплексным проектам и нестандартным задачам."}
+
+
+
+
+    %meta{:charset => "utf-8"}/
+    %meta{:content => "IE=edge", "http-equiv" => "X-UA-Compatible"}/
+    %meta{:content => "width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no", :name => "viewport"}/
+    %meta{:content => "#ffffff", :name => "theme-color"}/
+
+    %link{:href => "https://fonts.googleapis.com/css?family=Oswald:400,500&subset=cyrillic", :rel => "stylesheet"}/
+    %link{:href => asset_path('icons/favicon-180x180.png'), :rel => "apple-touch-icon", :sizes => "180x180"}/
+    
+    %link{:href => asset_path('icons/favicon-32x32.png'), :rel => "icon", :sizes => "32x32", :type => "image/png"}/
+    %link{:href => asset_path('icons/favicon-16x16.png'), :rel => "icon", :sizes => "16x16", :type => "image/png"}/
+    
+    %link{:href => "/manifest.json", :rel => "manifest"}/
+    %link{:color => "#5bbad5", :href => "/img/icons/safari-pinned-tab.svg", :rel => "mask-icon"}/
+    
+    = csrf_meta_tags
+    = stylesheet_link_tag "https://api.mapbox.com/mapbox-gl-js/v0.41.0/mapbox-gl.css", :rel => "stylesheet"
+    = stylesheet_link_tag    'static', media: 'all'
+    = javascript_include_tag 'front/social_header.js'
+    %noscript
+      %img{:height => "1", :src => "https://www.facebook.com/tr?id=318401934950930&ev=PageView&noscript=1", :style => "display:none", :width => "1"}/
+
+    / = javascript_include_tag 'front/main.js' if action_name == 'home'
+    / = javascript_include_tag 'front/about.js' if action_name == 'about'
+    / = javascript_include_tag 'front/contact.js' if action_name == 'contact'
+    / = javascript_include_tag 'front'
+
+  %body.g-body{class: "#{controller_name == 'posts' ? 'g-body_blog' : controller_name + ' ' + action_name}"}
+    .g-content
+      =render partial: 'front/navigation/header'
+      = yield
+      / =debug
+      =render partial: 'front/navigation/footer'
+      =render partial: 'front/navigation/popups'
+      =render partial: 'front/navigation/icons'
+  = javascript_include_tag 'https://api.mapbox.com/mapbox-gl-js/v0.41.0/mapbox-gl.js'
+  = javascript_include_tag 'static'
