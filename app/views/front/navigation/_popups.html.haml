@@ -38,15 +38,15 @@
             %use{"xlink:href" => "#ic-input-error"}
           %svg.g-input__icon.g-input__icon_success
             %use{"xlink:href" => "#ic-input-success"}
-      .g-input.g-extra-message
-        =f.text_field :message, class: 'g-input__field js-input', placeholder: 'Дополнительное сообщение'
-        .g-input__flag
-          %svg.g-input__icon.g-input__icon_error
-            %use{"xlink:href" => "#ic-input-error"}
-          %svg.g-input__icon.g-input__icon_success
-            %use{"xlink:href" => "#ic-input-success"}
+      / .g-input.g-extra-message
+      /   =f.text_field :message, class: 'g-input__field js-input', placeholder: 'Дополнительное сообщение'
+      /   .g-input__flag
+      /     %svg.g-input__icon.g-input__icon_error
+      /       %use{"xlink:href" => "#ic-input-error"}
+      /     %svg.g-input__icon.g-input__icon_success
+      /       %use{"xlink:href" => "#ic-input-success"}
       .g-input
-        =f.text_area :body, class: 'g-input__field g-input__field_textarea', maxlength: 1000
+        =f.text_area :body, class: 'g-input__field g-input__field_textarea', maxlength: 2000
       %p.g-form__text
         Если у вас есть ТЗ или иная информация, просто приложите файл к запросу (поддерживаются форматы .pdf, .txt, .doc, .docx, .xls, .xlsx, .png, .jpg):
       =f.file_field :attachments, class: 'g-input__field-file', multiple: true
