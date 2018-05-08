@@ -28,17 +28,17 @@ Rails.application.routes.draw do
     get 'contact', to: 'static_pages#contact'
     
     scope 'services' do
-      get '', to: 'static_pages#services'
-      get 'ecom', to: 'static_pages#ecom'
-      get 'difficult', to: 'static_pages#difficult'
-      get 'support', to: 'static_pages#support'
-      get 'mobile', to: 'static_pages#mobile'
+      get '', to: 'services#services'
+      get 'ecom', to: 'services#ecom'
+      get 'difficult', to: 'services#difficult'
+      get 'support', to: 'services#support'
+      get 'mobile', to: 'services#mobile'
 
-      get 'corporate', to: 'static_pages#corporate'
-      get 'clients', to: 'static_pages#clients'
+      get 'corporate', to: 'services#corporate'
+      get 'clients', to: 'services#clients'
 
-      get 'firmstyle', to: 'static_pages#firmstyle'
-      get 'bitrix', to: 'static_pages#bitrix'
+      get 'firmstyle', to: 'services#firmstyle'
+      get 'bitrix', to: 'services#bitrix'
     end
     
     get 'projects', to: 'static_pages#projects'

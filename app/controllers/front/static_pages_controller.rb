@@ -1,6 +1,5 @@
 class Front::StaticPagesController < FrontController
 
-  # layout 'static'
   
   before_action :set_page_loading_time
 
@@ -18,33 +17,6 @@ class Front::StaticPagesController < FrontController
   end
 
   def projects
-  end
-
-  def services
-  end
-
-  def ecom
-  end
-
-  def difficult 
-  end
-
-  def support
-  end
-
-  def mobile
-  end
-
-  def corporate
-  end
-
-  def clients
-  end
-
-  def firmstyle
-  end
-
-  def bitrix
   end
 
   private
