@@ -41,10 +41,14 @@ var Yadadya = {
         isMobile: window.matchMedia("(max-width: 720px)"),
         isHeaderHide: window.matchMedia("(max-width: 900px)"),
         pageClasses: {
-            main: "g-body_main",
-            about: "g-body_about",
-            contact: "g-body_contact",
-            service: "g-body_service"
+            main: "home",
+            about: "about",
+            contact: "contact",
+            service: "services"
+            // main: "g-body_main",
+            // about: "g-body_about",
+            // contact: "g-body_contact",
+            // service: "g-body_service"
         }
     },
     rem: parseFloat(getComputedStyle($("html")[0]).fontSize),
@@ -297,7 +301,7 @@ Yadadya.params.$body.hasClass(Yadadya.params.pageClasses.main) ? Yadadya.resetIt
             theme: "onebutton",
             addMore: !0,
             enableApi: !0
-        }), Yadadya.params.isDesctop.matches && $("#video-wrapper").append('<video id="video" width="100%" height="auto" autoplay="autoplay" loop="loop" preload="auto"><source src="img/coding.webm" type="video/webm"></source></video>');
+        }), Yadadya.params.isDesctop.matches && $("#video-wrapper").append('<video id="video" width="100%" height="auto" autoplay="autoplay" loop="loop" preload="auto"><source src="<%= asset_path "coding.webm" %>"" type="video/webm"></source></video>');
         var m = {
             movement: {
                 imgWrapper: {

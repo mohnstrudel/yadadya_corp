@@ -1,6 +1,6 @@
 class Front::ServicesController < FrontController
 
-  layout 'static'
+  # layout 'static'
 
   def services
   end
