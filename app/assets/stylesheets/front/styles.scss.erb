@@ -110,35 +110,35 @@ html {
 
 @font-face {
     font-family: BebasNeueBold;
-    src: font-url("BebasNeueBold.ttf?cncltt") format("truetype");
+    src: font-url('BebasNeueBold.ttf?cncltt') format("truetype");
     font-weight: 400;
     font-style: normal
 }
 
 @font-face {
     font-family: Lato;
-    src: font-url("Lato-LightItalic.ttf?cncltt") format("truetype");
+    src: font-url('Lato-LightItalic.ttf?cncltt') format("truetype");
     font-weight: 300;
     font-style: italic
 }
 
 @font-face {
     font-family: Lato;
-    src: font-url("Lato-Light.ttf?cncltt") format("truetype");
+    src: font-url('Lato-Light.ttf?cncltt') format("truetype");
     font-weight: 300;
     font-style: normal
 }
 
 @font-face {
     font-family: Lato;
-    src: font-url("Lato-Regular.ttf?cncltt") format("truetype");
+    src: font-url('Lato-Regular.ttf?cncltt') format("truetype");
     font-weight: 400;
     font-style: normal
 }
 
 @font-face {
     font-family: Lato;
-    src: font-url("Lato-Black.ttf?cncltt") format("truetype");
+    src: font-url('Lato-Black.ttf?cncltt') format("truetype");
     font-weight: 800;
     font-style: normal
 }
@@ -182,7 +182,7 @@ html {
     overflow-y: scroll;
     font-family: Lato, sans-serif;
     background-color: #fff;
-    background-image: url(<%=asset_path 'bg-pattern.png' %>);
+    background-image: url(<%= asset_path 'bg-pattern.png' %>);
     color: #0e2f22
 }
 
@@ -249,7 +249,7 @@ html {
     height: 100%;
     top: 0;
     left: 0;
-    background-image: url(<%=asset_path 'coding.jpg' %>);
+    background-image: url(<%= asset_path 'coding.jpg' %>);
     z-index: -1;
     overflow: hidden
 }
@@ -748,13 +748,13 @@ html {
 }
 
 .g-approach-list__steps_agile:after {
-    background-image: url(<%=asset_path 'agile.svg' %>);
+    background-image: url(<%= asset_path 'agile.svg' %>);
     background-size: 129px;
     background-position: 44px 0
 }
 
 .g-approach-list__steps_waterfall:after {
-    background-image: url(<%=asset_path 'waterfall.svg' %>);
+    background-image: url(<%= asset_path 'waterfall.svg' %>);
     background-repeat: no-repeat;
     background-size: 130px;
     background-position: 40px 8px
@@ -979,7 +979,8 @@ html {
 }
 
 .g-best-wrapper {
-    padding-top: 61px
+    padding-top: 61px;
+    text-align: center
 }
 
 .g-best {
@@ -1128,7 +1129,7 @@ html {
     position: absolute;
     width: 17px;
     height: 13px;
-    background-image: url(<%=asset_path 'check.svg' %>);
+    background-image: url(<%= asset_path 'check.svg' %>);
     -webkit-transform: translateY(-42%);
     transform: translateY(-42%);
     top: 50%;
@@ -1136,7 +1137,7 @@ html {
 }
 
 .g-offer {
-    background-image: url(<%=asset_path 'offer.jpg' %>);
+    background-image: url(<%= asset_path 'offer.jpg' %>);
     position: relative;
     z-index: 1;
     text-align: center;
@@ -1187,6 +1188,12 @@ html {
     display: block
 }
 
+.g-btn-icon,
+.g-btn_facebook .g-icon {
+    display: inline-block;
+    vertical-align: middle
+}
+
 .g-btn:hover {
     cursor: pointer;
     background-color: #164834
@@ -1213,6 +1220,22 @@ html {
     border: 2px solid #d0e2db;
     border-radius: 325px;
     padding: 0 42px
+}
+
+.g-btn-icon {
+    fill: #fff
+}
+
+.g-btn-icon_download {
+    width: 14px;
+    height: 17px;
+    padding-left: 3px;
+    margin-top: -5px
+}
+
+.g-btn_download {
+    padding: 0 29px 0 52px;
+    letter-spacing: .05em
 }
 
 .g-btn_file {
@@ -1247,8 +1270,6 @@ html {
     height: 23px;
     fill: #b5cbc2;
     transition: fill 250ms linear;
-    display: inline-block;
-    vertical-align: middle;
     margin-top: -7px
 }
 
@@ -2361,7 +2382,7 @@ html {
 }
 
 .g-proposal {
-    background-image: url(<%=asset_path 'proposals.jpg' %>);
+    background-image: url(<%= asset_path 'proposals.jpg' %>);
     background-repeat: no-repeat;
     padding-top: 136px;
     padding-bottom: 114px
@@ -2576,7 +2597,7 @@ html {
 }
 
 .g-help__item:after {
-    background-image: url(<%=asset_path 'check.svg' %>);
+    background-image: url(<%= asset_path 'check.svg' %>);
     position: absolute;
     left: 3px;
     top: 53%;
@@ -2692,6 +2713,12 @@ html {
     left: 11.65%
 }
 
+.g-leadership__photo_dima {
+    width: 80%;
+    height: auto;
+    left: 10.05%
+}
+
 .g-about-write {
     padding-top: 66px;
     background-color: #edf5f2;
@@ -2772,7 +2799,7 @@ html {
 
 .g-contact__img-wrapper {
     position: relative;
-    background-image: url(<%=asset_path 'contact.svg' %>);
+    background-image: url(<%= asset_path 'contact.svg' %>);
     padding-top: 183px;
     margin: 53px auto 58px;
     width: 43%
@@ -3355,11 +3382,6 @@ html {
     top: -12px
 }
 
-.button,
-.rub {
-    position: relative
-}
-
 .column-title,
 .g-form__text {
     line-height: 24px
@@ -3394,6 +3416,11 @@ html {
     top: 48%
 }
 
+.button,
+.rub {
+    position: relative
+}
+
 .g-popup__title-text:after {
     right: -44px
 }
@@ -3424,7 +3451,9 @@ html {
     float: right;
     margin: -60px 0 0;
     font-size: 16px;
-    padding: 0 57px
+    padding: 0 57px;
+    position: relative;
+    z-index: 1
 }
 
 .fileuploader {
@@ -3465,7 +3494,7 @@ html {
 }
 
 .column-title:before {
-    background-image: url(<%=asset_path 'file.svg' %>);
+    background-image: url(<%= asset_path 'file.svg' %>);
     width: 14px;
     height: 17px
 }
@@ -3486,7 +3515,7 @@ html {
 
 .fileuploader-action.fileuploader-action-remove:after {
     display: inline-block;
-    background-image: url(<%=asset_path 'delete_file.svg' %>);
+    background-image: url(<%= asset_path 'delete_file.svg' %>);
     width: 10px;
     height: 10px;
     vertical-align: middle
@@ -3842,6 +3871,14 @@ html {
         font-size: 16px;
         line-height: 50px;
         padding: 0 38px
+    }
+
+    @media screen and (max-width: 1439px){
+        .g-btn {
+        
+        
+        line-height: 58px;
+        }
     }
     .g-copy,
     .g-social__text {
@@ -6378,7 +6415,7 @@ svg {
     opacity: 0;
     -moz-opacity: 0;
     -webkit-opacity: 0;
-    /*-ms-filter: progid: DXImageTransform.Microsoft.Alpha(opacity=0);*/
+    // -ms-filter: progid: DXImageTransform.Microsoft.Alpha(opacity=0);
     filter: alpha(opacity=0);
     visibility: hidden!important
 }
@@ -7112,7 +7149,7 @@ svg {
     cursor: default;
     margin-left: 28px;
     margin-right: 28px;
-    background-image: url(<%=asset_path 'line.svg' %>);
+    background-image: url(<%= asset_path 'line.svg' %>);
     background-repeat: repeat-x;
     background-position: 0 50%;
     background-size: auto
@@ -7867,7 +7904,7 @@ svg {
     border: 5px solid #fff;
     border-radius: 4px;
     z-index: 5;
-    background-image: url(<%=asset_path 'services/b24/video.jpg' %>);
+    background-image: url(<%= asset_path 'services/b24/video.jpg' %>);
     background-size: 102% auto
 }
 
@@ -10514,7 +10551,7 @@ svg {
 }
 
 .firm-logo .path-block__list::before {
-    background-image: url(<%=asset_path 'services/firm-style/path.svg' %>);
+    background-image: url(<%= asset_path 'services/firm-style/path.svg' %>);
     background-size: auto 486px
 }
 
@@ -10525,7 +10562,7 @@ svg {
 }
 
 .corp-how .path-block__list::before {
-    background-image: url(<%=asset_path 'services/corp/path.svg' %>);
+    background-image: url(<%= asset_path 'services/corp/path.svg' %>);
     background-size: auto 590px
 }
 
@@ -10564,7 +10601,7 @@ svg {
 
 .check-list__item::before,
 .text-row__heading_check::before {
-    background-image: url(<%=asset_path 'check.svg' %>);
+    background-image: url(<%= asset_path 'check.svg' %>);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 50% 50%
@@ -12334,7 +12371,7 @@ svg {
     .green-banner_corp .green-banner__bg,
     .green-banner_support .green-banner__bg {
         background-position: 50% 50%;
-        background-image: url(<%=asset_path 'services/firm-style/green.jpg)!importa' %>nt
+        background-image: url(<%= asset_path 'services/firm-style/green.jpg' %>) !important;
     }
     .green-banner__wrp {
         min-height: 263px;
