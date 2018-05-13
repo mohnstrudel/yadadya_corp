@@ -45,10 +45,6 @@ var Yadadya = {
             about: "about",
             contact: "contact",
             service: "services"
-            // main: "g-body_main",
-            // about: "g-body_about",
-            // contact: "g-body_contact",
-            // service: "g-body_service"
         }
     },
     rem: parseFloat(getComputedStyle($("html")[0]).fontSize),
@@ -58,7 +54,7 @@ var Yadadya = {
     resetItems: {},
     supportFunc: {},
     reset: function() {
-        Yadadya.params.$body.hasClass(Yadadya.params.pageClasses.main) ? (Yadadya.resetItems.whatSlider && (Yadadya.resetItems.whatSliderSlide = Yadadya.resetItems.whatSlider.getCurrentSlide(), Yadadya.resetItems.whatSlider.destroySlider(), Yadadya.resetItems.whatSlider = null), Yadadya.resetItems.whySlider && (Yadadya.resetItems.whySliderSlide = Yadadya.resetItems.whySlider.getCurrentSlide(), Yadadya.resetItems.whySlider.destroySlider(), Yadadya.resetItems.whySlider = null), Yadadya.resetItems.casesSlider && (Yadadya.resetItems.casesSliderSlide = Yadadya.resetItems.casesSlider.getCurrentSlide(), Yadadya.resetItems.casesSlider.destroySlider(), Yadadya.resetItems.casesSlider = null)) : Yadadya.params.$body.hasClass(Yadadya.params.pageClasses.about) ? (Yadadya.resetItems.proposalSlider && (Yadadya.resetItems.proposalSliderSlide = Yadadya.resetItems.proposalSlider.getCurrentSlide(), Yadadya.resetItems.proposalSlider.destroySlider(), Yadadya.resetItems.proposalSlider = null), Yadadya.resetItems.leadershipSlider && (Yadadya.resetItems.leadershipSliderSlide = Yadadya.resetItems.leadershipSlider.getCurrentSlide(), Yadadya.resetItems.leadershipSlider.destroySlider(), Yadadya.resetItems.leadershipSlider = null), Yadadya.resetItems.aboutSlider && (Yadadya.resetItems.aboutSliderSlide = Yadadya.resetItems.aboutSlider.getCurrentSlide(), Yadadya.resetItems.aboutSlider.destroySlider(), Yadadya.resetItems.aboutSlider = null)) : Yadadya.params.$body.hasClass(Yadadya.params.pageClasses.contact)
+        Yadadya.params.$body.hasClass(Yadadya.params.pageClasses.main) ? (Yadadya.resetItems.whatSlider && (Yadadya.resetItems.whatSliderSlide = Yadadya.resetItems.whatSlider.getCurrentSlide(), Yadadya.resetItems.whatSlider.destroySlider(), Yadadya.resetItems.whatSlider = null), Yadadya.resetItems.whySlider && (Yadadya.resetItems.whySliderSlide = Yadadya.resetItems.whySlider.getCurrentSlide(), Yadadya.resetItems.whySlider.destroySlider(), Yadadya.resetItems.whySlider = null)) : Yadadya.params.$body.hasClass(Yadadya.params.pageClasses.about) ? (Yadadya.resetItems.proposalSlider && (Yadadya.resetItems.proposalSliderSlide = Yadadya.resetItems.proposalSlider.getCurrentSlide(), Yadadya.resetItems.proposalSlider.destroySlider(), Yadadya.resetItems.proposalSlider = null), Yadadya.resetItems.leadershipSlider && (Yadadya.resetItems.leadershipSliderSlide = Yadadya.resetItems.leadershipSlider.getCurrentSlide(), Yadadya.resetItems.leadershipSlider.destroySlider(), Yadadya.resetItems.leadershipSlider = null), Yadadya.resetItems.aboutSlider && (Yadadya.resetItems.aboutSliderSlide = Yadadya.resetItems.aboutSlider.getCurrentSlide(), Yadadya.resetItems.aboutSlider.destroySlider(), Yadadya.resetItems.aboutSlider = null)) : Yadadya.params.$body.hasClass(Yadadya.params.pageClasses.contact)
     },
     mobile: function() {
         Yadadya.params.$body.hasClass(Yadadya.params.pageClasses.main) ? (Yadadya.resetItems.whatSlider = $("#what-slider").bxSlider({
@@ -75,12 +71,6 @@ var Yadadya = {
             mouseDrag: !0,
             adaptiveHeight: !0,
             startSlide: Yadadya.resetItems.whySliderSlide || 0
-        }), Yadadya.resetItems.casesSlider = $("#cases-slider").bxSlider({
-            minSlides: 1,
-            maxSlides: 1,
-            moveSlides: 1,
-            mouseDrag: !0,
-            startSlide: Yadadya.resetItems.casesSliderSlide || 0
         })) : Yadadya.params.$body.hasClass(Yadadya.params.pageClasses.about) ? (Yadadya.resetItems.proposalSlider = $("#proposal-slider").bxSlider({
             minSlides: 1,
             maxSlides: 1,
@@ -110,14 +100,6 @@ var Yadadya = {
         if (Yadadya.params.$body.hasClass(Yadadya.params.pageClasses.main)) {
             $(".g-what-list__item, .g-why-list__item").css({
                 height: "auto"
-            }), Yadadya.resetItems.casesSlider = $("#cases-slider").bxSlider({
-                minSlides: 3,
-                maxSlides: 5,
-                moveSlides: 1,
-                slideWidth: parseInt(317 * Yadadya.rem / 13, 10),
-                slideMargin: parseInt(10 * Yadadya.rem / 13, 10),
-                mouseDrag: !0,
-                startSlide: Yadadya.resetItems.casesSliderSlide || 0
             }), Yadadya.resetItems.whatSlider = $("#what-slider").bxSlider({
                 minSlides: 3,
                 maxSlides: 3,
@@ -148,15 +130,7 @@ var Yadadya = {
         } else Yadadya.params.$body.hasClass(Yadadya.params.pageClasses.about) || Yadadya.params.$body.hasClass(Yadadya.params.pageClasses.contact)
     },
     desctop: function() {
-        Yadadya.params.$body.hasClass(Yadadya.params.pageClasses.main) ? Yadadya.resetItems.casesSlider = $("#cases-slider").bxSlider({
-            minSlides: 3,
-            maxSlides: 5,
-            moveSlides: 2,
-            slideWidth: parseInt(317 * Yadadya.rem / 13, 10),
-            slideMargin: parseInt(10 * Yadadya.rem / 13, 10),
-            mouseDrag: !0,
-            startSlide: Yadadya.resetItems.casesSliderSlide || 0
-        }) : Yadadya.params.$body.hasClass(Yadadya.params.pageClasses.about) || Yadadya.params.$body.hasClass(Yadadya.params.pageClasses.contact)
+        Yadadya.params.$body.hasClass(Yadadya.params.pageClasses.main) || Yadadya.params.$body.hasClass(Yadadya.params.pageClasses.about) || Yadadya.params.$body.hasClass(Yadadya.params.pageClasses.contact)
     },
     run: function() {
         Yadadya.rem = parseFloat(getComputedStyle($("html")[0]).fontSize), Yadadya.params.windowPoint = parseInt(.9 * $(window).height()), Yadadya.params.$header.hasClass("g-header_white") && Yadadya.params.$header.next(".g-section").eq(0).css({
@@ -169,11 +143,11 @@ var Yadadya = {
         $(document).ready(function() {
             function a() {
                 var e = $(this).scrollTop();
-                Math.abs(i - e) <= d || (e > i && e > t ? $("header").addClass("g-header_hidden") : e + $(window).height() < $(document).height() && $("header").removeClass("g-header_hidden"), i = e)
+                Math.abs(i - e) <= t || (e > i && e > d ? $("header").addClass("g-header_hidden") : e + $(window).height() < $(document).height() && $("header").removeClass("g-header_hidden"), i = e)
             }
             var s, i = 0,
-                d = 5,
-                t = $("header").outerHeight();
+                t = 5,
+                d = $("header").outerHeight();
             $(window).scroll(function(e) {
                 s = !0, $(this).scrollTop() > $(".g-header").outerHeight() ? $(".g-header").addClass("g-header_fixed") : $(".g-header").removeClass("g-header_fixed")
             }), setInterval(function() {
@@ -196,9 +170,7 @@ Yadadya.params.$body.hasClass(Yadadya.params.pageClasses.main) ? Yadadya.resetIt
     whatSlider: null,
     whatSliderSlide: null,
     whySlider: null,
-    whySliderSlide: null,
-    casesSlider: null,
-    casesSliderSlide: null
+    whySliderSlide: null
 } : Yadadya.params.$body.hasClass(Yadadya.params.pageClasses.about) ? Yadadya.resetItems = {
     proposalSlider: null,
     proposalSliderSlide: null,
@@ -223,15 +195,15 @@ Yadadya.params.$body.hasClass(Yadadya.params.pageClasses.main) ? Yadadya.resetIt
     }
 
     function i() {
-        Yadadya.params.$body.hasClass("g-body_overflow") ? (Yadadya.params.$body.removeAttr("style"), $(window).scrollTop(t)) : (t = $(window).scrollTop(), Yadadya.params.$body.css({
+        Yadadya.params.$body.hasClass("g-body_overflow") ? (Yadadya.params.$body.removeAttr("style"), $(window).scrollTop(d)) : (d = $(window).scrollTop(), Yadadya.params.$body.css({
             position: "fixed",
-            top: -t,
+            top: -d,
             left: 0,
             right: 0
         })), Yadadya.params.$body.toggleClass("g-body_overflow")
     }
 
-    function d(e) {
+    function t(e) {
         i(), e.fadeToggle()
     }
     Yadadya.run(), Yadadya.params.isMobile.matches ? Yadadya.params.$animated = $(".js-animation.js-animation_mobile") : Yadadya.params.isTablet.matches ? Yadadya.params.$animated = $(".js-animation.js-animation_tablet") : Yadadya.params.$animated = $(".js-animation"), Yadadya.params.$animated.each(function() {
@@ -245,33 +217,33 @@ Yadadya.params.$body.hasClass(Yadadya.params.pageClasses.main) ? Yadadya.resetIt
     }), $(".js-input").on("focus", function() {
         e($(this), !1), a($(this), !1)
     });
-    var t;
+    var d;
     if ($(".js-menu").on("click", function() {
             console.log(Yadadya.params.$menu), Yadadya.params.$body.css({
                 height: $(window).outerHeight()
             }).toggleClass("g-body_overflow"), Yadadya.params.$menu.toggleClass("g-menu_visible")
         }), $(".js-popup").on("click", function() {
-            d($("#form-popup"))
+            t($("#form-popup"))
         }), !Yadadya.params.isMobile.matches) {
         var l = $(".g-speakers__list"),
-            r = l.find(".g-speakers__item"),
-            o = 4;
-        Yadadya.params.isMobile.matches ? o = 1 : Yadadya.params.isTablet.matches && (o = 3);
-        for (var n = 0; n < o; n++) $("<div>", {
+            o = l.find(".g-speakers__item"),
+            r = 4;
+        Yadadya.params.isMobile.matches ? r = 1 : Yadadya.params.isTablet.matches && (r = 3);
+        for (var n = 0; n < r; n++) $("<div>", {
             "class": "g-speakers__colum"
         }).appendTo(l);
         var p = l.find(".g-speakers__colum");
-        r.each(function(e) {
-            $(this).appendTo(p.eq(e % o))
+        o.each(function(e) {
+            $(this).appendTo(p.eq(e % r))
         })
     }
     if ($(".g-popup").on("click", function(e) {
-            ($(e.target).hasClass("g-popup") || 1 == $(e.target).closest(".js-close").length) && d($(this))
+            ($(e.target).hasClass("g-popup") || 1 == $(e.target).closest(".js-close").length) && t($(this))
         }), $(document).on("submit", ".g-form", function(i) {
             i.preventDefault();
-            var t = $(this).find(".js-input"),
+            var d = $(this).find(".js-input"),
                 l = !1;
-            if (t.each(function() {
+            if (d.each(function() {
                     switch ($(this).attr("name")) {
                         case "name":
                             "" == $(this).val() ? (l = !0, e($(this), !0)) : a($(this), !0);
@@ -286,13 +258,13 @@ Yadadya.params.$body.hasClass(Yadadya.params.pageClasses.main) ? Yadadya.resetIt
                             $(this).inputmask("isComplete") ? a($(this), !0) : (l = !0, e($(this), !0))
                     }
                 }), !l) {
-                var r = $(this);
-                r.find("input").attr("disabled", !0), setTimeout(function() {
-                    d($("#form-popup")), setTimeout(function() {
-                        d($("#success-popup"))
-                    }, 500), t.each(function() {
+                var o = $(this);
+                o.find("input").attr("disabled", !0), setTimeout(function() {
+                    t($("#form-popup")), setTimeout(function() {
+                        t($("#success-popup"))
+                    }, 500), d.each(function() {
                         $(this).val("").parents(".g-input").removeClass("g-input_success")
-                    }), r.find("input").removeAttr("disabled")
+                    }), o.find("input").removeAttr("disabled")
                 }, 1e3)
             }
             return !1
@@ -301,7 +273,7 @@ Yadadya.params.$body.hasClass(Yadadya.params.pageClasses.main) ? Yadadya.resetIt
             theme: "onebutton",
             addMore: !0,
             enableApi: !0
-        }), Yadadya.params.isDesctop.matches && $("#video-wrapper").append('<video id="video" width="100%" height="auto" autoplay="autoplay" loop="loop" preload="auto"><source src="<%= asset_path "coding.webm" %>"" type="video/webm"></source></video>');
+        }), Yadadya.params.isDesctop.matches && $("#video-wrapper").append('<video id="video" width="100%" height="auto" autoplay="autoplay" loop="loop" preload="auto"><source src=<%= asset_path "coding.webm" %> type="video/webm"></source></video>');
         var m = {
             movement: {
                 imgWrapper: {
@@ -449,7 +421,7 @@ $(document).ready(function() {
                 pointerEvents: !0
             })
         }
-    var d = {
+    var t = {
         movement: {
             imgWrapper: {
                 translation: {
@@ -486,23 +458,23 @@ $(document).ready(function() {
         }
     };
     if ($(".js-tilter").each(function() {
-            new TiltFx(this, d)
+            new TiltFx(this, t)
         }), videoData.length > 0) {
-        var t = +$("#video-b24").offset().top,
+        var d = +$("#video-b24").offset().top,
             l = +$("#video-b24").height(),
-            r = +$("header").height();
+            o = +$("header").height();
         $(".js-anchor-video").on("click", function(e) {
             e.preventDefault();
-            var a = t - r;
+            var a = d - o;
             $("body, html").animate({
                 scrollTop: a
             }, 1e3), playVideo()
         }), onPlayerReady = function(e) {
             e.target.mute();
             var a = $(window).scrollTop();
-            a >= t - 2 * r ? (playVideo(), a >= t + l && stopVideo()) : stopVideo(), $(window).on("scroll", function() {
+            a >= d - 2 * o ? (playVideo(), a >= d + l && stopVideo()) : stopVideo(), $(window).on("scroll", function() {
                 var e = $(window).scrollTop();
-                e >= t - 2 * r ? (playVideo(), e >= t + l && stopVideo()) : stopVideo()
+                e >= d - 2 * o ? (playVideo(), e >= d + l && stopVideo()) : stopVideo()
             })
         }
     }
@@ -516,12 +488,12 @@ $(document).ready(function() {
         var s = $(this).attr("href"),
             i = 0;
         a > 720 && (i = +$("header").height());
-        var d = +$(s).offset().top - i;
+        var t = +$(s).offset().top - i;
         $("body, html").animate({
-            scrollTop: d
+            scrollTop: t
         }, 1e3)
     });
-    var o = new Swiper(".js-slider-b24", {
+    var r = new Swiper(".js-slider-b24", {
             loop: !1,
             slidesPerView: 1,
             spaceBetween: "20%",
@@ -533,7 +505,7 @@ $(document).ready(function() {
         }),
         n = null,
         p = 1;
-    o.on("slideChange", function() {
+    r.on("slideChange", function() {
         var e = +$(this)[0].realIndex + 1;
         if ($(window).width() > 767) {
             var a = $(".js-slider-b24-nav"),
@@ -543,14 +515,14 @@ $(document).ready(function() {
             }, 800)
         } else {
             var i = $(".slider-b24__mobnav-dropdown").find('.js-dropdown-link[data-toggle="' + e + '"]'),
-                d = i.text(),
-                t = i.closest(".js-dropdown");
-            t.find(".js-dropdown-toggle span").text(d)
+                t = i.text(),
+                d = i.closest(".js-dropdown");
+            d.find(".js-dropdown-toggle span").text(t)
         }
     }), $(".js-slider-b24-nav").on("click", function(e) {
         e.preventDefault();
         var a = +$(this).data("toggle") - 1;
-        o.slideTo(a)
+        r.slideTo(a)
     });
     var m = (new Swiper(".js-slider-reviews", {
             loop: !0,
@@ -685,6 +657,6 @@ $(document).ready(function() {
             s = $(this).closest(".js-dropdown");
         s.find(".js-dropdown-toggle span").text(a), s.removeClass("open"), s.find(".js-dropdown-list").fadeToggle("fast");
         var i = +$(this).data("toggle") - 1;
-        o.slideTo(i)
+        r.slideTo(i)
     })
 });
