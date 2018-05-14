@@ -30,15 +30,15 @@ Rails.application.routes.draw do
     scope 'services' do
       get '', to: 'services#services'
       get 'ecom', to: 'services#ecom'
-      get 'difficult', to: 'services#difficult'
+      get 'custom_development', to: 'services#custom_development'
       get 'support', to: 'services#support'
       get 'mobile', to: 'services#mobile'
 
-      get 'corporate', to: 'services#corporate'
+      get 'website', to: 'services#corporate'
       get 'clients', to: 'services#clients'
 
-      get 'firmstyle', to: 'services#firmstyle'
-      get 'bitrix', to: 'services#bitrix'
+      get 'branding', to: 'services#firmstyle'
+      get 'bitrix24', to: 'services#bitrix'
     end
     
     get 'projects', to: 'static_pages#projects'

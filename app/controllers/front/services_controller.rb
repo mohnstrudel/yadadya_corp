@@ -8,7 +8,7 @@ class Front::ServicesController < FrontController
   def ecom
   end
 
-  def difficult 
+  def custom_development 
   end
 
   def support
