@@ -1,7 +1,7 @@
 !!!
 %html
   %head
-    =metamagic site: "Digital-агентство Я.Creations", title: [:title, :site], separator: " | ", og: { title: :site, type: 'website', locale: 'ru_RU', url: request.protocol + request.host, site_name: :site, image: request.protocol + request.host + asset_path('social/open-graph-title-pic.png'), 'image:alt' => :site, description: "Мы занимаемся разработкой, развитием и продвижением корпоративных сайтов, интернет-магазинов, мобильных приложений и сервисов. Отдаем предпочтение сложным комплексным проектам и нестандартным задачам."}
+    =metamagic site: "Digital-агентство Atomic", title: [:title, :site], separator: " | ", og: { title: :site, type: 'website', locale: 'ru_RU', url: request.protocol + request.host, site_name: :site, image: request.protocol + request.host + asset_path('social/open-graph-title-pic.png'), 'image:alt' => :site, description: "Мы занимаемся разработкой, развитием и продвижением корпоративных сайтов, интернет-магазинов, мобильных приложений и сервисов. Отдаем предпочтение сложным комплексным проектам и нестандартным задачам."}
 
 
 
@@ -23,9 +23,14 @@
     = csrf_meta_tags
     = stylesheet_link_tag "https://api.mapbox.com/mapbox-gl-js/v0.41.0/mapbox-gl.css", :rel => "stylesheet"
     = stylesheet_link_tag    'front', media: 'all'
+    %script{:async => "", :src => "https://www.googletagmanager.com/gtag/js?id=UA-90439970-11"}
     = javascript_include_tag 'front/social_header.js'
     %noscript
       %img{:height => "1", :src => "https://www.facebook.com/tr?id=318401934950930&ev=PageView&noscript=1", :style => "display:none", :width => "1"}/
+    %noscript
+      %img{src: "https://mc.yandex.ru/watch/48950303", style:"position:absolute; left:-9999px;", alt:"" }
+
+
 
     / = javascript_include_tag 'front/main.js' if action_name == 'home'
     / = javascript_include_tag 'front/about.js' if action_name == 'about'

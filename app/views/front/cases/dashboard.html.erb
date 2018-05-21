@@ -1,0 +1,116 @@
+<%- meta title: "Проекты"
+    meta og: { title: "Проекты"} %>
+
+      <main class="main">
+        
+        <section class="section section_first section_pad_large services-promo">
+          <div class="section__wrp services-promo__wrp scene">
+            <div class="section__header section__header_compensate services-promo__header">
+              <h2 class="section__heading heading heading_type_h2 services-promo__heading">
+                <span class="section__heading-text">Наши проекты</span>
+              </h2>
+            </div>
+            
+            <div class="section__body services-promo__body">
+              <div class="services-promo__img">
+                <div class="services-promo__img-wrp">
+                  <img src="<%= asset_path 'services/promo/bg.svg' %>" alt="firm-style" class="services-promo__img-bg layer" data-depth="0.40">
+                  <img src="<%= asset_path 'services/promo/icon2.svg' %>" alt="firm-style" class="services-promo__img-icon2 layer" data-depth="0.60">
+                  <img src="<%= asset_path 'services/promo/icon.svg' %>" alt="firm-style" class="services-promo__img-icon layer" data-depth="0.80">
+                </div>
+              </div>
+              
+              <div class="services-promo__caption caption caption_size_l">
+                Мы&nbsp;делаем их реально круто
+              </div>
+              
+              <a href="#services" class="services-promo__link js-anchor-link">
+                <span class="services-promo__link-icon">
+                  <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      xmlns:xlink="http://www.w3.org/1999/xlink"
+                      width="20px" height="11px">
+                  <path fill-rule="evenodd"
+                      d="M19.435,1.707 L10.707,10.435 C10.317,10.825 9.683,10.825 9.293,10.435 L0.565,1.707 C0.174,1.316 0.174,0.683 0.565,0.293 C0.955,-0.098 1.589,-0.098 1.979,0.293 L10.000,8.313 L18.021,0.293 C18.411,-0.098 19.044,-0.098 19.435,0.293 C19.825,0.683 19.825,1.316 19.435,1.707 Z"/>
+                </svg>
+                </span>
+              </a>
+            </div>
+          </div>
+        </section>
+        
+        <section id="services" class="section section_pad_medium section_green_light services">
+          <div class="section__wrp services__wrp">
+            <div class="section__body services__body">
+              <div class="services__icon-col icon-col icon-col_main icon-col_border">
+                <div class="icon-col__list icon-col__list_grid-two">
+                  <div class="icon-col__item services__item js-animation js-animation_fadeInLeft" data-animation-delay="0">
+                    <div class="icon-col__img-wrp js-tilter">
+                      <img src="<%= asset_path 'services/icons/1.svg' %>" alt="services" class="icon-col__img tilter__figure">
+                      <img src="<%= asset_path 'services/icons/1_bg.svg' %>" alt="services" class="icon-col__bg">
+                    </div>
+                    
+                    <div class="icon-col__text">
+                      <div class="icon-col__title heading heading_type_h4">
+                        Инпас
+                      </div>
+                      
+                      <div class="icon-col__caption caption caption_size_g">
+                        Помогаем продавать ваши товары. <br class="md-show xs-hide"/>В&nbsp;нашем портфолио уже несколько <br class="md-show xs-hide"/>десятков успешных историй.
+                      </div>
+                      
+                      <a href="<%= inpas_path %>" class="icon-col__button button button_theme_border button_size_g">
+                        Подробнее
+                      </a>
+                    </div>
+                  </div>
+                  <div class="icon-col__item services__item js-animation js-animation_fadeInRight" data-animation-delay="100ms">
+                    <div class="icon-col__img-wrp js-tilter">
+                      <img src="<%= asset_path 'services/icons/2.svg' %>" alt="services" class="icon-col__img tilter__figure">
+                      <img src="<%= asset_path 'services/icons/2_bg.svg' %>" alt="services" class="icon-col__bg">
+                    </div>
+                    
+                    <div class="icon-col__text">
+                      <div class="icon-col__title heading heading_type_h4">
+                        Департамент Кашрута
+                      </div>
+                      
+                      <div class="icon-col__caption caption caption_size_g">
+                        Затачиваем под ваш бизнес CRM, ERP, системы отчетности и&nbsp;другие продукты. Чем сложнее, тем интереснее.
+                      </div>
+                      
+                      <a href="<%= kosher_path %>"
+                          class="icon-col__button button button_theme_border button_size_g">
+                        Подробнее
+                      </a>
+                    </div>
+                  </div>
+                  <div class="icon-col__item services__item js-animation js-animation_fadeInRight" data-animation-delay="100ms">
+                    <div class="icon-col__img-wrp js-tilter">
+                      <img src="<%= asset_path 'services/icons/3.svg' %>" alt="services" class="icon-col__img tilter__figure">
+                      <img src="<%= asset_path 'services/icons/3_bg.svg' %>" alt="services" class="icon-col__bg">
+                    </div>
+                    
+                    <div class="icon-col__text">
+                      <div class="icon-col__title heading heading_type_h4">
+                        Раменский мясокомбинат
+                      </div>
+                      
+                      <div class="icon-col__caption caption caption_size_g">
+                        Мы&nbsp;любим долгосрочные отношения и&nbsp;после запуска помогаем вашему продукту эволюционировать и&nbsp;идти в&nbsp;ногу с&nbsp;технологиями.
+                      </div>
+                      
+                      <a href="<%= ramen_path %>"
+                          class="icon-col__button button button_theme_border button_size_g">
+                        Подробнее
+                      </a>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        
+      </main>

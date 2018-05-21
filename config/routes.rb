@@ -28,6 +28,15 @@ Rails.application.routes.draw do
     get 'contact', to: 'static_pages#contact'
     
     get 'services', to: 'services#services'
+    get 'cases', to: 'cases#dashboard'
+
+    scope 'cases' do
+      get '', to: 'cases#dashboard'
+
+      get 'inpas', to: 'cases#inpas'
+      get 'kosher', to: 'cases#kosher'
+      get 'ramen', to: 'cases#ramen'
+    end
 
     scope 'services' do
       get '', to: 'services#services'

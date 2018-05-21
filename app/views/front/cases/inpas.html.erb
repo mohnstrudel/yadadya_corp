@@ -1,0 +1,612 @@
+<%- meta title: "INPAS | Проекты"
+    meta og: { title: "INPAS | Проекты" }
+    %>
+
+<main class="main">
+  <section class="section section_first project project_inpas">
+    <div class="section__wrp project__wrp">
+      <div class="section__header section__header_compensate project__header">
+        <h1 class="section__heading heading heading_type_h2 project__heading">
+          INPAS: разработка <nobr>Intranet-портала</nobr> и&nbsp;учетной системы
+        </h1>
+      </div>
+      
+      <div class="section__body project__body project__body_size_s">
+        <div class="project__info">
+          <div class="project__info-heading heading heading_type_h4">
+            О&nbsp;клиенте
+          </div>
+          
+          <div class="project__info-descr">
+            <div class="project__info-logo">
+              <img src="<%= asset_path 'projects/inpas/logo.svg' %>" alt="INPAS">
+            </div>
+            
+            <div class="project__info-text">
+              <div class="project__info-caption caption caption_size_g">
+                <span>INPAS&nbsp;&mdash;</span> ведущий дистрибьютор комплексных платежных решений, включая <nobr>POS-терминальное</nobr> оборудование, кассовую технику, прикладное ПО, системы управления и&nbsp;сервисы. Является частью многопрофильного холдинга ITG (INLINE Technologies Group). На&nbsp;рынке с&nbsp;1995 года.
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="project__preview">
+          <img class="project__preview-img" src="<%= asset_path 'projects/inpas/preview.png' %>" alt="inpas">
+        </div>
+      </div>
+      
+      <div class="section__footer project__footer">
+        <div class="project__plus-col plus-col">
+          <div class="plus-col__list">
+            <div class="plus-col__item">
+              <div class="plus-col__body">
+                <div class="plus-col__title heading heading_type_h4">
+                  300&nbsp;+
+                </div>
+                
+                <div class="plus-col__caption caption caption_size_g">
+                  Банков и&nbsp;финансовых компаний в&nbsp;числе клиентов
+                </div>
+              </div>
+            </div>
+            <div class="plus-col__item">
+              <div class="plus-col__body">
+                <div class="plus-col__title heading heading_type_h4">
+                  в&nbsp;<nobr>топ-10</nobr>
+                </div>
+                
+                <div class="plus-col__caption caption caption_size_g">
+                  Крупнейших <nobr>IT-компаний</nobr><br />
+                  России по&nbsp;данным<br />
+                  CNews Analytics 2016
+                </div>
+              </div>
+            </div>
+            <div class="plus-col__item">
+              <div class="plus-col__body">
+                <div class="plus-col__title heading heading_type_h4">
+                  20&nbsp;+
+                </div>
+                
+                <div class="plus-col__caption caption caption_size_g">
+                  Лет на&nbsp;рынке
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="section section_pad_large section_green_light project-why project-why_inpas scene">
+    <div class="section__wrp project-why__wrp">
+      <div class="section__header section__header_compensate project-why__header">
+        <h2 class="section__heading project-why__heading heading heading_type_h2">
+          Почему клиент выбрал нас?
+        </h2>
+      </div>
+      
+      <div class="section__body project-why__body project-why__body_size_s  project-why__body_size_shift">
+        <div class="project-why__grid">
+          <div class="project-why__grid-img">
+            <div class="project-why__img project-why__img_inpas">
+              <div class="project-why__img-wrp">
+                <img src="<%= asset_path 'projects/inpas/why/bg.svg' %>" alt="inpas" class="project-why__img-bg layer" data-depth="0.40">
+                <img src="<%= asset_path 'projects/inpas/why/icon2.svg' %>" alt="inpas" class="project-why__img-icon2 layer" data-depth="0.60">
+                <img src="<%= asset_path 'projects/inpas/why/icon.svg' %>" alt="inpas" class="project-why__img-icon layer" data-depth="0.80">
+              </div>
+            </div>
+          </div>
+          <div class="project-why__grid-box">
+            <div class="project-why__caption caption caption_size_g">
+              Atomic является золотым сертифицированным партнером &laquo;1C-Битрикс&raquo;, у&nbsp;нас большой опыт внедрения решений для сложных и&nbsp;высоконагруженных проектов на&nbsp;этой платформе. Когда INPAS обратилась к&nbsp;&laquo;Битриксу&raquo; за&nbsp;консультацией, вендор посоветовал наше агентство как одного из&nbsp;лучших исполнителей.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="section section_pad_large project-issue">
+    <div class="section__wrp project-issue__wrp">
+      <div class="section__header section__header_compensate project-issue__header">
+        <h2 class="section__heading heading heading_type_h2 project-issue__heading">
+          Проблема клиента
+        </h2>
+      </div>
+      
+      <div class="section__body project-issue__body project-issue__body_size_m">
+        <div class="project-issue__text">
+          <div class="project-issue__caption caption caption_size_g">
+            Рабочие данные INPAS&nbsp;&mdash; это миллионы строк записей о&nbsp;клиентах и&nbsp;оборудовании. Это колоссальное количество информации хранилось в&nbsp;двух не&nbsp;связанных между собой базах данных Oracle и&nbsp;MSSQL, а&nbsp;управление осуществлялось через систему запросов на&nbsp;изменение IBM ClearQuest.
+          </div>
+          <div class="project-issue__caption caption caption_size_g">
+            Чтобы получить информацию о&nbsp;сделках и&nbsp;состоянии оборудования, сотрудникам приходилось обращаться к&nbsp;<nobr>программисту-аналитику</nobr> и&nbsp;ждать ответ в&nbsp;течение нескольких часов, а&nbsp;иногда и&nbsp;дней.
+          </div>
+        </div>
+        
+        <div class="project-issue__grid">
+          <div class="project-issue__grid-img">
+            <div class="project-issue__img js-tilter">
+              <img src="<%= asset_path 'leadership/inpas_ilya.png' %>" class="project-issue__photo tilter__figure">
+            </div>
+          </div>
+          
+          <div class="project-issue__grid-review">
+            <div class="project-issue__review">
+              <div class="project-issue__review-title heading heading_type_h6">
+                Илья Коробов
+              </div>
+              
+              <div class="project-issue__review-subhead caption caption_size_s">
+                Генеральный директор &laquo;Инпас Компани&raquo;
+              </div>
+              
+              <div class="project-issue__review-caption caption caption_size_g">
+                Наша текущая система управления оборудованием на&nbsp;основе IBM ClearQuest морально устарела и&nbsp;не&nbsp;успевала за&nbsp;растущими потребностями бизнеса. Было решено создать облачное решение, в&nbsp;котором будут отображаться все данные из&nbsp;наших БД&nbsp;в&nbsp;удобном <nobr>веб-интерфейсе</nobr>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="section section_pad_large section_green_light project-task scene">
+    <div class="section__wrp project-task__wrp">
+      <div class="section__header section__header_compensate project-task__header">
+        <h2 class="section__heading heading heading_type_h2 project-task__heading">
+          Задача проекта
+        </h2>
+      </div>
+      
+      <div class="section__body project-task__body project-task__body_size_s">
+        <div class="project-task__img project-task__img_inpas">
+          <div class="project-task__img-wrp">
+            <img src="<%= asset_path 'projects/inpas/task/bg.svg' %>" alt="inpas" class="project-task__img-bg layer" data-depth="0.40">
+            <img src="<%= asset_path 'projects/inpas/task/icon2.svg' %>" alt="inpas" class="project-task__img-icon2 layer" data-depth="0.60">
+            <img src="<%= asset_path 'projects/inpas/task/icon.svg' %>" alt="inpas" class="project-task__img-icon layer" data-depth="0.80">
+          </div>
+        </div>
+        
+        <div class="project-task__caption caption caption_size_g">
+          Объединить два огромных массива данных в&nbsp;одно целое и&nbsp;дать пользователям возможность работать с&nbsp;ними через удобный <nobr>web-интерфейс</nobr>.
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="section project-work project-work_inpas">
+    <div class="section__wrp project-work__wrp">
+      <div class="section__header section__header_compensate project-work__header">
+        <h2 class="section__heading heading heading_type_h2 project-work__heading">
+          Работы по проекту
+        </h2>
+      </div>
+      
+      <div class="section__body project-work__body">
+        <div class="project-work__icon-col icon-col icon-col_x-small icon-col_border js-slider-icon-col">
+          <div class="icon-col__list icon-col__list_grid-five">
+            <div class="icon-col__item project-work__item">
+              <div class="icon-col__img-wrp js-tilter">
+                <img src="<%= asset_path 'projects/inpas/work/1.svg' %>" alt="inpas" class="icon-col__img tilter__figure">
+                <img src="<%= asset_path 'projects/inpas/work/1_1.svg' %>" alt="inpas" class="icon-col__icons tilter__deco--lines">
+                <img src="<%= asset_path 'projects/inpas/work/1_bg.svg' %>" alt="inpas" class="icon-col__bg">
+              </div>
+              
+              <div class="icon-col__text">
+                <div class="icon-col__caption caption caption_size_s">
+                  Аналитика
+                </div>
+              </div>
+            </div>
+            <div class="icon-col__item project-work__item">
+              <div class="icon-col__img-wrp js-tilter">
+                <img src="<%= asset_path 'projects/inpas/work/2.svg' %>" alt="inpas" class="icon-col__img tilter__figure">
+                <img src="<%= asset_path 'projects/inpas/work/2_1.svg' %>" alt="inpas" class="icon-col__icons tilter__deco--lines">
+                <img src="<%= asset_path 'projects/inpas/work/2_bg.svg' %>" alt="inpas" class="icon-col__bg">
+              </div>
+              
+              <div class="icon-col__text">
+                <div class="icon-col__caption caption caption_size_s">
+                  Проектирование <br/>
+                  и&nbsp;дизайн интерфейсов
+                </div>
+              </div>
+            </div>
+            <div class="icon-col__item project-work__item">
+              <div class="icon-col__img-wrp js-tilter">
+                <img src="<%= asset_path 'projects/inpas/work/3.svg' %>" alt="inpas" class="icon-col__img tilter__figure">
+                <img src="<%= asset_path 'projects/inpas/work/3_1.svg' %>" alt="inpas" class="icon-col__icons tilter__deco--lines">
+                <img src="<%= asset_path 'projects/inpas/work/3_bg.svg' %>" alt="inpas" class="icon-col__bg">
+              </div>
+              
+              <div class="icon-col__text">
+                <div class="icon-col__caption caption caption_size_s">
+                  Верстка
+                </div>
+              </div>
+            </div>
+            <div class="icon-col__item project-work__item">
+              <div class="icon-col__img-wrp js-tilter">
+                <img src="<%= asset_path 'projects/inpas/work/4.svg' %>" alt="inpas" class="icon-col__img tilter__figure">
+                <img src="<%= asset_path 'projects/inpas/work/4_1.svg' %>" alt="inpas" class="icon-col__icons tilter__deco--lines">
+                <img src="<%= asset_path 'projects/inpas/work/4_bg.svg' %>" alt="inpas" class="icon-col__bg">
+              </div>
+              
+              <div class="icon-col__text">
+                <div class="icon-col__caption caption caption_size_s">
+                  Программирование
+                </div>
+              </div>
+            </div>
+            <div class="icon-col__item project-work__item">
+              <div class="icon-col__img-wrp js-tilter">
+                <img src="<%= asset_path 'projects/inpas/work/5.svg' %>" alt="inpas" class="icon-col__img tilter__figure">
+                <img src="<%= asset_path 'projects/inpas/work/5_1.svg' %>" alt="inpas" class="icon-col__icons tilter__deco--lines">
+                <img src="<%= asset_path 'projects/inpas/work/5_bg.svg' %>" alt="inpas" class="icon-col__bg">
+              </div>
+              
+              <div class="icon-col__text">
+                <div class="icon-col__caption caption caption_size_s">
+                  Интеграция двух баз данных на&nbsp;Oracle и&nbsp;MSSQL
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="icon-col__dots js-slider-icon-col-dots"></div>
+        </div>
+      </div>
+      
+      <div class="section__footer project-work__footer">
+        <div class="project-work__caption caption caption_size_l">
+          Сроки проекта:<br />
+          <span>5&nbsp;месяцев. Запуск в&nbsp;августе 2016 года</span>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="section section_pad_large section_green_lighter project-solution">
+    <div class="section__wrp project-solution__wrp">
+      <div class="section__header section__header_compensate project-solution__header">
+        <h2 class="section__heading heading heading_type_h2 project-solution__heading">
+          Решения
+        </h2>
+      </div>
+      
+      <div class="section__body project-solution__body">
+        <div class="project-solution__block-list">
+          <div class="project-solution__block">
+            <div class="project-solution__block-title">
+              Аналитика
+            </div>
+            
+            <div class="project-solution__block-caption">
+              В&nbsp;начале работы над проектом мы&nbsp;описали все виды операций с&nbsp;данными, которые нужны сотрудникам &laquo;Инпас&raquo;: учет продаж и&nbsp;ремонта оборудования, хранение истории отношений с&nbsp;клиентами, формирование различных отчетов и&nbsp;многое другое.
+            </div>
+          </div>
+          <div class="project-solution__block">
+            <div class="project-solution__block-title">
+              Создание прототипа
+            </div>
+            
+            <div class="project-solution__block-img project-solution__block-img_slider">
+              <div class="project-solution__slider ba-slider">
+                <img class="ba-slider__img ba-slider__img_after" src="<%= asset_path 'projects/inpas/solution/after.jpg' %>" alt="after">
+                <div class="ba-slider__resize">
+                  <img class="ba-slider__img ba-slider__img_before" src="<%= asset_path 'projects/inpas/solution/before.jpg' %>" alt="before">
+                </div>
+                <div class="ba-slider__handle">
+                  <div class="ba-slider__handle-circle">
+                    <svg class="ba-slider__handle-arrow">
+                      <use xlink:href="#ic-left"></use>
+                    </svg>
+                    <svg class="ba-slider__handle-arrow">
+                      <use xlink:href="#ic-right"></use>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="project-solution__block-caption">
+              Мы&nbsp;отказались от&nbsp;написания подробного технического задания, разработав вместо этого наглядный прототип портала и&nbsp;составив понятное описание. Это позволило заказчику уже на&nbsp;ранней стадии получить представление о&nbsp;будущем продукте и&nbsp;внести свои пожелания. В&nbsp;этом преимущество <nobr>agile-подхода</nobr>: можно достичь понимания уже на&nbsp;начальном этапе работы, что позволит значительно сэкономить ресурсы в&nbsp;будущем.
+            </div>
+          </div>
+          <div class="project-solution__block">
+            <div class="project-solution__block-title">
+              Дизайн 
+            </div>
+            
+            <div class="project-solution__block-caption">
+              В&nbsp;начале работы над проектом мы&nbsp;описали все виды операций с&nbsp;данными, которые нужны сотрудникам &laquo;Инпас&raquo;: учет продаж и&nbsp;ремонта оборудования, хранение истории отношений с&nbsp;клиентами, формирование различных отчетов и&nbsp;многое другое.
+            </div>
+            
+            <div class="project-solution__block-img">
+              <img src="<%= asset_path 'projects/inpas/solution/1.jpg' %>" alt="inpas">
+            </div>
+          </div>
+          <div class="project-solution__block">
+            <div class="project-solution__block-title">
+              Разработка
+            </div>
+            
+            <div class="project-solution__block-caption">
+              Для реализации <nobr>Intranet-портала</nobr> мы&nbsp;выбрали <nobr>&laquo;1С-Битрикс&raquo;</nobr> в&nbsp;редакции &laquo;Бизнес&raquo;. Это стабильная система, имеющая много преимуществ для больших проектов, например, настраиваемую кластеризацию. Чтобы готовое решение как можно точнее отражало <nobr>бизнес-процессы</nobr> заказчика, мы&nbsp;значительно доработали его функционал. Также мы&nbsp;значительно переписали модель хранения информации в&nbsp;системе, отказавшись от&nbsp;стандартных инфоблоков <nobr>&laquo;1С-Битрикса&raquo;</nobr>.
+            </div>
+          </div>
+          <div class="project-solution__block">
+            <div class="project-solution__block-title">
+              Функционал
+            </div>
+            
+            <div class="project-solution__block-caption">
+              <span>Учет всех операций</span>. Создавая на&nbsp;портале новые записи по&nbsp;клиентам и&nbsp;аппаратам, можно вести учет всех сделок по&nbsp;продаже и&nbsp;ремонту оборудования.
+            </div>
+            
+            <div class="project-solution__block-caption">
+              <span>Быстрый поиск</span>. С&nbsp;помощью портала сотрудники INPAS могут быстро найти историю отношений с&nbsp;клиентом или информацию о&nbsp;поставляемом товаре. Помимо текстовых запросов поиск может обрабатывать файлы с&nbsp;серийными номерами.
+            </div>
+            
+            <div class="project-solution__block-img">
+              <img src="<%= asset_path 'projects/inpas/solution/2.jpg' %>" alt="inpas">
+            </div>
+          </div>
+          <div class="project-solution__block">
+            <div class="project-solution__block-title">
+              Просмотр детальной информации о&nbsp;клиенте
+            </div>
+            
+            <div class="project-solution__block-caption">
+              По&nbsp;каждому клиенту (банку или&nbsp;другой организации) ведется учет операций и&nbsp;оборудования. Сотрудники INPAS всегда могут узнать, какие аппараты установлены у&nbsp;клиента, находятся&nbsp;ли они на&nbsp;гарантии, ведется&nbsp;ли в&nbsp;данное время их&nbsp;ремонт. Также есть возможность просматривать список оборудования, снятого с&nbsp;гарантии.
+            </div>
+            
+            <div class="project-solution__block-img">
+              <img src="<%= asset_path 'projects/inpas/solution/3.jpg' %>" alt="inpas">
+            </div>
+          </div>
+          <div class="project-solution__block">
+            <div class="project-solution__block-title">
+              Просмотр информации о&nbsp;единице оборудования
+            </div>
+            
+            <div class="project-solution__block-caption">
+              По&nbsp;каждому аппарату ведется история: дата отгрузки, гарантийный период, номер накладной, текущий статус, зафиксированные неисправности и&nbsp;выполненные ремонты и&nbsp;др.
+            </div>
+            
+            <div class="project-solution__block-img">
+              <img src="<%= asset_path 'projects/inpas/solution/4.jpg' %>" alt="inpas">
+            </div>
+          </div>
+          <div class="project-solution__block">
+            <div class="project-solution__block-title">
+              Конструктор отчетов
+            </div>
+            
+            <div class="project-solution__block-caption">
+              Прямо на&nbsp;главной странице портала доступны 6 видов различных отчетов, которые используются сотрудниками INPAS чаще всего:
+            </div>
+            
+            <div class="project-solution__block-check-list project-solution__block-check-list_three check-list">
+              <ul class="check-list__list">
+                <li class="check-list__item">
+                  <div class="check-list__caption">
+                    Отчет по&nbsp;банку
+                  </div>
+                </li>
+                <li class="check-list__item">
+                  <div class="check-list__caption">
+                    Отчет по&nbsp;номеру счета
+                  </div>
+                </li>
+                <li class="check-list__item">
+                  <div class="check-list__caption">
+                    Оборудование в&nbsp;сервисе
+                  </div>
+                </li>
+                <li class="check-list__item">
+                  <div class="check-list__caption">
+                    По&nbsp;серийным номерам
+                  </div>
+                </li>
+                <li class="check-list__item">
+                  <div class="check-list__caption">
+                    Отгруженное оборудование
+                  </div>
+                </li>
+                <li class="check-list__item">
+                  <div class="check-list__caption">
+                    Все ремонты клиента
+                  </div>
+                </li>
+              </ul>
+            </div>
+            
+            <div class="project-solution__block-caption">
+              Введя название банка или его филиала, можно увидеть всю историю ремонта оборудования для данного клиента.
+            </div>
+            
+            <div class="project-solution__block-img">
+              <img src="<%= asset_path 'projects/inpas/solution/5.jpg' %>" alt="inpas">
+            </div>
+            
+            <div class="project-solution__block-caption">
+              Можно за&nbsp;считанные секунды выгрузить все данные по&nbsp;номеру счета.
+            </div>
+            
+            <div class="project-solution__block-img">
+              <img src="<%= asset_path 'projects/inpas/solution/6.jpg' %>" alt="inpas">
+            </div>
+          </div>
+          <div class="project-solution__block">
+            <div class="project-solution__block-title">
+              Сохранение шаблонов отчетов
+            </div>
+            
+            <div class="project-solution__block-caption">
+              Каждый сотрудник INPAS, имеющий доступ к&nbsp;внутреннему порталу, может сформировать шаблон отчета под свои индивидуальные задачи. Например, составить набор параметров по&nbsp;ремонту строго определенного оборудования в&nbsp;конкретном филиале того или иного банка.
+            </div>
+            
+            <div class="project-solution__block-img">
+              <img src="<%= asset_path 'projects/inpas/solution/7.jpg' %>" alt="inpas">
+            </div>
+          </div>
+          <div class="project-solution__block">
+            <div class="project-solution__block-title">
+              Настройка прав доступа
+            </div>
+            
+            <div class="project-solution__block-caption">
+              Пользователей портала можно объединять в&nbsp;группы и&nbsp;разграничивать права доступа. Есть возможность определять, какие банки будет видеть тот или иной пользователь&nbsp;&mdash; все, региональные отделения или только отдельные филиалы.
+            </div>
+            
+            <div class="project-solution__block-img">
+              <img src="<%= asset_path 'projects/inpas/solution/8.jpg' %>" alt="inpas">
+            </div>
+            
+            <div class="project-solution__block-img">
+              <img src="<%= asset_path 'projects/inpas/solution/9.jpg' %>" alt="inpas">
+            </div>
+          </div>
+          <div class="project-solution__block">
+            <div class="project-solution__block-title">
+              Объединение баз данных
+            </div>
+            
+            <div class="project-solution__block-caption">
+              Для обеспечения работы портала его требовалось интегрировать с&nbsp;базами данных компании на&nbsp;Oracle и&nbsp;MSSQL. Однако это было технически сложно и&nbsp;малоэффективно, поэтому мы&nbsp;создали новую БД, которая объединяет данные из&nbsp;двух старых.<br />
+              Раз в&nbsp;день запускается программа, которая сверяет все записи между старыми и&nbsp;новой базами, находит несовпадения и&nbsp;заменяет их. Благодаря этому пользователи портала INPAS могут за&nbsp;считанные секунды искать и&nbsp;изменять информацию в&nbsp;базе с&nbsp;миллионами строк данных.
+            </div>
+          </div>
+          <div class="project-solution__block">
+            <div class="project-solution__block-title">
+              Отказоустойчивость и&nbsp;быстродействие
+            </div>
+            
+            <div class="project-solution__num-list">
+              <ol class="project-solution__num-list-list">
+                <li class="project-solution__num-list-item">
+                  <div class="project-solution__block-caption">
+                    <span>Кластеры &laquo;Битрикса&raquo;.</span> Для портала была выполнена кластеризация, которая распределяет его обслуживание на&nbsp;несколько серверов. Для проекта с&nbsp;миллионом записей это нужное решение: оно балансирует нагрузку между серверами, повышая тем самым доступность портала, а&nbsp;также дает возможность масштабировать проект с&nbsp;ростом нагрузки.
+                  </div>
+                </li>
+                <li class="project-solution__num-list-item">
+                  <div class="project-solution__block-caption">
+                    <span>Распределенная сетевая инфраструктура (Content Delivery Network).</span> Для экономии времени каждому пользователю портала выдается информация с&nbsp;ближайшего сервера.
+                  </div>
+                </li>
+                <li class="project-solution__num-list-item">
+                  <div class="project-solution__block-caption">
+                    <span>Технология &laquo;Композитный сайт&raquo;.</span> Статическая часть страницы портала кешируется в&nbsp;браузере пользователя и&nbsp;при повторных обращениях отображается мгновенно, а&nbsp;динамическая часть подгружается в&nbsp;фоновом режиме.
+                  </div>
+                </li>
+              </ol>
+            </div>
+          </div>
+          <div class="project-solution__block">
+            <div class="project-solution__block-title">
+              Тестирование и&nbsp;документация
+            </div>
+            
+            <div class="project-solution__block-caption">
+              Для проекта мы&nbsp;выбрали технику разработки через тестирование (<nobr>test-driven</nobr> development). Она предполагает создание кода под выполнение конкретных тестов и&nbsp;обеспечивает высокое качество продукта, несмотря на&nbsp;то, что занимает немало времени.
+            </div>
+            
+            <div class="project-solution__block-caption">
+              Проект полностью задокументирован, поэтому у&nbsp;заказчика не&nbsp;будет проблем, если он&nbsp;захочет развивать проект самостоятельно или с&nbsp;помощью других подрядчиков.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="section section_pad_large project-result">
+    <div class="section__wrp project-result__wrp">
+      <div class="section__header section__header_compensate project-result__header">
+        <h2 class="section__heading heading heading_type_h2 project-result__heading">
+          Результаты
+        </h2>
+      </div>
+      
+      <div class="section__body project-result__body">
+        <div class="project-result__check-list check-list check-list_three">
+          <ul class="check-list__list">
+            <li class="check-list__item">
+              <div class="check-list__caption">
+                <span>Автоматизация работы</span><br />
+                Ранее создание отчета занимало не менее 4&ndash;6 часов, теперь всю нужную информацию сотрудники INPAS могут получить за&nbsp;несколько секунд.
+              </div>
+            </li>
+            <li class="check-list__item">
+              <div class="check-list__caption">
+                <span>Доступ для клиентов</span><br />
+                Клиенты заказчика (подавляющее большинство банков России) впервые получили возможность обращаться к информации по&nbsp;своему оборудованию наравне с&nbsp;сотрудниками INPAS.
+              </div>
+            </li>
+            <li class="check-list__item">
+              <div class="check-list__caption">
+                <span>Сокращение издержек</span><br />
+                Компании больше не&nbsp;нужен отдельный специалист по&nbsp;работе с&nbsp;IBM ClearQuest, чтобы создавать отчеты или менять информацию в&nbsp;базах данных.
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="section section_pad_large section_green_light project-review">
+    <div class="section__wrp project-review__wrp">
+      <div class="section__body project-review__body">
+        <div class="project-review__grid">
+          <div class="project-review__grid-img">
+            <div class="project-review__img js-tilter">
+              <img src="<%= asset_path 'leadership/yadadya.png' %>" class="project-review__photo tilter__figure">
+            </div>
+          </div>
+          
+          <div class="project-review__grid-review">
+            <div class="project-review__review">
+              <div class="project-review__review-title heading heading_type_h6">
+                Исаков Ядадья
+              </div>
+              
+              <div class="project-review__review-subhead caption caption_size_s">
+                Генеральный директор <nobr>digital-агентства</nobr> Atomic.
+              </div>
+              
+              <div class="project-review__review-caption caption caption_size_g">
+                &laquo;Скорость обработки информации&nbsp;&mdash; один из&nbsp;главных факторов, влияющих на&nbsp;успех бизнеса. Теперь сотрудникам компании INPAS не&nbsp;нужно ждать целыми днями справки о&nbsp;состоянии оборудования в&nbsp;конкретном филиале банка&nbsp;&mdash; они могут сами получить эту информацию за&nbsp;секунду.
+              </div>
+              
+              <div class="project-review__review-caption caption caption_size_g">
+                Данный проект стал настоящим вызовом для нашей команды. Мы&nbsp;собрали миллионы строк данных из&nbsp;двух огромных БД и&nbsp;создали эффективное решение для их&nbsp;обработки. Я&nbsp;рад, что мы&nbsp;справились с&nbsp;ним на&nbsp;пять с&nbsp;плюсом!&raquo;
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="section green-banner green-banner_inpas">
+    <span class="green-banner__bg" style="background-image: url(img/projects/inpas/green.jpg);"></span>
+    
+    <div class="section__wrp green-banner__wrp">
+      <h2 class="green-banner__heading section__heading heading heading_type_h2">
+        Нужен мощный и&nbsp;точный <nobr>digital-инструмент</nobr> для бизнеса?
+      </h2>
+      
+      <div class="green-banner__buttons">
+        <a href="javascript:void(0);"
+            class="green-banner__button button button_theme_accent button_size_l js-popup">
+          Напишите нам
+        </a>
+      </div>
+    </div>
+  </section>
+</main>

@@ -43,7 +43,7 @@ var Yadadya = {
         pageClasses: {
             main: "home",
             about: "about",
-            contact: "contact",
+            contact: "contacts",
             service: "services"
         }
     },
@@ -149,16 +149,22 @@ var Yadadya = {
                 t = 5,
                 d = $("header").outerHeight();
             $(window).scroll(function(e) {
-                s = !0, $(this).scrollTop() > $(".g-header").outerHeight() ? $(".g-header").addClass("g-header_fixed") : $(".g-header").removeClass("g-header_fixed")
+                if(s = !0, $(this).scrollTop() > $(".g-header").outerHeight()){
+                    $(".g-header").addClass("g-header_fixed");
+                    $('.g-logo__background_image').attr("src","<%= asset_path 'logo-dark.svg' %>");
+                } else {
+                    $('.g-logo__background_image').attr("src","<%= asset_path 'logo-light.svg' %>");
+                    $(".g-header").removeClass("g-header_fixed");
+                }
             }), setInterval(function() {
                 s && (a(), s = !1)
             }, 250), document.documentElement.addEventListener("touchstart", function(e) {
                 e.touches.length > 1 && e.preventDefault()
             }, !1);
-            var l = 0;
+            var o = 0;
             document.documentElement.addEventListener("touchend", function(e) {
                 var a = (new Date).getTime();
-                a - l <= 300 && e.preventDefault(), l = a
+                a - o <= 300 && e.preventDefault(), o = a
             }, !1), e()
         })
     },
@@ -225,15 +231,15 @@ Yadadya.params.$body.hasClass(Yadadya.params.pageClasses.main) ? Yadadya.resetIt
         }), $(".js-popup").on("click", function() {
             t($("#form-popup"))
         }), !Yadadya.params.isMobile.matches) {
-        var l = $(".g-speakers__list"),
-            o = l.find(".g-speakers__item"),
+        var o = $(".g-speakers__list"),
+            l = o.find(".g-speakers__item"),
             r = 4;
         Yadadya.params.isMobile.matches ? r = 1 : Yadadya.params.isTablet.matches && (r = 3);
         for (var n = 0; n < r; n++) $("<div>", {
             "class": "g-speakers__colum"
-        }).appendTo(l);
-        var p = l.find(".g-speakers__colum");
-        o.each(function(e) {
+        }).appendTo(o);
+        var p = o.find(".g-speakers__colum");
+        l.each(function(e) {
             $(this).appendTo(p.eq(e % r))
         })
     }
@@ -242,29 +248,29 @@ Yadadya.params.$body.hasClass(Yadadya.params.pageClasses.main) ? Yadadya.resetIt
         }), $(document).on("submit", ".g-form", function(i) {
             i.preventDefault();
             var d = $(this).find(".js-input"),
-                l = !1;
+                o = !1;
             if (d.each(function() {
                     switch ($(this).attr("name")) {
                         case "name":
-                            "" == $(this).val() ? (l = !0, e($(this), !0)) : a($(this), !0);
+                            "" == $(this).val() ? (o = !0, e($(this), !0)) : a($(this), !0);
                             break;
                         case "company":
-                            "" == $(this).val() ? (l = !0, e($(this), !0)) : a($(this), !0);
+                            "" == $(this).val() ? (o = !0, e($(this), !0)) : a($(this), !0);
                             break;
                         case "email":
-                            s($(this).val()) ? a($(this), !0) : (l = !0, e($(this), !0));
+                            s($(this).val()) ? a($(this), !0) : (o = !0, e($(this), !0));
                             break;
                         case "phone":
-                            $(this).inputmask("isComplete") ? a($(this), !0) : (l = !0, e($(this), !0))
+                            $(this).inputmask("isComplete") ? a($(this), !0) : (o = !0, e($(this), !0))
                     }
-                }), !l) {
-                var o = $(this);
-                o.find("input").attr("disabled", !0), setTimeout(function() {
+                }), !o) {
+                var l = $(this);
+                l.find("input").attr("disabled", !0), setTimeout(function() {
                     t($("#form-popup")), setTimeout(function() {
                         t($("#success-popup"))
                     }, 500), d.each(function() {
                         $(this).val("").parents(".g-input").removeClass("g-input_success")
-                    }), o.find("input").removeAttr("disabled")
+                    }), l.find("input").removeAttr("disabled")
                 }, 1e3)
             }
             return !1
@@ -274,7 +280,7 @@ Yadadya.params.$body.hasClass(Yadadya.params.pageClasses.main) ? Yadadya.resetIt
             addMore: !0,
             enableApi: !0
         }), Yadadya.params.isDesctop.matches && $("#video-wrapper").append('<video id="video" width="100%" height="auto" autoplay="autoplay" loop="loop" preload="auto"><source src=<%= asset_path "coding.webm" %> type="video/webm"></source></video>');
-        var m = {
+        var c = {
             movement: {
                 imgWrapper: {
                     translation: {
@@ -295,7 +301,7 @@ Yadadya.params.$body.hasClass(Yadadya.params.pageClasses.main) ? Yadadya.resetIt
             }
         };
         $(".js-tilter").each(function() {
-            new TiltFx(this, m)
+            new TiltFx(this, c)
         })
     } else if (Yadadya.params.$body.hasClass(Yadadya.params.pageClasses.about)) {
         Yadadya.params.isMobile.matches && $(".g-skills").on("click", function() {
@@ -304,7 +310,7 @@ Yadadya.params.$body.hasClass(Yadadya.params.pageClasses.main) ? Yadadya.resetIt
                 e.addClass("g-skills_open")
             }, 250))
         });
-        var m = {
+        var c = {
             movement: {
                 imgWrapper: {
                     translation: {
@@ -325,10 +331,10 @@ Yadadya.params.$body.hasClass(Yadadya.params.pageClasses.main) ? Yadadya.resetIt
             }
         };
         $(".js-tilter").each(function() {
-            new TiltFx(this, m)
+            new TiltFx(this, c)
         })
     } else if (Yadadya.params.$body.hasClass(Yadadya.params.pageClasses.contact)) {
-        var m = {
+        var c = {
             movement: {
                 imgWrapper: {
                     translation: {
@@ -349,7 +355,7 @@ Yadadya.params.$body.hasClass(Yadadya.params.pageClasses.main) ? Yadadya.resetIt
             }
         };
         $(".js-tilter").each(function() {
-            new TiltFx(this, m)
+            new TiltFx(this, c)
         }), $('input[type="file"]').fileuploader({
             theme: "onebutton",
             addMore: !0,
@@ -358,7 +364,7 @@ Yadadya.params.$body.hasClass(Yadadya.params.pageClasses.main) ? Yadadya.resetIt
         new mapboxgl.Map({
             container: "g-map",
             style: "mapbox://styles/mapbox/light-v9",
-            center: [37.5866845, 55.7474782],
+            center: [37.565337, 55.805336],
             zoom: 14.5,
             hash: !1,
             interactive: !0
@@ -461,20 +467,20 @@ $(document).ready(function() {
             new TiltFx(this, t)
         }), videoData.length > 0) {
         var d = +$("#video-b24").offset().top,
-            l = +$("#video-b24").height(),
-            o = +$("header").height();
+            o = +$("#video-b24").height(),
+            l = +$("header").height();
         $(".js-anchor-video").on("click", function(e) {
             e.preventDefault();
-            var a = d - o;
+            var a = d - l;
             $("body, html").animate({
                 scrollTop: a
             }, 1e3), playVideo()
         }), onPlayerReady = function(e) {
             e.target.mute();
             var a = $(window).scrollTop();
-            a >= d - 2 * o ? (playVideo(), a >= d + l && stopVideo()) : stopVideo(), $(window).on("scroll", function() {
+            a >= d - 2 * l ? (playVideo(), a >= d + o && stopVideo()) : stopVideo(), $(window).on("scroll", function() {
                 var e = $(window).scrollTop();
-                e >= d - 2 * o ? (playVideo(), e >= d + l && stopVideo()) : stopVideo()
+                e >= d - 2 * l ? (playVideo(), e >= d + o && stopVideo()) : stopVideo()
             })
         }
     }
@@ -483,6 +489,8 @@ $(document).ready(function() {
         var a = $(this).closest(".js-acc"),
             s = a.find(".js-acc-item");
         a.toggleClass("open"), s.slideToggle(200)
+    }), $(".ba-slider").each(function() {
+        $(this).beforeAfter()
     }), $(".js-anchor-link").on("click", function(e) {
         e.preventDefault();
         var s = $(this).attr("href"),
@@ -524,32 +532,52 @@ $(document).ready(function() {
         var a = +$(this).data("toggle") - 1;
         r.slideTo(a)
     });
-    var m = (new Swiper(".js-slider-reviews", {
-            loop: !0,
-            slidesPerView: 3,
-            spaceBetween: 10,
-            speed: 600,
-            navigation: {
-                nextEl: $(".js-slider-reviews-next"),
-                prevEl: $(".js-slider-reviews-prev")
-            },
-            breakpoints: {
-                767: {
-                    slidesPerView: 1,
-                    spaceBetween: 20,
-                    autoHeight: !0,
-                    pagination: {
-                        el: ".js-slider-reviews-dots",
-                        clickable: !0
-                    }
-                },
-                1023: {
-                    slidesPerView: 2,
-                    spaceBetween: 20
+    var c = (new Swiper(".js-slider-reviews", {
+        loop: !0,
+        slidesPerView: 3,
+        spaceBetween: 10,
+        speed: 600,
+        navigation: {
+            nextEl: $(".js-slider-reviews-next"),
+            prevEl: $(".js-slider-reviews-prev")
+        },
+        breakpoints: {
+            767: {
+                slidesPerView: 1,
+                spaceBetween: 20,
+                autoHeight: !0,
+                pagination: {
+                    el: ".js-slider-reviews-dots",
+                    clickable: !0
                 }
+            },
+            1023: {
+                slidesPerView: 2,
+                spaceBetween: 20
             }
-        }), {}),
-        c = {
+        }
+    }), new Swiper(".js-slider-project-screen", {
+        loop: !1,
+        slidesPerView: 1,
+        speed: 800,
+        autoHeight: !0,
+        effect: "fade",
+        fadeEffect: {
+            crossFade: !0
+        }
+    }));
+    c.on("slideChange", function() {
+        var e = +$(this)[0].realIndex + 1,
+            a = $(".js-project-screen-nav"),
+            s = $(".project-screen__nav-list").find('.js-project-screen-nav[data-toggle="' + e + '"]');
+        a.removeClass("active"), s.addClass("active")
+    }), $(".js-project-screen-nav").on("click", function(e) {
+        e.preventDefault();
+        var a = +$(this).data("toggle") - 1;
+        c.slideTo(a)
+    });
+    var m = {},
+        u = {
             slidesPerView: 2,
             freeMode: !1,
             loop: !0,
@@ -565,14 +593,14 @@ $(document).ready(function() {
     $(".js-slider-public").each(function(e) {
         m[e] = null
     }), $(".js-slider-public").each(function(e) {
-        $(window).width() < 768 ? null === m[e] && $(".js-slider-public").length > 0 && (m[e] = new Swiper($(".public").find(".js-slider-public").eq(e), c)) : m[e] && (m[e].destroy(), m[e] = null, $(".public__img-list").removeAttr("style"))
+        $(window).width() < 768 ? null === m[e] && $(".js-slider-public").length > 0 && (m[e] = new Swiper($(".public").find(".js-slider-public").eq(e), u)) : m[e] && (m[e].destroy(), m[e] = null, $(".public__img-list").removeAttr("style"))
     }), jQuery(window).resize(function() {
         $(".js-slider-public").each(function(e) {
-            $(window).width() < 768 ? null === m[e] && $(".js-slider-public").length > 0 && (m[e] = new Swiper($(".public").find(".js-slider-public").eq(e), c)) : m[e] && (m[e].destroy(), m[e] = null, $(".public__img-list").removeAttr("style"))
+            $(window).width() < 768 ? null === m[e] && $(".js-slider-public").length > 0 && (m[e] = new Swiper($(".public").find(".js-slider-public").eq(e), u)) : m[e] && (m[e].destroy(), m[e] = null, $(".public__img-list").removeAttr("style"))
         })
     });
-    var u = {},
-        h = {
+    var h = {},
+        y = {
             slidesPerView: 2,
             freeMode: !1,
             loop: !1,
@@ -598,18 +626,18 @@ $(document).ready(function() {
             }
         };
     $(".js-slider-icon-col").each(function(e) {
-        u[e] = null
+        h[e] = null
     }), $(".js-slider-icon-col").each(function(e) {
         var a = $(".js-slider-icon-col").eq(e);
-        $(window).width() < 1025 ? null === u[e] && $(".js-slider-icon-col").length > 0 && (h.pagination.el = a.find(".js-slider-icon-col-dots"), u[e] = new Swiper(a, h)) : u[e] && (u[e].destroy(), u[e] = null, a.find(".icon-col__list").removeAttr("style"), a.find(".icon-col__item").removeAttr("style"))
+        $(window).width() < 1025 ? null === h[e] && $(".js-slider-icon-col").length > 0 && (y.pagination.el = a.find(".js-slider-icon-col-dots"), h[e] = new Swiper(a, y)) : h[e] && (h[e].destroy(), h[e] = null, a.find(".icon-col__list").removeAttr("style"), a.find(".icon-col__item").removeAttr("style"))
     }), jQuery(window).resize(function() {
         $(".js-slider-icon-col").each(function(e) {
             var a = $(".js-slider-icon-col").eq(e);
-            $(window).width() < 1025 ? null === u[e] && $(".js-slider-icon-col").length > 0 && (h.pagination.el = a.find(".js-slider-icon-col-dots"), u[e] = new Swiper($(".js-slider-icon-col").eq(e), h)) : u[e] && (u[e].destroy(), u[e] = null, a.find(".icon-col__list").removeAttr("style"), a.find(".icon-col__item").removeAttr("style"))
+            $(window).width() < 1025 ? null === h[e] && $(".js-slider-icon-col").length > 0 && (y.pagination.el = a.find(".js-slider-icon-col-dots"), h[e] = new Swiper($(".js-slider-icon-col").eq(e), y)) : h[e] && (h[e].destroy(), h[e] = null, a.find(".icon-col__list").removeAttr("style"), a.find(".icon-col__item").removeAttr("style"))
         })
     });
-    var y = {},
-        g = {
+    var g = {},
+        w = {
             slidesPerView: 2,
             freeMode: !1,
             loop: !1,
@@ -635,14 +663,14 @@ $(document).ready(function() {
             }
         };
     $(".js-slider-num-col").each(function(e) {
-        y[e] = null
+        g[e] = null
     }), $(".js-slider-num-col").each(function(e) {
         var a = $(".js-slider-num-col").eq(e);
-        $(window).width() < 1025 ? null === y[e] && $(".js-slider-num-col").length > 0 && (g.pagination.el = a.find(".js-slider-num-col-dots"), y[e] = new Swiper($(".js-slider-num-col").eq(e), g)) : y[e] && (y[e].destroy(), y[e] = null, a.find(".num-col__list").removeAttr("style"), a.find(".num-col__item").removeAttr("style"))
+        $(window).width() < 1025 ? null === g[e] && $(".js-slider-num-col").length > 0 && (w.pagination.el = a.find(".js-slider-num-col-dots"), g[e] = new Swiper($(".js-slider-num-col").eq(e), w)) : g[e] && (g[e].destroy(), g[e] = null, a.find(".num-col__list").removeAttr("style"), a.find(".num-col__item").removeAttr("style"))
     }), jQuery(window).resize(function() {
         $(".js-slider-num-col").each(function(e) {
             var a = $(".js-slider-num-col").eq(e);
-            $(window).width() < 1025 ? null === y[e] && $(".js-slider-num-col").length > 0 && (g.pagination.el = a.find(".js-slider-num-col-dots"), y[e] = new Swiper($(".js-slider-num-col").eq(e), g)) : y[e] && (y[e].destroy(), y[e] = null, a.find(".num-col__list").removeAttr("style"), a.find(".num-col__item").removeAttr("style"))
+            $(window).width() < 1025 ? null === g[e] && $(".js-slider-num-col").length > 0 && (w.pagination.el = a.find(".js-slider-num-col-dots"), g[e] = new Swiper($(".js-slider-num-col").eq(e), w)) : g[e] && (g[e].destroy(), g[e] = null, a.find(".num-col__list").removeAttr("style"), a.find(".num-col__item").removeAttr("style"))
         })
     }), $(".js-dropdown-toggle").on("click", function(e) {
         e.preventDefault();
