@@ -1,10 +1,10 @@
 %header#g-header.g-header{class: get_header_class}
   %a.g-logo.g-logo_top{:href => root_path}
-    %img.g-logo__img{src: "#{asset_path 'logo-light.svg'}", style: "width: 50px; height: 50px;"}
+    %img.g-logo__img{src: "#{asset_path 'logo-dark.svg'}", style: "width: 50px; height: 50px;"}
     -if action_name == 'home' && get_header_class == "g-header_fixed"
       %img.g-logo__img.g-logo__img_mobile{src: "#{asset_path 'logo-dark.svg'}", style: "width: 50px; height: 50px;"}
     -elsif action_name == 'home'
-      %img.g-logo__img.g-logo__img_mobile{src: "#{asset_path 'logo-dark.svg'}", style: "width: 50px; height: 50px;"}
+      %img.g-logo__img.g-logo__img_mobile{src: "#{asset_path 'logo-light.svg'}", style: "width: 50px; height: 50px;"}
     -else 
       %img.g-logo__img.g-logo__img_mobile{src: "#{asset_path 'logo-dark.svg'}", style: "width: 50px; height: 50px;"}
   %a.g-burger.js-menu{:href => "javascript:void(0)"}
@@ -13,12 +13,11 @@
     .g-menu-top
       %a.g-logo{:href => root_path}
         -if action_name == 'home'
-          %img.g-logo__img.g-logo__img_small{src: "#{asset_path 'logo-dark.svg'}", style: "width: 50px; height: 50px;"}
+          %img.g-logo__img.g-logo__img_small{src: "#{asset_path 'logo-light.svg'}", style: "width: 50px; height: 50px;"}
         -else
           %img.g-logo__img.g-logo__img_small{src: "#{asset_path 'logo-dark.svg'}", style: "width: 50px; height: 50px;"}
       %a.g-close.js-menu{:href => "javascript:void(0)"}
         %i.g-close__icon
-    .g-menu__list
     .g-menu__list
       =header_nav_link 'Услуги', services_path
       =header_nav_link 'Проекты', cases_path
