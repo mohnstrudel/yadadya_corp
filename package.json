@@ -7,7 +7,8 @@
     "bxslider": "^4.2.13",
     "coffeescript": "1.12.7",
     "inputmask": "^3.3.10",
-    "jquery": "^3.2.1",
+    "jquery": "^3.3.1",
+    "jquery-ujs": "^1.2.2",
     "normalize.css": "^7.0.0",
     "tilt.js": "^1.2.0"
   },

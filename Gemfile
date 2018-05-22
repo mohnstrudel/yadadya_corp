@@ -7,25 +7,25 @@ end
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.1.4'
+gem 'rails'
 # Use postgresql as the database for Active Record
-gem 'pg', '~> 0.18'
+gem 'pg'
 # Use Puma as the app server
-gem 'puma', '~> 3.7'
+gem 'puma'
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0'
+gem 'sass-rails'
 # Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '>= 1.3.0'
+gem 'uglifier'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
 # Use CoffeeScript for .coffee assets and views
-gem 'coffee-rails', '~> 4.2'
+gem 'coffee-rails'
 
 
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 2.5'
+gem 'jbuilder'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
@@ -38,11 +38,31 @@ gem 'jbuilder', '~> 2.5'
 gem 'haml-rails'
 # что бы юзать yarn
 gem 'webpacker'
-gem 'carrierwave'
 gem "figaro"
 gem 'delayed_job_active_record'
 gem 'capistrano3-delayed-job'
 gem 'metamagic'
+
+gem 'listen', '~> 3.1.5'
+
+# Use CKEditor for html formatting
+gem 'ckeditor'
+gem 'redcarpet' # Redcarpet markdown editor
+# gem 'bootsy' # Screw CKEditor, it's not working on production! 
+gem 'carrierwave' # Required for images upload using ckeditor and in general
+gem 'mini_magick' # Required for image processing
+
+# Use font awesome and Glyphicons
+gem "font-awesome-rails"
+gem 'bootstrap-glyphicons'
+
+# Use Devise for handling users
+gem 'devise'
+
+gem 'will_paginate'
+gem 'friendly_id'
+
+gem 'russian'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -61,7 +81,7 @@ group :development do
   gem 'capistrano-figaro-yml'
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console', '>= 3.3.0'
-  gem 'listen', '>= 3.0.5', '< 3.2'
+
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'

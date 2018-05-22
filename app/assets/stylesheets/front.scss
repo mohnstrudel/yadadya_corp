@@ -4,6 +4,8 @@
 *= require_tree ../../../app/assets/stylesheets/front/.
 *= require normalize.css/normalize
 
+*= require_tree ../../../vendor/assets/stylesheets/front/.
+
 */
 
 @media screen and (max-width: 720px){

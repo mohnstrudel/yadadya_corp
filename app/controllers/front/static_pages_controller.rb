@@ -1,4 +1,5 @@
 class Front::StaticPagesController < FrontController
+
   
   before_action :set_page_loading_time
 
@@ -16,9 +17,6 @@ class Front::StaticPagesController < FrontController
   end
 
   def projects
-  end
-
-  def services
   end
 
   private
