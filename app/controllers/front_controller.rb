@@ -8,6 +8,8 @@ class FrontController < ApplicationController
   def redirect_if_old
     if request.host == 'yadadya.com'
       redirect_to "#{request.protocol}atomic-digital.ru#{request.fullpath}", :status => :moved_permanently 
+    elsif request.host == 'www.yadadya.com'
+      redirect_to "#{request.protocol}atomic-digital.ru#{request.fullpath}", :status => :moved_permanently 
     end
   end
 end
