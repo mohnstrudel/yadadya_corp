@@ -5,11 +5,8 @@
 //= require_tree ../../../vendor/assets/javascripts/front/.
 
 
-//=require front/main
+//=require front/common
 //=require front/social
-
-
-
 
 // RAILS SCRIPTS
 //= require rails-ujs

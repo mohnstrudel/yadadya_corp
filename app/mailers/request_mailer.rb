@@ -1,5 +1,5 @@
 class RequestMailer < ApplicationMailer
-  default from: 'Заявка на сайте <form@atomic-digital.ru>'
+  default from: 'Заявка на сайте <form@yadadya.com>'
   layout 'mailer'
 
   def notify_admin(request)
@@ -8,6 +8,6 @@ class RequestMailer < ApplicationMailer
       filename = attach.file.filename
       attachments[filename] = File.read(attach.path)
     end
-    mail to: "info@atomic-digital.ru, dima@atomic-digital.ru", subject: "Новая заявка на сайте atomic-digital.ru"
+    mail to: "info@yadadya.com, dima@yadadya.com", subject: "Новая заявка на сайте yadadya.com"
   end
 end

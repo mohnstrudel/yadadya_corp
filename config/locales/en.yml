@@ -31,16 +31,3 @@
 
 en:
   hello: "Hello world"
-
-  admin:
-    navigation:
-      posts:
-        main: Blog
-        all_posts: All Posts
-        new_post: New Post
-        post_categories: Post Categories
-      users:
-        main: Users
-    form:
-      actions:
-        save: Save
