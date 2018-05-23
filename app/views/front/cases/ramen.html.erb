@@ -17,14 +17,14 @@
       
       <div class="section__body project__body project__body_size_m">
         <div class="project__preview">
-          <img class="project__preview-img" src="<%= asset_path 'projects/ramensky/preview.png'%>" alt="ramensky">
+          <img class="project__preview-img" src="<%= asset_path 'projects/ramensky/preview.png' %>" alt="ramensky">
         </div>
       </div>
       
       <div class="section__footer project__footer">
         <div class="project__plus-col plus-col">
           <div class="plus-col__list">
-            <div class="plus-col__item">
+            <div class="plus-col__item js-animation js-animation_fadeInLeft" data-animation-delay="0">
               <div class="plus-col__body">
                 <div class="plus-col__title heading heading_type_h4">
                   3 млрд рублей
@@ -35,7 +35,7 @@
                 </div>
               </div>
             </div>
-            <div class="plus-col__item">
+            <div class="plus-col__item js-animation js-animation_fadeInLeft" data-animation-delay="200ms">
               <div class="plus-col__body">
                 <div class="plus-col__title heading heading_type_h4">
                   45&nbsp;+
@@ -46,7 +46,7 @@
                 </div>
               </div>
             </div>
-            <div class="plus-col__item">
+            <div class="plus-col__item js-animation js-animation_fadeInLeft" data-animation-delay="400ms">
               <div class="plus-col__body">
                 <div class="plus-col__title heading heading_type_h4">
                   400
@@ -72,13 +72,13 @@
       </div>
       
       <div class="section__body project-issue__body project-issue__body_size_m">
-        <div class="project-issue__grid-icon">
+        <div class="project-issue__grid-icon js-animation js-animation_fadeInUp" data-animation-delay="0">
           <div class="project-issue__grid-icon-icon">
             <div class="project-issue__icon project-issue__icon_ramensky">
               <div class="project-issue__icon-wrp">
-                <img src="<%= asset_path 'projects/ramensky/issue/bg.svg'%>" alt="ramensky" class="project-issue__icon-bg layer" data-depth="0.40">
-                <img src="<%= asset_path 'projects/ramensky/issue/icon2.svg'%>" alt="ramensky" class="project-issue__icon-icon2 layer" data-depth="0.60">
-                <img src="<%= asset_path 'projects/ramensky/issue/icon.svg'%>" alt="ramensky" class="project-issue__icon-icon layer" data-depth="0.80">
+                <img src="<%= asset_path 'projects/ramensky/issue/bg.svg' %>" alt="ramensky" class="project-issue__icon-bg layer" data-depth="0.40">
+                <img src="<%= asset_path 'projects/ramensky/issue/icon2.svg' %>" alt="ramensky" class="project-issue__icon-icon2 layer" data-depth="0.60">
+                <img src="<%= asset_path 'projects/ramensky/issue/icon.svg' %>" alt="ramensky" class="project-issue__icon-icon layer" data-depth="0.80">
               </div>
             </div>
           </div>
@@ -103,7 +103,7 @@
       <div class="section__body project-goal__body project-goal__body_size_m">
         <div class="project-goal__arrow-col arrow-col">
           <div class="arrow-col__list">
-            <div class="arrow-col__item">
+            <div class="arrow-col__item js-animation js-animation_fadeInLeft" data-animation-delay="300ms">
               <div class="arrow-col__icon">
                 <svg>
                   <use xlink:href="#ic-arrow-col"></use>
@@ -115,7 +115,7 @@
                 </div>
               </div>
             </div>
-            <div class="arrow-col__item">
+            <div class="arrow-col__item js-animation js-animation_fadeInLeft" data-animation-delay="0">
               <div class="arrow-col__icon">
                 <svg>
                   <use xlink:href="#ic-arrow-col"></use>
@@ -143,50 +143,48 @@
       </div>
       
       <div class="section__body project-task__body">
-        <div class="project-task__icon-col icon-col icon-col_wide js-slider-icon-col">
+        <div class="project-task__icon-col icon-col icon-col_wide">
           <div class="icon-col__list icon-col__list_grid-three">
-            <div class="icon-col__item project-task__item">
+            <div class="icon-col__item project-task__item js-animation js-animation_fadeInLeft" data-animation-delay="200ms">
               <div class="icon-col__img-wrp js-tilter">
-                <img src="<%= asset_path 'projects/ramensky/task/1.svg'%>" alt="ramensky" class="icon-col__img tilter__figure">
-                <img src="<%= asset_path 'projects/ramensky/task/1_1.svg'%>" alt="ramensky" class="icon-col__icons tilter__deco--lines">
-                <img src="<%= asset_path 'projects/ramensky/task/1_bg.svg'%>" alt="ramensky" class="icon-col__bg">
+                <img src="<%= asset_path 'projects/ramensky/task/1.svg' %>" alt="ramensky" class="icon-col__img tilter__figure">
+                <img src="<%= asset_path 'projects/ramensky/task/1_1.svg' %>" alt="ramensky" class="icon-col__icons tilter__deco--lines">
+                <img src="<%= asset_path 'projects/ramensky/task/1_bg.svg' %>" alt="ramensky" class="icon-col__bg">
               </div>
               
               <div class="icon-col__text">
                 <div class="icon-col__caption caption caption_size_g">
-                  Разработать <nobr>ERP-систему</nobr> для автоматизации розничной торговли
+                  Разработать <nobr>ERP-систему</nobr> <br class="xs-show"/>для автоматизации розничной торговли
                 </div>
               </div>
             </div>
-            <div class="icon-col__item project-task__item">
+            <div class="icon-col__item project-task__item js-animation js-animation_fadeInDown" data-animation-delay="0">
               <div class="icon-col__img-wrp js-tilter">
-                <img src="<%= asset_path 'projects/ramensky/task/2.svg'%>" alt="ramensky" class="icon-col__img tilter__figure">
-                <img src="<%= asset_path 'projects/ramensky/task/2_1.svg'%>" alt="ramensky" class="icon-col__icons tilter__deco--lines">
-                <img src="<%= asset_path 'projects/ramensky/task/2_bg.svg'%>" alt="ramensky" class="icon-col__bg">
+                <img src="<%= asset_path 'projects/ramensky/task/2.svg' %>" alt="ramensky" class="icon-col__img tilter__figure">
+                <img src="<%= asset_path 'projects/ramensky/task/2_1.svg' %>" alt="ramensky" class="icon-col__icons tilter__deco--lines">
+                <img src="<%= asset_path 'projects/ramensky/task/2_bg.svg' %>" alt="ramensky" class="icon-col__bg">
               </div>
               
               <div class="icon-col__text">
                 <div class="icon-col__caption caption caption_size_g">
-                  Внедрить безопасное решение для касс (без выхода в&nbsp;интернет)
+                  Внедрить безопасное решение <br class="xs-show" />для касс (без выхода в&nbsp;интернет)
                 </div>
               </div>
             </div>
-            <div class="icon-col__item project-task__item">
+            <div class="icon-col__item project-task__item js-animation js-animation_fadeInRight" data-animation-delay="200ms">
               <div class="icon-col__img-wrp js-tilter">
-                <img src="<%= asset_path 'projects/ramensky/task/3.svg'%>" alt="ramensky" class="icon-col__img tilter__figure">
-                <img src="<%= asset_path 'projects/ramensky/task/3_1.svg'%>" alt="ramensky" class="icon-col__icons tilter__deco--lines">
-                <img src="<%= asset_path 'projects/ramensky/task/3_bg.svg'%>" alt="ramensky" class="icon-col__bg">
+                <img src="<%= asset_path 'projects/ramensky/task/3.svg' %>" alt="ramensky" class="icon-col__img tilter__figure">
+                <img src="<%= asset_path 'projects/ramensky/task/3_1.svg' %>" alt="ramensky" class="icon-col__icons tilter__deco--lines">
+                <img src="<%= asset_path 'projects/ramensky/task/3_bg.svg' %>" alt="ramensky" class="icon-col__bg">
               </div>
               
               <div class="icon-col__text">
                 <div class="icon-col__caption caption caption_size_g">
-                  Интегрировать продукт с&nbsp;бухгалтерской системой комбината
+                  Интегрировать продукт <br class="xs-show" />с&nbsp;бухгалтерской системой комбината
                 </div>
               </div>
             </div>
           </div>
-          
-          <div class="icon-col__dots js-slider-icon-col-dots"></div>
         </div>
       </div>
     </div>
@@ -196,19 +194,18 @@
     <div class="section__wrp project-why__wrp">
       <div class="section__header section__header_compensate project-why__header">
         <h2 class="section__heading project-why__heading heading heading_type_h2">
-          <!-- <span class="section__heading-text">Почему клиент выбрал Я<span class="accent">.</span>Creations?</span> -->
-          <span class="section__heading-text">Почему клиент выбрал Atomic?</span>
+          <span class="section__heading-text">Почему клиент выбрал <br class="sm-show"/>Я<span class="accent">.</span>Creations?</span>
         </h2>
       </div>
       
       <div class="section__body project-why__body project-why__body_size_s">
-        <div class="project-why__grid project-why__grid_start">
+        <div class="project-why__grid project-why__grid_start js-animation js-animation_fadeInUp" data-animation-delay="0">
           <div class="project-why__grid-img">
             <div class="project-why__img project-why__img_ramensky">
               <div class="project-why__img-wrp">
-                <img src="<%= asset_path 'projects/ramensky/why/bg.svg'%>" alt="ramensky" class="project-why__img-bg layer" data-depth="0.40">
-                <img src="<%= asset_path 'projects/ramensky/why/icon2.svg'%>" alt="ramensky" class="project-why__img-icon2 layer" data-depth="0.60">
-                <img src="<%= asset_path 'projects/ramensky/why/icon.svg'%>" alt="ramensky" class="project-why__img-icon layer" data-depth="0.80">
+                <img src="<%= asset_path 'projects/ramensky/why/bg.svg' %>" alt="ramensky" class="project-why__img-bg layer" data-depth="0.40">
+                <img src="<%= asset_path 'projects/ramensky/why/icon2.svg' %>" alt="ramensky" class="project-why__img-icon2 layer" data-depth="0.60">
+                <img src="<%= asset_path 'projects/ramensky/why/icon.svg' %>" alt="ramensky" class="project-why__img-icon layer" data-depth="0.80">
               </div>
             </div>
           </div>
@@ -223,7 +220,7 @@
   </section>
   
   <section class="section section_pad_large project-time">
-    <div class="section__wrp project-goal__wrp">
+    <div class="section__wrp project-time__wrp">
       <div class="section__header section__header_compensate project-time__header">
         <h2 class="section__heading heading heading_type_h2 project-time__heading">
           <span class="section__heading-text">Сроки</span>
@@ -233,14 +230,14 @@
       <div class="section__body project-time__body">
         <div class="project-time__box-row box-row">
           <div class="box-row__list">
-            <div class="box-row__item">
+            <div class="box-row__item js-animation js-animation_fadeInUp" data-animation-delay="0">
               <div class="box-row__caption caption caption_size_g">
                 Разработка и&nbsp;запуск первой версии:<br />
                 <span>Март&nbsp;&mdash; август 2015 года</span>
               </div>
             </div>
-            <span class="box-row__sep"></span>
-            <div class="box-row__item">
+            <span class="box-row__sep js-animation js-animation_fadeInUp" data-animation-delay="200ms"></span>
+            <div class="box-row__item js-animation js-animation_fadeInUp" data-animation-delay="400ms">
               <div class="box-row__caption caption caption_size_g">
                 Развитие и&nbsp;поддержка продукта:<br />
                 <span>Август 2015&nbsp;&mdash; настоящее время</span>
@@ -262,10 +259,10 @@
       
       <div class="section__body project-decision__body">
         <div class="project-decision__grid">
-          <div class="project-decision__grid-img">
+          <div class="project-decision__grid-img js-animation js-animation_bounceInLong" data-animation-delay="0">
             <div class="project-decision__img">
               <div class="project-decision__img-wrp js-tilter">
-                <img class="tilter__figure" src="<%= asset_path 'projects/ramensky/decision/img.png'%>" alt="ramensky">
+                <img class="tilter__figure" src="<%= asset_path 'projects/ramensky/decision/img.png' %>" alt="ramensky">
               </div>
               
               <div class="project-decision__caption caption caption_size_l">
@@ -275,17 +272,17 @@
             </div>
           </div>
           <div class="project-decision__grid-box">
-            <div class="project-decision__grid-title">
+            <div class="project-decision__grid-title js-animation js-animation_fadeInUp" data-animation-delay="400ms">
               Преимущества
             </div>
             
-            <div class="firm-promo__icon-row icon-row icon-row_clear">
+            <div class="project-decision__icon-row icon-row icon-row_clear">
               <div class="icon-row__list">
-                <div class="icon-row__item project-decision__item">
+                <div class="icon-row__item project-decision__item js-animation js-animation_fadeInUp" data-animation-delay="400ms">
                   <div class="icon-row__img-wrp js-tilter">
-                    <img src="<%= asset_path 'projects/ramensky/decision/1.svg'%>" alt="ramensky" class="icon-row__img tilter__figure">
-                    <img src="<%= asset_path 'projects/ramensky/decision/1_1.svg'%>" alt="ramensky" class="icon-row__icons tilter__deco--lines">
-                    <img src="<%= asset_path 'projects/ramensky/decision/1_bg.svg'%>" alt="ramensky" class="icon-row__bg">
+                    <img src="<%= asset_path 'projects/ramensky/decision/1.svg' %>" alt="ramensky" class="icon-row__img tilter__figure">
+                    <img src="<%= asset_path 'projects/ramensky/decision/1_1.svg' %>" alt="ramensky" class="icon-row__icons tilter__deco--lines">
+                    <img src="<%= asset_path 'projects/ramensky/decision/1_bg.svg' %>" alt="ramensky" class="icon-row__bg">
                   </div>
                   
                   <div class="icon-row__text">
@@ -295,11 +292,11 @@
                     </div>
                   </div>
                 </div>
-                <div class="icon-row__item project-decision__item">
+                <div class="icon-row__item project-decision__item js-animation js-animation_fadeInUp" data-animation-delay="400ms">
                   <div class="icon-row__img-wrp js-tilter">
-                    <img src="<%= asset_path 'projects/ramensky/decision/2.svg'%>" alt="ramensky" class="icon-row__img tilter__figure">
-                    <img src="<%= asset_path 'projects/ramensky/decision/2_1.svg'%>" alt="ramensky" class="icon-row__icons tilter__deco--lines">
-                    <img src="<%= asset_path 'projects/ramensky/decision/2_bg.svg'%>" alt="ramensky" class="icon-row__bg">
+                    <img src="<%= asset_path 'projects/ramensky/decision/2.svg' %>" alt="ramensky" class="icon-row__img tilter__figure">
+                    <img src="<%= asset_path 'projects/ramensky/decision/2_1.svg' %>" alt="ramensky" class="icon-row__icons tilter__deco--lines">
+                    <img src="<%= asset_path 'projects/ramensky/decision/2_bg.svg' %>" alt="ramensky" class="icon-row__bg">
                   </div>
                   
                   <div class="icon-row__text">
@@ -308,11 +305,11 @@
                     </div>
                   </div>
                 </div>
-                <div class="icon-row__item project-decision__item">
+                <div class="icon-row__item project-decision__item js-animation js-animation_fadeInUp" data-animation-delay="400ms">
                   <div class="icon-row__img-wrp js-tilter">
-                    <img src="<%= asset_path 'projects/ramensky/decision/3.svg'%>" alt="ramensky" class="icon-row__img tilter__figure">
-                    <img src="<%= asset_path 'projects/ramensky/decision/3_1.svg'%>" alt="ramensky" class="icon-row__icons tilter__deco--lines">
-                    <img src="<%= asset_path 'projects/ramensky/decision/3_bg.svg'%>" alt="ramensky" class="icon-row__bg">
+                    <img src="<%= asset_path 'projects/ramensky/decision/3.svg' %>" alt="ramensky" class="icon-row__img tilter__figure">
+                    <img src="<%= asset_path 'projects/ramensky/decision/3_1.svg' %>" alt="ramensky" class="icon-row__icons tilter__deco--lines">
+                    <img src="<%= asset_path 'projects/ramensky/decision/3_bg.svg' %>" alt="ramensky" class="icon-row__bg">
                   </div>
                   
                   <div class="icon-row__text">
@@ -350,7 +347,7 @@
               <span class="line-row__dot"></span>
               <div class="line-row__text">
                 <div class="line-row__caption caption caption_size_g">
-                  Формирование поставок для магазинов на&nbsp;комбинате
+                  Формирование поставок для <br class="xs-show"/>магазинов на&nbsp;комбинате
                 </div>
               </div>
             </div>
@@ -358,7 +355,7 @@
               <span class="line-row__dot"></span>
               <div class="line-row__text">
                 <div class="line-row__caption caption caption_size_g">
-                  Прием продукции работником торговой точки
+                  Прием продукции работником <br class="xs-show"/>торговой точки
                 </div>
               </div>
             </div>
@@ -382,7 +379,7 @@
               <span class="line-row__dot"></span>
               <div class="line-row__text">
                 <div class="line-row__caption caption caption_size_g">
-                  Контроль расхода продуктов на&nbsp;производстве <br class="xs-hide"/>
+                  Контроль расхода продуктов на <br class="xs-show"/>производстве <br class="xs-hide"/>
                   в&nbsp;розничных магазинах.
                 </div>
               </div>
@@ -403,39 +400,39 @@
       
       <div class="section__body project-prop__body">
         <div class="project-prop__grid">
-          <div class="project-prop__grid-img">
+          <div class="project-prop__grid-img js-animation js-animation_fadeInLeft" data-animation-delay="0">
             <div class="project-prop__img">
-              <img src="<%= asset_path 'projects/ramensky/prop/img.jpg'%>" alt="ramensky">
+              <img src="<%= asset_path 'projects/ramensky/prop/img.jpg' %>" alt="ramensky">
             </div>
           </div>
           <div class="project-prop__grid-box">
             <ul class="project-prop__dot-list dot-list dot-list_dot_large">
-              <li class="dot-list__item">
+              <li class="dot-list__item js-animation js-animation_fadeInRight" data-animation-delay="0">
                 <div class="dot-list__caption">
                   Единая база товаров для всех магазинов (более 80 тыс. позиций на&nbsp;2017 год)
                 </div>
               </li>
-              <li class="dot-list__item">
+              <li class="dot-list__item js-animation js-animation_fadeInRight" data-animation-delay="100ms">
                 <div class="dot-list__caption">
                   Можно менять цены при оприходовании товара для соответствия закупочным ценам
                 </div>
               </li>
-              <li class="dot-list__item">
+              <li class="dot-list__item js-animation js-animation_fadeInRight" data-animation-delay="200ms">
                 <div class="dot-list__caption">
                   Магазины могут создавать собственные товары, которые будут видны только им
                 </div>
               </li>
-              <li class="dot-list__item">
+              <li class="dot-list__item js-animation js-animation_fadeInRight" data-animation-delay="300ms">
                 <div class="dot-list__caption">
                   Возможность создавать <nobr>прайс-листы</nobr> со&nbsp;спец. предложениями (акции, скидки <nobr>и т. д.</nobr>)
                 </div>
               </li>
-              <li class="dot-list__item">
+              <li class="dot-list__item js-animation js-animation_fadeInRight" data-animation-delay="400ms">
                 <div class="dot-list__caption">
                   В карточке товара отображается вся статистика изменения его стоимости
                 </div>
               </li>
-              <li class="dot-list__item">
+              <li class="dot-list__item js-animation js-animation_fadeInRight" data-animation-delay="500ms">
                 <div class="dot-list__caption">
                   Два вида инвентаризации: для синхронизации базы и&nbsp;для сверки количества товаров
                 </div>
@@ -457,7 +454,7 @@
       
       <div class="section__body project-solution__body">
         <div class="project-solution__block-list">
-          <div class="project-solution__block">
+          <div class="project-solution__block js-animation js-animation_fadeInUp" data-animation-delay="0">
             <div class="project-solution__block-title">
               Электронный документооборот сокращает трудозатраты
             </div>
@@ -467,7 +464,7 @@
             </div>
           </div>
           
-          <div class="project-solution__block">
+          <div class="project-solution__block js-animation js-animation_fadeInUp" data-animation-delay="0">
             <div class="project-solution__block-title">
               Автоматизация производства позволяет контролировать расход&nbsp;продуктов
             </div>
@@ -477,7 +474,7 @@
             </div>
           </div>
           
-          <div class="project-solution__block">
+          <div class="project-solution__block js-animation js-animation_fadeInUp" data-animation-delay="0">
             <div class="project-solution__block-title">
               Учет товаров исключает ошибки и&nbsp;воровство
             </div>
@@ -487,13 +484,13 @@
             </div>
             
             <div class="project-solution__block-img project-solution__block-img_margin_large">
-              <img src="<%= asset_path 'projects/ramensky/solution/1.jpg'%>" alt="ramensky">
+              <img src="<%= asset_path 'projects/ramensky/solution/1.jpg' %>" alt="ramensky">
             </div>
           </div>
           
-          <div class="project-solution__block">
+          <div class="project-solution__block js-animation js-animation_fadeInUp" data-animation-delay="0">
             <div class="project-solution__block-cols">
-              <div class="project-solution__block-cols-item">
+              <div class="project-solution__block-cols-item js-animation js-animation_fadeInLeft" data-animation-delay="100ms">
                 <div class="project-solution__block-cols-title">
                   До автоматизации
                 </div>
@@ -507,7 +504,7 @@
                 </div>
               </div>
               
-              <div class="project-solution__block-cols-item">
+              <div class="project-solution__block-cols-item js-animation js-animation_fadeInRight" data-animation-delay="100ms">
                 <div class="project-solution__block-cols-title">
                   После внедрения ERP
                 </div>
@@ -517,7 +514,7 @@
                 </div>
                 
                 <div class="project-solution__block-cols-caption project-solution__block-cols-caption_center">
-                  <span>Вся работа занимает <br />несколько минут.</span>
+                  <span>Вся работа занимает <br class="xs-hide"/>несколько минут.</span>
                 </div>
               </div>
             </div>
@@ -537,7 +534,7 @@
       
       <div class="section__body project-feature__body">
         <div class="project-feature__list">
-          <div class="project-feature__item">
+          <div class="project-feature__item js-animation js-animation_fadeInLeft" data-animation-delay="0">
             <h3 class="project-feature__item-heading heading heading_type_h5-s">
               Работа без&nbsp;сбоев
             </h3>
@@ -546,7 +543,7 @@
               Для проверки работы функционала <nobr>ERP-системы</nobr> было написано более 500 тестов. Чтобы сократить трудозатраты на&nbsp;их&nbsp;создание, мы&nbsp;отказались от&nbsp;тестирования через PHPUnit в&nbsp;пользу Codeception (полноценное функциональное тестирование с&nbsp;возможностью создавать тесты в&nbsp;более понятной форме).
             </div>
           </div>
-          <div class="project-feature__item">
+          <div class="project-feature__item js-animation js-animation_fadeInLeft" data-animation-delay="200ms">
             <h3 class="project-feature__item-heading heading heading_type_h5-s">
               Подробное описание
             </h3>
@@ -555,7 +552,7 @@
               Весь функционал проекта описывается в&nbsp;документации (ее&nbsp;создание также автоматизировано для ускорения процесса). Для клиента это означает отсутствие организационных и&nbsp;финансовых проблем при вводе новых исполнителей или смене подрядчика по&nbsp;доработке и&nbsp;развитию проекта.
             </div>
           </div>
-          <div class="project-feature__item">
+          <div class="project-feature__item js-animation js-animation_fadeInLeft" data-animation-delay="400ms">
             <h3 class="project-feature__item-heading heading heading_type_h5-s">
               &laquo;Облачная&raquo; система
             </h3>
@@ -564,23 +561,23 @@
               Разработанное решение практически полностью работает онлайн. Для управления магазином достаточно ввести в&nbsp;браузере адрес системы и&nbsp;авторизоваться в&nbsp;личном кабинете.
             </div>
           </div>
-          <div class="project-feature__item">
+          <div class="project-feature__item js-animation js-animation_fadeInLeft" data-animation-delay="600ms">
             <h3 class="project-feature__item-heading heading heading_type_h5-s">
               Безопасное решение для&nbsp;касс
             </h3>
             
             <div class="project-feature__item-gallery project-feature__gallery">
-              <div class="project-feature__gallery-col project-feature__gallery-col_large">
+              <div class="project-feature__gallery-col project-feature__gallery-col_large js-animation js-animation_fadeInLeft" data-animation-delay="0">
                 <div class="project-feature__gallery-item">
-                  <img src="<%= asset_path 'projects/ramensky/feature/1.jpg'%>" alt="ramensky">
+                  <img src="<%= asset_path 'projects/ramensky/feature/1.jpg' %>" alt="ramensky">
                 </div>
               </div>
               <div class="project-feature__gallery-col">
-                <div class="project-feature__gallery-item">
-                  <img src="<%= asset_path 'projects/ramensky/feature/2.jpg'%>" alt="ramensky">
+                <div class="project-feature__gallery-item js-animation js-animation_fadeInLeft" data-animation-delay="200ms">
+                  <img src="<%= asset_path 'projects/ramensky/feature/2.jpg' %>" alt="ramensky">
                 </div>
                 <div class="project-feature__gallery-item">
-                  <img src="<%= asset_path 'projects/ramensky/feature/3.jpg'%>" alt="ramensky">
+                  <img src="<%= asset_path 'projects/ramensky/feature/3.jpg' %>" alt="ramensky">
                 </div>
               </div>
             </div>
@@ -589,10 +586,10 @@
               Управлять кассами непосредственно из&nbsp;веба нельзя <nobr>из-за</nobr> угрозы хакерских атак. Поэтому мы&nbsp;разработали специальный драйвер для взаимодействия с&nbsp;денежным ящиком, сканером <nobr>штрих-кодов</nobr> и&nbsp;фискальным регистратором без выхода в&nbsp;интернет.
             </div>
             
-            <div class="project-feature__item-promo project-feature__promo">
+            <div class="project-feature__item-promo project-feature__promo js-animation js-animation_bounceInLong" data-animation-delay="100ms">
               <div class="project-feature__promo-wrp">
                 <div class="project-feature__promo-img js-tilter">
-                  <img class="tilter__figure" src="<%= asset_path 'projects/ramensky/feature/bitrix.svg'%>" alt="bitrix">
+                  <img class="tilter__figure" src="<%= asset_path 'projects/ramensky/feature/bitrix.svg' %>" alt="bitrix">
                 </div>
                 
                 <div class="project-feature__promo-text">
@@ -603,7 +600,7 @@
               </div>
             </div>
           </div>
-          <div class="project-feature__item">
+          <div class="project-feature__item js-animation js-animation_fadeInLeft" data-animation-delay="400ms">
             <h3 class="project-feature__item-heading heading heading_type_h5-s">
               Быстродействие при работе с&nbsp;кассой
             </h3>
@@ -612,7 +609,7 @@
               При работе с&nbsp;кассой через браузер могут возникнуть задержки, что будет создавать большие неудобства при большом потоке покупателей. По&nbsp;этой причине мы&nbsp;реализовали для кассиров Раменского возможность пробивать продукты в&nbsp;стороннем <nobr>офлайн-приложении</nobr> &laquo;ДЭНСИ: КАССА&raquo;.
             </div>
           </div>
-          <div class="project-feature__item">
+          <div class="project-feature__item js-animation js-animation_fadeInLeft" data-animation-delay="400ms">
             <h3 class="project-feature__item-heading heading heading_type_h5-s">
               Совместимость с&nbsp;ЕГАИС
             </h3>
@@ -637,32 +634,32 @@
       <div class="section__body project-result__body">
         <div class="project-result__check-list check-list check-list_three">
           <ul class="check-list__list">
-            <li class="check-list__item">
+            <li class="check-list__item js-animation js-animation_bounceInLong" data-animation-delay="0">
               <div class="check-list__caption">
                 Бумажный документооборот в&nbsp;сети комбината был полностью заменен на&nbsp;электронный
               </div>
             </li>
-            <li class="check-list__item">
+            <li class="check-list__item js-animation js-animation_bounceInLong" data-animation-delay="300ms">
               <div class="check-list__caption">
                 Учет товарных запасов позволил оптимизировать поставки, что увеличило оборот
               </div>
             </li>
-            <li class="check-list__item">
+            <li class="check-list__item js-animation js-animation_bounceInLong" data-animation-delay="600ms">
               <div class="check-list__caption">
                 Значительное сокращение <br />трудозатрат помогло повысить рентабельность бизнеса
               </div>
             </li>
-            <li class="check-list__item">
+            <li class="check-list__item js-animation js-animation_bounceInLong" data-animation-delay="900ms">
               <div class="check-list__caption">
                 Рост чистой прибыли составил 15%
               </div>
             </li>
-            <li class="check-list__item">
+            <li class="check-list__item js-animation js-animation_bounceInLong" data-animation-delay="1200ms">
               <div class="check-list__caption">
                 Выручка розничных магазинов выросла&nbsp;на&nbsp;17%
               </div>
             </li>
-            <li class="check-list__item">
+            <li class="check-list__item js-animation js-animation_bounceInLong" data-animation-delay="1500ms">
               <div class="check-list__caption">
                 Штат сотрудников сократился на&nbsp;25%
               </div>
@@ -683,20 +680,20 @@
       
       <div class="section__body project-review__body">
         <div class="project-review__grid">
-          <div class="project-review__grid-img">
+          <div class="project-review__grid-img js-animation js-animation_bounceIn" data-animation-delay="100ms">
             <div class="project-review__img js-tilter">
-              <img src="<%= asset_path 'leadership/ramen_roman.jpg' %>" class="project-review__photo project-review__photo_smaller tilter__figure">
+              <img src="<%= asset_path 'leadership/dima.png' %>" class="project-review__photo project-review__photo_smaller tilter__figure">
             </div>
           </div>
           
-          <div class="project-review__grid-review">
+          <div class="project-review__grid-review js-animation js-animation_fadeInRight" data-animation-delay="300ms">
             <div class="project-review__review">
               <div class="project-review__review-title heading heading_type_h6">
                 Роман Баер
               </div>
               
               <div class="project-review__review-subhead caption caption_size_s">
-                Исполнительный директор &laquo;Раменского мясокомбината&raquo;
+                Исполнительный директор <br class="xs-show"/>&laquo;Раменского мясокомбината&raquo;
               </div>
               
               <div class="project-review__review-caption caption caption_size_g">
@@ -708,18 +705,18 @@
         
         <div class="project-review__grid">
           <div class="project-review__grid-profile">
-            <div class="project-review__profile">
+            <div class="project-review__profile js-animation js-animation_bounceIn" data-animation-delay="300ms">
               <div class="project-review__profile-title heading heading_type_h6">
                 Антон Костин
               </div>
               
               <div class="project-review__profile-subhead caption caption_size_s">
-                Руководитель разработки <br />Atomic.
+                Руководитель разработки <br class="xs-hide"/>Atomic
               </div>
             </div>
           </div>
           
-          <div class="project-review__grid-text">
+          <div class="project-review__grid-text js-animation js-animation_fadeInRight" data-animation-delay="500ms">
             <div class="project-review__text">
               <div class="project-review__text-caption caption caption_size_g">
                 &laquo;Внедренная <nobr>ERP-система</nobr> полностью автоматизирует процессы розничной торговли, магазинам больше не&nbsp;надо тратить по&nbsp;несколько часов на&nbsp;оприходование товара и&nbsp;оформление документов. Процессы стали не&nbsp;только быстрее, но&nbsp;и&nbsp;прозрачнее для контроля со&nbsp;стороны руководства комбината.
@@ -738,7 +735,7 @@
   <section class="section section_pad_large project-screen">
     <div class="section__wrp project-screen__wrp">
       <div class="section__header section__header_compensate project-screen__header">
-        <h2 class="section__heading heading heading_type_h2">
+        <h2 class="section__heading project-screen__heading heading heading_type_h2">
           <span class="section__heading-text">
             Экраны проекта
           </span>
@@ -781,70 +778,72 @@
           </div>
         </div>
         
-        <div class="project-screen__slider swiper-container js-slider-project-screen">
+        <div class="project-screen__slider swiper-container js-slider-project-screen js-animation js-animation_fadeInUp" data-animation-delay="200s">
           <div class="project-screen__slider-wrapper swiper-wrapper">
             <div class="project-screen__slide swiper-slide">
               <div class="project-screen__slide-wrp">
-                <img src="<%= asset_path 'projects/ramensky/screen/1.jpg'%>" alt="ramensky">
+                <img src="<%= asset_path 'projects/ramensky/screen/1.jpg' %>" alt="ramensky">
               </div>
             </div>
             <div class="project-screen__slide swiper-slide">
               <div class="project-screen__slide-wrp">
-                <img src="<%= asset_path 'projects/ramensky/screen/2.jpg'%>" alt="ramensky">
+                <img src="<%= asset_path 'projects/ramensky/screen/2.jpg' %>" alt="ramensky">
               </div>
             </div>
             <div class="project-screen__slide swiper-slide">
               <div class="project-screen__slide-wrp">
-                <img src="<%= asset_path 'projects/ramensky/screen/3.jpg'%>" alt="ramensky">
+                <img src="<%= asset_path 'projects/ramensky/screen/3.jpg' %>" alt="ramensky">
               </div>
             </div>
             <div class="project-screen__slide swiper-slide">
               <div class="project-screen__slide-wrp">
-                <img src="<%= asset_path 'projects/ramensky/screen/1.jpg'%>" alt="ramensky">
+                <img src="<%= asset_path 'projects/ramensky/screen/1.jpg' %>" alt="ramensky">
               </div>
             </div>
             <div class="project-screen__slide swiper-slide">
               <div class="project-screen__slide-wrp">
-                <img src="<%= asset_path 'projects/ramensky/screen/2.jpg'%>" alt="ramensky">
+                <img src="<%= asset_path 'projects/ramensky/screen/2.jpg' %>" alt="ramensky">
               </div>
             </div>
             <div class="project-screen__slide swiper-slide">
               <div class="project-screen__slide-wrp">
-                <img src="<%= asset_path 'projects/ramensky/screen/3.jpg'%>" alt="ramensky">
+                <img src="<%= asset_path 'projects/ramensky/screen/3.jpg' %>" alt="ramensky">
               </div>
             </div>
             <div class="project-screen__slide swiper-slide">
               <div class="project-screen__slide-wrp">
-                <img src="<%= asset_path 'projects/ramensky/screen/1.jpg'%>" alt="ramensky">
+                <img src="<%= asset_path 'projects/ramensky/screen/1.jpg' %>" alt="ramensky">
               </div>
             </div>
             <div class="project-screen__slide swiper-slide">
               <div class="project-screen__slide-wrp">
-                <img src="<%= asset_path 'projects/ramensky/screen/2.jpg'%>" alt="ramensky">
+                <img src="<%= asset_path 'projects/ramensky/screen/2.jpg' %>" alt="ramensky">
               </div>
             </div>
             <div class="project-screen__slide swiper-slide">
               <div class="project-screen__slide-wrp">
-                <img src="<%= asset_path 'projects/ramensky/screen/3.jpg'%>" alt="ramensky">
+                <img src="<%= asset_path 'projects/ramensky/screen/3.jpg' %>" alt="ramensky">
               </div>
             </div>
             <div class="project-screen__slide swiper-slide">
               <div class="project-screen__slide-wrp">
-                <img src="<%= asset_path 'projects/ramensky/screen/2.jpg'%>" alt="ramensky">
+                <img src="<%= asset_path 'projects/ramensky/screen/2.jpg' %>" alt="ramensky">
               </div>
             </div>
           </div>
+          
+          <div class="project-screen__dots js-slider-project-screen-dots"></div>
         </div>
       </div>
     </div>
   </section>
   
   <section class="section green-banner green-banner_project">
-    <span class="green-banner__bg" style="background-image: url(img/projects/inpas/green.jpg);"></span>
+    <span class="green-banner__bg" style="background-image: url(<%= asset_path 'projects/inpas/green.jpg' %>);"></span>
     
     <div class="section__wrp green-banner__wrp">
       <h2 class="green-banner__heading section__heading heading heading_type_h2">
-        Нужен мощный и&nbsp;точный <nobr>digital-инструмент</nobr> для бизнеса?
+        Нужен мощный и&nbsp;точный <nobr>digital-инструмент</nobr> для&nbsp;бизнеса?
       </h2>
       
       <div class="green-banner__buttons">

@@ -44,7 +44,8 @@ var Yadadya = {
             main: "home",
             about: "about",
             contact: "contacts",
-            service: "services"
+            service: "services",
+            "case": "cases"
         }
     },
     rem: parseFloat(getComputedStyle($("html")[0]).fontSize),
@@ -149,13 +150,7 @@ var Yadadya = {
                 t = 5,
                 d = $("header").outerHeight();
             $(window).scroll(function(e) {
-                if(s = !0, $(this).scrollTop() > $(".g-header").outerHeight()){
-                    $(".g-header").addClass("g-header_fixed");
-                    $('.g-logo__background_image').attr("src","<%= asset_path 'logo-dark.svg' %>");
-                } else {
-                    $('.g-logo__background_image').attr("src","<%= asset_path 'logo-light.svg' %>");
-                    $(".g-header").removeClass("g-header_fixed");
-                }
+                s = !0, $(this).scrollTop() > $(".g-header").outerHeight() ? $(".g-header").addClass("g-header_fixed") : $(".g-header").removeClass("g-header_fixed")
             }), setInterval(function() {
                 s && (a(), s = !1)
             }, 250), document.documentElement.addEventListener("touchstart", function(e) {
@@ -369,7 +364,11 @@ Yadadya.params.$body.hasClass(Yadadya.params.pageClasses.main) ? Yadadya.resetIt
             hash: !1,
             interactive: !0
         })
-    } else Yadadya.params.$body.hasClass(Yadadya.params.pageClasses.service) && $('input[type="file"]').fileuploader({
+    } else Yadadya.params.$body.hasClass(Yadadya.params.pageClasses.service) ? $('input[type="file"]').fileuploader({
+        theme: "onebutton",
+        addMore: !0,
+        enableApi: !0
+    }) : Yadadya.params.$body.hasClass(Yadadya.params.pageClasses["case"]) && $('input[type="file"]').fileuploader({
         theme: "onebutton",
         addMore: !0,
         enableApi: !0
@@ -556,7 +555,9 @@ $(document).ready(function() {
                 spaceBetween: 20
             }
         }
-    }), new Swiper(".js-slider-project-screen", {
+    }), 0);
+    $(".js-slider-project-screen .swiper-wrapper .swiper-slide").length > 4 ? c = 2 : $(".js-slider-project-screen .swiper-wrapper .swiper-slide").length > 2 && (c = 1);
+    var m = new Swiper(".js-slider-project-screen", {
         loop: !1,
         slidesPerView: 1,
         speed: 800,
@@ -564,9 +565,20 @@ $(document).ready(function() {
         effect: "fade",
         fadeEffect: {
             crossFade: !0
+        },
+        breakpoints: {
+            767: {
+                initialSlide: c,
+                pagination: {
+                    el: ".js-slider-project-screen-dots",
+                    clickable: !0,
+                    dynamicBullets: !0,
+                    dynamicMainBullets: 5
+                }
+            }
         }
-    }));
-    c.on("slideChange", function() {
+    });
+    m.on("slideChange", function() {
         var e = +$(this)[0].realIndex + 1,
             a = $(".js-project-screen-nav"),
             s = $(".project-screen__nav-list").find('.js-project-screen-nav[data-toggle="' + e + '"]');
@@ -574,10 +586,10 @@ $(document).ready(function() {
     }), $(".js-project-screen-nav").on("click", function(e) {
         e.preventDefault();
         var a = +$(this).data("toggle") - 1;
-        c.slideTo(a)
+        m.slideTo(a)
     });
-    var m = {},
-        u = {
+    var u = {},
+        h = {
             slidesPerView: 2,
             freeMode: !1,
             loop: !0,
@@ -591,16 +603,16 @@ $(document).ready(function() {
             }
         };
     $(".js-slider-public").each(function(e) {
-        m[e] = null
+        u[e] = null
     }), $(".js-slider-public").each(function(e) {
-        $(window).width() < 768 ? null === m[e] && $(".js-slider-public").length > 0 && (m[e] = new Swiper($(".public").find(".js-slider-public").eq(e), u)) : m[e] && (m[e].destroy(), m[e] = null, $(".public__img-list").removeAttr("style"))
+        $(window).width() < 768 ? null === u[e] && $(".js-slider-public").length > 0 && (u[e] = new Swiper($(".public").find(".js-slider-public").eq(e), h)) : u[e] && (u[e].destroy(), u[e] = null, $(".public__img-list").removeAttr("style"))
     }), jQuery(window).resize(function() {
         $(".js-slider-public").each(function(e) {
-            $(window).width() < 768 ? null === m[e] && $(".js-slider-public").length > 0 && (m[e] = new Swiper($(".public").find(".js-slider-public").eq(e), u)) : m[e] && (m[e].destroy(), m[e] = null, $(".public__img-list").removeAttr("style"))
+            $(window).width() < 768 ? null === u[e] && $(".js-slider-public").length > 0 && (u[e] = new Swiper($(".public").find(".js-slider-public").eq(e), h)) : u[e] && (u[e].destroy(), u[e] = null, $(".public__img-list").removeAttr("style"))
         })
     });
-    var h = {},
-        y = {
+    var y = {},
+        g = {
             slidesPerView: 2,
             freeMode: !1,
             loop: !1,
@@ -626,18 +638,18 @@ $(document).ready(function() {
             }
         };
     $(".js-slider-icon-col").each(function(e) {
-        h[e] = null
+        y[e] = null
     }), $(".js-slider-icon-col").each(function(e) {
         var a = $(".js-slider-icon-col").eq(e);
-        $(window).width() < 1025 ? null === h[e] && $(".js-slider-icon-col").length > 0 && (y.pagination.el = a.find(".js-slider-icon-col-dots"), h[e] = new Swiper(a, y)) : h[e] && (h[e].destroy(), h[e] = null, a.find(".icon-col__list").removeAttr("style"), a.find(".icon-col__item").removeAttr("style"))
+        $(window).width() < 1025 ? null === y[e] && $(".js-slider-icon-col").length > 0 && (g.pagination.el = a.find(".js-slider-icon-col-dots"), y[e] = new Swiper(a, g)) : y[e] && (y[e].destroy(), y[e] = null, a.find(".icon-col__list").removeAttr("style"), a.find(".icon-col__item").removeAttr("style"))
     }), jQuery(window).resize(function() {
         $(".js-slider-icon-col").each(function(e) {
             var a = $(".js-slider-icon-col").eq(e);
-            $(window).width() < 1025 ? null === h[e] && $(".js-slider-icon-col").length > 0 && (y.pagination.el = a.find(".js-slider-icon-col-dots"), h[e] = new Swiper($(".js-slider-icon-col").eq(e), y)) : h[e] && (h[e].destroy(), h[e] = null, a.find(".icon-col__list").removeAttr("style"), a.find(".icon-col__item").removeAttr("style"))
+            $(window).width() < 1025 ? null === y[e] && $(".js-slider-icon-col").length > 0 && (g.pagination.el = a.find(".js-slider-icon-col-dots"), y[e] = new Swiper($(".js-slider-icon-col").eq(e), g)) : y[e] && (y[e].destroy(), y[e] = null, a.find(".icon-col__list").removeAttr("style"), a.find(".icon-col__item").removeAttr("style"))
         })
     });
-    var g = {},
-        w = {
+    var w = {},
+        f = {
             slidesPerView: 2,
             freeMode: !1,
             loop: !1,
@@ -663,14 +675,47 @@ $(document).ready(function() {
             }
         };
     $(".js-slider-num-col").each(function(e) {
-        g[e] = null
+        w[e] = null
     }), $(".js-slider-num-col").each(function(e) {
         var a = $(".js-slider-num-col").eq(e);
-        $(window).width() < 1025 ? null === g[e] && $(".js-slider-num-col").length > 0 && (w.pagination.el = a.find(".js-slider-num-col-dots"), g[e] = new Swiper($(".js-slider-num-col").eq(e), w)) : g[e] && (g[e].destroy(), g[e] = null, a.find(".num-col__list").removeAttr("style"), a.find(".num-col__item").removeAttr("style"))
+        $(window).width() < 1025 ? null === w[e] && $(".js-slider-num-col").length > 0 && (f.pagination.el = a.find(".js-slider-num-col-dots"), w[e] = new Swiper($(".js-slider-num-col").eq(e), f)) : w[e] && (w[e].destroy(), w[e] = null, a.find(".num-col__list").removeAttr("style"), a.find(".num-col__item").removeAttr("style"))
     }), jQuery(window).resize(function() {
         $(".js-slider-num-col").each(function(e) {
             var a = $(".js-slider-num-col").eq(e);
-            $(window).width() < 1025 ? null === g[e] && $(".js-slider-num-col").length > 0 && (w.pagination.el = a.find(".js-slider-num-col-dots"), g[e] = new Swiper($(".js-slider-num-col").eq(e), w)) : g[e] && (g[e].destroy(), g[e] = null, a.find(".num-col__list").removeAttr("style"), a.find(".num-col__item").removeAttr("style"))
+            $(window).width() < 1025 ? null === w[e] && $(".js-slider-num-col").length > 0 && (f.pagination.el = a.find(".js-slider-num-col-dots"), w[e] = new Swiper($(".js-slider-num-col").eq(e), f)) : w[e] && (w[e].destroy(), w[e] = null, a.find(".num-col__list").removeAttr("style"), a.find(".num-col__item").removeAttr("style"))
+        })
+    });
+    var v = {},
+        b = {
+            slidesPerView: 2,
+            freeMode: !1,
+            loop: !1,
+            spaceBetween: 10,
+            speed: 400,
+            slideClass: "project-solution__block-img-row-img",
+            wrapperClass: "project-solution__block-img-row",
+            pagination: {
+                el: $(".js-slider-solution-img-dots"),
+                clickable: !0
+            },
+            breakpoints: {
+                767: {
+                    slidesPerView: 1,
+                    spaceBetween: 10,
+                    loop: !1,
+                    autoHeight: !0
+                }
+            }
+        };
+    $(".js-slider-solution-img").each(function(e) {
+        v[e] = null
+    }), $(".js-slider-solution-img").each(function(e) {
+        var a = $(".js-slider-solution-img").eq(e);
+        $(window).width() < 768 ? null === v[e] && $(".js-slider-solution-img").length > 0 && (b.pagination.el = a.find(".js-slider-solution-img-dots"), v[e] = new Swiper(a, b)) : v[e] && (v[e].destroy(), v[e] = null, a.find(".project-solution__block-img-row-img").removeAttr("style"), a.find(".project-solution__block-img-row").removeAttr("style"))
+    }), jQuery(window).resize(function() {
+        $(".js-slider-solution-img").each(function(e) {
+            var a = $(".js-slider-solution-img").eq(e);
+            $(window).width() < 768 ? null === v[e] && $(".js-slider-solution-img").length > 0 && (b.pagination.el = a.find(".js-slider-solution-img-dots"), v[e] = new Swiper($(".js-slider-solution-img").eq(e), b)) : v[e] && (v[e].destroy(), v[e] = null, a.find(".project-solution__block-img-row-img").removeAttr("style"), a.find(".project-solution__block-img-row").removeAttr("style"))
         })
     }), $(".js-dropdown-toggle").on("click", function(e) {
         e.preventDefault();
