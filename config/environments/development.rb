@@ -53,7 +53,7 @@ Rails.application.configure do
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
   # Mailer config for devise
-  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000}
   
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.perform_deliveries = true 
@@ -63,12 +63,13 @@ Rails.application.configure do
   # Specify what domain to use for mailer URLs 
 
   config.action_mailer.smtp_settings = {
-    user_name: Figaro.env.mailer_user,
-    password: Figaro.env.mailer_password,
-    domain: Figaro.env.hostname,
-    address: 'smtp.mandrillapp.com"',
-    port: 587,
-    authentication: :plain,
-    tls: true
+   user_name: 'Yadadya',
+   password: 'MNXiGqJ4pED40nVOTeUWCg',
+   domain: 'localhost:3000',
+   address: 'smtp.mandrillapp.com',
+   port: 587,
+   authentication: :plain,
+   enable_starttls_auto: true
   }
+
 end

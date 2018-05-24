@@ -23,7 +23,7 @@ class Front::RequestsController < FrontController
     if allow_send
       respond_to do |format|
         if @request.save
-          format.js
+            format.js
           RequestMailer.notify_admin(@request).deliver_now
         else
           format.js { render partial: 'fail' }
@@ -33,6 +33,7 @@ class Front::RequestsController < FrontController
       @request.errors.add(:bot, "К сожалению, у нас подозрение, что вы бот. Попробуйте заполнить форму ещё раз.")
       respond_to do |format|
         format.js { render partial: 'fail' }
+        format.html
       end
       
     end

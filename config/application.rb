@@ -36,5 +36,6 @@ module YadadyaCom
     config.i18n.default_locale = :ru
 
     config.page_size = 10
+
   end
 end

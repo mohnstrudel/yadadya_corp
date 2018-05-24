@@ -51,4 +51,4 @@
         Если у вас есть ТЗ или иная информация, просто приложите файл к запросу (поддерживаются форматы .pdf, .txt, .doc, .docx, .xls, .xlsx, .png, .jpg):
       =f.file_field :attachments, class: 'g-input__field-file', multiple: true
       
-      =f.submit 'Отправить', class: 'g-btn g-btn_submit'
+      =f.submit 'Отправить', class: 'g-btn g-btn_submit', id: 'form_submit', data: { "disable-with": "Отправляем..." }

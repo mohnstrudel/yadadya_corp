@@ -35,6 +35,7 @@ gem 'jbuilder'
 # gem 'capistrano-rails', group: :development
 
 # CUSTOM GEMS
+gem 'browser'
 gem 'haml-rails'
 # что бы юзать yarn
 gem 'webpacker'
