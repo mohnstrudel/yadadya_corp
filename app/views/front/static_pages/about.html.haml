@@ -7,14 +7,14 @@
         %br.g-mobile
           КОМПЛЕКСНЫЕ ПРОДУКТЫ
     %h3.g-subtitle От прототипов до внедрения
-    .g-about__left
-      %img.g-about__img.g-about__img_bg{src: "#{asset_path 'about_bg.svg'}"}
-      %img.g-about__img.g-about__img_confetti{src: "#{asset_path 'about_confetti.svg'}"}
-      .js-tilter
-        %img.g-about__img.g-about__img_hand.tilter__figure{src: "#{asset_path 'about.svg'}"}
+    .g-about__left.js-tilter
+      %img.g-about__img.g-about__img_bg{src: "#{asset_path 'about_bg.svg'}" }/
+      %img.g-about__img.g-about__img_confetti.tilter__deco--lines{:src => "#{ asset_path 'about_confetti.svg'}" }/
+      %div
+        %img.g-about__img.g-about__img_hand.tilter__figure{:src => "#{ asset_path 'about.svg' }"}/
     .g-about__right
       %p.g-about__text
-        Digital-агентство Atomic работает над повышением эффективности бизнесов своих клиентов с 2013 года.
+        Интернет-агентство Я.Сreations работает над повышением эффективности бизнесов своих клиентов с 2013 года.
       %p.g-about__text
         Мы занимаемся разработкой, развитием и продвижением корпоративных сайтов, интернет-магазинов, мобильных приложений и сервисов. Отдаем предпочтение сложным комплексным проектам и нестандартным задачам.
       %p.g-about__text
@@ -25,24 +25,24 @@
   .g-wrapper
     .g-directions__item.g-directions__item_web.js-animation.js-animation_fadeInDown{"data-animation-delay" => "200ms"}
       .g-img-wrapper.js-tilter
-        %img.g-img-wrapper__pic.g-img-wrapper__pic_direction-web.tilter__figure{src: "#{asset_path 'directions/direction_1.svg'}"}
-        %img.g-img-wrapper__bg{src: "#{asset_path 'directions/direction_1_bg.svg'}"}
+        %img.g-img-wrapper__pic.g-img-wrapper__pic_direction-web.tilter__figure{:src => "#{ asset_path 'directions/direction_1.svg' }"}/
+        %img.g-img-wrapper__bg{:src => "#{ asset_path 'directions/direction_1_bg.svg' }"}/
       %h2.g-directions__title Веб-разработка
       %a.g-btn.g-btn_transparent{:href => custom_development_path}
         %span.g-directions__btn_desctop Подробнее
         %span.g-directions__btn_mobile Веб-разработка
     .g-directions__item.g-directions__item_mobile.js-animation.js-animation_fadeInDown{"data-animation-delay" => "600ms"}
       .g-img-wrapper.js-tilter
-        %img.g-img-wrapper__pic.g-img-wrapper__pic_direction-mob.tilter__figure{src: "#{asset_path 'directions/direction_2.svg'}"}
-        %img.g-img-wrapper__bg{src: "#{asset_path 'directions/direction_2_bg.svg'}"}
+        %img.g-img-wrapper__pic.g-img-wrapper__pic_direction-mob.tilter__figure{:src => "#{ asset_path 'directions/direction_2.svg' }"}/
+        %img.g-img-wrapper__bg{:src => "#{ asset_path 'directions/direction_2_bg.svg' }"}/
       %h2.g-directions__title Мобильные приложения
       %a.g-btn.g-btn_transparent{:href => mobile_path}
         %span.g-directions__btn_desctop Подробнее
         %span.g-directions__btn_mobile Мобильные приложения
     .g-directions__item.g-directions__item_calling.js-animation.js-animation_fadeInDown{"data-animation-delay" => "1s"}
       .g-img-wrapper.js-tilter
-        %img.g-img-wrapper__pic.g-img-wrapper__pic_direction-cli.tilter__figure{src: "#{asset_path 'directions/direction_3.svg'}"}
-        %img.g-img-wrapper__bg{src: "#{asset_path 'directions/direction_3_bg.svg'}"}
+        %img.g-img-wrapper__pic.g-img-wrapper__pic_direction-cli.tilter__figure{:src => "#{ asset_path 'directions/direction_3.svg' }"}/
+        %img.g-img-wrapper__bg{:src => "#{ asset_path 'directions/direction_3_bg.svg' }"}/
       %h2.g-directions__title Привлечение клиентов
       %a.g-btn.g-btn_transparent{:href => clients_path}
         %span.g-directions__btn_desctop Подробнее
@@ -54,63 +54,61 @@
     %ul#proposal-slider.g-proposals
       %li.g-proposals__item.g-proposals__item_approach.js-animation.js-animation_fadeInDown{"data-animation-delay" => "200ms"}
         .g-img-wrapper.js-tilter
-          %img.g-img-wrapper__pic.g-img-wrapper__pic_offer-approach.tilter__figure{src: "#{asset_path 'offer/offer_1.svg'}"}
-          %img.g-img-wrapper__bg{src: "#{asset_path 'offer/offer_1_bg.svg'}"}
+          %img.g-img-wrapper__pic.g-img-wrapper__pic_offer-approach.tilter__figure{:src => "#{ asset_path 'offer/offer_1.svg' }"}/
+          %img.g-img-wrapper__bg{:src => "#{ asset_path 'offer/offer_1_bg.svg' }"}/
         %span.g-proposals__text
           Детальный подход
           %br
-          к проектированию решений
+            к проектированию решений
           %br
-          для вашего бизнеса.
+            для вашего бизнеса.
       %li.g-proposals__item.g-proposals__item_quality.js-animation.js-animation_fadeInDown{"data-animation-delay" => "400ms"}
         .g-img-wrapper.js-tilter
-          %img.g-img-wrapper__pic.g-img-wrapper__pic_offer-quality.tilter__figure{src: "#{asset_path 'offer/offer_2.svg'}"}
-          %img.g-img-wrapper__bg{src: "#{asset_path 'offer/offer_2_bg.svg'}"}
+          %img.g-img-wrapper__pic.g-img-wrapper__pic_offer-quality.tilter__figure{:src => "#{ asset_path 'offer/offer_2.svg' }"}/
+          %img.g-img-wrapper__bg{:src => "#{ asset_path 'offer/offer_2_bg.svg' }"}/
         %span.g-proposals__text
           Качество.
-          %br
-          Мы даем пожизненную
-          %br
-          гарантию на продукт.
+          = succeed "\u{41c}\u{44b}" do
+            %br/
       %li.g-proposals__item.g-proposals__item_transparency.js-animation.js-animation_fadeInDown{"data-animation-delay" => "600ms"}
         .g-img-wrapper.js-tilter
-          %img.g-img-wrapper__pic.g-img-wrapper__pic_offer-opacity.tilter__figure{src: "#{asset_path 'offer/offer_3.svg'}"}
-          %img.g-img-wrapper__bg{src: "#{asset_path 'offer/offer_3_bg.svg'}"}
+          %img.g-img-wrapper__pic.g-img-wrapper__pic_offer-opacity.tilter__figure{:src => "#{ asset_path 'offer/offer_3.svg' }"}/
+          %img.g-img-wrapper__bg{:src => "#{ asset_path 'offer/offer_3_bg.svg' }"}/
         %span.g-proposals__text
           Прозрачность.
-          %br
-          Мы — открытая компания 
-          %br
-          и ничего не скрываем.
+          = succeed "\u{41c}\u{44b}" do
+            %br/
+          = succeed "\u{438}" do
+            %br/
       %li.g-proposals__item.g-proposals__item_freedom.js-animation.js-animation_fadeInDown{"data-animation-delay" => "800ms"}
         .g-img-wrapper.js-tilter
-          %img.g-img-wrapper__pic.g-img-wrapper__pic_offer-freedom.tilter__figure{src: "#{asset_path 'offer/offer_4.svg'}"}
-          %img.g-img-wrapper__bg{src: "#{asset_path 'offer/offer_4_bg.svg'}"}
+          %img.g-img-wrapper__pic.g-img-wrapper__pic_offer-freedom.tilter__figure{:src => "#{ asset_path 'offer/offer_4.svg' }"}/
+          %img.g-img-wrapper__bg{:src => "#{ asset_path 'offer/offer_4_bg.svg' }"}/
         %span.g-proposals__text
           Свобода.
-          %br
-          Мы документируем код 
-          %br
-          и предоставляем подробную инструкцию 
-          %br
-          по эксплуатации.
+          = succeed "\u{41c}\u{44b}" do
+            %br/
+          = succeed "\u{438}" do
+            %br/
+          = succeed "\u{43f}\u{43e}" do
+            %br/
       %li.g-proposals__item.g-proposals__item_future.js-animation.js-animation_fadeInDown{"data-animation-delay" => "1s"}
         .g-img-wrapper.js-tilter
-          %img.g-img-wrapper__pic.g-img-wrapper__pic_offer-future.tilter__figure{src: "#{asset_path 'offer/offer_5.svg'}"}
-          %img.g-img-wrapper__bg{src: "#{asset_path 'offer/offer_5_bg.svg'}"}
+          %img.g-img-wrapper__pic.g-img-wrapper__pic_offer-future.tilter__figure{:src => "#{ asset_path 'offer/offer_5.svg' }"}/
+          %img.g-img-wrapper__bg{:src => "#{ asset_path 'offer/offer_5_bg.svg' }"}/
         %span.g-proposals__text
           Будущее.
-          %br
-          Мы обеспечиваем развитие проекта, отслеживаем показатели и работаем 
-          %br
-          на перспективу.
+          = succeed "\u{41c}\u{44b}" do
+            %br/
+          = succeed "\u{43d}\u{430}" do
+            %br/
 %section.g-section.g-help
   .g-wrapper
     .g-help__left
       %h3.g-help__title
         В КАКИХ ОБЛАСТЯХ
-        %br.g-mobile
-          МЫ МОЖЕМ ВАМ ПОМОЧЬ
+        = succeed "\u{41c}\u{42b}" do
+          %br.g-mobile/
       %ul.g-help__list
         %li.g-help__item Сложные решения
         %li.g-help__item Интернет-магазины
@@ -172,46 +170,50 @@
 %section.g-section.g-leadership
   .g-wrapper
     #leadership-slider.g-leadership__wrapper
-      .g-leadership__item.js-animation.js-animation_bounceIn{"data-animation-delay" => "600ms"}
-        .g-leadership__photo-wrapper.js-tilter
-          %img.g-leadership__photo.g-leadership__photo_anton.tilter__figure{src: "#{asset_path 'leadership/anton.png'}"}
-        %h3.g-leadership__name Антон Костин
-        %p.g-leadership__position Руководитель проектов
-        %a.g-btn.g-btn_transparent.g-btn_facebook{:href => "https://www.facebook.com/anton.kostin.5", :target => "_blank"}
-          %svg.g-icon
-            %use{"xlink:href" => "#ic-facebook"}
-
       .g-leadership__item.js-animation.js-animation_bounceIn{"data-animation-delay" => "0ms"}
         .g-leadership__photo-wrapper.js-tilter
-          %img.g-leadership__photo.g-leadership__photo_yadadya.tilter__figure{src: "#{asset_path 'leadership/yadadya.png'}"}
+          %img.g-leadership__photo.tilter__figure.g-leadership__photo_anton{:src => "#{ asset_path 'leadership/anton.png' }"}/
+        %h3.g-leadership__name Антон Костин
+        %p.g-leadership__position Руководитель проектов
+        %a.g-btn.g-btn_transparent.g-btn_facebook{:href => "https://facebook.com/anton.kostin.5", :target => "_blank"}
+          %svg.g-icon
+            %use{"xlink:href" => "#ic-facebook"}
+      .g-leadership__item.js-animation.js-animation_bounceIn{"data-animation-delay" => "300ms"}
+        .g-leadership__photo-wrapper.js-tilter
+          %img.g-leadership__photo.g-leadership__photo_yadadya.tilter__figure{:src => "#{ asset_path 'leadership/yadadya.png' }"}/
         %h3.g-leadership__name Ядадья Исаков
         %p.g-leadership__position Генеральный директор
-        %a.g-btn.g-btn_transparent.g-btn_facebook{:href => "https://www.facebook.com/yadadya", :target => "_blank"}
+        %a.g-btn.g-btn_transparent.g-btn_facebook{:href => "https://facebook.com/yadadya", :target => "_blank"}
           %svg.g-icon
             %use{"xlink:href" => "#ic-facebook"}
 
-
-      .g-leadership__item.js-animation.js-animation_bounceIn{"data-animation-delay" => "300ms"}
+      .g-leadership__item.js-animation.js-animation_bounceIn{"data-animation-delay" => "600ms"}
         .g-leadership__photo-wrapper.js-tilter
-          %img.g-leadership__photo.tilter__figure.g-leadership__photo_dima{src: "#{asset_path 'leadership/dima.png'}"}
+          %img.g-leadership__photo.g-leadership__photo_anton.tilter__figure{:src => "#{ asset_path 'leadership/dima.png' }"}/
         %h3.g-leadership__name Дмитрий Калашников
         %p.g-leadership__position Коммерческий директор
-        %a.g-btn.g-btn_transparent.g-btn_facebook{:href => "https://www.facebook.com/dmitry.ak47", :target => "_blank"}
+        %a.g-btn.g-btn_transparent.g-btn_facebook{:href => "https://facebook.com/dmitry.ak47", :target => "_blank"}
           %svg.g-icon
             %use{"xlink:href" => "#ic-facebook"}
 %section.g-section.g-about-write
   .g-wrapper
     %h2.g-about-write__title О нас пишут
     #about-write-slider.g-about-write__list
-      %a.g-about-write__link
-        %img.g-about-write__logo.g-about-write__logo_forbes{src: "#{asset_path 'about/forbes.png'}"}
-      %a.g-about-write__link
-        %img.g-about-write__logo.g-about-write__logo_vc{src: "#{asset_path 'about/vc.png'}"}
-      %a.g-about-write__link
-        %img.g-about-write__logo.g-about-write__logo_sekret{src: "#{asset_path 'about/sekret.png'}"}
-      %a.g-about-write__link
-        %img.g-about-write__logo.g-about-write__logo_m{src: "#{asset_path 'about/m.png'}"}
-      %a.g-about-write__link
-        %img.g-about-write__logo.g-about-write__logo_cossa{src: "#{asset_path 'about/cossa.png'}"}
-      %a.g-about-write__link
-        %img.g-about-write__logo.g-about-write__logo_sostav{src: "#{asset_path 'about/sostav.png'}"}
+      .g-about-write__link
+        %a.g-about-write__link-wrp
+          %img.g-about-write__logo.g-about-write__logo_forbes{:src => "#{ asset_path 'about/forbes.png' }"}/
+      .g-about-write__link
+        %a.g-about-write__link-wrp
+          %img.g-about-write__logo.g-about-write__logo_vc{:src => "#{ asset_path 'about/vc.png' }"}/
+      .g-about-write__link
+        %a.g-about-write__link-wrp
+          %img.g-about-write__logo.g-about-write__logo_sekret{:src => "#{ asset_path 'about/sekret.png' }"}/
+      .g-about-write__link
+        %a.g-about-write__link-wrp
+          %img.g-about-write__logo.g-about-write__logo_m{:src => "#{ asset_path 'about/m.png' }"}/
+      .g-about-write__link
+        %a.g-about-write__link-wrp
+          %img.g-about-write__logo.g-about-write__logo_cossa{:src => "#{ asset_path 'about/cossa.png' }"}/
+      .g-about-write__link
+        %a.g-about-write__link-wrp
+          %img.g-about-write__logo.g-about-write__logo_sostav{:src => "#{ asset_path 'about/sostav.png' }"}/

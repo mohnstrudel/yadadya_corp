@@ -43,7 +43,7 @@ var Yadadya = {
         pageClasses: {
             main: "home",
             about: "about",
-            contact: "contacts",
+            contact: "contact",
             service: "services",
             "case": "cases"
         }
@@ -150,7 +150,7 @@ var Yadadya = {
                 t = 5,
                 d = $("header").outerHeight();
             $(window).scroll(function(e) {
-                s = !0, $(this).scrollTop() > $(".g-header").outerHeight() ? $(".g-header").addClass("g-header_fixed") : $(".g-header").removeClass("g-header_fixed")
+                s = !0, $(this).scrollTop() > $(".g-header").outerHeight() ? ($(".g-header").addClass("g-header_fixed"), $(".js-logo-light").addClass("invisible"), $(".js-logo-dark").addClass("visible")) : ($(".g-header").removeClass("g-header_fixed"), $(".js-logo-light").removeClass("invisible"), $(".js-logo-dark").removeClass("visible"))
             }), setInterval(function() {
                 s && (a(), s = !1)
             }, 250), document.documentElement.addEventListener("touchstart", function(e) {
