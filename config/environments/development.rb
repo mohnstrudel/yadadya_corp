@@ -63,13 +63,14 @@ Rails.application.configure do
   # Specify what domain to use for mailer URLs 
 
   config.action_mailer.smtp_settings = {
-   user_name: 'Yadadya',
-   password: 'MNXiGqJ4pED40nVOTeUWCg',
-   domain: 'localhost:3000',
-   address: 'smtp.mandrillapp.com',
-   port: 587,
+   user_name: Figaro.env.mailer_user,
+   password: Figaro.env.mailer_password,
+   domain: 'yandex.ru',
+   address: Figaro.env.mailer_address,
+   port: 465,
    authentication: :plain,
-   enable_starttls_auto: true
+   # enable_starttls_auto: true,
+   tls: true
   }
 
 end
