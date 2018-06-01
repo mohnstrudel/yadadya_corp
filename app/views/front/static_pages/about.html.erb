@@ -1,0 +1,264 @@
+-meta title: 'Компания'
+<section class="g-section g-about">
+    <div class="g-wrapper">
+        <h1 class="g-title"><span class="g-title__text">МЫ СОЗДАЕМ <br class="g-mobile">Комплексные продукты</span></h1>
+        <h3 class="g-subtitle">От прототипов до внедрения</h3>
+        <div class="g-about__left js-tilter">
+            <img src="<%= asset_path 'about_bg.svg' %>" class="g-about__img g-about__img_bg">
+            <img src="<%= asset_path 'about_confetti.svg' %>" class="g-about__img g-about__img_confetti tilter__deco--lines">
+            <div>
+                <img src="<%= asset_path 'about.svg' %>" class="g-about__img g-about__img_hand tilter__figure">
+            </div>
+        </div>
+        <div class="g-about__right">
+            <p class="g-about__text">
+                Интернет-агентство Я.Сreations работает над повышением эффективности бизнесов своих клиентов с 2013 года.
+            </p>
+            <p class="g-about__text">
+                Мы занимаемся разработкой, развитием и продвижением корпоративных сайтов, интернет-магазинов, мобильных приложений и сервисов. Отдаем предпочтение сложным комплексным проектам и нестандартным задачам.
+            </p>
+            <p class="g-about__text">
+                Особенность нашего подхода заключается в том, что мы полностью погружаемся в бизнес клиента, анализируем внутренние процессы компании, а затем предлагаем и внедряем решения по их автоматизации. Такие решения позволяют, например, сократить расходы на персонал, уменьшить время производственного цикла и в конечном итоге влияют на рентабельность бизнеса клиента.
+            </p>
+            <p class="g-about__text">
+                Мы готовы приехать к вам и рассказать о нашем подходе и его результатах подробнее.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="g-section g-directions">
+    <div class="g-wrapper">
+        <div class="g-directions__item g-directions__item_web js-animation js-animation_fadeInDown" data-animation-delay="200ms">
+            <div class="g-img-wrapper js-tilter">
+                <img class="g-img-wrapper__pic g-img-wrapper__pic_direction-web tilter__figure" src="<%= asset_path 'directions/direction_1.svg' %>">
+                <img class="g-img-wrapper__bg" src="<%= asset_path 'directions/direction_1_bg.svg' %>">
+            </div>
+            <h2 class="g-directions__title">Веб-разработка</h2>
+            <a href="#" class="g-btn g-btn_transparent">
+                <span class="g-directions__btn_desctop">Подробнее</span>
+                <span class="g-directions__btn_mobile">Веб-разработка</span>
+            </a>
+        </div>
+        <div class="g-directions__item g-directions__item_mobile js-animation js-animation_fadeInDown" data-animation-delay="600ms">
+            <div class="g-img-wrapper js-tilter">
+                <img class="g-img-wrapper__pic g-img-wrapper__pic_direction-mob tilter__figure" src="<%= asset_path 'directions/direction_2.svg' %>">
+                <img class="g-img-wrapper__bg" src="<%= asset_path 'directions/direction_2_bg.svg' %>">
+            </div>
+            <h2 class="g-directions__title">Мобильные приложения</h2>
+            <a href="#" class="g-btn g-btn_transparent">
+                <span class="g-directions__btn_desctop">Подробнее</span>
+                <span class="g-directions__btn_mobile">Мобильные приложения</span>
+            </a>
+        </div>
+        <div class="g-directions__item g-directions__item_calling js-animation js-animation_fadeInDown" data-animation-delay="1s">
+            <div class="g-img-wrapper js-tilter">
+                <img class="g-img-wrapper__pic g-img-wrapper__pic_direction-cli tilter__figure" src="<%= asset_path 'directions/direction_3.svg' %>">
+                <img class="g-img-wrapper__bg" src="<%= asset_path 'directions/direction_3_bg.svg' %>">
+            </div>
+            <h2 class="g-directions__title">Привлечение клиентов</h2>
+            <a href="#" class="g-btn g-btn_transparent">
+                <span class="g-directions__btn_desctop">Подробнее</span>
+                <span class="g-directions__btn_mobile">Привлечение клиентов</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<section class="g-section g-proposal">
+    <div class="g-wrapper js-slider-other-col">
+        <h1 class="g-title g-title_white js-animation js-animation_fadeInDown" data-animation-delay="200ms"><span class="g-title__text">Наше предложение</span></h1>
+        <ul class="g-proposals" id="proposal-slider">
+            <li class="g-proposals__item g-proposals__item_approach js-animation js-animation_fadeInDown" data-animation-delay="200ms">
+                <div class="g-img-wrapper js-tilter">
+                    <img class="g-img-wrapper__pic g-img-wrapper__pic_offer-approach tilter__figure" src="<%= asset_path 'offer/offer_1.svg' %>">
+                    <img class="g-img-wrapper__bg" src="<%= asset_path 'offer/offer_1_bg.svg' %>">
+                </div>
+                <span class="g-proposals__text">Детальный подход <br>к&nbsp;проектированию решений <br>для вашего бизнеса.</span>
+            </li>
+            <li class="g-proposals__item g-proposals__item_quality js-animation js-animation_fadeInDown" data-animation-delay="400ms">
+                <div class="g-img-wrapper js-tilter">
+                    <img class="g-img-wrapper__pic g-img-wrapper__pic_offer-quality tilter__figure" src="<%= asset_path 'offer/offer_2.svg' %>">
+                    <img class="g-img-wrapper__bg" src="<%= asset_path 'offer/offer_2_bg.svg' %>">
+                </div>
+                <span class="g-proposals__text">Качество. <br>Мы даем пожизненную гарантию на продукт.</span>
+            </li>
+            <li class="g-proposals__item g-proposals__item_transparency js-animation js-animation_fadeInDown" data-animation-delay="600ms">
+                <div class="g-img-wrapper js-tilter">
+                    <img class="g-img-wrapper__pic g-img-wrapper__pic_offer-opacity tilter__figure" src="<%= asset_path 'offer/offer_3.svg' %>">
+                    <img class="g-img-wrapper__bg" src="<%= asset_path 'offer/offer_3_bg.svg' %>">
+                </div>
+                <span class="g-proposals__text">Прозрачность. <br>Мы — открытая компания <br>и ничего не скрываем.</span>
+            </li>
+            <li class="g-proposals__item g-proposals__item_freedom js-animation js-animation_fadeInDown" data-animation-delay="800ms">
+                <div class="g-img-wrapper js-tilter">
+                    <img class="g-img-wrapper__pic g-img-wrapper__pic_offer-freedom tilter__figure" src="<%= asset_path 'offer/offer_4.svg' %>">
+                    <img class="g-img-wrapper__bg" src="<%= asset_path 'offer/offer_4_bg.svg' %>">
+                </div>
+                <span class="g-proposals__text">Свобода. <br>Мы документируем код <br>и предоставляем подробную инструкцию <br>по эксплуатации.</span>
+            </li>
+            <li class="g-proposals__item g-proposals__item_future js-animation js-animation_fadeInDown" data-animation-delay="1s">
+                <div class="g-img-wrapper js-tilter">
+                    <img class="g-img-wrapper__pic g-img-wrapper__pic_offer-future tilter__figure" src="<%= asset_path 'offer/offer_5.svg' %>">
+                    <img class="g-img-wrapper__bg" src="<%= asset_path 'offer/offer_5_bg.svg' %>">
+                </div>
+                <span class="g-proposals__text">Будущее. <br>Мы обеспечиваем развитие проекта, отслеживаем показатели и работаем <br>на перспективу.</span>
+            </li>
+        </ul>
+
+        <div class="other-col__dots js-slider-other-col-dots"></div>
+    </div>
+</section>
+
+<section class="g-section g-help">
+    <div class="g-wrapper">
+        <div class="g-help__left">
+            <h3 class="g-help__title">В КАКИХ ОБЛАСТЯХ <br class="g-mobile">МЫ МОЖЕМ ВАМ ПОМОЧЬ</h3>
+            <ul class="g-help__list">
+                <li class="g-help__item">Сложные решения</li>
+                <li class="g-help__item">Интернет-магазины</li>
+                <li class="g-help__item">Поддержка и развитие</li>
+                <li class="g-help__item">Привлечение клиентов</li>
+                <li class="g-help__item">Мобильные приложения</li>
+                <li class="g-help__item">Фирменный стиль</li>
+                <li class="g-help__item">Корпоративные сайты</li>
+                <li class="g-help__item">Битрикс24</li>
+            </ul>
+        </div>
+        <div class="g-help__right">
+            <ul class="g-skills">
+                <li class="g-skills__title">
+                    Проектирование
+                    <svg class="g-icon">
+                        <use xlink:href="#ic-toggler"></use>
+                    </svg>
+                </li>
+                <li class="g-skills__li js-animation js-animation_bounceIn" data-animation-delay="0ms"><span class="g-skills__item">Прототипы</span></li>
+                <li class="g-skills__li js-animation js-animation_bounceIn" data-animation-delay="50ms"><span class="g-skills__item">Брендбук</span></li>
+                <li class="g-skills__li js-animation js-animation_bounceIn" data-animation-delay="100ms"><span class="g-skills__item">Техническое задание</span></li>
+            </ul>
+            <ul class="g-skills">
+                <li class="g-skills__title">
+                    Дизайн
+                    <svg class="g-icon">
+                        <use xlink:href="#ic-toggler"></use>
+                    </svg>
+                </li>
+                <li class="g-skills__li js-animation js-animation_bounceIn" data-animation-delay="150ms"><span class="g-skills__item">Индивидуальный дизайн</span></li>
+                <li class="g-skills__li js-animation js-animation_bounceIn" data-animation-delay="200ms"><span class="g-skills__item">Адаптивность</span></li>
+                <li class="g-skills__li js-animation js-animation_bounceIn" data-animation-delay="250ms"><span class="g-skills__item">UI/UX тренды</span></li>
+            </ul>
+            <ul class="g-skills">
+                <li class="g-skills__title">
+                    Веб-разработка
+                    <svg class="g-icon">
+                        <use xlink:href="#ic-toggler"></use>
+                    </svg>
+                </li>
+                <li class="g-skills__li js-animation js-animation_bounceIn" data-animation-delay="300ms"><span class="g-skills__item">PHP, 1C-Битрикс</span></li>
+                <li class="g-skills__li js-animation js-animation_bounceIn" data-animation-delay="350ms"><span class="g-skills__item">Ruby, Ruby on Rails</span></li>
+                <li class="g-skills__li js-animation js-animation_bounceIn" data-animation-delay="400ms"><span class="g-skills__item">LESS | SASS</span></li>
+                <li class="g-skills__li js-animation js-animation_bounceIn" data-animation-delay="450ms"><span class="g-skills__item">MySQL | PostgreSQL</span></li>
+            </ul>
+            <ul class="g-skills">
+                <li class="g-skills__title">
+                    Поддержка и развитие
+                    <svg class="g-icon">
+                        <use xlink:href="#ic-toggler"></use>
+                    </svg>
+                </li>
+                <li class="g-skills__li js-animation js-animation_bounceIn" data-animation-delay="500ms"><span class="g-skills__item">Техническая поддержка</span></li>
+                <li class="g-skills__li js-animation js-animation_bounceIn" data-animation-delay="550ms"><span class="g-skills__item">Работа по SLA</span></li>
+                <li class="g-skills__li js-animation js-animation_bounceIn" data-animation-delay="600ms"><span class="g-skills__item">Личный менеджер</span></li>
+                <li class="g-skills__li js-animation js-animation_bounceIn" data-animation-delay="650ms"><span class="g-skills__item">Любые задачи</span></li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section class="g-section g-leadership">
+    <div class="g-wrapper js-slider-other-col">
+        <div class="g-leadership__wrapper" id="leadership-slider">
+
+            <div class="g-leadership__item js-animation js-animation_bounceIn" data-animation-delay="600ms">
+                <div class="g-leadership__photo-wrapper js-tilter">
+                    <img src="<%= asset_path 'leadership/anton.png' %>" class="g-leadership__photo g-leadership__photo_anton tilter__figure">
+                </div>
+                <h3 class="g-leadership__name">Антон Костин</h3>
+                <p class="g-leadership__position">Руководитель проектов</p>
+                <a href="https://facebook.com/anton.kostin.5" target="_blank" class="g-btn g-btn_transparent g-btn_facebook">
+                    <svg class="g-icon">
+                        <use xlink:href="#ic-facebook"></use>
+                    </svg>
+                </a>
+            </div>
+            <div class="g-leadership__item js-animation js-animation_bounceIn" data-animation-delay="0ms">
+                    <div class="g-leadership__photo-wrapper js-tilter">
+                        <img src="<%= asset_path 'leadership/yadadya.png' %>" class="g-leadership__photo g-leadership__photo_yadadya tilter__figure">
+                    </div>
+                <h3 class="g-leadership__name">Ядадья Исаков</h3>
+                <p class="g-leadership__position">Генеральный директор</p>
+                <a href="https://facebook.com/yadadya" target="_blank" class="g-btn g-btn_transparent g-btn_facebook">
+                    <svg class="g-icon">
+                        <use xlink:href="#ic-facebook"></use>
+                    </svg>
+                </a>
+            </div>
+            <div class="g-leadership__item js-animation js-animation_bounceIn" data-animation-delay="300ms">
+                <div class="g-leadership__photo-wrapper js-tilter">
+                    <img src="<%= asset_path 'leadership/dima.png' %>" class="g-leadership__photo tilter__figure g-leadership__photo_dima">
+                </div>
+                <h3 class="g-leadership__name">Дмитрий Калашников</h3>
+                <p class="g-leadership__position">Коммерческий директор</p>
+                <a href="https://facebook.com/dmitry.ak47" target="_blank" class="g-btn g-btn_transparent g-btn_facebook">
+                    <svg class="g-icon">
+                        <use xlink:href="#ic-facebook"></use>
+                    </svg>
+                </a>
+            </div>
+
+        </div>
+
+      <div class="other-col__dots js-slider-other-col-dots"></div>
+    </div>
+</section>
+
+<section class="g-section g-about-write">
+    <div class="g-wrapper js-slider-other-col">
+      <h2 class="g-about-write__title">О нас пишут</h2>
+      <div class="g-about-write__list" id="about-write-slider">
+          <div class="g-about-write__link">
+              <a class="g-about-write__link-wrp">
+                  <img src="<%= asset_path 'about/forbes.png' %>" class="g-about-write__logo g-about-write__logo_forbes">
+              </a>
+          </div>
+          <div class="g-about-write__link">
+              <a class="g-about-write__link-wrp">
+                  <img src="<%= asset_path 'about/vc.png' %>" class="g-about-write__logo g-about-write__logo_vc">
+              </a>
+          </div>
+          <div class="g-about-write__link">
+              <a class="g-about-write__link-wrp">
+                  <img src="<%= asset_path 'about/sekret.png' %>" class="g-about-write__logo g-about-write__logo_sekret">
+              </a>
+          </div>
+          <div class="g-about-write__link">
+              <a class="g-about-write__link-wrp">
+                  <img src="<%= asset_path 'about/m.png' %>" class="g-about-write__logo g-about-write__logo_m">
+              </a>
+          </div>
+          <div class="g-about-write__link">
+              <a class="g-about-write__link-wrp">
+                  <img src="<%= asset_path 'about/cossa.png' %>" class="g-about-write__logo g-about-write__logo_cossa">
+              </a>
+          </div>
+          <div class="g-about-write__link">
+              <a class="g-about-write__link-wrp">
+                  <img src="<%= asset_path 'about/sostav.png' %>" class="g-about-write__logo g-about-write__logo_sostav">
+              </a>
+          </div>
+      </div>
+      
+      <div class="other-col__dots js-slider-other-col-dots"></div>
+    </div>
+</section>

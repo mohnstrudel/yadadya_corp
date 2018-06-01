@@ -43,7 +43,7 @@ var Yadadya = {
         pageClasses: {
             main: "home",
             about: "about",
-            contact: "contact",
+            contact: "contacts",
             service: "services",
             "case": "cases"
         }
@@ -54,85 +54,10 @@ var Yadadya = {
     },
     resetItems: {},
     supportFunc: {},
-    reset: function() {
-        Yadadya.params.$body.hasClass(Yadadya.params.pageClasses.main) ? (Yadadya.resetItems.whatSlider && (Yadadya.resetItems.whatSliderSlide = Yadadya.resetItems.whatSlider.getCurrentSlide(), Yadadya.resetItems.whatSlider.destroySlider(), Yadadya.resetItems.whatSlider = null), Yadadya.resetItems.whySlider && (Yadadya.resetItems.whySliderSlide = Yadadya.resetItems.whySlider.getCurrentSlide(), Yadadya.resetItems.whySlider.destroySlider(), Yadadya.resetItems.whySlider = null)) : Yadadya.params.$body.hasClass(Yadadya.params.pageClasses.about) ? (Yadadya.resetItems.proposalSlider && (Yadadya.resetItems.proposalSliderSlide = Yadadya.resetItems.proposalSlider.getCurrentSlide(), Yadadya.resetItems.proposalSlider.destroySlider(), Yadadya.resetItems.proposalSlider = null), Yadadya.resetItems.leadershipSlider && (Yadadya.resetItems.leadershipSliderSlide = Yadadya.resetItems.leadershipSlider.getCurrentSlide(), Yadadya.resetItems.leadershipSlider.destroySlider(), Yadadya.resetItems.leadershipSlider = null), Yadadya.resetItems.aboutSlider && (Yadadya.resetItems.aboutSliderSlide = Yadadya.resetItems.aboutSlider.getCurrentSlide(), Yadadya.resetItems.aboutSlider.destroySlider(), Yadadya.resetItems.aboutSlider = null)) : Yadadya.params.$body.hasClass(Yadadya.params.pageClasses.contact)
-    },
-    mobile: function() {
-        Yadadya.params.$body.hasClass(Yadadya.params.pageClasses.main) ? (Yadadya.resetItems.whatSlider = $("#what-slider").bxSlider({
-            minSlides: 1,
-            maxSlides: 1,
-            moveSlides: 1,
-            mouseDrag: !0,
-            adaptiveHeight: !0,
-            startSlide: Yadadya.resetItems.whatSliderSlide || 0
-        }), Yadadya.resetItems.whySlider = $("#why-slider").bxSlider({
-            minSlides: 1,
-            maxSlides: 1,
-            moveSlides: 1,
-            mouseDrag: !0,
-            adaptiveHeight: !0,
-            startSlide: Yadadya.resetItems.whySliderSlide || 0
-        })) : Yadadya.params.$body.hasClass(Yadadya.params.pageClasses.about) ? (Yadadya.resetItems.proposalSlider = $("#proposal-slider").bxSlider({
-            minSlides: 1,
-            maxSlides: 1,
-            moveSlides: 1,
-            mouseDrag: !0,
-            adaptiveHeight: !0,
-            startSlide: Yadadya.resetItems.proposalSliderSlide || 0
-        }), Yadadya.resetItems.leadershipSlider = $("#leadership-slider").bxSlider({
-            minSlides: 1,
-            maxSlides: 1,
-            moveSlides: 1,
-            mouseDrag: !0,
-            adaptiveHeight: !0,
-            startSlide: Yadadya.resetItems.proposalSliderSlide || 0
-        }), Yadadya.resetItems.aboutSlider = $("#about-write-slider").bxSlider({
-            minSlides: 3,
-            maxSlides: 3,
-            moveSlides: 1,
-            mouseDrag: !0,
-            adaptiveHeight: !0,
-            slideWidth: parseInt(7.27 * Yadadya.rem, 10),
-            slideMargin: parseInt(1.81 * Yadadya.rem, 10),
-            startSlide: Yadadya.resetItems.aboutSliderSlide || 0
-        })) : Yadadya.params.$body.hasClass(Yadadya.params.pageClasses.contact)
-    },
-    tablet: function() {
-        if (Yadadya.params.$body.hasClass(Yadadya.params.pageClasses.main)) {
-            $(".g-what-list__item, .g-why-list__item").css({
-                height: "auto"
-            }), Yadadya.resetItems.whatSlider = $("#what-slider").bxSlider({
-                minSlides: 3,
-                maxSlides: 3,
-                moveSlides: 1,
-                slideWidth: parseInt(28.5 * Yadadya.rem, 10),
-                slideMargin: parseInt(.5 * Yadadya.rem, 10),
-                mouseDrag: !0,
-                startSlide: Yadadya.resetItems.whatSliderSlide || 0
-            }), Yadadya.resetItems.whySlider = $("#why-slider").bxSlider({
-                minSlides: 2,
-                maxSlides: 2,
-                moveSlides: 1,
-                slideWidth: parseInt(57 * Yadadya.rem, 10),
-                slideMargin: parseInt(.5 * Yadadya.rem, 10),
-                mouseDrag: !0,
-                startSlide: Yadadya.resetItems.whySliderSlide || 0
-            });
-            var e = 0;
-            $("#what-slider").find(".g-what-list__item").each(function() {
-                e < $(this).outerHeight() && (e = $(this).outerHeight())
-            }).css({
-                height: e
-            }), e = 0, $("#why-slider").find(".g-why-list__item").each(function() {
-                e < $(this).outerHeight() && (e = $(this).outerHeight())
-            }).css({
-                height: e
-            })
-        } else Yadadya.params.$body.hasClass(Yadadya.params.pageClasses.about) || Yadadya.params.$body.hasClass(Yadadya.params.pageClasses.contact)
-    },
-    desctop: function() {
-        Yadadya.params.$body.hasClass(Yadadya.params.pageClasses.main) || Yadadya.params.$body.hasClass(Yadadya.params.pageClasses.about) || Yadadya.params.$body.hasClass(Yadadya.params.pageClasses.contact)
-    },
+    reset: function() {},
+    mobile: function() {},
+    tablet: function() {},
+    desctop: function() {},
     run: function() {
         Yadadya.rem = parseFloat(getComputedStyle($("html")[0]).fontSize), Yadadya.params.windowPoint = parseInt(.9 * $(window).height()), Yadadya.params.$header.hasClass("g-header_white") && Yadadya.params.$header.next(".g-section").eq(0).css({
             "margin-top": Yadadya.params.$header.outerHeight()
@@ -142,24 +67,24 @@ var Yadadya = {
     },
     DOMReady: function(e) {
         $(document).ready(function() {
-            function a() {
+            function i() {
                 var e = $(this).scrollTop();
-                Math.abs(i - e) <= t || (e > i && e > d ? $("header").addClass("g-header_hidden") : e + $(window).height() < $(document).height() && $("header").removeClass("g-header_hidden"), i = e)
+                Math.abs(a - e) <= t || (e > a && e > o ? $("header").addClass("g-header_hidden") : e + $(window).height() < $(document).height() && $("header").removeClass("g-header_hidden"), a = e)
             }
-            var s, i = 0,
+            var s, a = 0,
                 t = 5,
-                d = $("header").outerHeight();
+                o = $("header").outerHeight();
             $(window).scroll(function(e) {
                 s = !0, $(this).scrollTop() > $(".g-header").outerHeight() ? ($(".g-header").addClass("g-header_fixed"), $(".js-logo-light").addClass("invisible"), $(".js-logo-dark").addClass("visible")) : ($(".g-header").removeClass("g-header_fixed"), $(".js-logo-light").removeClass("invisible"), $(".js-logo-dark").removeClass("visible"))
             }), setInterval(function() {
-                s && (a(), s = !1)
+                s && (i(), s = !1)
             }, 250), document.documentElement.addEventListener("touchstart", function(e) {
                 e.touches.length > 1 && e.preventDefault()
             }, !1);
-            var o = 0;
+            var n = 0;
             document.documentElement.addEventListener("touchend", function(e) {
-                var a = (new Date).getTime();
-                a - o <= 300 && e.preventDefault(), o = a
+                var i = (new Date).getTime();
+                i - n <= 300 && e.preventDefault(), n = i
             }, !1), e()
         })
     },
@@ -167,45 +92,33 @@ var Yadadya = {
         $(window).scroll(e)
     }
 };
-Yadadya.params.$body.hasClass(Yadadya.params.pageClasses.main) ? Yadadya.resetItems = {
-    whatSlider: null,
-    whatSliderSlide: null,
-    whySlider: null,
-    whySliderSlide: null
-} : Yadadya.params.$body.hasClass(Yadadya.params.pageClasses.about) ? Yadadya.resetItems = {
-    proposalSlider: null,
-    proposalSliderSlide: null,
-    leadershipSlider: null,
-    leadershipSliderSlide: null,
-    aboutSlider: null,
-    aboutSliderSlide: null
-} : Yadadya.params.$body.hasClass(Yadadya.params.pageClasses.contact), Yadadya.resize(function() {
+Yadadya.resize(function() {
     Yadadya.reset(), Yadadya.run()
 }), Yadadya.DOMReady(function() {
-    function e(e, a) {
-        e.parents(".g-input").toggleClass("g-input_error", a)
+    function e(e, i) {
+        e.parents(".g-input").toggleClass("g-input_error", i)
     }
 
-    function a(e, a) {
-        e.parents(".g-input").toggleClass("g-input_success", a)
+    function i(e, i) {
+        e.parents(".g-input").toggleClass("g-input_success", i)
     }
 
     function s(e) {
-        var a = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-        return a.test(e)
+        var i = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return i.test(e)
     }
 
-    function i() {
-        Yadadya.params.$body.hasClass("g-body_overflow") ? (Yadadya.params.$body.removeAttr("style"), $(window).scrollTop(d)) : (d = $(window).scrollTop(), Yadadya.params.$body.css({
+    function a() {
+        Yadadya.params.$body.hasClass("g-body_overflow") ? (Yadadya.params.$body.removeAttr("style"), $(window).scrollTop(o)) : (o = $(window).scrollTop(), Yadadya.params.$body.css({
             position: "fixed",
-            top: -d,
+            top: -o,
             left: 0,
             right: 0
         })), Yadadya.params.$body.toggleClass("g-body_overflow")
     }
 
     function t(e) {
-        i(), e.fadeToggle()
+        a(), e.fadeToggle()
     }
     Yadadya.run(), Yadadya.params.isMobile.matches ? Yadadya.params.$animated = $(".js-animation.js-animation_mobile") : Yadadya.params.isTablet.matches ? Yadadya.params.$animated = $(".js-animation.js-animation_tablet") : Yadadya.params.$animated = $(".js-animation"), Yadadya.params.$animated.each(function() {
         $(this).css({
@@ -216,9 +129,9 @@ Yadadya.params.$body.hasClass(Yadadya.params.pageClasses.main) ? Yadadya.resetIt
         mask: "+7 (999) 999-99-99",
         showMaskOnHover: !1
     }), $(".js-input").on("focus", function() {
-        e($(this), !1), a($(this), !1)
+        e($(this), !1), i($(this), !1)
     });
-    var d;
+    var o;
     if ($(".js-menu").on("click", function() {
             console.log(Yadadya.params.$menu), Yadadya.params.$body.css({
                 height: $(window).outerHeight()
@@ -226,44 +139,44 @@ Yadadya.params.$body.hasClass(Yadadya.params.pageClasses.main) ? Yadadya.resetIt
         }), $(".js-popup").on("click", function() {
             t($("#form-popup"))
         }), !Yadadya.params.isMobile.matches) {
-        var o = $(".g-speakers__list"),
-            l = o.find(".g-speakers__item"),
-            r = 4;
-        Yadadya.params.isMobile.matches ? r = 1 : Yadadya.params.isTablet.matches && (r = 3);
-        for (var n = 0; n < r; n++) $("<div>", {
+        var n = $(".g-speakers__list"),
+            l = n.find(".g-speakers__item"),
+            d = 4;
+        Yadadya.params.isMobile.matches ? d = 1 : Yadadya.params.isTablet.matches && (d = 3);
+        for (var r = 0; r < d; r++) $("<div>", {
             "class": "g-speakers__colum"
-        }).appendTo(o);
-        var p = o.find(".g-speakers__colum");
+        }).appendTo(n);
+        var c = n.find(".g-speakers__colum");
         l.each(function(e) {
-            $(this).appendTo(p.eq(e % r))
+            $(this).appendTo(c.eq(e % d))
         })
     }
     if ($(".g-popup").on("click", function(e) {
             ($(e.target).hasClass("g-popup") || 1 == $(e.target).closest(".js-close").length) && t($(this))
-        }), $(document).on("submit", ".g-form", function(i) {
-            i.preventDefault();
-            var d = $(this).find(".js-input"),
-                o = !1;
-            if (d.each(function() {
+        }), $(document).on("submit", ".g-form", function(a) {
+            a.preventDefault();
+            var o = $(this).find(".js-input"),
+                n = !1;
+            if (o.each(function() {
                     switch ($(this).attr("name")) {
                         case "name":
-                            "" == $(this).val() ? (o = !0, e($(this), !0)) : a($(this), !0);
+                            "" == $(this).val() ? (n = !0, e($(this), !0)) : i($(this), !0);
                             break;
                         case "company":
-                            "" == $(this).val() ? (o = !0, e($(this), !0)) : a($(this), !0);
+                            "" == $(this).val() ? (n = !0, e($(this), !0)) : i($(this), !0);
                             break;
                         case "email":
-                            s($(this).val()) ? a($(this), !0) : (o = !0, e($(this), !0));
+                            s($(this).val()) ? i($(this), !0) : (n = !0, e($(this), !0));
                             break;
                         case "phone":
-                            $(this).inputmask("isComplete") ? a($(this), !0) : (o = !0, e($(this), !0))
+                            $(this).inputmask("isComplete") ? i($(this), !0) : (n = !0, e($(this), !0))
                     }
-                }), !o) {
+                }), !n) {
                 var l = $(this);
                 l.find("input").attr("disabled", !0), setTimeout(function() {
                     t($("#form-popup")), setTimeout(function() {
                         t($("#success-popup"))
-                    }, 500), d.each(function() {
+                    }, 500), o.each(function() {
                         $(this).val("").parents(".g-input").removeClass("g-input_success")
                     }), l.find("input").removeAttr("disabled")
                 }, 1e3)
@@ -275,7 +188,7 @@ Yadadya.params.$body.hasClass(Yadadya.params.pageClasses.main) ? Yadadya.resetIt
             addMore: !0,
             enableApi: !0
         }), Yadadya.params.isDesctop.matches && $("#video-wrapper").append('<video id="video" width="100%" height="auto" autoplay="autoplay" loop="loop" preload="auto"><source src=<%= asset_path "coding.webm" %> type="video/webm"></source></video>');
-        var c = {
+        var p = {
             movement: {
                 imgWrapper: {
                     translation: {
@@ -296,7 +209,7 @@ Yadadya.params.$body.hasClass(Yadadya.params.pageClasses.main) ? Yadadya.resetIt
             }
         };
         $(".js-tilter").each(function() {
-            new TiltFx(this, c)
+            new TiltFx(this, p)
         })
     } else if (Yadadya.params.$body.hasClass(Yadadya.params.pageClasses.about)) {
         Yadadya.params.isMobile.matches && $(".g-skills").on("click", function() {
@@ -305,7 +218,7 @@ Yadadya.params.$body.hasClass(Yadadya.params.pageClasses.main) ? Yadadya.resetIt
                 e.addClass("g-skills_open")
             }, 250))
         });
-        var c = {
+        var p = {
             movement: {
                 imgWrapper: {
                     translation: {
@@ -326,10 +239,10 @@ Yadadya.params.$body.hasClass(Yadadya.params.pageClasses.main) ? Yadadya.resetIt
             }
         };
         $(".js-tilter").each(function() {
-            new TiltFx(this, c)
+            new TiltFx(this, p)
         })
     } else if (Yadadya.params.$body.hasClass(Yadadya.params.pageClasses.contact)) {
-        var c = {
+        var p = {
             movement: {
                 imgWrapper: {
                     translation: {
@@ -350,7 +263,7 @@ Yadadya.params.$body.hasClass(Yadadya.params.pageClasses.main) ? Yadadya.resetIt
             }
         };
         $(".js-tilter").each(function() {
-            new TiltFx(this, c)
+            new TiltFx(this, p)
         }), $('input[type="file"]').fileuploader({
             theme: "onebutton",
             addMore: !0,
@@ -406,27 +319,39 @@ $(document).ready(function() {
     $("img, a, button").on("dragstart", function(e) {
         e.preventDefault()
     });
-    var a = $(window).width(),
-        s = document.querySelectorAll(".scene");
-    if (e.width() > 1024 && !isMobile)
-        for (var i = 0; i < s.length; ++i) {
-            new Parallax(s[i], {
-                relativeInput: !0,
-                clipRelativeInput: !1,
-                hoverOnly: !0,
-                calibrateX: !0,
-                calibrateY: !0,
-                invertX: !1,
-                invertY: !0,
-                limitX: 25,
-                limitY: 15,
-                frictionX: .1,
-                frictionY: .1,
-                selector: ".layer",
-                pointerEvents: !0
-            })
-        }
-    var t = {
+    var i = $(window).width(),
+        s = $(".scene"),
+        a = [],
+        t = {
+            relativeInput: !0,
+            clipRelativeInput: !1,
+            hoverOnly: !0,
+            calibrateX: !0,
+            calibrateY: !0,
+            invertX: !1,
+            invertY: !0,
+            limitX: 25,
+            limitY: 15,
+            frictionX: .1,
+            frictionY: .1,
+            selector: ".layer",
+            pointerEvents: !0
+        };
+    e.width() > 1024 && !isMobile && s.each(function(e) {
+        var i = $(".scene").eq(e);
+        if (i.hasClass("scene_horizontal")) {
+            console.log("HAS HORIZONTAL");
+            var o = t;
+            o.calibrateY = !1, o.limitY = 0, o.limitX = 50, o.invertX = !0, a[e] = new Parallax(s[e], o)
+        } else a[e] = new Parallax(s[e], t)
+    }), jQuery(window).resize(function() {
+        $(".scene").each(function() {
+            $(window).width() < 1025 && $(this).attr("style", "")
+        }), $(".layer").each(function() {
+            $(window).width() < 1025 && $(this).attr("style", "")
+        })
+    });
+    var o = {
         movement: {
             imgWrapper: {
                 translation: {
@@ -463,39 +388,39 @@ $(document).ready(function() {
         }
     };
     if ($(".js-tilter").each(function() {
-            new TiltFx(this, t)
+            new TiltFx(this, o)
         }), videoData.length > 0) {
-        var d = +$("#video-b24").offset().top,
-            o = +$("#video-b24").height(),
-            l = +$("header").height();
+        var n = +$("#video-b24").offset().top,
+            l = +$("#video-b24").height(),
+            d = +$("header").height();
         $(".js-anchor-video").on("click", function(e) {
             e.preventDefault();
-            var a = d - l;
+            var i = n - d;
             $("body, html").animate({
-                scrollTop: a
+                scrollTop: i
             }, 1e3), playVideo()
         }), onPlayerReady = function(e) {
             e.target.mute();
-            var a = $(window).scrollTop();
-            a >= d - 2 * l ? (playVideo(), a >= d + o && stopVideo()) : stopVideo(), $(window).on("scroll", function() {
+            var i = $(window).scrollTop();
+            i >= n - 2 * d ? (playVideo(), i >= n + l && stopVideo()) : stopVideo(), $(window).on("scroll", function() {
                 var e = $(window).scrollTop();
-                e >= d - 2 * l ? (playVideo(), e >= d + o && stopVideo()) : stopVideo()
+                e >= n - 2 * d ? (playVideo(), e >= n + l && stopVideo()) : stopVideo()
             })
         }
     }
     $(".js-acc-toggle").on("click", function(e) {
         e.preventDefault();
-        var a = $(this).closest(".js-acc"),
-            s = a.find(".js-acc-item");
-        a.toggleClass("open"), s.slideToggle(200)
+        var i = $(this).closest(".js-acc"),
+            s = i.find(".js-acc-item");
+        i.toggleClass("open"), s.slideToggle(200)
     }), $(".ba-slider").each(function() {
         $(this).beforeAfter()
     }), $(".js-anchor-link").on("click", function(e) {
         e.preventDefault();
         var s = $(this).attr("href"),
-            i = 0;
-        a > 720 && (i = +$("header").height());
-        var t = +$(s).offset().top - i;
+            a = 0;
+        i > 720 && (a = +$("header").height());
+        var t = +$(s).offset().top - a;
         $("body, html").animate({
             scrollTop: t
         }, 1e3)
@@ -510,28 +435,28 @@ $(document).ready(function() {
                 crossFade: !0
             }
         }),
-        n = null,
+        c = null,
         p = 1;
     r.on("slideChange", function() {
         var e = +$(this)[0].realIndex + 1;
         if ($(window).width() > 767) {
-            var a = $(".js-slider-b24-nav"),
+            var i = $(".js-slider-b24-nav"),
                 s = $(".slider-b24__nav-list").find('.js-slider-b24-nav[data-toggle="' + e + '"]');
-            a.removeClass("active"), s.addClass("active"), e > p ? (n = s.prev(".slider-b24__nav-line"), n.addClass("animate")) : (n = s.next(".slider-b24__nav-line"), n.addClass("animate reverse")), p = e, setTimeout(function() {
-                n.removeClass("animate reverse")
+            i.removeClass("active"), s.addClass("active"), e > p ? (c = s.prev(".slider-b24__nav-line"), c.addClass("animate")) : (c = s.next(".slider-b24__nav-line"), c.addClass("animate reverse")), p = e, setTimeout(function() {
+                c.removeClass("animate reverse")
             }, 800)
         } else {
-            var i = $(".slider-b24__mobnav-dropdown").find('.js-dropdown-link[data-toggle="' + e + '"]'),
-                t = i.text(),
-                d = i.closest(".js-dropdown");
-            d.find(".js-dropdown-toggle span").text(t)
+            var a = $(".slider-b24__mobnav-dropdown").find('.js-dropdown-link[data-toggle="' + e + '"]'),
+                t = a.text(),
+                o = a.closest(".js-dropdown");
+            o.find(".js-dropdown-toggle span").text(t)
         }
     }), $(".js-slider-b24-nav").on("click", function(e) {
         e.preventDefault();
-        var a = +$(this).data("toggle") - 1;
-        r.slideTo(a)
+        var i = +$(this).data("toggle") - 1;
+        r.slideTo(i)
     });
-    var c = (new Swiper(".js-slider-reviews", {
+    var u = new Swiper(".js-slider-reviews", {
         loop: !0,
         slidesPerView: 3,
         spaceBetween: 10,
@@ -550,25 +475,31 @@ $(document).ready(function() {
                     clickable: !0
                 }
             },
-            1023: {
+            1024: {
                 slidesPerView: 2,
-                spaceBetween: 20
+                spaceBetween: 20,
+                autoHeight: !1
             }
         }
-    }), 0);
-    $(".js-slider-project-screen .swiper-wrapper .swiper-slide").length > 4 ? c = 2 : $(".js-slider-project-screen .swiper-wrapper .swiper-slide").length > 2 && (c = 1);
-    var m = new Swiper(".js-slider-project-screen", {
+    });
+    jQuery(window).resize(function() {
+        $(window).width() < 1025 && $(window).width() > 767 && null !== u && $(".js-slider-reviews").length > 0 && ($(".js-slider-reviews").find(".swiper-wrapper").css("height", "inherit"), u.update())
+    });
+    var h = 0;
+    $(".js-slider-project-screen .swiper-wrapper .swiper-slide").length > 4 ? h = 2 : $(".js-slider-project-screen .swiper-wrapper .swiper-slide").length > 2 && (h = 1);
+    var w = new Swiper(".js-slider-project-screen", {
         loop: !1,
         slidesPerView: 1,
         speed: 800,
         autoHeight: !0,
-        effect: "fade",
-        fadeEffect: {
-            crossFade: !0
+        effect: "flip",
+        flipEffect: {
+            rotate: 10,
+            slideShadows: !1
         },
         breakpoints: {
             767: {
-                initialSlide: c,
+                initialSlide: h,
                 pagination: {
                     el: ".js-slider-project-screen-dots",
                     clickable: !0,
@@ -578,18 +509,18 @@ $(document).ready(function() {
             }
         }
     });
-    m.on("slideChange", function() {
+    w.on("slideChange", function() {
         var e = +$(this)[0].realIndex + 1,
-            a = $(".js-project-screen-nav"),
+            i = $(".js-project-screen-nav"),
             s = $(".project-screen__nav-list").find('.js-project-screen-nav[data-toggle="' + e + '"]');
-        a.removeClass("active"), s.addClass("active")
+        i.removeClass("active"), s.addClass("active")
     }), $(".js-project-screen-nav").on("click", function(e) {
         e.preventDefault();
-        var a = +$(this).data("toggle") - 1;
-        m.slideTo(a)
+        var i = +$(this).data("toggle") - 1;
+        w.slideTo(i)
     });
-    var u = {},
-        h = {
+    var m = {},
+        g = {
             slidesPerView: 2,
             freeMode: !1,
             loop: !0,
@@ -603,16 +534,16 @@ $(document).ready(function() {
             }
         };
     $(".js-slider-public").each(function(e) {
-        u[e] = null
+        m[e] = null
     }), $(".js-slider-public").each(function(e) {
-        $(window).width() < 768 ? null === u[e] && $(".js-slider-public").length > 0 && (u[e] = new Swiper($(".public").find(".js-slider-public").eq(e), h)) : u[e] && (u[e].destroy(), u[e] = null, $(".public__img-list").removeAttr("style"))
+        $(window).width() < 768 ? null === m[e] && $(".js-slider-public").length > 0 && (m[e] = new Swiper($(".public").find(".js-slider-public").eq(e), g)) : m[e] && (m[e].destroy(), m[e] = null, $(".public__img-list").removeAttr("style"))
     }), jQuery(window).resize(function() {
         $(".js-slider-public").each(function(e) {
-            $(window).width() < 768 ? null === u[e] && $(".js-slider-public").length > 0 && (u[e] = new Swiper($(".public").find(".js-slider-public").eq(e), h)) : u[e] && (u[e].destroy(), u[e] = null, $(".public__img-list").removeAttr("style"))
+            $(window).width() < 768 ? null === m[e] && $(".js-slider-public").length > 0 && (m[e] = new Swiper($(".public").find(".js-slider-public").eq(e), g)) : m[e] && (m[e].destroy(), m[e] = null, $(".public__img-list").removeAttr("style"))
         })
     });
-    var y = {},
-        g = {
+    var f = {},
+        v = {
             slidesPerView: 2,
             freeMode: !1,
             loop: !1,
@@ -631,25 +562,25 @@ $(document).ready(function() {
                     loop: !1,
                     autoHeight: !0
                 },
-                1023: {
+                1024: {
                     slidesPerView: 2,
                     autoHeight: !1
                 }
             }
         };
     $(".js-slider-icon-col").each(function(e) {
-        y[e] = null
+        f[e] = null
     }), $(".js-slider-icon-col").each(function(e) {
-        var a = $(".js-slider-icon-col").eq(e);
-        $(window).width() < 1025 ? null === y[e] && $(".js-slider-icon-col").length > 0 && (g.pagination.el = a.find(".js-slider-icon-col-dots"), y[e] = new Swiper(a, g)) : y[e] && (y[e].destroy(), y[e] = null, a.find(".icon-col__list").removeAttr("style"), a.find(".icon-col__item").removeAttr("style"))
+        var i = $(".js-slider-icon-col").eq(e);
+        $(window).width() < 1025 ? (null === f[e] && $(".js-slider-icon-col").length > 0 && (v.pagination.el = i.find(".js-slider-icon-col-dots"), f[e] = new Swiper(i, v)), $(window).width() > 767 && null !== f[e] && (i.find(".icon-col__list").css("height", "inherit"), f[e].update())) : f[e] && (f[e].destroy(), f[e] = null, i.find(".icon-col__list").removeAttr("style"), i.find(".icon-col__item").removeAttr("style"))
     }), jQuery(window).resize(function() {
         $(".js-slider-icon-col").each(function(e) {
-            var a = $(".js-slider-icon-col").eq(e);
-            $(window).width() < 1025 ? null === y[e] && $(".js-slider-icon-col").length > 0 && (g.pagination.el = a.find(".js-slider-icon-col-dots"), y[e] = new Swiper($(".js-slider-icon-col").eq(e), g)) : y[e] && (y[e].destroy(), y[e] = null, a.find(".icon-col__list").removeAttr("style"), a.find(".icon-col__item").removeAttr("style"))
+            var i = $(".js-slider-icon-col").eq(e);
+            $(window).width() < 1025 ? (null === f[e] && $(".js-slider-icon-col").length > 0 && (v.pagination.el = i.find(".js-slider-icon-col-dots"), f[e] = new Swiper($(".js-slider-icon-col").eq(e), v)), $(window).width() > 767 && null !== f[e] && (i.find(".icon-col__list").css("height", "inherit"), f[e].update())) : f[e] && (f[e].destroy(), f[e] = null, i.find(".icon-col__list").removeAttr("style"), i.find(".icon-col__item").removeAttr("style"))
         })
     });
-    var w = {},
-        f = {
+    var y = {},
+        b = {
             slidesPerView: 2,
             freeMode: !1,
             loop: !1,
@@ -668,25 +599,62 @@ $(document).ready(function() {
                     loop: !1,
                     autoHeight: !0
                 },
-                1023: {
+                1024: {
                     slidesPerView: 2,
                     autoHeight: !1
                 }
             }
         };
     $(".js-slider-num-col").each(function(e) {
-        w[e] = null
+        y[e] = null
     }), $(".js-slider-num-col").each(function(e) {
-        var a = $(".js-slider-num-col").eq(e);
-        $(window).width() < 1025 ? null === w[e] && $(".js-slider-num-col").length > 0 && (f.pagination.el = a.find(".js-slider-num-col-dots"), w[e] = new Swiper($(".js-slider-num-col").eq(e), f)) : w[e] && (w[e].destroy(), w[e] = null, a.find(".num-col__list").removeAttr("style"), a.find(".num-col__item").removeAttr("style"))
+        var i = $(".js-slider-num-col").eq(e);
+        $(window).width() < 1025 ? (null === y[e] && $(".js-slider-num-col").length > 0 && (b.pagination.el = i.find(".js-slider-num-col-dots"), y[e] = new Swiper($(".js-slider-num-col").eq(e), b)), $(window).width() > 767 && null !== y[e] && (i.find(".num-col__list").css("height", "inherit"), y[e].update())) : y[e] && (y[e].destroy(), y[e] = null, i.find(".num-col__list").removeAttr("style"), i.find(".num-col__item").removeAttr("style"))
     }), jQuery(window).resize(function() {
         $(".js-slider-num-col").each(function(e) {
-            var a = $(".js-slider-num-col").eq(e);
-            $(window).width() < 1025 ? null === w[e] && $(".js-slider-num-col").length > 0 && (f.pagination.el = a.find(".js-slider-num-col-dots"), w[e] = new Swiper($(".js-slider-num-col").eq(e), f)) : w[e] && (w[e].destroy(), w[e] = null, a.find(".num-col__list").removeAttr("style"), a.find(".num-col__item").removeAttr("style"))
+            var i = $(".js-slider-num-col").eq(e);
+            $(window).width() < 1025 ? (null === y[e] && $(".js-slider-num-col").length > 0 && (b.pagination.el = i.find(".js-slider-num-col-dots"), y[e] = new Swiper($(".js-slider-num-col").eq(e), b)), $(window).width() > 767 && null !== y[e] && (i.find(".num-col__list").css("height", "inherit"), y[e].update())) : y[e] && (y[e].destroy(), y[e] = null, i.find(".num-col__list").removeAttr("style"), i.find(".num-col__item").removeAttr("style"))
         })
     });
-    var v = {},
-        b = {
+    var j = {},
+        _ = {
+            slidesPerView: 2,
+            freeMode: !1,
+            loop: !1,
+            spaceBetween: 10,
+            speed: 400,
+            slideClass: $('[id*="-slider"] > *').attr("class"),
+            wrapperClass: $('[id*="-slider"]').attr("class"),
+            pagination: {
+                el: $(".js-slider-other-col-dots"),
+                clickable: !0
+            },
+            breakpoints: {
+                720: {
+                    slidesPerView: 1,
+                    spaceBetween: 10,
+                    loop: !1,
+                    autoHeight: !0
+                },
+                1024: {
+                    slidesPerView: 2,
+                    autoHeight: !1
+                }
+            }
+        };
+    $(".js-slider-other-col").each(function(e) {
+        j[e] = null
+    }), $(".js-slider-other-col").each(function(e) {
+        var i = $(".js-slider-other-col").eq(e);
+        $(window).width() < 1025 ? (null === j[e] && $(".js-slider-other-col").length > 0 ? (_.pagination.el = i.find(".js-slider-other-col-dots"), _.slideClass = i.find('[id*="-slider"] > *:first-child').attr("class").split(" ")[0], _.wrapperClass = i.find('[id*="-slider"]').attr("class"), i.find('[id*="-slider"]').hasClass("g-what-list") || i.find('[id*="-slider"]').hasClass("g-proposals") ? (_.breakpoints[1024].slidesPerView = 3, _.breakpoints[720].slidesPerView = 1, j[e] = new Swiper(i, _)) : i.find('[id*="-slider"]').hasClass("g-about-write__list") ? (_.breakpoints[720].slidesPerView = 3, $(window).width() < 721 && (j[e] = new Swiper(i, _))) : i.find('[id*="-slider"]').hasClass("g-leadership__wrapper") ? (_.breakpoints[720].slidesPerView = 1, $(window).width() < 721 && (j[e] = new Swiper(i, _))) : (_.breakpoints[1024].slidesPerView = 2, _.breakpoints[720].slidesPerView = 1, j[e] = new Swiper(i, _))) : $(window).width() > 720 && $(".js-slider-other-col").length > 0 && (i.find('[id*="-slider"]').hasClass("g-about-write__list") || i.find('[id*="-slider"]').hasClass("g-leadership__wrapper")) && j[e] && (j[e].destroy(), j[e] = null, i.find('[id*="-slider"]').removeAttr("style"), i.find('[id*="-slider"] > *').removeAttr("style")), $(window).width() > 720 && null !== j[e] && (i.find('[id*="-slider"]').css("height", "inherit"), j[e].update())) : j[e] && (j[e].destroy(), j[e] = null, i.find('[id*="-slider"]').removeAttr("style"), i.find('[id*="-slider"] > *').removeAttr("style"))
+    }), jQuery(window).resize(function() {
+        $(".js-slider-other-col").each(function(e) {
+            var i = $(".js-slider-other-col").eq(e);
+            $(window).width() < 1025 ? (null === j[e] && $(".js-slider-other-col").length > 0 ? (_.pagination.el = i.find(".js-slider-other-col-dots"), _.slideClass = i.find('[id*="-slider"] > *:first-child').attr("class").split(" ")[0], _.wrapperClass = i.find('[id*="-slider"]').attr("class"), i.find('[id*="-slider"]').hasClass("g-what-list") || i.find('[id*="-slider"]').hasClass("g-proposals") ? (_.breakpoints[1024].slidesPerView = 3, _.breakpoints[720].slidesPerView = 1, j[e] = new Swiper(i, _)) : i.find('[id*="-slider"]').hasClass("g-about-write__list") ? (_.breakpoints[720].slidesPerView = 3, $(window).width() < 721 && (j[e] = new Swiper(i, _))) : (_.breakpoints[1024].slidesPerView = 2, _.breakpoints[720].slidesPerView = 1, j[e] = new Swiper(i, _))) : $(window).width() > 720 && $(".js-slider-other-col").length > 0 && (i.find('[id*="-slider"]').hasClass("g-about-write__list") || i.find('[id*="-slider"]').hasClass("g-leadership__wrapper")) && j[e] && (j[e].destroy(), j[e] = null, i.find('[id*="-slider"]').removeAttr("style"), i.find('[id*="-slider"] > *').removeAttr("style")), $(window).width() > 720 && null !== j[e] && (i.find('[id*="-slider"]').css("height", "inherit"), j[e].update())) : j[e] && (j[e].destroy(), j[e] = null, i.find('[id*="-slider"]').removeAttr("style"), i.find('[id*="-slider"] > *').removeAttr("style"))
+        })
+    });
+    var C = {},
+        k = {
             slidesPerView: 2,
             freeMode: !1,
             loop: !1,
@@ -708,28 +676,28 @@ $(document).ready(function() {
             }
         };
     $(".js-slider-solution-img").each(function(e) {
-        v[e] = null
+        C[e] = null
     }), $(".js-slider-solution-img").each(function(e) {
-        var a = $(".js-slider-solution-img").eq(e);
-        $(window).width() < 768 ? null === v[e] && $(".js-slider-solution-img").length > 0 && (b.pagination.el = a.find(".js-slider-solution-img-dots"), v[e] = new Swiper(a, b)) : v[e] && (v[e].destroy(), v[e] = null, a.find(".project-solution__block-img-row-img").removeAttr("style"), a.find(".project-solution__block-img-row").removeAttr("style"))
+        var i = $(".js-slider-solution-img").eq(e);
+        $(window).width() < 768 ? null === C[e] && $(".js-slider-solution-img").length > 0 && (k.pagination.el = i.find(".js-slider-solution-img-dots"), C[e] = new Swiper(i, k)) : C[e] && (C[e].destroy(), C[e] = null, i.find(".project-solution__block-img-row-img").removeAttr("style"), i.find(".project-solution__block-img-row").removeAttr("style"))
     }), jQuery(window).resize(function() {
         $(".js-slider-solution-img").each(function(e) {
-            var a = $(".js-slider-solution-img").eq(e);
-            $(window).width() < 768 ? null === v[e] && $(".js-slider-solution-img").length > 0 && (b.pagination.el = a.find(".js-slider-solution-img-dots"), v[e] = new Swiper($(".js-slider-solution-img").eq(e), b)) : v[e] && (v[e].destroy(), v[e] = null, a.find(".project-solution__block-img-row-img").removeAttr("style"), a.find(".project-solution__block-img-row").removeAttr("style"))
+            var i = $(".js-slider-solution-img").eq(e);
+            $(window).width() < 768 ? null === C[e] && $(".js-slider-solution-img").length > 0 && (k.pagination.el = i.find(".js-slider-solution-img-dots"), C[e] = new Swiper($(".js-slider-solution-img").eq(e), k)) : C[e] && (C[e].destroy(), C[e] = null, i.find(".project-solution__block-img-row-img").removeAttr("style"), i.find(".project-solution__block-img-row").removeAttr("style"))
         })
     }), $(".js-dropdown-toggle").on("click", function(e) {
         e.preventDefault();
-        var a = $(this).closest(".js-dropdown");
-        a.toggleClass("open"), a.find(".js-dropdown-list").fadeToggle("fast")
+        var i = $(this).closest(".js-dropdown");
+        i.toggleClass("open"), i.find(".js-dropdown-list").fadeToggle("fast")
     }), jQuery(document).click(function(e) {
-        var a = $(e.target).hasClass("js-dropdown") || $(e.target).closest(".dropdown").hasClass("js-dropdown");
-        a || ($(".js-dropdown").removeClass("open"), $(".js-dropdown-list").fadeOut("fast"))
+        var i = $(e.target).hasClass("js-dropdown") || $(e.target).closest(".dropdown").hasClass("js-dropdown");
+        i || ($(".js-dropdown").removeClass("open"), $(".js-dropdown-list").fadeOut("fast"))
     }), $(".js-dropdown-link").on("click", function(e) {
         e.preventDefault();
-        var a = $(this).text(),
+        var i = $(this).text(),
             s = $(this).closest(".js-dropdown");
-        s.find(".js-dropdown-toggle span").text(a), s.removeClass("open"), s.find(".js-dropdown-list").fadeToggle("fast");
-        var i = +$(this).data("toggle") - 1;
-        r.slideTo(i)
+        s.find(".js-dropdown-toggle span").text(i), s.removeClass("open"), s.find(".js-dropdown-list").fadeToggle("fast");
+        var a = +$(this).data("toggle") - 1;
+        r.slideTo(a)
     })
 });
