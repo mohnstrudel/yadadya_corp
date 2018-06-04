@@ -44,6 +44,13 @@ svg {
     list-style-type: none
 }
 
+.attract-promo__box-list,
+.path-block__list,
+.project-feature__list,
+.project-issue__text {
+    counter-reset: myCounter
+}
+
 .action-b24__grid,
 .arrow-col__item,
 .arrow-col__list,
@@ -152,8 +159,8 @@ svg {
 }
 
 .main *,
-.main:after,
-.main:before {
+.main::after,
+.main::before {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box
@@ -1657,6 +1664,7 @@ html {
     right: 50%;
     width: 100%;
     height: 200vh;
+    min-height: 1668px;
     background-color: rgba(34, 45, 40, .98);
     border-radius: 50%;
     -webkit-transform-origin: 100% 0;
@@ -1672,6 +1680,18 @@ html {
     -ms-transition: transform .5s ease-out, border-radius .3s ease-out;
     -o-transition: transform .5s ease-out, border-radius .3s ease-out;
     transition: transform .5s ease-out, border-radius .3s ease-out
+}
+
+@media screen and (max-width:1439px) {
+    .g-menu::before {
+        min-height: 1448px
+    }
+}
+
+@media screen and (max-width:720px) {
+    .g-menu::before {
+        min-height: 872px
+    }
 }
 
 .g-menu_visible {
@@ -1933,6 +1953,10 @@ html {
 
 .g-menu__list-item:hover {
     color: #16d488
+}
+
+.g-menu__social {
+    display: inline-block
 }
 
 .g-menu__social .g-icon {
@@ -4614,9 +4638,7 @@ html {
     .g-post {
         padding-top: 16px;
         padding-left: 0;
-        padding-right: 0;
-        margin-left: 20px;
-        margin-right: 20px
+        padding-right: 0
     }
     .g-post__date {
         font-size: 14px;
@@ -4879,6 +4901,10 @@ html {
         max-width: 100%;
         padding-left: 20px;
         padding-right: 20px
+    }
+    .g-post {
+        margin-left: 20px;
+        margin-right: 20px
     }
     .g-footer .g-wrapper {
         padding: 66px 20px
@@ -5220,6 +5246,9 @@ html {
         font-size: 16px;
         padding: 0 23px
     }
+    .g-btn_small {
+        line-height: 42px
+    }
     .g-directions .g-btn_transparent {
         line-height: 40px;
         padding: 0;
@@ -5511,7 +5540,7 @@ html {
     .g-menu__social_mail .g-icon {
         width: 30px;
         height: 20px;
-        margin-top: 14px;
+        margin-top: 10px;
         margin-left: 29px
     }
     .g-breadcrumbs__arrow,
@@ -7331,7 +7360,7 @@ html {
         display: inline-block
     }
     .section_full-height {
-        min-height: 508px;
+        min-height: 440px;
         padding-top: 0;
         padding-bottom: 40px
     }
@@ -8670,7 +8699,7 @@ html {
     border: 5px solid #fff;
     border-radius: 4px;
     z-index: 5;
-    background-image: url(<%= asset_path 'services/b24/video' %>.jpg);
+    background-image: url(<%= asset_path 'services/b24/video.jpg' %>);
     background-size: 102% auto
 }
 
@@ -11189,7 +11218,13 @@ html {
 }
 
 .icon-col__logo {
-    max-height: 100%
+    max-height: 150px
+}
+
+@media screen and (max-width:767px) {
+    .icon-col__logo {
+        max-height: 130px
+    }
 }
 
 .icon-col__bg {
@@ -11754,7 +11789,6 @@ html {
 }
 
 .path-block__list {
-    counter-reset: myCounter;
     margin: 0 0 44px;
     padding: 0 0 0 90px;
     position: relative;
@@ -11801,7 +11835,7 @@ html {
 }
 
 .corp-how .path-block__list::before {
-    background-image: url(<%= asset_path 'services/corp/path.svg'%> );
+    background-image: url(<%= asset_path 'services/corp/path.svg' %>);
     background-size: auto 590px
 }
 
@@ -11960,7 +11994,10 @@ html {
     -webkit-transform: translate(-48px, -50%);
     -moz-transform: translate(-48px, -50%);
     -ms-transform: translate(-48px, -50%);
-    transform: translate(-48px, -50%)
+    transform: translate(-48px, -50%);
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box
 }
 
 .attract-promo__box-title,
@@ -14050,7 +14087,7 @@ html {
     .green-banner_project .green-banner__bg,
     .green-banner_support .green-banner__bg {
         background-position: 50% 50%;
-        background-image: url(<%= asset_path 'services/firm-style/green.jpg' %>)!important
+        background-image: url(<%= asset_path 'services/firm-style/green.jpg' %>) !important
     }
     .green-banner__wrp {
         min-height: 263px;
@@ -15907,10 +15944,6 @@ html {
     }
 }
 
-.attract-promo__box-list {
-    counter-reset: myCounter
-}
-
 .attract-promo__box {
     margin-bottom: 58px
 }
@@ -15987,8 +16020,12 @@ html {
     border: 2px solid #226d4f;
     border-radius: 50%;
     background-color: #16d488;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
     margin-bottom: 0;
-    line-height: 28px;
+    // line-height: 28px;
+    line-height: 29px;
     text-align: center;
     color: #fff
 }
@@ -15997,6 +16034,13 @@ html {
 .complex-scheme__caption span .rub::after {
     bottom: 39%;
     background-color: #6f7a76
+}
+
+.project-issue__caption_num::before,
+.project-solution__num-list-item::before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    counter-increment: myCounter
 }
 
 .attract-promo__box-title {
@@ -16702,9 +16746,9 @@ html {
 
 @media screen and (max-width:767px) {
     .services-promo__img {
-        width: 90%;
+        width: 72%;
         max-width: 360px;
-        margin: 20px auto 16px
+        margin: 12px auto 10px
     }
     .services-promo__caption {
         color: #6f7a76
@@ -17501,10 +17545,6 @@ html {
     }
 }
 
-.project-issue__text {
-    counter-reset: myCounter
-}
-
 @media screen and (max-width:767px) {
     .project-issue__body_size_m,
     .project-issue__body_size_s {
@@ -17535,7 +17575,6 @@ html {
 }
 
 .project-issue__caption_num::before {
-    counter-increment: myCounter;
     content: counter(myCounter);
     position: absolute;
     top: 7px;
@@ -17546,8 +17585,10 @@ html {
     border: 2px solid #226d4f;
     border-radius: 50%;
     background-color: #16d488;
+    box-sizing: border-box;
     margin-bottom: 0;
-    line-height: 28px;
+    // line-height: 28px;
+    line-height: 29px;
     text-align: center;
     color: #fff
 }
@@ -19045,12 +19086,12 @@ html {
 }
 
 .project-solution__num-list-item::before {
-    counter-increment: myCounter;
     content: counter(myCounter);
     display: inline-block;
     position: absolute;
     top: 0;
-    left: 0
+    left: 0;
+    box-sizing: border-box
 }
 
 .project-solution__figure {
@@ -21151,10 +21192,6 @@ html {
     }
 }
 
-.project-feature__list {
-    counter-reset: myCounter
-}
-
 @media screen and (max-width:767px) {
     .project-feature__body {
         padding-left: 0;
@@ -21221,8 +21258,12 @@ html {
     border: 2px solid #226d4f;
     border-radius: 50%;
     background-color: #16d488;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
     margin-bottom: 0;
-    line-height: 28px;
+    // line-height: 28px;
+    line-height: 29px;
     text-align: center;
     color: #fff
 }
