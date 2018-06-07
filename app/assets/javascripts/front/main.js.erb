@@ -272,7 +272,7 @@ Yadadya.resize(function() {
         new mapboxgl.Map({
             container: "g-map",
             style: "mapbox://styles/mapbox/light-v9",
-            center: [37.5872749, 55.7474909],
+            center: [37.565337, 55.805336],
             zoom: 14.5,
             hash: !1,
             interactive: !0
@@ -490,12 +490,11 @@ $(document).ready(function() {
     var w = new Swiper(".js-slider-project-screen", {
         loop: !1,
         slidesPerView: 1,
-        speed: 800,
+        speed: 500,
         autoHeight: !0,
-        effect: "flip",
-        flipEffect: {
-            rotate: 10,
-            slideShadows: !1
+        effect: "fade",
+        fadeEffect: {
+            crossFade: !0
         },
         breakpoints: {
             767: {
