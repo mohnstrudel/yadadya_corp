@@ -41,11 +41,11 @@ var Yadadya = {
         isMobile: window.matchMedia("(max-width: 720px)"),
         isHeaderHide: window.matchMedia("(max-width: 900px)"),
         pageClasses: {
-            main: "home",
-            about: "about",
-            contact: "contact",
-            service: "services",
-            "case": "cases"
+            main: "g-body_main",
+            about: "g-body_about",
+            contact: "g-body_contact",
+            service: "g-body_service",
+            "case": "g-body_case"
         }
     },
     rem: parseFloat(getComputedStyle($("html")[0]).fontSize),
@@ -490,11 +490,12 @@ $(document).ready(function() {
     var w = new Swiper(".js-slider-project-screen", {
         loop: !1,
         slidesPerView: 1,
-        speed: 500,
+        speed: 800,
         autoHeight: !0,
-        effect: "fade",
-        fadeEffect: {
-            crossFade: !0
+        effect: "flip",
+        flipEffect: {
+            rotate: 10,
+            slideShadows: !1
         },
         breakpoints: {
             767: {
