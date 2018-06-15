@@ -1,9 +1,13 @@
+// console.log('rendering errors');
 $('#form').find('.text-error').empty();
 
 var errors = "<%= @request.errors.messages %>";
-// console.log(typeof errors);
+console.log(typeof errors);
+console.log("Errors are: " + errors);
 
 errors_array = errors.split(',');
+
+console.log("Error array is: " + errors_array);
 
 for (item of errors_array) {
   var field_name = item.substring(item.lastIndexOf(":")+1, item.lastIndexOf("="));
@@ -14,6 +18,8 @@ for (item of errors_array) {
   else if (field_name == 'attachments'){
     $('#form').append("<p><div class='g-form__text text-error'>К сожалению, формат загруженных файлов не поддерживается.</p></div>");
   }
-  $input = $('form').find("input[name='request[" + field_name + "]']");
+  // $input = $('form').find("input[name='request[" + field_name + "]']");
+  // $('form').find('input[name="[request]full_name"]')
+  $input = $('form').find('input[name="[request]' + field_name +  '"]');
   $input.parents(".g-input").toggleClass("g-input_error", true);
 }

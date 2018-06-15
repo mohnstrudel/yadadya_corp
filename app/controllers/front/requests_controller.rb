@@ -1,6 +1,37 @@
 class Front::RequestsController < FrontController
 
   def create
+    
+    allow_send = check_timer     
+      
+    @request = Request.new(request_params)
+    if allow_send
+      respond_to do |format|
+        if @request.save
+            format.json { render partial: 'success.js' }
+            RequestMailer.notify_admin(@request).deliver_now
+        else
+          format.json { render partial: 'fail.js' }
+          # format.json { render json: { errors: @request.errors}  }
+        end
+      end
+    else
+      @request.errors.add(:bot, "К сожалению, у нас подозрение, что вы бот. Попробуйте заполнить форму ещё раз.")
+      respond_to do |format|
+        format.json do
+          # render json:{
+          #   html_data: render_to_string(partial: 'fail.js', locals: {errors: @request.errors}) 
+          # }
+          render partial: 'fail.js'
+        end
+      end
+      
+    end
+  end
+
+  private
+
+  def check_timer
     allow_send = true
     puts "Timer 1: #{session[:timer_1].to_time.class}"
 
@@ -17,29 +48,9 @@ class Front::RequestsController < FrontController
     end
 
     puts "Allow send is: #{allow_send}"
-    
-      
-    @request = Request.new(request_params)
-    if allow_send
-      respond_to do |format|
-        if @request.save
-            format.js
-          RequestMailer.notify_admin(@request).deliver_now
-        else
-          format.js { render partial: 'fail' }
-        end
-      end
-    else
-      @request.errors.add(:bot, "К сожалению, у нас подозрение, что вы бот. Попробуйте заполнить форму ещё раз.")
-      respond_to do |format|
-        format.js { render partial: 'fail' }
-        format.html
-      end
-      
-    end
-  end
 
-  private
+    return allow_send
+  end
 
   def request_params
     params.require(:request).permit(:full_name, :email, :phone, :body, {attachments: []}, :message)

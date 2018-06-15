@@ -16,39 +16,38 @@
     %p.g-popup__text
       или напишите нам
       %a.g-link{:href => "mailto:info@atomic-digital.ru"} info@atomic-digital.ru
-    =form_with(model: Request.new, class: 'g-form g-contact__form', id: 'form', remote: true) do |f|
+    %form#form.g-form.g-contact__form
       .g-input
-        =f.text_field :full_name, class: 'g-input__field js-input', placeholder: 'Как вас зовут'
+        %input.g-input__field.js-input{:name => "[request]full_name", :placeholder => "Как вас зовут", :type => "text"}/
         .g-input__flag
           %svg.g-input__icon.g-input__icon_error
             %use{"xlink:href" => "#ic-input-error"}
           %svg.g-input__icon.g-input__icon_success
             %use{"xlink:href" => "#ic-input-success"}
       .g-input
-        =f.text_field :email, class: 'g-input__field js-input', placeholder: 'E-mail'
+        %input.g-input__field.js-input{:name => "[request]email", :placeholder => "E-mail", :type => "text"}/
         .g-input__flag
           %svg.g-input__icon.g-input__icon_error
             %use{"xlink:href" => "#ic-input-error"}
           %svg.g-input__icon.g-input__icon_success
             %use{"xlink:href" => "#ic-input-success"}
       .g-input
-        =f.text_field :phone, class: 'g-input__field js-input js-input-phone', placeholder: 'Контактный телефон'
+        %input.g-input__field.js-input.js-input-phone{:name => "[request]phone", :placeholder => "Контактный телефон", :type => "text"}/
         .g-input__flag
           %svg.g-input__icon.g-input__icon_error
             %use{"xlink:href" => "#ic-input-error"}
           %svg.g-input__icon.g-input__icon_success
             %use{"xlink:href" => "#ic-input-success"}
       .g-input.g-extra-message
-        =f.text_field :message, class: 'g-input__field js-input', placeholder: 'Дополнительное сообщение'
+        %input.g-input__field.js-input.js-input-phone{:name => "[request]message", :placeholder => "Дополнительное сообщение", :type => "text"}/
         .g-input__flag
           %svg.g-input__icon.g-input__icon_error
             %use{"xlink:href" => "#ic-input-error"}
           %svg.g-input__icon.g-input__icon_success
             %use{"xlink:href" => "#ic-input-success"}
       .g-input
-        =f.text_area :body, class: 'g-input__field g-input__field_textarea', placeholder: 'Сообщение', maxlength: 2000
+        %textarea.g-input__field.g-input__field_textarea{:name => "[request]body", :placeholder => "Сообщение"}
       %p.g-form__text
-        Если у вас есть ТЗ или иная информация, просто приложите файл к запросу (поддерживаются форматы .pdf, .txt, .doc, .docx, .xls, .xlsx, .png, .jpg):
-      =f.file_field :attachments, class: 'g-input__field-file', multiple: true
-      
-      =f.submit 'Отправить', class: 'g-btn g-btn_submit', id: 'form_submit', data: { "disable-with": "Отправляем..." }
+        Если у вас есть ТЗ или иная информация, просто приложите файл к запросу (поддерживаются форматы .pdf, .txt, .doc, .docx):
+      %input.g-input__field-file{:name => "request[attachments][]", :type => "file"}/
+      %input.g-btn.g-btn_submit{:type => "submit", :value => "Отправить"}/

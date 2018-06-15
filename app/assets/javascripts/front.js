@@ -7,6 +7,7 @@
 
 //=require front/main
 //=require front/social
+//=require front/form
 
 
 

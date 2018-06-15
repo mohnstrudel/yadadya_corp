@@ -153,7 +153,7 @@ Yadadya.resize(function() {
     }
     if ($(".g-popup").on("click", function(e) {
             ($(e.target).hasClass("g-popup") || 1 == $(e.target).closest(".js-close").length) && t($(this))
-        }), $(document).on("submit", ".g-form", function(a) {
+        }), $(document).on("submit", ".g-form_diable", function(a) {
             a.preventDefault();
             var o = $(this).find(".js-input"),
                 n = !1;
