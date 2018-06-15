@@ -1,13 +1,8 @@
-// console.log('rendering errors');
 $('#form').find('.text-error').empty();
 
 var errors = "<%= @request.errors.messages %>";
-console.log(typeof errors);
-console.log("Errors are: " + errors);
 
 errors_array = errors.split(',');
-
-console.log("Error array is: " + errors_array);
 
 for (item of errors_array) {
   var field_name = item.substring(item.lastIndexOf(":")+1, item.lastIndexOf("="));

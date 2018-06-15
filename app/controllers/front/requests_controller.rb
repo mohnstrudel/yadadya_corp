@@ -12,16 +12,12 @@ class Front::RequestsController < FrontController
             RequestMailer.notify_admin(@request).deliver_now
         else
           format.json { render partial: 'fail.js' }
-          # format.json { render json: { errors: @request.errors}  }
         end
       end
     else
       @request.errors.add(:bot, "К сожалению, у нас подозрение, что вы бот. Попробуйте заполнить форму ещё раз.")
       respond_to do |format|
         format.json do
-          # render json:{
-          #   html_data: render_to_string(partial: 'fail.js', locals: {errors: @request.errors}) 
-          # }
           render partial: 'fail.js'
         end
       end
