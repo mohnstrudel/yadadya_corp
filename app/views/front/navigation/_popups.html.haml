@@ -50,4 +50,4 @@
       %p.g-form__text
         Если у вас есть ТЗ или иная информация, просто приложите файл к запросу (поддерживаются форматы .pdf, .txt, .doc, .docx):
       %input.g-input__field-file{:name => "request[attachments][]", :type => "file"}/
-      %input.g-btn.g-btn_submit{:type => "submit", :value => "Отправить"}/
+      %input.g-btn.g-btn_submit{:type => "submit", :value => "Отправить", "data-disable-with" => "Отправляем..."}/

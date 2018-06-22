@@ -3,6 +3,8 @@ class Front::RequestsController < FrontController
   def create
     
     allow_send = check_timer     
+
+    # allow_send = false
       
     @request = Request.new(request_params)
     if allow_send
