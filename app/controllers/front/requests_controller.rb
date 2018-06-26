@@ -6,7 +6,7 @@ class Front::RequestsController < FrontController
 
     if Rails.env.development?
       # блочим отправку и спам на деве. Если нужно тестить отправку, то раскомментить
-      allow_send = false
+      # allow_send = false
     end
       
     @request = Request.new(request_params)

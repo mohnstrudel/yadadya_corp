@@ -11,13 +11,6 @@ $(document).ready(function(){
     btn.prop('disabled', false);
   }
 
-  btn.on('click', function(){
-    console.log('button was clicked');
-    btn.prop('disabled', true);
-    btn.val('Отправляем...');
-    window.setTimeout( enable_button, seconds * 1000 );
-  });
-
   $('#form').submit(function(e){
     e.preventDefault();
     // var valuesToSubmit = $(this).serialize();
@@ -33,11 +26,9 @@ $(document).ready(function(){
       dataType: 'script',
       data: data,
       success: function(result){
-        // $('#form-popup').toggle();
-        // $('#success-popup').toggle();
-        // console.log('success: ' + result);
-        // console.log('data sent is: ' + data);
-        // btn.prop('disabled', false);
+        btn.prop('disabled', true);
+        btn.val('Отправляем...');
+        window.setTimeout( enable_button, seconds * 1000 );
       },
       error: function(XMLHttpRequest, textStatus, errorThrown) { 
         console.log("Status: " + textStatus); 
