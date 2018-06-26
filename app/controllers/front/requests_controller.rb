@@ -4,7 +4,10 @@ class Front::RequestsController < FrontController
     
     allow_send = check_timer     
 
-    # allow_send = false
+    if Rails.env.development?
+      # блочим отправку и спам на деве. Если нужно тестить отправку, то раскомментить
+      allow_send = false
+    end
       
     @request = Request.new(request_params)
     if allow_send
