@@ -18,7 +18,9 @@ $(document).ready(function(){
     // console.log('form clicked');
     // console.log('data is: ' + data);
 
-    
+    //console.log('Button successfully clicked.');
+    btn.prop('disabled', true);
+    btn.val('Отправляем...');
 
     $.ajax({
       url: '/requests',
@@ -26,8 +28,7 @@ $(document).ready(function(){
       dataType: 'script',
       data: data,
       success: function(result){
-        btn.prop('disabled', true);
-        btn.val('Отправляем...');
+
         window.setTimeout( enable_button, seconds * 1000 );
       },
       error: function(XMLHttpRequest, textStatus, errorThrown) { 
