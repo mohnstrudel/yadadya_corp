@@ -54,6 +54,6 @@ class Front::RequestsController < FrontController
   end
 
   def request_params
-    params.require(:request).permit(:full_name, :email, :phone, :body, {attachments: []}, :message)
+    params.require(:request).permit(:full_name, :email, :phone, :body, :message, :attachments => [])
   end
 end
